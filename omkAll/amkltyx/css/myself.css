@@ -1,0 +1,446 @@
+.my{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/my.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+/*上部分  左边*/
+.my_top{
+    width: 7rem;
+    height: 8rem;
+    position: absolute;
+    top: 0%;
+    left: 10%;
+}
+.my_top>img{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 8%;
+    left: 7%;
+    border-radius: 50%;
+}
+.my_id{
+    width: 9rem;
+    height: 1rem;
+    position: absolute;
+    top:75%;
+    left: 3%;
+    font-size: 12px;
+    color: #fff;
+}
+
+/*上部分  右边*/
+.my_top1{
+	width: 13rem;
+    height:9rem;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+/*签到*/
+.img_2{
+    width: 3.90625rem;
+    height: 2.1875rem;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+/*可用积分*/
+.ky{
+    width: 8rem;
+    height: 2rem;
+    position: absolute;
+    top: 2%;
+    left: 13%;
+    font-size: 16px;
+    color: #fff;
+}
+/*兑换*/
+.img_3{
+    width: 5.1875rem;
+    height: 2.8125rem;
+    position: absolute;
+    top: 14%;
+    right: 50%;
+    background-image: url(../img/duihuan.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/*积分信息*/
+.jifen{
+    width: 11rem;
+    height: 3rem;
+    position: absolute;
+    top: 43%;
+    right: 3%;
+    font-size: 12px;
+    color: #fff;
+}
+.jifen>p{
+    line-height: 0.9375rem;
+}
+.span_1{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+}
+.span_2{
+    position: absolute;
+    top: 35%;
+    left: 41%;
+}
+.span_3{
+    position: absolute;
+    top: 63%;
+    left: 85%;
+}
+
+/*下部分*/
+.bott1{
+    width: 100%;
+    height: 18.125rem;
+    position: absolute;
+    top:25%;
+    left: 0%;
+    background-image: url('../img/mx.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+/*榜单*/
+.bott1>.ul_1{
+    width: 10rem;
+    height: 1rem;
+    position: absolute;
+    top: 34%;
+    left: 7%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott1>.ul_1>li:nth-child(1){
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    top: 3%;
+    left: 0%;
+}
+.bott1>.ul_1>li:nth-child(2){
+    width:7rem;
+    height: 1rem;
+    position: absolute;
+    top: 3%;
+    left: 44%;
+}
+
+
+
+.bott1>.ul_2{
+    width: 10rem;
+    height: 3rem;
+    position: absolute;
+    top: 45%;
+    left: 7%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott1>.ul_2>li:nth-child(1){
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    top: 37%;
+    left: 0%;
+}
+.bott1>.ul_2>li:nth-child(2){
+    width: 6rem;
+    height: 1rem;
+    position: absolute;
+    top: 3%;
+    left: 44%;
+}
+.bott1>.ul_2>li:nth-child(3){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 68%;
+    left: 44%;
+}
+
+
+.bott1>.ul_3{
+    width: 10rem;
+    height: 6rem;
+    position: absolute;
+    top: 65%;
+    left: 7%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott1>.ul_3>li:nth-child(1){
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+}
+.bott1>.ul_3>li:nth-child(2){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 7%;
+    left: 44%;
+}
+.bott1>.ul_3>li:nth-child(3){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top:37%;
+    left: 44%;
+}
+.bott1>.ul_3>li:nth-child(4){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 72%;
+    left: 44%;
+}
+
+.bott1>.fen{
+    width: 10rem;
+    height: 12rem;
+    position: absolute;
+    top: 32%;
+    left: 52%;
+}
+.bott1>.fen>ul{
+    width: 10rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.bott1>.fen>ul>li{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+
+/*昨日获得奖励*/
+.bott1>.fen>.jl_1{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    position: absolute;
+    top: 66%;
+    right: 6%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott1>.fen>.jl_2{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    position: absolute;
+    top: 84%;
+    right: 6%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+
+
+/*llllllllllllllllllllllllllllllll*/
+.bott2{
+    width: 100%;
+    height: 18.125rem;
+    position: absolute;
+    top:25%;
+    left: 0%;
+    background-image: url('../img/mx1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+/*榜单*/
+.bott2>.ul_1{
+    width: 10rem;
+    height: 1rem;
+    position: absolute;
+    top: 34%;
+    left: 7%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott2>.ul_1>li:nth-child(1){
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    top: 3%;
+    left: 0%;
+}
+.bott2>.ul_1>li:nth-child(2){
+    width:7rem;
+    height: 1rem;
+    position: absolute;
+    top: 3%;
+    left: 44%;
+}
+
+
+
+.bott2>.ul_2{
+    width: 10rem;
+    height: 3rem;
+    position: absolute;
+    top: 45%;
+    left: 7%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott2>.ul_2>li:nth-child(1){
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    top: 37%;
+    left: 0%;
+}
+.bott2>.ul_2>li:nth-child(2){
+    width: 6rem;
+    height: 1rem;
+    position: absolute;
+    top: 3%;
+    left: 44%;
+}
+.bott2>.ul_2>li:nth-child(3){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 68%;
+    left: 44%;
+}
+
+
+.bott2>.ul_3{
+    width: 10rem;
+    height: 6rem;
+    position: absolute;
+    top: 43%;
+    left: 7%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott2>.ul_3>li:nth-child(1){
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+}
+.bott2>.ul_3>li:nth-child(2){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 7%;
+    left: 44%;
+}
+.bott2>.ul_3>li:nth-child(3){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top:37%;
+    left: 44%;
+}
+.bott2>.ul_3>li:nth-child(4){
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 72%;
+    left: 44%;
+}
+
+.bott2>.fen{
+    width: 10rem;
+    height: 6rem;
+    position: absolute;
+    top: 42%;
+    left: 52%;
+}
+.bott2>.fen>ul{
+    width: 10rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.bott2>.fen>ul>li{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+
+/*昨日获得奖励*/
+.bott2>.fen>.jl_1{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    position: absolute;
+    top: 32%;
+    right: 6%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+.bott2>.fen>.jl_2{
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    position: absolute;
+    top: 68%;
+    right: 6%;
+    color: #D5E9DE;
+    font-size: 12px;
+}
+/*积分商城*/
+.jfsc{
+    width: 100%;
+    height: 8.90625rem;
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    background-image: url('../img/jf_sc.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+.am{
+    width: 110.4rem;
+    height: 5rem;
+    position: absolute;
+    top: 40%;
+    left: 1%;
+}
+.am>div{
+    width: 5.8rem;
+    height: 5.2rem;
+    float: left;
+    background-image: url(../img/kuangs.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.am>div>img{
+    width: 3rem;
+    height: 3rem;
+    margin-top: .8rem;
+    margin-left: 1.3rem;
+}
+.am>div>p{
+    width: 3.5rem;
+    font-size: 12px;
+    color: #fff;
+    margin-left: 1.6rem;
+}

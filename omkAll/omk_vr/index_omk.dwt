@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <link rel="stylesheet" href="vr/css/css.css">
+    <title>探索超级卡车</title>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?56f77c39f964e18a9c52332bfd1caf59";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '超卡VR内饰抢鲜看，答题赢红包！ ', // 分享标题
+                desc: '全新平台欧马可超级卡车，全景内饰抢鲜看，万元红包等你抢！', // 分享描述
+                link: 'http://huodong.chaojikache.com/omk_vr.php', // 分享链接
+                imgUrl: 'http://huodong.chaojikache.com/vr/img/fenxiang.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '超卡VR内饰抢鲜看，答题赢红包！', // 分享标题
+                link: 'http://huodong.chaojikache.com/omk_vr.php', // 分享链接
+                imgUrl: 'http://huodong.chaojikache.com/vr/img/fenxiang.jpg', // 分享图标
+                success: function () {
+                    alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="index_bg">
+    <input id="tijiao1" type="button" onclick="tiaozhuan()">
+    <input type="hidden" value="{$openid}" id="openid">
+    <img class="tansuo_img" src="vr/img/index_button.png">
+</div>
+<script src="vr/jq.js"></script>
+<script>
+    function tiaozhuan() {
+        window.location.href = "http://720yun.com/t/0e3jOzewkk3";
+    }
+</script>
+</body>
+</html>

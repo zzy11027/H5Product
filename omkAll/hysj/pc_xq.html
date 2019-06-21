@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>卡车圈头条</title>
+  <link rel="stylesheet" href="templates/hysj/cssxq/base.css">
+  <link rel="stylesheet" href="templates/hysj/cssxq/detail.css">
+  <link rel="stylesheet" href="templates/hysj/css/header.css">
+  <style>
+    .navUl li a{
+      font-size: 16px;
+    }
+  </style>
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3ef7c02f46afc39946d7bb8e58f4a538";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+      <div class="nav">
+        <div class="w1200">
+          <span class="logo"><a href="index.php"><img src="templates/hysj/images/logo.png" /></a></span>
+          <ul class="navUl">
+            <li><a href="index.php">首页</a></li>
+            <li><a href="index.php?r=site/tb"  class="aOn">直播</a></li>
+            <li><a href="index.php?r=site/zhengce">政策</a></li>
+            <li><a href="index.php?r=site/zixun">资讯</a></li>
+            <li><a href="index.php?r=site/shenghuo">人车生活</a></li>
+            <li><a href="index.php?r=site/juhui" >购车优惠</a></li>
+            <li><a href="index.php?r=site/juhui" >购车优惠</a></li>
+          </ul>
+          <ul class="ulRight">
+            <li><a href="index.php?r=site/login">登录</a></li>
+            <li>|</li>
+            <li><a href="index.php?r=site/regist">注册</a></li>
+          </ul>
+        </div>
+      </div>
+      <img src="templates/hysj/imagesxq/detail.png" class="det_img" style="width:100%;">
+  <div class="container">
+   
+    <div class="detail">
+      <div class="title">
+       {$sql.openid}
+      </div>
+      <div class="time">
+        <div>浏览量：<span>{$sql.num}</span>发布事件：{$sql.adddate}</div>
+      </div>
+      <div class="con">
+        {$sql.content}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

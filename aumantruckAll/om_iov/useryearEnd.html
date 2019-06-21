@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="/mobile2/templates/ftzr/css/index.css">
+	<script src="/mobile2/templates/ftzr/js/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	$(function () {
+			$.ajax({
+				url : 'http://service.foton.com.cn/api/activity/v1/activity/access.action',
+	            type: 'GET',
+	            dataType: "jsonp",
+	            data: {
+					"type": "34",
+					"userNumber": "501664",
+					"activityNumber": "190118"
+				},
+	            success: function(data){
+	            	console.log(data);
+	            }
+
+		   	});
+	 });
+</script>
+</body>
+</html>

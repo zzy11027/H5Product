@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>&nbsp&nbsp&nbsp&nbsp&nbsp卡车圈头条</title>
+  <link rel="stylesheet" href="templates/hysj/xcss/css.css">
+  <link rel="stylesheet" href="templates/hysj/xcss/jquery-ui.min.css">
+  <link rel="stylesheet" href="templates/hysj/xcss/index.css">
+  <style type="text/css">
+  .nnn{
+            width: 100%;
+    top: 102px;
+    position: relative;
+    text-align: right;
+    font-size: 23px;
+    right: -123px;
+  }
+  .pic{
+      position: relative;
+      float: left;
+      width: 120px;
+      height: 120px;
+     /* background: blue;*/
+      margin-left: 48px;
+      margin-top: 15px;
+      left: 48px;
+  }
+
+  .pic2{
+      position: relative;
+      float: left;
+      width: 100px;
+      height: 100px;
+      margin-left: 29px;
+      margin-top: 15px;
+      left: -21px;
+  }
+
+  .change{
+      opacity: 0;
+  }
+  .upload{
+      padding: 4px 10px;
+      height: 20px;
+      line-height: 20px;
+      border: 1px solid #999;
+      text-decoration: none;
+     // color: #666;
+  }
+  *
+  {
+      margin: 0;
+      padding: 0;
+  }
+  /*蓝色按钮,绝对定位*/
+  .blueButton
+  {
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 100px;
+      /*background-color: #00b3ee;*/
+      /*color: #fff;*/
+      text-decoration: none;
+      text-align: center;
+      font:normal normal normal 16px/40px 'Microsoft YaHei';
+      cursor: pointer;
+      border-radius: 4px;
+  }
+  .blueButton:hover
+  {
+      text-decoration: none;
+  }
+  /*自定义上传,位置大小都和a完全一样,而且完全透明*/
+  .myFileUpload
+  {
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 100px;
+      position: relative;float: left;width: 100px;height:100px;background: rebeccapurple;
+      opacity: 0;
+  }
+
+  </style>
+  <script src="templates/hysj/xjs/jquery-1.10.2.min.js"></script>
+  <script src="templates/hysj/xjs/jquery-ui.min.js"></script>
+  <script src="templates/hysj/xjs/viewport.js"></script>
+  <script src="templates/hysj/xjs/my.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+         <script>
+        wx.config({
+            debug: false, //开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '上汽红岩叫板“谁扛撞 ”  引发热议', // 分享标题
+                desc: '红岩约“撞”掀起重卡撕逼大战？各方反应不一，该如何收场？', // 分享描述
+                link: 'http://kcq.kachetop.com', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/hysj/images/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '上汽红岩叫板“谁扛撞 ”  引发热议', // 分享标题
+                link: 'http://kcq.kachetop.com', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/hysj/images/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+  <script type="text/javascript">
+    $(function() {
+        $(window).resize(function() {
+            $('.wrapper').css('min-height', ($(window).height()));
+        }).resize();
+    });
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3ef7c02f46afc39946d7bb8e58f4a538";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- <script>
+    var textarea = document.getElementsByTagName('textarea')[0];
+    for (var i = 0; i < textarea.length; i++) {
+        textarea[i].oninput = function() {//注意，这里要用oninput,不要用onkeyup,否则iOS系统不支持
+            this.value = this.value.substring(0, 10);
+        }
+    }
+    </script> -->
+</head>
+<body style="width:100%;">
+  <div class="wrapper">
+  <img src="templates/hysj/ximages/bg_m2.jpg" alt="">
+
+  <!-- 事件开始 -->
+  <div class="shijian">
+    <p>3月22日，上汽依维柯红岩有限公司总经理楼建平公开邀请重卡整车企业就产品安全做一场公开对撞比赛。你认为会有人应战吗？上汽红岩在这之前，已经公开发起过两次邀请，并无人响应。楼建平热血战书已下，你认为哪家重卡品牌会应战？</p>
+  
+  </div>
+  <!-- 事件结束 -->
+
+  <!-- pk开始 -->
+  <div class="pk_1">
+    <p class="ok">投票人数：<span class="num1">{$hui.num}</span></p>
+    <p class="no">投票人数：<span class="num2">{$buhui.num}</span></p>
+    <div class="left"></div>
+    <div class="right"></div>
+    <a href="javascript:void(0)" class="btn1"></a>    
+    <a href="javascript:void(0)" class="btn2"></a>    
+  </div>
+  <!-- pk结束 -->
+
+  <div class="yz yz_0">
+    <ul>
+      <li>
+        <img src="templates/hysj/ximages/yiqi.png" alt="" class="img_left" >
+        <div class="num3" style="display:none">{$id3.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r1">
+        <div class="img_center c1"></div>
+        <div class='nnn'>票数:{$id3.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/dongfeng.png" alt="" class="img_left" >
+        <div class="num4" style="display:none">{$id4.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r2">
+        <div class="img_center c2"></div> 
+        <div class='nnn'>票数:{$id4.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/zhongguo.png" alt="" class="img_left" >
+        <div class="num5" style="display:none">{$id5.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r3">
+        <div class="img_center c3"></div> 
+        <div class='nnn'>票数:{$id5.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/shanqi.png" alt="" class="img_left" >
+        <div class="num6" style="display:none">{$id6.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r4">
+        <div class="img_center c4"></div> 
+        <div class='nnn'>票数:{$id6.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/futian.png" alt="" class="img_left" >
+        <div class="num7" style="display:none">{$id7.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r5">
+        <div class="img_center c5"></div> 
+        <div class='nnn'>票数:{$id7.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/jianghuai.png" alt="" class="img_left" >
+        <div class="num8" style="display:none">{$id8.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r6">
+        <div class="img_center c6"></div> 
+        <div class='nnn'>票数:{$id8.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/dongfengliuqi.png" alt="" class="img_left" >
+        <div class="num9" style="display:none">{$id9.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r7">
+        <div class="img_center c7"></div> 
+        <div class='nnn'>票数:{$id9.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/dayun.png" alt="" class="img_left" >
+        <div class="num10" style="display:none">{$id10.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r8">
+        <div class="img_center c8"></div> 
+        <div class='nnn'>票数:{$id10.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/beiben.png" alt="" class="img_left" >
+        <div class="num11" style="display:none">{$id11.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r9">
+        <div class="img_center c9"></div> 
+        <div class='nnn'>票数:{$id11.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/jiangling.png" alt="" class="img_left" >
+        <div class="num12" style="display:none">{$id12.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r10">
+        <div class="img_center c10"></div> 
+        <div class='nnn'>票数:{$id12.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/lianhe.png" alt="" class="img_left" >
+        <div class="num13" style="display:none">{$id13.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r11">
+        <div class="img_center c11"></div> 
+        <div class='nnn'>票数:{$id13.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/sichuan.png" alt="" class="img_left" >
+        <div class="num14" style="display:none">{$id14.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r12">
+        <div class="img_center c12"></div> 
+        <div class='nnn'>票数:{$id14.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/hualing.png" alt="" class="img_left" >
+        <div class="num15" style="display:none">{$id15.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r13">
+        <div class="img_center c13"></div> 
+        <div class='nnn'>票数:{$id15.num}</div>
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/shangqi.png" alt="" class="img_left" >
+        <div class="num16" style="display:none">{$id29.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r14">
+        <div class="img_center c14"></div> 
+        <div class='nnn'>票数:{$id29.num}</div>
+      </li>
+    </ul>
+   </div>
+  
+   <!-- 事件跟踪开始 -->
+   <div class="gz">
+    <ul>
+
+
+     {foreach from=$qy item=list name=listone}
+    <li><a href="/hysj.php?step=m_xq&id={$list.id}" target="_blank" >
+      <img src="{$list.img}"   width="72px" height="72px" alt="">
+      <div class="msg">
+        <p class="con-top">{$list.openid}</p>
+        <span>浏览:{$list.num}</span><span>时间:{$list.adddate}</span>
+        <p class="con-bottom">{$list.phone}</p>
+      </div></a>
+    </li>
+    {/foreach}
+      </ul>
+    </div>
+    <!-- 事件跟踪结束 -->
+
+    <textarea type="text" id="ly" class="kf" ></textarea>
+      <div style="position: absolute;width:100%;bottom: 980px;">
+          <div class="pic">
+              <img style="width: 100%;height:100%;position: absolute" id="preview1"  src="templates/hysj/ximages/file.png" />
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload1" />
+          </div>
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" id="preview2" src="templates/hysj/ximages/file.png"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload2" />
+          </div>
+
+          <div class="pic" style="display: none;" >
+              <img style="width: 100%;height:100%;position: absolute" id="preview3" src="templates/hysj/ximages/file.png"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload3" />
+          </div>
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" id="preview4" src="templates/hysj/ximages/file.png"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload4" />
+          </div>
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" id="preview5" src="templates/hysj/ximages/file.png"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload5" />
+          </div>
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" id="preview6" src="templates/hysj/ximages/file.png"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload6"/>
+          </div>
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" src="templates/hysj/ximages/file.png" id="preview7"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload7" />
+          </div>
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" src="templates/hysj/ximages/file.png" id="preview8"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload8" />
+          </div>
+
+
+          <div class="pic" style="display: none;">
+              <img style="width: 100%;height:100%;position: absolute" src="templates/hysj/ximages/file.png" id="preview9"/>
+              <a href="javascript:;" class="blueButton"></a>
+              <input type="file" class="myFileUpload" id="myFileUpload9" />
+          </div>
+
+
+      </div>
+    <input type="hidden" id="ip" value="{$ip}" name="ip" >
+     <div class="tj_btn" onclick="tijiao()">发表</div>
+
+    <div class="qzgd">
+      <ul>
+          {foreach from=$pl item=list name=listone}
+        <li>
+          <img src="templates/hysj/mimages/tx.png" alt="">
+          <div style="width: 418px;float: left;margin-left: 20px;">
+            <p class="title">
+                {$list.ly}
+              </p>
+              {if $list.img1 !=""}
+              <div class="pic2">
+                  <img style="width: 100%;height:100%;position: absolute" src="{$list.img1}" />
+              </div>
+              {/if}
+              {if $list.img2 !=""}
+              <div class="pic2">
+                  <img style="width: 100%;height:100%;position: absolute" src="{$list.img2}"/>
+              </div>
+              {/if}
+              {if $list.img3 !=""}
+              <div class="pic2">
+                  <img style="width: 100%;height:100%;position: absolute" src="{$list.img3}"/>
+              </div>
+              {/if}
+              {if $list.img4 !=""}
+              <div class="pic2">
+                  <img style="width: 100%;height:100%;position: absolute" src="{$list.img4}"/>
+              </div>
+              {/if}
+              {if $list.img5 !=""}
+              <div class="pic2" style="display: none;">
+                  <img style="width: 100%;height:100%;position: absolute" src="{$list.img5}"/>
+              </div>
+              {/if}
+          </div>
+
+        </li>
+          {/foreach}
+      </ul>
+    </div>
+  </div>  
+    <script>
+function tijiao(){
+  var ip = $("#ip").val();
+  var ly = $("#ly").val();
+  if(ly==""){
+      alert('请填写留言');
+      return;
+    }
+  
+  var formData = new FormData();
+  formData.append('file', $("#myFileUpload1")[0].files[0]);
+  formData.append('file2', $("#myFileUpload2")[0].files[0]);
+  formData.append('file3', $("#myFileUpload3")[0].files[0]);
+  formData.append('file4', $("#myFileUpload4")[0].files[0]);
+  formData.append('file5', $("#myFileUpload5")[0].files[0]);
+  formData.append('file6', $("#myFileUpload6")[0].files[0]);
+  formData.append('file7', $("#myFileUpload7")[0].files[0]);
+  formData.append('file8', $("#myFileUpload8")[0].files[0]);
+  formData.append('file9', $("#myFileUpload9")[0].files[0]);
+
+  formData.append('ip', ip);
+  formData.append('ly', ly);
+    
+
+      $.ajax({
+            url: '/hysj.php?step=ly',
+            type: 'POST',
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false
+        }).done(function(res) {
+           if (res == 1) {
+            alert("留言发表成功");
+                location.reload();
+                return;
+           }
+        }).fail(function(res) {
+            console.log(res);
+        });
+}
+
+$("#myFileUpload1").on("change", function () {
+    //获取文件
+    var file = $("#myFileUpload1")[0].files[0];
+    console.log(file);
+    //创建读取文件的对象
+    var reader = new FileReader();
+    //创建文件读取相关的变量
+    var imgFile;
+    var ip = $("#ip").val();
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview1").attr('src', imgFile);
+        $("#preview2").parent().css('display', 'block');
+        // var formData = new FormData();
+        // formData.append('file', $("#myFileUpload1")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+$("#myFileUpload2").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+
+    //获取文件
+    var file = $("#myFileUpload2")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+    var ip = $("#ip").val();
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview2").attr('src', imgFile);
+         $("#preview3").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file2', $("#myFileUpload2")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+$("#myFileUpload3").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload3")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview3").attr('src', imgFile);
+         $("#preview4").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file3', $("#myFileUpload3")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+
+$("#myFileUpload4").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload4")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview4").attr('src', imgFile);
+         $("#preview5").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file4', $("#myFileUpload4")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+
+$("#myFileUpload5").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload5")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview5").attr('src', imgFile);
+         $("#preview6").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file5', $("#myFileUpload5")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+
+$("#myFileUpload6").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload6")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview6").attr('src', imgFile);
+         $("#preview7").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file6', $("#myFileUpload6")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+$("#myFileUpload7").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload7")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview7").attr('src', imgFile);
+         $("#preview8").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file7', $("#myFileUpload7")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+
+$("#myFileUpload8").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload8")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview8").attr('src', imgFile);
+         $("#preview9").parent().css('display', 'block');
+        //   var formData = new FormData();
+        // formData.append('file8', $("#myFileUpload8")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+
+
+$("#myFileUpload9").on("change", function () {
+    var str = this.id;
+    var index = str.substr(str.length-1,1);
+    var ip = $("#ip").val();
+    //获取文件
+    var file = $("#myFileUpload9")[0].files[0];
+    //创建读取文件的对象
+    var reader = new FileReader();
+
+    //创建文件读取相关的变量
+    var imgFile;
+
+    //为文件读取成功设置事件
+    reader.onload=function(e) {
+        imgFile = e.target.result;
+        $("#preview9").attr('src', imgFile);
+        //  var formData = new FormData();
+        // formData.append('file9', $("#myFileUpload9")[0].files[0]);
+        // formData.append('ip', ip);
+        // $.ajax({
+        //     url: '/hysj.php?step=ly',
+        //     type: 'POST',
+        //     cache: false,
+        //     data: formData,
+        //     processData: false,
+        //     contentType: false
+        // }).done(function(res) {
+        //    console.log(res);
+        // }).fail(function(res) {
+        //     console.log(res);
+        // });
+    };
+    //正式读取文件
+    reader.readAsDataURL(file);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,583 @@
+* {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+    font-weight: bold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   font-weight: bold;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   font-weight: bold;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+   font-weight: bold;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.first{
+    width: 23.4375rem;
+    height:41.6875rem;
+    background-image: url(../img/first.jpg);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+}
+
+.Answerbj{
+	width: 23.4375rem;
+	height:41.6875rem;
+	background-image: url(../img/Answer.png);
+	background-size: 100%,100%;
+	background-repeat: no-repeat;
+	position: absolute;
+    display: none;
+}
+.Answerbj>span{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 22%;
+}
+.Answer{
+    width: 3.9375rem;
+    height: 3.9375rem;
+    background-image: url(../img/Answers.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 77%;
+    left: 41%;
+}
+
+.people>img{
+    width: 100%;
+}
+.people>span{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 22%;
+}
+.people>p{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    bottom: 3%;
+}
+.hang{
+    width: 3.9375rem;
+    height: 3.9375rem;
+    background-image: url(../img/hang.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 80%;
+    left: 42%;
+}
+
+.guide{
+    width: 23.4375rem;
+    height:41.6875rem;
+    background-image: url(../img/guide.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+}
+.words{
+    width: 16.59375rem;
+    height: 23.25rem;
+    background-image: url(../img/words.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 16%;
+    left: 15%;
+}
+
+
+.uploads{
+    width: 23.4375rem;
+    height:41.6875rem;
+    background-image: url(../img/uploads.jpg);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+}
+.img1s{
+    width: 12.34375rem;
+    height: 4.375rem;
+    position: absolute;
+    top: 21%;
+    left: 25%;
+}
+
+.img3s{
+    width: 3.53125rem;
+    height: 1.03125rem;
+    position: absolute;
+    top: 93%;
+    left: 42.5%;
+}
+.sel1{
+    width: 12.4375rem;
+    height: 2.65625rem;
+    line-height: 2.65625rem;
+    background-image: url(../img/select1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 47%;
+    left: 25%;
+    color: #000;
+    font-weight: bold;
+}
+.sel2{
+    width: 12.4375rem;
+    height: 2.65625rem;
+    line-height: 2.65625rem;
+    background-image: url(../img/select.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 57%;
+    left: 27.5%;
+    color: #000;
+    font-weight: bold;
+}
+.sel3{
+    width: 12.4375rem;
+    height: 2.65625rem;
+    line-height: 2.65625rem;
+    text-align: center;
+    background-image: url(../img/select3.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 67%;
+    left: 24.5%;
+    color: #000;
+    font-weight: bold;
+}
+
+.sel>select{
+    width: 7.5rem;
+    height: 1.9125rem;
+    background: none;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 7%;
+    left: 15%;
+    /* text-align: center; */
+    /* text-align-last: center; */
+    font-weight: bold;
+    line-height: 2.125rem;
+    font-size: 13px;
+    color: #fff;
+}
+.sel>img{
+    width: 1.5rem;
+    height: 1.1rem;
+    position: absolute;
+    top: 30%;
+    right: 7%;
+    display: none;
+}
+
+.sels>span{
+    width: 8.5rem;
+    height: 2.2rem;
+    line-height: 2rem;
+    position: absolute;
+    top: 6%;
+    right: 15%;
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+}
+#upload{
+    position: absolute;
+    top: 86%;
+    left: 6%;
+    width: 9.8rem;
+    height: 2.4rem;
+    opacity: 0;
+    z-index: 99999;
+}
+/*模板..................................*/
+.choice{
+    width: 23.4375rem;
+    height:41.6875rem;
+    background-image: url(../img/choice.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+    /*visibility: hidden;position: absolute;z-index: -1;*/
+}
+.choice>img{
+    width: 3.65625rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.sure{
+    width: 6.5625rem;
+    height: 2.34375rem;
+    background-image: url(../img/sure.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 82%;
+    left: 36%;
+}
+
+
+
+
+.Synthesis{
+    width: 23.4375rem;
+    height:41.6875rem;
+    background-image: url(../img/Synthesis.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+}
+.Synthesis>.tishi{
+    width: 5.625rem;
+    height: 0.6875rem;
+    position: absolute;
+    top: 6%;
+    left: 39%;
+}
+.Synthesis>.return{
+    width: 3.65625rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.Synthesis>a{
+    display: block;
+    width: 89%;
+    height: 2rem;
+    position: absolute;
+    bottom: 1%;
+    z-index: 9999999999;
+}
+.Synthesis>.sel4{
+    width: 6.5625rem;
+    height: 2.34375rem;
+    line-height: 2.65625rem;
+    text-align: center;
+    background-image: url(../img/select4.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 86%;
+    left: 58%;
+    color: #000;
+    font-weight: bold;
+}
+.Synthesis>.sel5{
+    width: 6.5625rem;
+    height: 2.34375rem;
+    line-height: 2.65625rem;
+    text-align: center;
+    background-image: url(../img/select5.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 86%;
+    left: 13%;
+    color: #000;
+    font-weight: bold;
+}
+video{
+	width:100%;
+	height:41.6875rem;
+    /*height: 37.6875rem;*/
+	object-fit:fill;
+	z-index: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+}
+/*图片合成...........................................................................*/
+.xz{
+    width: 100%;
+    height: 41.6875rem;
+    position: relative;
+    background: #0B3336;
+    display: none;
+}
+.xz>.return{
+    width: 3.65625rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 111;
+}
+/*保存的图片*/
+#screenShotImg{
+    width: 100%;
+    height: 41.6875rem;
+    position: absolute;
+    top: 0%;
+    z-index: 10;
+    display: none;
+}
+
+/*懒加载      样式*/
+.loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+}
+.img3ss{
+    width: 6.5625rem;
+    height: 2.34375rem;
+    position: absolute;
+    top: 83%;
+    left: 36%;
+}
+.box {text-align: center;}
+a {display: inline-block;height: 30px;line-height: 30px;padding: 0 10px;margin-right: 50px;}
+a:hover {background-color: #aaaaaa;}
+.loading {position: fixed;top: 0;left: 0;width: 100%;height: 100%;text-align: center;font-size: 30px;background-color: #000;}
+.xl-progress-wp{position: absolute;width: 300px;height: 100px;top: 50%;left: 50%;margin: -50px 0 0 -150px;}
+.xl-progress {position: relative;width: 100%;height: 16px;border-radius: 20px;background-color: #eeeeed;overflow: hidden;}
+.xl-progress__inner {position: absolute;top: 0;left: 0;height: 100%;border-radius: 20px;background-color: #f3d08c;}
+.xl-progress__txt {color: #959595;margin-top: 7px;text-align: center;}
+
+
+#c2{
+    width: 16.75rem;
+    height: 29.6875rem;
+    position: absolute;
+    top: 12%;
+    left: 14%;
+}
+.fales{
+    width: 16.75rem;
+    height: 29.6875rem;
+    position: absolute;
+    top: 12%;
+    left: 14%;
+}
+
+
+/*swiper*/
+/*整体样式开始*/
+#swip{
+    width: 100%;
+    height: 66%;
+    margin-top: 5rem;
+}  
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    opacity: .4;
+}
+#swiper-slide1{
+    width: 100%;
+    height: 100%;
+    width: 64%;
+    margin: 0 auto;
+    background-image: url('../img/1s.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#swiper-slide2{
+    width: 100%;
+    height: 100%;
+    width: 64%;
+    margin: 0 auto;
+    background-image: url('../img/2s.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#swiper-slide3{
+    width: 100%;
+    height: 100%;
+    width: 64%;
+    margin: 0 auto;
+    background-image: url('../img/3s.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#swiper-slide4{
+    width: 100%;
+    height: 100%;
+    width: 64%;
+    margin: 0 auto;
+    background-image: url('../img/4s.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#swiper-slide5{
+    width: 100%;
+    height: 100%;
+    width: 64%;
+    margin: 0 auto;
+    background-image: url('../img/5s.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#swiper-slide6{
+    width: 100%;
+    height: 100%;
+    width: 64%;
+    margin: 0 auto;
+    background-image: url('../img/6s.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.video_con{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+.video_con>.skip{
+    width: 3.34375rem;
+    height: 0.90625rem;
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    z-index: 999999;
+}
+
+/*音频按钮*/
+#but{
+    position: absolute;
+    top: 4%;
+    right:4%;
+    z-index: 9999999999999999999999999999;
+    background-image: url('../img/mus.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+/*    animation: rotating 1.2s linear infinite;*/
+}
+@keyframes rotating{
+    0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(0.5turn);
+}
+100% {
+    transform: rotate(1turn);
+}
+}
+
+.man_wo{
+    width: 23.4375rem;
+    height:41.6875rem;
+    background-image: url(../img/man_wo.png);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+}
+.man_wo>img{
+    width: 3.65625rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.man{
+    width: 12.4375rem;
+    height: 2.65625rem;
+    line-height: 2.65625rem;
+    background-image: url(../img/man.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 47%;
+    left: 26%;
+    color: #000;
+    font-weight: bold;
+}
+.woman{
+    width: 12.4375rem;
+    height: 2.65625rem;
+    line-height: 2.65625rem;
+    background-image: url(../img/woman.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 57%;
+    left: 26%;
+    color: #000;
+    font-weight: bold;
+}
+.god{
+    width: 100%;
+    height: 41.6875rem;
+    display: none;
+}

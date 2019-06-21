@@ -1,0 +1,525 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+/*-webkit-appearance: none;*/
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:100%;
+	position: absolute;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+.container{
+    width: 100%;
+    height: 41.6875rem;
+    position: absolute;
+    top: 0%;
+    z-index: 100;
+    background: rgba(0,0,0,0.75);
+    display: none;
+}
+.logo{
+	width: 5.28125rem;
+	height: 2.0rem;
+	position: absolute;
+	top: 3%;
+	left: 3%;
+}
+/*开屏页*/
+.index{
+	width: 100%;
+	height: 41.6875rem;
+	background-image: url('../img/kai.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+.without{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    background-image: url('../img/without.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.without>.fx{
+    width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 36%;
+}
+.start{
+    width: 9.34375rem;
+    height: 3.25rem;
+    position: absolute;
+    top: 83%;
+    left: 30.1%;
+    background-image: url(../img/start.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+}
+.gz{
+    width: 4.09375rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 92%;
+    left: 41%;
+}
+.gz_con{
+    width: 23.4375rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 17%;
+    left: 0%;
+    z-index: 101;
+    display: none;
+}
+.close{
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    top: 74%;
+    left: 0%;
+    display: none;
+    z-index: 102;
+}
+.closes{
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    top: 88%;
+    left: 0%;
+    z-index: 102;
+}
+.open{
+    width: 41%;
+    height: 3rem;
+    position: absolute;
+    top: 64%;
+    left: 30%;
+    display: none;
+    z-index: 102;
+}
+/*第一题*/
+.one{
+	width: 100%;
+	height: 41.6875rem;
+	background-image: url('../img/one.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	display: none;
+}
+.one1{
+    width: 4.90625rem;
+    height: 3.0625rem;
+    position: absolute;
+    top: 7%;
+    right: 21%;
+}
+.ti1{
+    width: 20.4375rem;
+    height: 32.28125rem;
+    position: absolute;
+    top: 10%;
+    right: 0;
+}
+.inp{
+    width: 3.5rem;
+    height: 7.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0;   
+}
+.inp_1{
+    position: absolute;
+    top: 69.7%;
+    left: 10.8%;
+}
+.inp_2{   
+    position: absolute;
+    top: 69.7%;
+    left: 32.8%;
+}
+.inp_3{   
+    position: absolute;
+    top: 69.7%;
+    left: 52.8%;
+}
+.inp_4{  
+    position: absolute;
+    top: 69.7%;
+    left: 72.8%;
+}
+
+/*模拟对勾*/
+.one_dui_1{
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+    top: 81.5%;
+    left: 16.2%;
+	/*background-image: url('../img/dui.png');*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one_dui_2{
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+    top: 81.5%;
+    left: 37.2%;
+	/*background-image: url('../img/dui.png');*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one_dui_3{
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+    top: 81.5%;
+    left: 57.2%;
+	/*background-image: url('../img/dui.png');*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one_dui_4{
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+    top: 81.5%;
+    left: 78.2%;
+	/*background-image: url('../img/dui.png');*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one_dui_5{
+	width: 1.5rem;
+	height: 1.5rem;
+	position: absolute;
+    top: 66%;
+    left: 8%;
+	/*background-image: url('../img/dui.png');*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.next{
+    width: 3.28125rem;
+    height: 1.25rem;
+    position: absolute;
+    bottom: 7%;
+    left: 43%;
+    background-image: url('../img/last.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第二题*/
+.two{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/one.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.next_1{
+    width: 3.28125rem;
+    height: 1.25rem;
+    position: absolute;
+    bottom: 7%;
+    left: 43%;
+    background-image: url('../img/last.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第三题*/
+.three{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/one.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.next_2{
+    width: 3.28125rem;
+    height: 1.25rem;
+    position: absolute;
+    bottom: 7%;
+    left: 43%;
+    background-image: url('../img/last.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第四题*/
+.four{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/one.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.xm{
+    width: 13.5rem;
+    height: 6%;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    position: absolute;
+    top: 41.3%;
+    left: 21%;
+    color: #fff;
+}
+.next_3{
+    width: 3.28125rem;
+    height: 1.25rem;
+    position: absolute;
+    bottom: 7%;
+    left: 43%;
+    background-image: url('../img/last.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第五题*/
+.five{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/one.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.next_4{
+    width: 4.40625rem;
+    height: 1.3125rem;
+    position: absolute;
+    bottom: 7%;
+    left: 43%;
+    background-image: url('../img/cha.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.yes{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    background-image: url('../img/yes.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.yes>.chou{
+    width: 41%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 30%;
+}
+.no{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left:0%;
+    background-image: url('../img/no.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.no>p{
+    width: 1.5rem;
+    height: 2rem;
+    text-align: center;
+    position: absolute;
+    top: 32%;
+    left: 56%;
+    line-height: 2rem;
+    font-weight: bold;
+    color: #C83921;
+}
+.no>.fx{
+    width: 28%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 20%;
+}
+.fxs{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fxfx.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    display: none;
+}
+
+
+
+.lz{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    background-image: url('../img/lz.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.name{
+    width: 10rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 37.7%;
+    left: 28.5%;
+    background: none;
+    text-align: center;
+}
+.phone{
+    width: 10rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 49.4%;
+    left: 28.5%;
+    background: none;
+    text-align: center;
+}
+.tj_s{
+    width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 35%;
+}
+.tj{
+    width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 52%;
+}
+.tjs{
+    width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 35%;
+}
+.tjss{
+    width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 37%;
+}
+.prize{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    background-image: url('../img/prize.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.prize>.fx{
+	width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 19%;
+}
+.prize>p{
+    width: 2.5rem;
+    height: 2rem;
+    text-align: center;
+    position: absolute;
+    top: 43%;
+    left: 38%;
+    line-height: 2rem;
+    font-weight: bold;
+    color: #C83921;
+}
+.noprize{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    background-image: url('../img/noprize.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.noprize>.fx{
+	width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 19%;
+}
+.prizecar{
+    width: 23.25rem;
+    height: 26.59375rem;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    background-image: url('../img/prizecar.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    display: none;
+}
+.prizecar>.fx{
+	width: 29%;
+    height: 3rem;
+    position: absolute;
+    top: 73%;
+    left: 19%;
+}

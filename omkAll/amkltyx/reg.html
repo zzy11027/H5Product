@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>绿途英雄</title>
+	<link rel="stylesheet" href="/templates/amkltyx/css/all.css">
+	<link rel="stylesheet" href="/templates/amkltyx/css/reg.css">
+	<script src="/templates/amkltyx/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx3a6efa88b590d910', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我是绿途英雄', // 分享标题
+                desc: '欧马可携手北京环交所邀您共同保卫首都蓝天', // 分享描述
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我是绿途英雄', // 分享标题
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="hidden" id="openid" value="{$openid}">
+<input type="hidden" id="token" value="{$token}">
+	<div class="reg">
+
+		<div class="reg_top">
+
+			<input type="text" class="inp_1">
+
+			<p></p>
+
+			<div class="yan" onclick="reg()"></div>
+		</div>
+
+
+		<div class="reg_bott">
+
+			<input type="text" class="inp_2" id="inp1" placeholder="请输入您的姓名">
+
+			<input type="text" class="inp_3" id="inp2" placeholder="请输入您的手机号">
+
+			<div class="tj" onclick="tj()"></div>
+
+		</div>
+		
+			<!-- loading -->
+
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+			<p id="i">
+				请稍后……
+			</p>
+		</div>
+
+		<div class="zhe"></div>
+	</div>
+
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+
+		function reg(){
+			var inp1 = $('.inp_1').val();
+			var token = $("#token").val();
+			if (inp1=="") {
+				alert('请输入您的车架号');
+	            return false;
+			}
+
+			$.ajax({
+	            type: "POST",
+	            url: "/amkltyx.php?step=yz",
+	            datType: "application/json",
+	            data:{
+	            	inp1:inp1
+				},
+				beforeSend: function(request) { 
+					request.setRequestHeader("Authorization", token); 
+				}, 
+	            success: function (res) {
+	         		if(res==1){
+	         			$('.reg_top').find('p').text('您的车辆符合活动条件!');
+	         		}else if(res==2){
+	         			$('.reg_top').find('p').text('您的车辆不符合活动条件!');
+	         		}
+	            }
+	        });
+		}
+
+		var aa = 1;
+		function tj(){
+			if(aa == 1){
+			var inp1 = $('.inp_1').val();
+			var inp2 = $('.inp_2').val();
+			var inp3 = $('.inp_3').val();
+			var openid = $("#openid").val();
+			var token = $("#token").val();
+			if (inp1=="") {
+				alert('请输入您的车架号');
+	            return false;
+			}			
+			if (inp2=="请输入您的姓名") {
+				alert('请输入您的姓名');
+	            return false;
+			}
+			if (inp2=="") {
+				alert('请输入您的姓名');
+	            return false;
+			}
+			if (inp3=="") {
+				alert('请输入您的电话');
+	            return false;
+			}
+			if (inp3=="请输入您的电话") {
+				alert('请输入您的电话');
+	            return false;
+			}
+
+			var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+
+	        if (!reg.test(inp3)) {
+	            alert("请输入正确的手机号");
+	            return false;
+	        }
+	        $('.spinner').show();
+	        $('.zhe').show();
+			$.ajax({
+
+	            type: "POST",
+	            url: "/amkltyx.php?step=info",
+	            datType: "application/json",
+	            data:{
+	            	inp1:inp1,
+	            	inp2:inp2,
+	            	inp3:inp3,
+	            	openid:openid
+				},
+				beforeSend: function(request) { 
+					request.setRequestHeader("Authorization", token); 
+				}, 
+	            success: function (res) {
+
+	            	if(res==6){
+	            		$('.reg_top').find('p').text('您的车辆不符合活动条件!');
+	            		$('.spinner').hide();
+						$('.zhe').hide();
+	            		return;
+	            	}else{
+						$('.spinner').hide();
+						$('.zhe').hide();
+	            		alert('提交成功');
+	            		location.href="/amkltyx.php?step=myself&openid="+openid;
+	            	}
+	            }
+	        });
+		}
+		aa=2;
+		jump(3);
+		}
+
+
+		function jump(count) { 
+            window.setTimeout(function(){ 
+                count--; 
+                if(count > 0) { 
+                    jump(count); 
+                } else { 
+                   aa=1; 
+                } 
+            }, 2000); 
+        } 
+
+       	// 适配华为键盘影响布局的问题
+		var h = window.innerHeight;
+		var myInput = document.getElementById('inp1');
+		var myInputs = document.getElementById('inp2');
+
+		myInput.addEventListener('focus',handler,false);
+		myInputs.addEventListener('focus',handlers,false);
+
+		function handler(){
+			// console.log(h)
+			$('body').height(h);
+// 　　		$('body').height($('body')[0].clientHeight);
+
+		}
+
+		function handlers(){
+			// alert(h)
+			$('body').height(h);
+// 　　		$('body').height($('body')[0].clientHeight);
+
+		}
+	</script>
+	
+</body>
+</html>

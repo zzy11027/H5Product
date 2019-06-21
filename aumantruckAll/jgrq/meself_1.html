@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>合伙赚钱，相荐恨晚！</title>
+	<script src="/mobile/templates/jgrq/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="/mobile/templates/jgrq/css/myself_1.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5153d9e21ba9617add22808ebf4e594f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+	<div class="gz_1">
+
+
+	</div>
+<div class="e">
+<input type="hidden" id="openid" value="{$openid}" />
+<input type="hidden" id="u_name" value="{$u_name}">
+
+	<a href="http://www.aumantruck.com/mobile/spike_jgrq.php" class="a_1"></a>
+	
+
+
+
+	<div class="jiang">
+		
+		<ul class="ul_1">
+			<li>姓名</li>
+			<li>奖励金额</li>
+		</ul>
+		
+		{foreach from=$mxhhr item=list key=k}
+		<ul>
+			<li>{$list.btj_name}</li>
+			<li>{$list.money}</li>
+		</ul>
+		{/foreach}
+	</div>
+	<p style="font-size: 18px;color: #fff;position: absolute;top: 57.5%;left: 32.5%;font-weight: bold;">奖金总计：{$cmoney}元</p>
+	<input type="hidden" id="money" value="{$cmoney}">
+	<a href="javascript:0;"  class="a_2" onclick="tx()"  ></a>
+
+	<div class="jiang_1">
+		
+		<ul class="ul_2">
+			<li>姓名</li>
+			<li>奖励金额</li>
+		</ul>
+
+		{foreach from=$mxhhrph item=mxph key=k}
+		<ul>
+			<li>{$mxph.username}</li>
+			<li>{$mxph.pmoney}</li>
+		</ul>
+		{/foreach}
+	
+	</div>
+
+		<!-- 规则弹窗 -->
+	<div class="guize">
+		
+		<div class="close_gz">
+
+		</div>
+		<div class="guize_nei">
+			
+			<img src="/mobile/templates/jgrq/img/guize_nei.png" alt="">
+		</div>
+	</div>
+
+	<!-- 跳转 超级卡车 -->
+	<a href="spike_jgrq.php?step=superca&openid={$openid}&u_name={$u_name}" class="a_3"></a>
+
+	<div class="a">
+		<a class="aa_1"></a>
+
+		<a href=""></a>
+	</div>
+</div>
+
+	<div class="two">
+		
+		<a></a>
+
+		<a></a>
+	</div>
+
+<!-- 30000 -->
+<div class="san">
+
+
+
+	<a href="http://www.aumantruck.com/mobile/spike_jgrq.php" class="a_11"></a>
+	
+<!-- 	<div class="two1">
+		
+		<a></a>
+
+		<a></a>
+	</div> -->
+
+
+	<div class="jiang1">
+		
+		<div class="ul_11">
+			<li>您所推荐的购车信息</li>
+		</div>
+
+		{foreach from=$cjhhr item=list key=k}
+		<ul>
+			<li>{$list.name}</li>
+			<li>{$list.phone}</li>
+			<li>{$list.num}</li>
+		</ul>
+		{/foreach}
+
+	</div>
+
+	<!-- <a href="javascript:0;" class="a_21"></a> -->
+
+	<div class="jiang_11">
+		
+		<ul class="ul_21">
+			<li>姓名</li>
+			<li>推荐人数</li>
+		</ul>
+
+		{foreach from=$tjph item=list key=k}
+		<ul>
+			<li>{$list.name}</li>
+			<li>{$list.num}</li>
+		</ul>
+		{/foreach}
+		
+	</div>
+
+
+			<!-- 规则弹窗 -->
+	<div class="guize1">
+		
+		<div class="close_gz1">
+
+		</div>
+		<div class="guize_nei1">
+			
+			<img src="/mobile/templates/jgrq/img/guize_nei.png" alt="">
+		</div>
+	</div>
+	
+
+	<!-- 跳转 超级卡车 -->
+	<a href="spike_jgrq.php?step=superca&openid={$openid}&u_name={$u_name}" class="a_31"></a>
+	<div class="a1">
+		<a class="aa_11"></a>
+
+		<a href=""></a>
+	</div>
+</div>
+	<script type="text/javascript">
+$(function(){
+
+		var openid = $("#openid").val();
+		 wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '合伙赚钱，相荐恨晚！全民合伙人荐购大赛第二季强势来袭！', // 分享标题
+                desc: '荐购大赛第二季奖励升级，月赚十万，就等你来！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_jgrq.php?step=test&id='+openid, // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/jgrq/img/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '合伙赚钱，相荐恨晚！全民合伙人荐购大赛第二季强势来袭！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_jgrq.php?step=test&id='+openid, // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/jgrq/img/logo.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+});
+
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+				// 点击出现规则
+		$('.aa_1').click(function(){
+			$('.gz_1').fadeIn();
+			$('.guize').fadeIn();
+		})
+
+		// 关闭规则弹窗
+		$('.close_gz').click(function(){
+			$('.gz_1').fadeOut();
+			$('.guize').fadeOut();
+		})
+
+						// 点击出现规则
+		$('.aa_11').click(function(){
+			$('.gz_1').fadeIn();
+			$('.guize1').fadeIn();
+		})
+
+		// 关闭规则弹窗
+		$('.close_gz1').click(function(){
+			$('.gz_1').fadeOut();
+			$('.guize1').fadeOut();
+		})
+
+
+
+		// 切换2000  30000
+		// 
+		$(".two").find("a:eq(0)").click(function(){
+			$('.e').show();
+			$('.san').hide();
+			$(".two").find("a:eq(0)").css("background-image","url(/mobile/templates/jgrq/img/meng1.png)");
+			$(".two").find("a:eq(1)").css("background-image","url(/mobile/templates/jgrq/img/chao1.png)");
+			// alert('123')
+		})
+
+		$(".two").find("a:eq(1)").click(function(){
+			$('.san').show();
+			$('.e').hide();
+			$(".two").find("a:eq(0)").css("background-image","url(/mobile/templates/jgrq/img/meng2.png)");
+			$(".two").find("a:eq(1)").css("background-image","url(/mobile/templates/jgrq/img/chao2.png)");
+			// alert('123')
+		})
+
+
+
+		$(".two1").find("a:eq(0)").click(function(){
+			$('.e').show();
+			$('.san').hide();
+			$(".two1").find("a:eq(0)").css("background-image","url(/mobile/templates/jgrq/img/meng2.png)");
+			$(".two1").find("a:eq(1)").css("background-image","url(/mobile/templates/jgrq/img/chao2.png)");
+			// alert('123')
+		})
+
+		$(".two1").find("a:eq(1)").click(function(){
+			$('.san').show();
+			$('.e').hide();
+			$(".two1").find("a:eq(0)").css("background-image","url(/mobile/templates/jgrq/img/meng2.png)");
+			$(".two1").find("a:eq(1)").css("background-image","url(/mobile/templates/jgrq/img/chao2.png)");
+			// alert('123')
+		})
+
+		function tx() {
+			var money = $("#money").val();
+			var openid = $("#openid").val();
+			var u_name = $("#u_name").val();
+			if (parseFloat(money) >= 1) {
+				$.ajax({
+		            type: 'POST',
+		            dataType:'json',
+		            url : 'spike_jgrq.php?step=jjtx',
+		             data: {
+		                    "money":money,
+		                    "u_name":u_name,
+		                    "openid":openid
+
+		                    },
+		            success: function(data){
+		            	if (data==1) {
+		            		alert("提现成功");
+		            		window.location.reload();
+		            	}else{
+		            		alert("提现失败");
+		            		window.location.reload();
+		            	}
+		            	
+		            }
+		        });
+
+			}else{
+				alert("没有可提现金额");
+			}
+		}
+	</script>
+</body>
+</html>

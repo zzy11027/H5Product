@@ -1,0 +1,510 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:auto;
+	position: relative;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+.banner{
+	width: 100%;
+	height:13.09375rem;
+	background-image: url(../img/banner-11.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.banner>a{
+	display: block;
+	width: 100%;
+	height: 11.75rem;
+}
+
+.container{
+	width: 100%;
+	height:150.625rem;
+	background-image: url(../img/jc_1.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.container>ul{
+	width: 100%;
+	height: 6.125rem;
+	display: flex;
+	justify-content: space-around;
+}
+.container>ul>li{
+	width: 4.125rem;
+	height:6.125rem;
+}
+.container>ul>li>a{
+	display: block;
+	width: 4.125rem;
+	height:6.125rem;
+}
+
+.auto-top{
+    width: 63.5%;
+    height: 5rem;
+    position: absolute;
+    top: 0.25%;
+    left: 29.6%;
+    display: flex;
+    justify-content: space-between;
+}
+.auto-top>a{
+	display: block;
+    width: 32%;
+    height: 2.125rem;
+    position: relative;
+    top: 64%;
+}
+
+.auto-top1{
+ 	width: 48%;
+    height: 5.0rem;
+    position: absolute;
+    top: 14.1%;
+    left: 43%;
+    display: flex;
+    justify-content: space-between;
+}
+.auto-top1>a{
+	display: block;
+    width: 44%;
+    height: 2.125rem;
+    position: relative;
+    top: 64%;
+}
+
+.lef{
+    width: 7%;
+    height: 4.25rem;
+    position: absolute;
+    top: 26.9%;
+    cursor: pointer;
+    z-index: 10;
+}
+.rig{
+    width: 7%;
+    height: 4.25rem;
+    position: absolute;
+    top: 26.9%;
+    right: 0%;
+    cursor: pointer;
+    z-index: 10;
+}
+/*竞猜*/
+.jc{
+	width: 100%;
+    height: 19rem;
+    position: absolute;
+    top: 22.5%;
+    overflow: hidden;
+}
+.jc_1{
+	width: 100%;
+	height: 19rem;
+/*	display: flex;;
+	justify-content: space-between;*/
+}
+.jc_1>form{
+	width: 100%;
+	height: 19rem;
+	/*float: left;*/
+}
+.jc_1-1>p{
+    width: 24%;
+    height: 3.125rem;
+    position: absolute;
+    top: 13%;
+    left: 43%;
+    text-align: center;
+    line-height: 3.125rem;
+    color: #000;
+    font-size: 0.875rem;
+    overflow: auto;
+}
+.jc_1-1>h5{
+	width: 41%;
+    height: 3.125rem;
+    position: absolute;
+    top: 31%;
+    left: 43%;
+    /* text-align: center; */
+    line-height: 1.125rem;
+    color: #000;
+    font-size: 0.875rem;
+    overflow: auto;
+}
+.jc_1-1>span{
+    display: block;
+    width: 22%;
+    height: 3.125rem;
+    position: absolute;
+    top:61%;
+    left: 23%;
+    color: #BA0103;
+    font-size: 1.0rem;
+    /* text-align: center; */
+    line-height: 3.125rem;
+    font-weight: bold;
+}
+.jc_1-1>input{
+    border: none;
+    width: 12%;
+    height: 1.125rem;
+    position: absolute;
+    top: 66%;
+    left: 43%;
+    color: #BA0103;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.125rem;
+    background: #989797;
+}
+.jc_1-1>.but{
+    width: 18%;
+    height: 3.125rem;
+    position: absolute;
+    top: 81%;
+    left: 41%;
+    cursor: pointer;
+}
+/*第二组*/
+.jc_1-2>p{
+    width: 24%;
+    height: 3.125rem;
+    position: absolute;
+    top: 13%;
+    left: 43%;
+    text-align: center;
+    line-height: 3.125rem;
+    color: #000;
+    font-size: 0.875rem;
+    overflow: auto;
+}
+.jc_1-2>h5{
+	width: 41%;
+    height: 3.125rem;
+    position: absolute;
+    top: 31%;
+    left: 43%;
+    /* text-align: center; */
+    line-height: 1.125rem;
+    color: #000;
+    font-size: 0.875rem;
+    overflow: auto;
+}
+.jc_1-2>span{
+    display: block;
+    width: 22%;
+    height: 3.125rem;
+    position: absolute;
+    top: 61%;
+    left: 23%;
+    color: #BA0103;
+    font-size: 1.0rem;
+    /* text-align: center; */
+    line-height: 3.125rem;
+    font-weight: bold;
+}
+.jc_1-2>input{
+border: none;
+    width: 12%;
+    height: 1.125rem;
+    position: absolute;
+    top: 66%;
+    left: 43%;
+    color: #BA0103;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 3.125rem;
+    background: #989797;
+}
+.jc_1-2>.but{
+    width: 18%;
+    height: 3.125rem;
+    position: absolute;
+    top: 81%;
+    left: 41%;
+    cursor: pointer;
+}
+.jc_1-1>h4{
+    width: 22%;
+    height: 53px;
+    position: absolute;
+    top: 60.1%;
+    left: 56%;
+    text-align: left;
+    line-height: 53px;
+    font-size: 17px;
+    color: #BA0103;
+    background: #fff;
+}
+.jc_1-2>h4{
+    width: 22%;
+    height: 53px;
+    position: absolute;
+    top: 60.1%;
+    left: 56%;
+    text-align: left;
+    line-height: 53px;
+    font-size: 17px;
+    color: #BA0103;
+    background: #fff;
+}
+.pai{
+	width: 93.6%;
+    height: 10.3rem;
+    position: absolute;
+    top: 43.4%;
+    left: 3.8%;
+    overflow: auto;
+}
+.pai>ul{
+    width: 93%;
+    height: 1.8125rem;
+    margin-left: 1rem;
+}
+
+.pai>ul>li{
+    width: 20%;
+    height: 1.8125rem;
+    float: left;
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+}
+
+.pai>a{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    position: absolute;
+    top: 78%;
+}
+
+/*弹窗*/
+.div_1{
+    width: 23.4375rem;
+    height: 20.375rem;
+    background-image: url(../img/gx.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 23%;
+    /* left: 11%; */
+     display: none; 
+}
+.div_1>p{
+    width: 30%;
+    height: 1.875rem;
+    text-align: center;
+    line-height: 1.875rem;
+    position: absolute;
+    top: 45%;
+    left: 41%;
+    color: #000;
+    font-size: 20px;
+}
+.div_1>span{
+    width: 20%;
+    height: 1.875rem;
+    display: block;
+    position: absolute;
+    top: 73%;
+    left: 39%;
+}
+.div_2{
+    width: 23.4375rem;
+    height: 20.375rem;
+    background-image: url(../img/yh.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 23%;
+    /* left: 11%; */
+     display: none; 
+}
+.div_2>span{
+    width: 27%;
+    height: 1.875rem;
+    display: block;
+    position: absolute;
+    top: 82%;
+    left: 39%;
+}
+.div_3{
+    width: 23.4375rem;
+    height: 20.375rem;
+    background-image: url(../img/tj.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 23%;
+    /* left: 11%; */
+     display: none; 
+}
+.div_3>span{
+    display: block;
+    width: 3.125rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 1%;
+    right: 2%;
+}
+.div_3>.inp_11{
+    width: 30%;
+    height: 1rem;
+    color: #000;
+    border: none;
+    position: absolute;
+    top: 34.5%;
+    left: 40%;
+}
+.div_3>.inp_12{
+    width: 30%;
+    height: 1rem;
+    color: #000;
+    border: none;
+    position: absolute;
+    top: 49.5%;
+    left: 40%;
+}
+.div_3>.inp_13{
+    width: 14%;
+    height: 1rem;
+    color: #000;
+    border: none;
+    position: absolute;
+    top: 64.5%;
+    left: 40%;
+}
+.div_3>img{
+    display: block;
+    width: 24%;
+    height: 1.875rem;
+    position: absolute;
+    top: 61.5%;
+    right: 16%;
+}
+.div_3>.butt{
+    width: 47%;
+    height: 1.875rem;
+    position: absolute;
+    top: 82%;
+    left: 27%;
+    cursor: pointer;
+}
+.div_4{
+    width: 23.4375rem;
+    height: 20.375rem;
+    background-image: url(../img/jl.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 22%;
+    /* left: 11%; */
+     display: none; 
+}
+.div_4>.spa_3{
+    width: 20%;
+    height: 1.875rem;
+    display: block;
+    position: absolute;
+    top: 73%;
+    left: 39%;
+}
+.div_4>.dao{
+    position: absolute;
+    top: 27%;
+    left: 10%;
+}
+.div_4>.ll{
+    width: 69%;
+    height: 2.5rem;
+    position: absolute;
+    top: 35%;
+    left: 11%;
+}
+.div_4>.dao_1{
+    position: absolute;
+    top: 49%;
+    left: 10%;
+}
+.div_4>.ll_1{
+    width: 69%;
+    height: 2.5rem;
+    position: absolute;
+    top: 57%;
+    left: 11%;
+}
+
+/*弹框*/
+
+.tk{
+    width:16%;
+    height: 3.125rem;
+    position: absolute;
+    top: 20.9%;
+    left: 81%;
+    cursor: pointer;
+}
+.tk_1{
+    width: 21.96875rem;
+    height: 13.21875rem;
+    position: absolute;
+    top: 23.5%;
+    left: 3%;
+    z-index: 100;
+    line-height: 3.125rem;
+    display: none;
+    background-image: url(../img/my.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.tk_1>.dao{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+.tk_1>.ll{
+    width: 69%;
+    height: 2.25rem;
+    position: absolute;
+    top: 33%;
+    left: 11%;
+    line-height: 1.2rem;
+}
+.tk_1>.dao_1{
+    position: absolute;
+    top: 44%;
+    left: 10%;
+}
+.tk_1>.ll_1{
+    width: 69%;
+    height: 3.25rem;
+    position: absolute;
+    top: 61%;
+    left: 11%;
+    line-height: 1.1rem;
+}
+.guan{
+    width: 21%;
+    height: 3.25rem;
+    position: absolute;
+    top: 72%;
+    left: 40%;
+    cursor: pointer;
+}

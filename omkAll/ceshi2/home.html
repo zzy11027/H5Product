@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>厉害了我的国</title>
+	<link rel="stylesheet" href="templates/lihai/css/reset.css">
+	<link rel="stylesheet" href="templates/ceshi2/css/ios.css">
+
+	<script src="templates/lihai/js/jquery.min.js"></script>
+
+	
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d7256b7aa83b670e158190e2129c729";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '厉害了我的国', // 分享标题
+                desc: '为祖国点赞', // 分享描述
+                link: 'http://cz.douyar.cc/spike_hxcx.php?step=lihai', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/lihai/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '厉害了我的国', // 分享标题
+                link: 'http://cz.douyar.cc/spike_hxcx.php?step=liha', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/liha/img/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<!-- 首页！！！！！！！！！！！！！！ -->
+	<div class="index">
+		<div class="zan" onclick="window.location.href='http://cz.douyar.cc/spike_hxcx.php?step=ceshi'">
+
+		</div>
+	</div>
+
+</body>
+</html>

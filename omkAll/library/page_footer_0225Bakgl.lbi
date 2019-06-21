@@ -1,0 +1,31 @@
+﻿
+<!--start:底部导航-->
+<div class="navWrapper boxShadow">
+        <div class="innerWrap">
+                <div class="footNav">
+                        <a href="index.php" {if $menu_type eq 'index'}class="aOn"{/if} target="_parent" name="home">
+                                <img src="new0225/images/home.png"/>首页
+                        </a>
+                        <a href="mall.php?act=index" {if $menu_type eq 'mall'}class="aOn"{/if} name="truck" target="_parent">
+                                <img src="new0225/images/truck.png"/>商城
+                        </a>
+                        <a href="http://bbs.aumantruck.com" target="_parent" name="community">
+                                <img src="new0225/images/community.png"/>社区
+                        </a>
+                        <a href="service.php" {if $menu_type eq 'service'}class="aOn"{/if} target="_parent" name="server">
+                                <img src="new0225/images/server.png"/>服务
+                        </a>
+                        {if $smarty.session.user_id}
+                        <a href="user.php?act=membercenter"  {if $menu_type eq 'user'}class="aOn"{/if} id="login1">
+                                <!--<a href="checkLogin.php?act=login" target="_parent" name="people">-->
+                                <img src="new0225/images/people.png"/>我
+                        </a>
+                        {else}
+                                <a href="checkLogin.php?act=login" target="_parent" name="people">
+                                        <img src="new0225/images/people.png"/>我
+                                </a>
+                        {/if}
+                </div>
+        </div>
+</div>
+<!--end:底部导航-->

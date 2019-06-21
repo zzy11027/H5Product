@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>绿途英雄</title>
+	<link rel="stylesheet" href="/templates/amkltyx/css/all.css">
+	<link rel="stylesheet" href="/templates/amkltyx/css/index.css">
+	<script src="/templates/amkltyx/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx3a6efa88b590d910', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我是绿途英雄', // 分享标题
+                desc: '欧马可携手北京环交所邀您共同保卫首都蓝天', // 分享描述
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我是绿途英雄', // 分享标题
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+
+	<div class="ind">
+		<!-- 首页的三个按钮 -->
+		<a href="amkltyx.php?step=list{$openid}" class="a_1"></a>
+		{if $type eq '1s'}
+		<a href="amkltyx.php?step=myself{$openid}" ><img src="/templates/amkltyx/img/{$type}.png" alt="" class="a_2"></a>
+		{else}
+		<a href="amkltyx.php?step=reg{$openid}"><img src="/templates/amkltyx/img/{$type}.png" alt="" class="a_2"></a>
+		{/if}
+		<a class="a_3"></a>
+		
+		<!-- 隐藏的规则弹窗 -->
+		<div class="gz">
+			
+			<div class="nei"><img src="/templates/amkltyx/img/guize.png" alt="" class="gze"></div>
+			
+			<!-- 关闭按钮 -->
+			<div class="que">	
+
+			</div>
+
+		</div>
+
+
+	</div>
+	
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+
+		// dom操作   点击显示规则弹窗
+		$('.a_3').click(function(){
+
+			$('.gz').show();
+		})
+
+		// 点击确认按钮，关闭规则弹窗
+		$('.que').click(function(){
+
+			$('.gz').hide();
+		})
+        // var video4 = document.getElementsByClassName('ind')[0];
+        // video4.addEventListener("touchmove",function(event){
+        //     event.preventDefault();
+        // });
+	</script>
+	
+</body>
+</html>

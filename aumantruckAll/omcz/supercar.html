@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>4月24日北京车展开幕，欧曼超级卡车EST-A2.0闪亮登场！</title>
+	<link rel="stylesheet" href="templates/omcz/css/supercar.css">
+	<link rel="stylesheet" href="templates/omcz/css/reset.css">
+	<link rel="stylesheet" href="templates/omcz/css/swiper-4.2.2.min.css">
+	<script src="templates/omcz/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b7703120da128e80267dd3bf63899abb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '4月24日北京车展开幕，欧曼超级卡车EST-A2.0闪亮登场！', // 分享标题
+                desc: '欧曼亮相北京车展，三大热点等你来看 ！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_omcz.php?step=test', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/omcz/img/cnmb.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '4月24日北京车展开幕，欧曼超级卡车EST-A2.0闪亮登场！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_omcz.php?step=test', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/omcz/img/cnmb.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+	
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide sli_1">
+				<div class="rut">
+					<a href="/mobile/spike_omcz.php?step=test&openid={$openid}"></a>
+				</div>
+	        </div>
+	        <div class="swiper-slide sli_2">
+	        	<div class="rut">
+					<a href="/mobile/spike_omcz.php?step=test&openid={$openid}"></a>
+				</div>
+				<div class="pos">
+					<input type="text"  id="name" placeholder="姓名" class="inp_1">
+					<input type="text" id="phone" placeholder="手机号" class="inp_2">
+					<input type="text" id="gcyx" placeholder="意向车型" class="inp_3">
+                    <select class="inp_3" name="input-12" id="input-12" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+                        <option value="0">意向车型</option>
+                        <option value="1">牵引车</option>
+                        <option value="2">载货车</option>
+                        <option value="3">自卸车</option>
+                        <option value="4">专用车</option>
+
+                    </select>
+					<input type="hidden" id="openid" value="{$openid}">
+					<div class="but" id="tijiao"  onclick="test()"></div>
+				</div>
+
+				<div class="non">
+
+		        	<div class="rut">
+						<a href="/mobile/spike_omcz.php?step=test&openid={$openid}"></a>
+					</div>
+				</div>
+	        </div>
+	    </div>
+	</div>
+
+	<script src="templates/omcz/js/swiper-4.2.2.min.js"></script>
+	<script type="text/javascript">
+
+		//通过比例计算不同设备的根元素的字体大小
+
+		//1.定义参照设备的宽度
+		var w = 375;
+
+		//2.定义参照设备的默认根元素的字体大小
+		var f = 16;
+
+		//3.获取打开该文件的设备的视图宽度
+		var c = document.documentElement.clientWidth;
+		console.log(c)
+		//4.进行不同设备根元素字体大小的计算
+		var nf = c * f / w;
+		console.log(nf)
+
+		//5.设置打开该文件的设备的根元素的字体大小即可
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+		var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    // effect : 'slide',
+		     parallax : true,
+  		})   
+
+  		function test(){
+  			$name = $("#name").val();
+  			$phone = $("#phone").val();
+  			$gcyx = $("#input-12").find("option:selected").text();
+  			$openid = $("#openid").val();
+  			if (!$name) {
+	            alert('请输入姓名');
+	            return false;
+	        }
+	        if (!$phone) {
+	            alert('请输入手机号');
+	            return false;
+	        }
+	        var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+	        if (!reg.test($phone)) {
+	            alert("请输入正确的手机号");
+	            return false;
+	        }
+	       if ($("select[name='input-12']").val() == 0) {
+                alert('请选择车型');
+                return false;
+            }
+	        
+  			$.ajax({  
+                type : "POST", 
+                url : "/mobile/spike_omcz.php?step=wygc",
+                data : {   
+                		'name':$name,
+                		'phone':$phone,
+                		'gcyx':$gcyx,
+                		'openid':$openid
+                    },
+                success : function(data) { 
+                        if (data==1) {  
+                        	$('.non').show();
+                        	$('.pos').hide();
+                        } else {  
+ 							alert('no!!!!!!!')
+                        }  
+
+                    }  
+
+                });  
+  		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<script src="../js/JQueryUtils.js" type="text/javascript"></script>
+{if $smarty.session.user_id==0}
+<!-- start:注册-登录前-->
+<div class="lregister" style="display: none">
+    <div class="slide">
+        <div class="login"> 
+            <i></i><a class="kuaijie">快捷登录</a><i></i>
+        </div>
+        <div class="kaHome">
+            <a href="checkLogin.php?act=kache_login" class="kache"><img src="images/kachehome.png"></a>
+        </div>
+        <div class="kaHome">
+            <a href="../api/oauth/qq/connect.php" class="qq"><img src="images/qq.png"></a>
+            <a href="checkLogin.php?act=act_login" class="wechat"><img src="images/wechat.png"></a>
+        </div>
+        <div class="enter">
+            <h1><a href="checkLogin.php?act=login">登录</a><a href="checkLogin.php?act=register">注册</a></h1>
+        </div>
+    </div>
+</div>
+<!-- start:注册-登录前-->
+{else}
+<!-- start:注册-登录后-->
+<div class="lregister" style="display: none">
+    <div class="slide">
+        <div class="personal">
+            <a href="#"><img src="http://bbs.aumantruck.com/uc_server/avatar.php?uid={$smarty.session.user_id}&amp;size=middle"></a>
+            <h1>{$smarty.session.user_name}</h1>
+        </div>
+        <ul class="personal-data">
+            <li>
+                <a href="javascript:void(0)" class="pic"><img src="images/date.png"></a>
+                <a href="http://bbs.aumantruck.com/home.php?mod=space&uid={$smarty.session.user_id}&do=profile&mycenter=1&mobile=2" class="date">个人资料</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="pic"><img src="images/myorder.png"></a>
+                <a href="http://bbs.aumantruck.com/home.php?mod=space&uid={$smarty.session.user_id}&do=order&mycenter=1&mobile=2" class="date">我的订单</a>
+            </li>
+        </ul>
+
+        <div class="enter">
+            <h1><a class="tuichu" href="checkLogin.php?act=login_quit"><img src="images/tuichu.png">退出登录</a></h1>
+        </div>
+    </div>
+</div>
+<!-- start:注册-登录后-->
+{/if}
+
+<script>
+    (function(){
+        
+        var jqutils = new JQueryUtils();
+
+        var start_index = 0;
+        var origin_y = 0;
+        jqutils.setTransform3D($(".slide"),0,0,0);
+        var bottom_y = undefined;
+
+        $(".slide").on("touchstart", function(e){
+            if(bottom_y == undefined){
+                bottom_y = (-($(".slide").height() - $(window).height())) - 44;
+            }
+            
+            var touches = e.originalEvent.touches[0];
+            start_index = touches.pageY;
+            var position3D = jqutils.getTransform3D(this);
+            if(position3D['o'] != undefined){
+                origin_y = position3D['o'];
+            }else{
+                origin_y = position3D['y'];
+            }
+        });
+        $(".slide").on("touchmove", function(e){
+            var touches = e.originalEvent.touches[0];
+            var offset = 0;
+        
+            if(origin_y + touches.pageY - start_index < 0){
+                offset = origin_y + touches.pageY - start_index;
+            }
+            if(offset < bottom_y){
+                offset = bottom_y;
+            }
+            jqutils.setTransform3D(this,0,offset,0);
+            e.preventDefault();
+        });
+
+
+        //解决小屏幕下菜单的退出登录显示位置太靠上
+        $(".lregister").on("touchmove", function(e){
+            e.preventDefault();
+        });
+        
+        $(window).resize(function(){
+            bottom_y = undefined;
+            resizeSlide();
+        });
+
+        
+        var resizeSlide = function(){
+            var win_height = parseInt($(window).height());
+            var part_height = 172 + 120 + 44 + 60 + 44;
+            if(part_height > win_height){
+                $(".slide").css("height", (part_height + 44) + "px");
+            }else{
+                $(".slide").css("height", (win_height - 44) + "px");
+                
+            }
+        }
+        
+        
+        resizeSlide();
+    })();
+    
+</script>

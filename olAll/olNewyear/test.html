@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title>您有一个红包待领取</title>
+    <link rel="stylesheet" href="/mobile2/templates/ol/olNewyear/css/reset.css">
+    <link rel="stylesheet" href="/templates/xmz/show/css/pace-theme-center-atom.css">
+    <link rel="stylesheet" href="/mobile2/templates/ol/olNewyear/css/indexs.css">
+    <script src="/mobile2/templates/ol/olNewyear/js/pace.min.js"></script>
+    <script src="/mobile2/templates/ol/olNewyear/js/jquery-1.8.3.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '您有一个红包待领取', // 分享标题
+                desc: '您有一个未接来电', // 分享描述
+                link: 'http://al.douyar.cc/ol/ol_phone.php', // 分享链接
+                imgUrl: 'http://al.douyar.cc/mobile2/templates/ol/olNewyear/img/fenx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '您有一个红包待领取', // 分享标题
+                link: 'http://al.douyar.cc/ol/ol_phone.php', // 分享链接
+                imgUrl: 'http://al.douyar.cc/ol/ol_phone.php/mobile2/templates/ol/olNewyear/img/fenx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+    /*loading插件配置*/
+    // paceOptions = {
+    //     elements: true,
+    //     // restartOnRequestAfter: false
+    // }
+    Pace.on('hide',function(){
+        $('.loadings').hide();
+        $("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+    });
+</script>
+</head>
+<body>
+    <!-- 遮罩层 -->
+    <div class="containerss"></div>
+<!-- loading -->
+<div class="loadings" style="width: 100%;height: 100%;background:#000;background-repeat: no-repeat;background-size: 100% 100%;position: absolute;z-index: 99;">
+    <span>来电转接中</span>
+</div>
+    <!-- 预加载 -->
+<!--     <div class="loading">
+    	<span style="text-align: center;display: block;font-size: 18px;margin-top: 12rem;color:#e3e3e3">电话接听中</span>
+        <div class="xl-progress-wp">
+            <div class="xl-progress">
+                <i class="xl-progress__inner" style="width:0%;"></i>
+            </div>
+            <div class="xl-progress__txt">0%</div>
+        </div>
+    </div> -->
+	<!-- 来电接听 -->
+    <input type="hidden" value="{$num}" id="hidden">
+
+    <input type="hidden" value="" id="hidden1">
+    <input type="hidden" value="" id="hidden2">
+	<input type="hidden" value="" id="hidden3">
+
+	<input type="hidden" value="{$openid}" id="openid">
+	<input type="hidden" value="{$token}" id="token">
+
+    <audio src="/mobile2/templates/ol/olNewyear/img/1.mp3" id="music1" class="audio"    preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+    <audio src="/mobile2/templates/ol/olNewyear/img/come.mp3" id="music5" class="audio come" loop="loop"    preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+<!-- style="display: none;" -->
+    <div class="Answerbj" id="swip2" >
+        <div class="Answer" onclick="Play(0)"></div>
+        <a href=""></a>
+    </div>
+
+    <div class="meet">
+        <div class="Answer" onclick="meet(0)"></div>
+    </div>
+
+
+    <!-- 聊天页面 -->
+    <div class="chat" id="swip">
+		<!-- 11111111111111111111 -->
+		<div class="one"></div>
+<!-- 		<div class="two" onclick="rob(1)"></div>
+		<div class="three" onclick="rob(2)"></div>
+		<div class="four" onclick="rob(3)"></div> -->
+
+            
+        <img src="/mobile2/templates/ol/olNewyear/img/{$img1}a.png" class="two" onclick="rob{$img1}(1)">
+		<img src="/mobile2/templates/ol/olNewyear/img/{$img2}b.png" class="three" onclick="rob{$img2}(2)">
+		<img src="/mobile2/templates/ol/olNewyear/img/{$img3}c.png" class="four" onclick="rob{$img3}(3)">
+    </div>
+
+    <!-- 点击抢红包 -->
+    <div class="clik" id="swip1" onclick="clik(0)">
+
+    </div>
+
+	<!-- 中奖页面 -->
+	<div class="price">
+		<span></span>
+		<div class="lz1">
+			<input type="text" class="inp1" id="name">
+			<input type="text" class="inp2" id="phone">
+		</div>
+		<div class="tj" onclick="tj()"></div>
+
+	</div>
+
+
+	<!-- 未中奖页面 -->
+	<div class="noprice">
+		<span></span>
+		<div class="accept" onclick="accepts()"></div>
+	</div>
+
+
+    <!-- 生成码 -->
+    <div class="prize_ma">
+    <div class="lz2">
+        <span></span>
+        <input type="text" id="names" class="inp1" placeholder="请输入您的姓名">  
+        <input type="text" id="password" class="inp2" placeholder="请输入您的电话">  
+        <select name="" id="selects1" class="inp3" onchange="change1();">
+            <option value="0">请选择省份</option>
+            {foreach from=$res item=cate name=name} 
+            <option value="{$cate.id}">{$cate.name}</option>
+            {/foreach}
+        </select>
+        <select name="" id="" class="inp4">
+            <option value="0">请选择城市</option>
+        </select>       
+    </div>
+        <div class="tj1" onclick="tj1()"></div>
+        <div class="gz"></div>
+
+        <div class="gzs"></div>
+    </div>
+	<img src="/mobile2/templates/ol/olNewyear/img/fx.jpg" alt="" class="fxs" style="position: absolute;z-index: 99999999">
+	<div class="fan" style="width: 100%;height: 4rem;position: absolute;top: 2%;left: 0%;z-index:99999999999999999;display: none"></div>
+	<img src="/mobile2/templates/ol/olNewyear/img/f.png" alt="" class="fff" style="display:none;position: absolute;z-index: 99999999">
+    <script src="/mobile2/templates/ol/olNewyear/js/canvass.js"></script>
+    <!-- <script src="/mobile2/templates/ol/olNewyear/js/preload.js"></script> -->
+    <script>
+//预加载
+// var no = false;//判断是否加载完成
+// var img = [
+//     '/mobile2/templates/ol/olNewyear/img/1.mp3',
+// ];
+// var index = 0,
+//     len = img.length,
+//     progressInner = $(".xl-progress__inner"),
+//     progressTxt = $('.xl-progress__txt');
+// //图片预加载
+// $.preload(img, {
+//     minTimer: 3000,
+//     //每加载完一张执行的方法
+//     each: function (count) {
+//         var percent = Math.round((count+1) / len * 100) + '%';
+//         progressInner.css("width",percent);
+//         progressTxt.html(percent);
+//     },
+//     // 加载完所有的图片执行的方法
+//     end: function () {
+//         console.log('预加载完成');
+//         no = true;
+//         $('.loading').hide();
+//         $('.Answerbj').fadeIn();
+//     }
+// });
+// 移动端默认初始化时暂停播放，改为初始化页面时播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+
+        var audio = document.getElementsByClassName('audio')[1];
+
+            audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+
+            audio.play();
+
+        }, false);
+
+    }
+
+    audioAutoPlay();
+});
+// var video1s = document.getElementById('swip');
+// video1s.addEventListener("touchmove",function(event){
+//     event.preventDefault();
+// });
+
+var video2s = document.getElementById('swip1');
+video2s.addEventListener("touchmove",function(event){
+    event.preventDefault();
+});
+
+// 适配华为键盘影响布局的问题
+var h = window.innerHeight;
+var myInput = document.getElementById('names');
+var myInputs = document.getElementById('password');
+var myInputs1 = document.getElementById('name');
+var myInputs2 = document.getElementById('phone');
+
+myInput.addEventListener('focus',handler,false);
+myInputs.addEventListener('focus',handlers,false);
+myInputs1.addEventListener('focus',handlers1,false);
+myInputs2.addEventListener('focus',handlers2,false);
+
+function handler(){
+    
+    $('body').height(h);
+// 　　       $('body').height($('body')[0].clientHeight);
+
+}
+
+function handlers(){
+    // alert(h)
+    $('body').height(h);
+// 　　       $('body').height($('body')[0].clientHeight);
+
+}
+function handlers1(){
+    // alert(h)
+    $('body').height(h);
+// 　　       $('body').height($('body')[0].clientHeight);
+
+}
+function handlers2(){
+    // alert(h)
+    $('body').height(h);
+// 　　       $('body').height($('body')[0].clientHeight);
+
+}
+
+// 全屏手机高度自适应，解决设计只给一张背景图的难题！！！！！！！！！！！！！在高度大于iphoneX的情况下，自适应屏幕
+var win = $(window).height();
+
+// console.log(win)
+var doc = $(document).height()
+// console.log(doc)
+if(win>=812){
+
+	// 先改变其高度
+	$('.Answerbj').height(win);
+	$('.meet').height(win);
+	$('.chat').height(win);
+	$('.prize').height(win);
+	$('.noprize').height(win);
+	$('.prize_ma').height(win);
+
+	// 换一个自适应的背景图
+	// $(".index").css("background-image","url(./img/kai.png)");
+	// $(".two").css("background-image","url(./img/two_1.png)");
+	// $('.contai_1').css('top','5%');
+	// $('.contai_2').css('top','5%');
+
+	// $('.xz>a').css('bottom','');
+}
+    </script>
+</body>
+</html>

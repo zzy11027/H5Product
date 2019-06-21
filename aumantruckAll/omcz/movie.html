@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>电影海报</title>
+	<link rel="stylesheet" href="templates/omcz/css/movie.css">
+	<link rel="stylesheet" href="templates/omcz/css/reset.css">
+	<link rel="stylesheet" href="templates/omcz/css/swiper-4.2.2.min.css">
+	<script src="templates/omcz/js/jquery.min.js"></script>
+</head>
+<body>
+	
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide sli_1">
+				<div class="rut">
+					<a href="/mobile/spike_omcz.php?step=test&openid={$openid}"></a>
+				</div>
+	        </div>
+	        <div class="swiper-slide sli_2">
+				<div class="rut">
+					<a href="/mobile/spike_omcz.php?step=test&openid={$openid}"></a>
+				</div>
+	        </div>
+	    </div>
+	</div>
+
+	<script src="templates/omcz/js/swiper-4.2.2.min.js"></script>
+	<script type="text/javascript">
+
+		//通过比例计算不同设备的根元素的字体大小
+
+		//1.定义参照设备的宽度
+		var w = 375;
+
+		//2.定义参照设备的默认根元素的字体大小
+		var f = 16;
+
+		//3.获取打开该文件的设备的视图宽度
+		var c = document.documentElement.clientWidth;
+		console.log(c)
+		//4.进行不同设备根元素字体大小的计算
+		var nf = c * f / w;
+		console.log(nf)
+
+		//5.设置打开该文件的设备的根元素的字体大小即可
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+		var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    // effect : 'slide',
+		     parallax : true,
+  		})   
+	</script>
+</body>
+</html>

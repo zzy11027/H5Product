@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+    <link rel="stylesheet" href="/mobile2/templates/chai/css/index.css">
+	<link rel="stylesheet" href="/mobile2/templates/chai/css/animate1.css">
+	<script src="/mobile2/templates/chai/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '疯狂拆快递', // 分享标题
+                desc: '拆快递赢话费，考验手速的时候到了', // 分享描述
+                link: 'http://omkds.douyar.cc/omkds.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc//mobile2/templates/chai/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '疯狂拆快递', // 分享标题
+                link: 'http://omkds.douyar.cc/omkds.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc//mobile2/templates/chai/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d4efdf35c16ff058adfa9e5747f6ac2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+
+    <div id="but" class="first" onclick="Play(this)"></div>
+    <audio src="templates/hb/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+    你的浏览器不支持video元素
+    </audio>
+    <audio src="/mobile2/templates/chai/img/2.mp3" id="music" class="audio audio_2"  loop="loop" preload="auto" >
+    你的浏览器不支持video元素
+    </audio>
+
+    <!-- loading -->
+
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+        <p id="i">
+            正在提交，请稍后……
+        </p>
+    </div>
+
+    <input type="hidden" id="token" value="{$token}">
+    <input type="hidden" id="openid" value="{$openid}">
+ 	<input type="hidden" id="nickname" value="{$nickname}">
+	<img src="/mobile2/templates/chai/img/1.png" onclick="bigSrc(this)" class="yao" alt="" style="width: 60%;margin:auto;position: absolute;top: 0;bottom: 0;left: 0;right: 0;display: none;z-index: 999;">
+    <!-- 遮罩层 -->
+    <div class="containerss"></div>
+    <!-- 首页 -->
+    <div class="kai">
+        <!-- 开始按钮 -->
+        <div class="start animated pulse" onclick="starts()"></div>
+
+        <!-- 规则按钮 -->
+        <div class="rule">
+            游戏规则
+        </div>
+
+        <!-- 规则详情 -->
+        <div class="rule_all">
+            <img src="/mobile2/templates/chai/img/rule.png" alt="" class="rule_details">
+            <div class="close"></div>
+        </div>
+    </div>
+
+<!-- gif......................... -->
+    <video src="/mobile2/templates/chai/img/1.mp4" id="shVideo" _type="video"
+        webkit-playsinline="true" webkit-playsinline playsinline x5-playsinline x5-video-player-fullscreen="true"  class="gif video1" preload="preload" playsinline="true" x5-video-player-type="h5">
+    该浏览器不支持video属性
+    </video>
+
+<!-- 游戏页面 -->
+    <div class="game">
+        <!-- 分数 -->
+        <div class="count">
+            <span>0</span><p>分</p>
+        </div>
+        <!-- 时间 -->
+        <div class="time">
+            <span>倒计时：</span>
+            <span>30</span><p>s</p>
+        </div>
+        <!-- 失败弹窗 -->
+        <div class="fail_all">
+            <!-- 在来一次 -->
+            <a href="" class="again"></a>
+            <!-- 关闭 -->
+            <div class="close"></div>
+
+	        <!-- 注册会员 -->
+	        <a href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"><div class="rule">
+	            注册会员
+	        </div></a>
+        </div>
+
+        <!-- 成功弹窗 -->
+        <div class="success_all">
+            <!-- 分数 -->
+            <p></p>
+            <!-- 百分百 -->
+            <p></p>
+            <!-- 在来一次 -->
+            <a href="" class="again"></a>
+            <!-- 抽奖 -->
+            <div class="luck"  onclick="luck()"></div>
+            <!-- 关闭 -->
+            <a href=""><div class="close"></div></a>
+
+	        <!-- 注册会员 -->
+	        <a href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"><div class="rule">
+	            注册会员
+	        </div></a>
+        </div>
+           
+
+
+        <!--中奖弹窗 2元 10元   50元 -->
+        <div class="prize">
+            <input type="text" id="xm" class="inp1" placeholder="请输入您的姓名">
+            <input type="text" id="phone" class="inp2" placeholder="请输入您的电话">
+            <select name="" id="" class="inp3">
+                <option value="意向车型">意向车型</option>
+                <option value="欧马可s1">欧马可s1</option>
+                <option value="欧马可s3">欧马可s3</option>
+                <option value="欧马可s5">欧马可s5</option>
+            </select>
+
+            <div class="tj" onclick="tj()"></div>
+            <!-- 关闭 -->
+            <a href=""><div class="close"></div></a>
+        </div>
+        
+        <!-- 未中奖弹窗 -->
+        <div class="prize_none">
+            <!-- 在来一次 -->
+            <a href="" class="again"></a>
+            <!-- 在来一次 -->
+            <a href="" class="close"></a>
+        </div>
+        
+
+
+        <div class="register">
+            <!-- 分数 -->
+            <p></p>
+            <!-- 炫耀成绩 -->
+            <div class="show"></div>
+            <!-- 注册会员 -->
+            <a href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"><div class="member"></div></a>
+            <!-- 关闭 -->
+            <a href=""><div class="close"></div></a>
+
+        </div>
+        <!-- 分享弹窗 -->
+        <div class="fx">
+            <div class="close"></div>
+        </div>
+    </div>
+
+	<script src='/mobile2/templates/chai/js/build.js'></script>
+	<script type="text/javascript"> 
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+    <link rel="stylesheet" href="/mobile/templates/om_iov/css/yearEnd_At.css">
+    <link rel="stylesheet" href="/mobile/templates/om_iov/css/swiper.min.css">
+    <link rel="stylesheet" href="/mobile/templates/om_iov/css/animate.css">
+    <script src="/mobile/templates/om_iov/js/jquery.min.js"></script>
+    <script src="/mobile/templates/om_iov/js/swiper.min.js"></script>
+    <script src="/mobile/templates/om_iov/js/swiper.animate.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '2018卡车人行车报告，用实力丈量梦想', // 分享标题
+                desc: '你的2018行车数据已揭晓，点击查看领话费', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/om_iov.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/om_iov/img/fenx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '2018卡车人行车报告，用实力丈量梦想', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/om_iov.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/om_iov/img/fenx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+<body>
+<!-- 懒加载 -->
+<div class="loading" id="ioadin" style="position: absolute;z-index: 9999999">
+    <div class="xl-progress-wp">
+        <div class="xl-progress">
+            <i class="xl-progress__inner" style="width:0%;"></i>
+        </div>
+        <div class="xl-progress__txt">0%</div>
+    </div>
+</div>
+
+<!-- 遮罩层 -->
+<div class="zz"></div>
+    <div class="index" id="video_1">
+        <img src="/mobile/templates/om_iov/img/kcr.png" alt="" class="kcr">
+        <img src="/mobile/templates/om_iov/img/index_car.png" alt="" class="index_car">
+        <img src="/mobile/templates/om_iov/img/kcr_img.png" alt="" class="kcr_img">
+        <div class="animateds pulse" id="lo"></div>
+    </div>
+    
+    <div class="login" id="login">
+        <div class="login_m">
+            <input type="text" id="names" class="zh" placeholder="请输入您的手机号">
+            <input type="password" id="password" class="mm" placeholder="请输入密码">
+            <div class="typ"><input type="type" id="yzm" class="yzm_inp" placeholder="请输入验证码"></div>
+            <img src='' alt="" class="yzm" onclick="yzms()">
+            <a href="http://www.aumantruck.com/mobile/om_iov.php?step=test"></a>
+        </div>
+        <div class="tj" onclick="tj()"></div>
+        <a href="#" class="tj1"></a>
+    </div>
+
+    <div class="vin" id="vin">
+        <div class="vin_vin">
+        </div>
+    </div>
+
+
+    <div class="swiper-container swiper-containers" id="swip">
+        <div class="swiper-wrapper">
+
+            <!-- 11111111111111111111111111111111111111111 fadeOutRight-->
+            <section class="swiper-slide swiper-slide1">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/road1.png" alt="" class="road1">
+                <img src="/mobile/templates/om_iov/img/car1.png" alt="" id="car" class="car1 " swiper-animate-effect="slideInUps" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                <div class="c1 " id="container1" swiper-animate-effect="slideInRight" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                    <div class="span1 totalMileage" id="sp" swiper-animate-effect="slideInUp" swiper-animate-duration="4s" swiper-animate-delay="2s"><span>这一年，你一共走过了</span><b></b></div>
+                    <div class="span2 totalDays" id="sp1" swiper-animate-effect="slideInUp" swiper-animate-duration="4s" swiper-animate-delay="4s"><span>全年有</span><b>XXX天</b><span>都在运输的路上</span></div>
+                </div>
+                <div class="c2 " id="container1s" swiper-animate-effect="slideInRight" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                    <div class="span1 " id="sp" swiper-animate-effect="slideInUp" swiper-animate-duration="4s" swiper-animate-delay="2s"><span>你和其他勤劳的</span><b>196253名</b><span>欧曼卡车司机一起</span></div>
+                    <div class="span2 " id="sp1s" swiper-animate-effect="slideInUp" swiper-animate-duration="4s" swiper-animate-delay="4s"><span>在2018年跑完了</span><b>196亿公里</b></div>
+                    <div class="span3 " id="sp2s" swiper-animate-effect="slideInUp" swiper-animate-duration="4s" swiper-animate-delay="5s"><span>相当于绕地球</span><b>49万圈</b></div>
+                </div>
+            </section>
+            
+
+            <!-- 22222222222222222222222222222222222222222222222 -->
+            <section class="swiper-slide swiper-slide2">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/road2.png" alt="" class="road2">
+                <img src="/mobile/templates/om_iov/img/car2.png" alt="" id="car" class="car2 " swiper-animate-effect="slideInUps" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                <div class="c3 ani" swiper-animate-effect="slideInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+                    <div class="ani span1 hundredOilConsumption" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>你的百公里平均油耗是</span><b>XXL</b></div>
+                    <div class="ani span2 totalOilConsumption" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><b>年度总油耗XXL</b></div>
+                    <div class="ani span3 totalOilConsumptionRanking" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><b>打败了全国XX%的卡友</b></div>
+                </div>
+                <div class="c4 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>这一年</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>全国的卡友的平均油耗</span></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><b>为32.35L/100KM</b></div>
+                    <div class="ani span3s" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>在全国卡友的共同努力下</span></div>
+                    <div class="ani span3ss" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>卡车司机的平均油耗仍在逐年降低</span></div>
+                </div>
+            </section>
+
+
+            <!-- 33333333333333333333333333333333333333333333 -->
+            <section class="swiper-slide swiper-slide3">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/road3.png" alt="" class="road3">
+                <img src="/mobile/templates/om_iov/img/car3.png" alt="" id="car" class="car3 " swiper-animate-effect="slideInUps" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                <div class="c5 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+                    <div class="ani span1 averageAnnualSpeed" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>你习惯把车速开到</span><b>XXKM/h</b></div>
+                    <div class="ani span2 dailyDrivingTime" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>平均每天驾驶</span><b>X小时</b></div>
+                    <div class="ani span3 dailyDrivingTimeRanking" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><b>打败了全国XX%的卡友</b></div>
+                </div> 
+
+                <div class="c6 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>这一年全国卡友的车速</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>平均值是</span><b>70KM/h</b></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>平均每天驾驶</span><b>7小时</b></div>
+                </div> 
+            </section>
+
+
+
+            <!-- 444444444444444444444444444444444444444444444444444444 -->
+            <section class="swiper-slide swiper-slide4">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/road4.png" alt="" class="road4">
+                <img src="/mobile/templates/om_iov/img/car4.png" alt="" id="car" class="car4 " swiper-animate-effect="slideInUps" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                <div class="c7 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>这一年</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>有辛苦，也有幸福</span></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>走遍大江南北</span></div>
+                    <div class="ani span4" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3.5s"><span>遇到过各种各样有趣的人事物</span></div>
+                    <div class="ani span5" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="4s"><span>然而</span></div>
+                    <div class="ani span6" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="4.5s"><span>还有一些你不知道的事儿</span></div>
+                    <div class="ani span7" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="5s"><span>比如… …</span></div>
+                </div> 
+
+                <div class="c7s ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="5s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><b>河南省</b><span>有一个地标打卡王</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><b>豫A3OXX</b></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>这一年，他去了</span><b>27个</b><span>城市</span></div>
+                </div>
+                <img src="/mobile/templates/om_iov/img/x4.png" alt="" class="x4 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1.5s" swiper-animate-delay="5s">
+            </section>
+
+
+
+            <!-- 目的地 -->
+            <section class="swiper-slide swiper-slide4s">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/mdd_road.png" alt="" class="mdd_road">
+                <img src="/mobile/templates/om_iov/img/mdd_car.png" alt="" id="car" class="mdd_car " swiper-animate-effect="slideInUps" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                <div class="contai ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span style="font-size: 18px;">你到达次数最多的</span></div>
+                    <div class="ani span2 arriveMaximumCity" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>目的地是</span><b style="font-size: 20px;">XX</b></div>
+                </div> 
+            </section>
+
+
+
+
+
+
+            <!-- 55555555555555555555555555555555555555555555555555555555555555 -->
+            <section class="swiper-slide swiper-slide5">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/road5.png" alt="" class="road5">
+                <img src="/mobile/templates/om_iov/img/car5.png" alt="" id="car" class="car5 " swiper-animate-effect="slideInUps" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+                <div class="c9 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>卡车司机中，</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><b>已婚的中青年</b><span>为中流砥柱</span></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>卡车司机开车走南闯北</span></div>
+                    <div class="ani span3s" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>看上去无比潇洒</span></div>
+                    <div class="ani span4" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3.5s"><span>其实背后也有心酸</span></div>
+                    <div class="ani span5" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="4s"><b>84%</b><span>的卡车司机每日工作时间超过</span></div>
+                    <div class="ani span5s" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="4s"><b>8个小时</b></div>
+                </div> 
+                <img src="/mobile/templates/om_iov/img/x5.png" alt="" class="x5 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1.5s" swiper-animate-delay="5s">
+                <div class="c8 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="5s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="5.5s"><span>中国的卡车司机以男性为主</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="6s"><span>女性极少</span></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="6.5s"><b>99%为男性</b></div>
+                    <div class="ani span4" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="6.5s"><span>只有</span><b>1%为女性</b></div>
+                </div>
+            </section>
+
+
+            <!-- 666666666666666666666666666666666666666666666666666666666666666666666666 -->
+            <section class="swiper-slide swiper-slide6">
+                <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w">
+                <img src="/mobile/templates/om_iov/img/road6.png" alt="" class="road6">
+                <img src="/mobile/templates/om_iov/img/car6.png" alt="" class="car6 ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+                <div class="c10 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>要想富来</span><b>上海</b></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>上海是全国100万人共同的目的地</span></div>
+                </div>
+
+                <div class="c11 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+                    <div class="ani span1" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2s"><span>走过最长的路，是</span><b>运葡萄干</b><span>的路</span></div>
+                    <div class="ani span2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"><span>从</span><b>新疆喀什</b><span>出发到</span><b>首都北京</b></div>
+                    <div class="ani span3" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="3s"><span>单程</span><b>4911</b><span>公里</span></div>
+                </div>
+            </section>
+            
+            <!-- 8888888888888888888888888888888888888888888888888888888888888888888888888888 -->
+            <div class="swiper-slide swiper-slide6 eight" >
+                <!-- <img src="/mobile/templates/om_iov/img/logo_w.png" alt="" class="logo_w"> -->
+                <div class="gjc"></div>
+                <div class="my_gjc animateds pulse" onclick="draw()"></div>
+                <div class="nick"><input type="text" placeholder="请输入昵称"></div>
+                <div class="pic animateds pulse">
+                    <input id="upload"  class="upload1" name="file" type="file"  accept="image/*" />
+                    <img src="" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <img src="/mobile/templates/om_iov/img/top.png" id="array" class="resize"> 
+    </div>
+
+    <!-- loading -->
+
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+        <p id="i">
+            请稍后……
+        </p>
+    </div>
+
+    <!-- 生成页面 -->
+    <div class="xz">
+        <img src="" alt="" id="screenShotImg">
+        <span class="span1s">识别二维码，查看我的行车报告</span>
+        <div class="cj"></div>
+        <div class="lz" style="display: none;">
+            <input type="text" class="name" placeholder="请输入姓名">
+            <input type="text" class="phone" placeholder="请输入电话">
+            <input type="text" class="yzma"  id="yzm" placeholder="" value="请输入验证码" onfocus="if(value=='请输入验证码') {value=''}" onblur="if (value=='') {value='请输入验证码'}">
+            <div id="getYzm" style="background:#8fc400;border-radius: 4px; color: #fff;" onclick="send_capicha_regist()">获取验证码</div>
+            <div style="margin-top: 21rem;" class="l-captcha" data-site-key="ef45ab6cd1f99414a7d9a57b868c419d" data-callback="getResponse" style=""></div>
+            <div class="chb" onclick="cj()"></div>
+        </div>
+        <div class="prize" style="display: none;">
+            <span>五</span>
+            <a href="http://www.aumantruck.com/mobile/om_iov.php" class="a1"></a>
+            <a href="http://www.aumantruck.com/mobile/om_iov.php" class="a2"></a>
+        </div>
+        <div class="no_prize" style="display: none;">
+            <a href="http://www.aumantruck.com/mobile/om_iov.php"></a>
+            <a href="http://www.aumantruck.com/mobile/om_iov.php"><div class="again"></div></a>
+        </div>
+    </div>
+
+	<audio src="/mobile/templates/om_iov/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+		你的浏览器不支持video元素
+	</audio>
+
+    <div id="but" onclick="Play(this)"></div>
+
+<script src="/mobile/templates/om_iov/js/lrz.all.bundle.js"></script>
+<script src="/mobile/templates/om_iov/js/register_message.js"></script>
+<script src="/mobile/templates/om_iov/js/yeareEnd_At.js"></script>
+<script src="/mobile/templates/om_iov/js/preload.js"></script>
+<script src="/mobile/templates/om_iov/js/base64.js"></script>
+<script src="//captcha.luosimao.com/static/js/api.js"></script>
+<script type="text/javascript">
+
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+        var video1 = document.getElementById('video_1');
+        video1.addEventListener("touchmove",function(event){
+            event.preventDefault();
+        });
+        var ioadins = document.getElementById('ioadin');
+        ioadins.addEventListener("touchmove",function(event){
+            event.preventDefault();
+        });
+        var video1s = document.getElementById('swip');
+        video1s.addEventListener("touchmove",function(event){
+            event.preventDefault();
+        });
+        // var login = document.getElementById('login');
+        // login.addEventListener("touchmove",function(event){
+        //     event.preventDefault();
+        // });
+        // var vinss = document.getElementById('vin');
+        // vinss.addEventListener("touchmove",function(event){
+        //     event.preventDefault();
+        // });
+
+        // 适配华为键盘影响布局的问题
+        var h = window.innerHeight;
+        var myInput = document.getElementById('names');
+        var myInputs = document.getElementById('password');
+
+        myInput.addEventListener('focus',handler,false);
+        myInputs.addEventListener('focus',handlers,false);
+
+        function handler(){
+            
+            $('body').height(h);
+// 　　       $('body').height($('body')[0].clientHeight);
+
+        }
+
+        function handlers(){
+            // alert(h)
+            $('body').height(h);
+// 　　       $('body').height($('body')[0].clientHeight);
+
+        }
+        // swiper初始化
+        var mySwiper = new Swiper ('.swiper-containers', {
+            lazy: {
+                loadPrevNext: true,
+            },
+            direction : 'vertical',
+            effect : 'fade',
+            speed:1000,
+            fadeEffect: {
+                crossFade: true,
+            },
+            observer:true,
+            observeParents:true,
+            observeSlideChildren:true,
+            // scrollbar:'.swiper-scrollbar',
+            pagination: '.swiper-pagination',
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            onTransitionEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+
+        }) 
+var img = [
+    '/mobile/templates/om_iov/img/1.png',
+    '/mobile/templates/om_iov/img/2.png',
+    '/mobile/templates/om_iov/img/3.png',
+    '/mobile/templates/om_iov/img/4.png',
+    '/mobile/templates/om_iov/img/5.png',
+    '/mobile/templates/om_iov/img/6.png',
+    '/mobile/templates/om_iov/img/7.png',
+    '/mobile/templates/om_iov/img/8.png',
+    '/mobile/templates/om_iov/img/9.jpg',
+    '/mobile/templates/om_iov/img/road1.png',
+    '/mobile/templates/om_iov/img/road2.png',
+    '/mobile/templates/om_iov/img/road3.png',
+    '/mobile/templates/om_iov/img/road4.png',
+    '/mobile/templates/om_iov/img/road5.png',
+    '/mobile/templates/om_iov/img/road6.png',
+    '/mobile/templates/om_iov/img/car1.png',
+    '/mobile/templates/om_iov/img/car2.png',
+    '/mobile/templates/om_iov/img/car3.png',
+    '/mobile/templates/om_iov/img/car4.png',
+    '/mobile/templates/om_iov/img/car5.png',
+    '/mobile/templates/om_iov/img/car6.png',
+    '/mobile/templates/om_iov/img/c1.png',
+    '/mobile/templates/om_iov/img/c2.png',
+    '/mobile/templates/om_iov/img/c3.png',
+    '/mobile/templates/om_iov/img/c4.png',
+    '/mobile/templates/om_iov/img/c5.png',
+    '/mobile/templates/om_iov/img/c6.png',
+    '/mobile/templates/om_iov/img/c8.png',
+    '/mobile/templates/om_iov/img/c9.png',
+    '/mobile/templates/om_iov/img/c10.png',
+    '/mobile/templates/om_iov/img/c11.png',
+    '/mobile/templates/om_iov/img/c12.png',
+    '/mobile/templates/om_iov/img/index.png',
+];
+var index = 0,
+    len = img.length,
+    progressInner = $(".xl-progress__inner"),
+    progressTxt = $('.xl-progress__txt');
+
+//图片预加载
+$.preload(img, {
+    minTimer: 3000,
+    //每加载完一张执行的方法
+    each: function (count) {
+        var percent = Math.round((count+1) / len * 100) + '%';
+        progressInner.css("width",percent);
+        progressTxt.html(percent);
+    },
+    // 加载完所有的图片执行的方法
+    end: function () {
+        $('.loading').hide();
+        $('.index').show();
+        $("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+    }
+});
+// 移动端默认初始化时暂停播放，改为初始化页面时播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+
+        var audio = document.getElementsByClassName('audio')[0];
+
+            audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+
+            audio.play();
+
+        }, false);
+
+    }
+
+    audioAutoPlay();
+});
+// 音频播放
+function Play(e) {
+    var audio = document.getElementsByClassName('audio')[0];
+
+    console.log(audio.paused);
+
+    if(audio.paused){
+
+       audio.play();
+
+        console.log('播放')
+        $("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+
+    }else{
+        $("#but").css("-webkit-animation","");
+       audio.pause();
+
+        console.log('暂停')
+
+    }
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+.reg{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/reg.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+/*车架号*/
+.reg_top{
+	width: 100%;
+	height: 13.09375rem;
+	background-image: url('../img/reg_top.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 8%;
+	left: 0%;
+}
+.inp_1{
+    width: 16rem;
+    height: 2.2rem;
+    position: absolute;
+    top: 27%;
+    left: 16%;
+    background: none;
+    border: none;
+    outline: none;
+    letter-spacing: .2rem;
+}
+.reg_top>p{
+    width: 16rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 21%;
+    font-size: 21px;
+    color: #FED372;
+    font-weight: bold;
+}
+.yan{
+	width: 9.71875rem;
+	height: 3.59375rem;
+	background-image: url('../img/yan.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+    top: 66%;
+    left: 30%;
+}
+/*注册下部分*/
+.reg_bott{
+	width: 100%;
+	height: 16.6875rem;
+	background-image: url('../img/reg_bott.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 49%;
+	left: 0%;
+}
+.inp_2{
+    width: 13rem;
+    height: 2.3rem;
+    position: absolute;
+    top: 22%;
+    left: 28%;
+    background: none;
+    border: none;
+    outline: none;
+    letter-spacing: .2rem;
+}
+.inp_3{
+    width: 13rem;
+    height: 2.3rem;
+    position: absolute;
+    top: 40%;
+    left: 28%;
+    background: none;
+    border: none;
+    outline: none;
+    letter-spacing: .2rem;
+}
+.tj{
+	width: 8.0625rem;
+	height: 3.8125rem;
+	background-image: url('../img/tj.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+    top: 65%;
+    left: 34%;
+}
+
+
+/*loading*/
+
+.spinner {
+    margin: auto 0;
+    width: 9.375rem;
+    text-align: center;
+    position: absolute;
+    top: 43%;
+    left: 29%;
+    z-index: 99999999999;
+    display: none;
+}
+ #i{
+    width: 10.25rem;
+    height: 2.1875rem;
+    line-height: 2.1875rem;
+    text-align: center;
+    color: #67CF22;
+ }
+.spinner > div {
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: #67CF22;
+ 
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+.zhe{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    position: absolute;
+    top: 0%;
+    display: none;
+}

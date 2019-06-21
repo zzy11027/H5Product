@@ -1,0 +1,163 @@
+/*==start:땅꼬돔봄으==*/
+body{
+	width:100%;
+	position:relative;
+}
+.top_nav{
+	width:96%;
+	padding:0 2%;
+	height:44px;
+	border-top:1px solid #e5e5e5;
+	border-bottom:1px solid #e5e5e5;
+	background:#ffffff;
+	overflow: hidden;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 20;
+	box-sizing: content-box;
+}
+.caidan{
+	float:left;
+	width:6%;
+    margin-top:8px;
+	height:auto;
+	margin-left:8px;
+}
+
+.caidan li{
+	width:100%;
+	height:1px;
+    background:#999999;
+	margin:6px 0;
+}
+.caidan li:nth-child(2){
+	width:75%;
+}
+.top_nav .logo{
+	width:28%;
+	float:left;
+	margin-top:8px;
+	margin-left:28%;
+}
+.top_nav .logo h1{
+	font-weight: normal;
+	font-size:17px;
+	color:#333333;
+	text-align:center;
+	margin:0;
+	line-height:28px;
+}
+.top_nav .logo img{
+	width: 100%;
+	vertical-align:baseline;
+}
+.rentou{
+	width:44px;
+	float:right;
+}
+.rentou img{
+	width:100%;
+	vertical-align:baseline;
+}
+.logoleft{
+	float:left;
+	width:44px;
+	height:auto;
+}
+.logoleft img{
+	width:100%;
+	vertical-align:baseline;
+}
+.kuanTitle{
+	overflow: hidden;
+	width:92%;
+	margin:0 auto;
+	border-top:1px solid #cbcbcb;
+	border-bottom:1px solid #cbcbcb;
+	padding:8px 0 8px 0;
+}
+.kuanTitle.width{
+	width: 100%;
+}
+
+.kuanTitle input[type="button"]{
+	width:66px;
+	height:32px;
+	background: #ffffff;
+	border:1px solid #e5e5e5;
+	font-size: 15px;
+	margin:0 3px;
+	font-family:"菓흡錤붚","芥竟",arial,verdana,sans-serif;
+	color:#999999;
+}
+.kuanTitle input[type="button"]:hover{
+	border:none;
+	background: #d0140d;
+	color: #ffffff;
+	border:1px solid #d0140d;
+}
+
+.kuanTitle .gongYou{
+     float:left;
+     font-size: 16px;
+	 line-height:30px;
+}
+.kuanTitle .gongYou a{
+	color:#d0140d;
+}
+.subNav{
+	overflow: hidden;
+	border-bottom:1px solid #cccccc;
+	padding:0 10px 8px 10px;
+
+}
+.kuanTitle.noborder{
+	border-bottom:none;
+	margin-top:45px;
+}
+/*==start:끓틔욋칵훰==*/
+.top_nav .logo.wenZi{
+	text-align: center;
+    margin-left:0;
+	float:none;
+	position:absolute;
+	left:50%;
+	width:auto;
+	transform: translate(-50%, -0%);
+	-webkit-transform: translate(-50%, -0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+}
+.top_nav .logo .center{
+	font-weight: normal;
+	font-size:17px;
+	color:#333333;
+	text-align:center;
+	margin:0;
+	line-height:26px;
+}
+.fr{
+	float:right;
+}
+/*==end:끓틔욋칵훰==*/
+/*==end:땅꼬돔봄으==*/
+	
+.kuanTitle input.qr{
+	background:#d0141d;
+	color:#ffffff;
+	border:1px solid #d0141d;
+}
+.top_nav .logo.wenZi01{
+	text-align: center;
+    margin-left:0;
+	float:none;
+	position:absolute;
+	left:50%;
+	transform: translate(-50%, -0%);
+	-webkit-transform: translate(-50%, -0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+}

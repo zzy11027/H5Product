@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>圣诞节运输大作战</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <link rel="stylesheet" href="/templates/omk/xm/css/css.css">
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+            overflow: hidden;
+        }
+        canvas {
+            display:block;
+            position:absolute;
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+        }
+        #gameDiv{
+            display: none;
+        }
+    </style>
+    <script src="/templates/omk/xm/js/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+               title: '圣诞节运输大作战', // 分享标题
+                desc: '运输挑战等你来，展示老司机功力的时候到了', // 分享描述
+                link: 'http://omk.douyar.cc/omk/xm.php?step=test', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/xm/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '圣诞节运输大作战', // 分享标题
+                link: 'http://omk.douyar.cc/omk/xm.php?step=test', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/xm/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?1717023bb2cb06b38b49225e684c3fb4";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <input type="hidden" id='openid' value="{$openid}">
+    <input type="hidden" id="token" value="{$token}">
+    <input type="hidden" id="nickname" value="{$nickname}">
+    <div id="but" class="first" onclick="Play(this)"></div>
+    <audio src="/templates/omk/xm/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+    你的浏览器不支持video元素
+    </audio>
+    <!-- 遮罩层 -->
+    <div class="containerss"></div>
+
+    <!-- 首页 -->
+    <div class="kai">
+        <!-- 开始按钮 -->
+        <div class="start animated pulse"></div>
+
+        <!-- 规则按钮 -->
+        <div class="rule">
+            
+        </div>
+
+        <!-- 规则详情 -->
+        <div class="rule_all">
+            <div class="close"></div>
+        </div>
+    </div>
+
+    <!-- 留资 -->
+    <div class="lz">
+        <span class="km"></span>
+        <span class="bfb"></span>
+        <input type="text" class="inp1" id="xm" placeholder="请输入您的姓名">
+        <input type="text" class="inp2" id="phone" placeholder="请输入您的电话">
+        <div class="tj" onclick="tj()"></div>
+        <a class="a1" href="http://omk.douyar.cc/omk/xm.php?step=test"></a>
+        <a href="" class="clo"></a>
+    </div>
+    
+    <!-- 中奖 -->
+    <div class="yes">
+        <a href="" class="clos"></a>
+        <a class="a1 a1s"></a>
+        <a class="a2" href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"></a>
+        <p>2</p>
+    </div>
+
+    <!-- 未中奖 -->
+    <div class="no">
+        <a href="" class="clos"></a>
+        <a class="a1 a1s"></a>
+        <a class="a2" href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"></a>
+    </div>
+
+
+	<!-- 分享 -->
+	<div class="fx">
+		<div class="guan"></div>
+	</div>	
+
+
+    <!-- 游戏页面 -->
+    <div style="position:relative;" id="gameDiv"></div>
+
+
+<script>var document_class = "Main";</script>
+<script src="/templates/omk/xm/js/egret_require.js"></script>
+<script src="/templates/omk/xm/js/egret_loader.js"></script>
+<script src="/templates/omk/xm/js/game-min.js"></script>
+<script src="/templates/omk/xm/js/prize.js"></script>
+<script>
+    var support = [].map && document.createElement("canvas").getContext;
+    if (support) {
+        egret_h5.startGame();
+    }
+    else {
+        alert("Egret 不支持您当前的浏览器")
+    }
+    function start(){
+        window.outerStart.call(window.gameObj);
+    }
+</script>
+
+</body>
+</html>

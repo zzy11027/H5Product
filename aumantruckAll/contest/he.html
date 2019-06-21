@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>降本增效，我是冠军</title>
+	<meta name="keywords" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+	<meta name="description" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+    <link href="new0225/css/css.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/mobile/templates/contest/css/he.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="/mobile/templates/contest/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/mobile/templates/2018live/register_message.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: 'Ta在SuperFleet超级车队驾驶员联赛打败了全国{$zhi}%的卡车司机！', // 分享标题
+                desc: 'Ta正在参与SuperFleet超级车队驾驶员联赛，快来为Ta加油,赢人气之星奖励！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_contest.php?act=spaxq&id={$res.phone}&{$fs}={$zhi}', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: 'Ta在SuperFleet超级车队驾驶员联赛打败了全国{$zhi}%的卡车司机！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_contest.php?act=spaxq&id={$res.phone}&{$zhi}', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</head>
+<body class="ovfHiden">
+            <div class="containerss"></div>
+            <!-- 弹窗 -->
+            <div class="tan">
+                <a href="http://www.aumantruck.com/mobile/spike_contest.php?act=spa"><div class="close">
+                </div></a>
+                
+                
+                <!-- <div class="bao"></div> -->
+
+                <div class="le" onclick="le()"></div>
+
+
+                <div class="ri" onclick="ri()"></div>
+
+                <div class="bao"></div>
+                <div class="contai">
+                    <div class="con_1">{$res.cph}</div>
+                    <div class="con_2">{$res.qymc}</div>
+                    <div class="con_3">{$res.pjbglyh}</div>
+                    <div class="con_4">{$res.zxslc}</div>
+                    <div class="con_5">{$res.hy}</div>
+                    <div class="con_6">{$res.cx}</div>
+                    <div class="con_7">{$res.cxlx}</div>
+                    <div class="con_8">{$res.pjzz}</div>
+                 <!--    <div class="con_9">{$res.zz}</div> -->
+                    <input type="hidden" id="id" name="" value="{$res.phone}">
+
+                </div>
+
+                <div class="shu">{$zhi}%</div>
+                <div class="shu_1">{$zhi}%</div>
+
+                <!-- 点击分享 -->
+                <div class="fxing" onclick="dian()"></div>
+
+                <!-- <img src="/themes/default/contest/img/a.jpg" alt="" class="img_3" > -->
+
+            </div>
+
+
+
+            <div class="fen">
+                
+                <div class="guan"></div>
+            </div>
+
+        <!-- 脚部顶起来 -->
+        <div class="ding"></div>
+
+
+
+
+        <div class="navWrapper boxShadow" >
+        <div class="innerWrap">
+        <div class="footNav">
+        <a href="index.php" target="_parent" name="home"><img src="new0225/images/home.png">首页</a>
+        <a href="mall.php?act=index" name="truck" target="_parent"><img src="new0225/images/truck.png">商城</a>
+        <a href="http://bbs.aumantruck.com" target="_parent" name="community"><img src="new0225/images/community.png">社区                        </a>
+        <a href="service.php" target="_parent" name="server"><img src="new0225/images/server.png">服务</a>
+
+        <a href="user.php?act=membercenter" id="login1"> <img src="new0225/images/people.png">我</a>
+
+        </div>
+        </div>
+        </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+<script>
+
+    
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+        console.log(nf,c)
+
+
+        // if($('.shu').text() == '%'){
+        //     // alert('油耗为空！')
+        //     $('.tan').css({"background-image":"url(templates/contest/img/he.png)","background-size":"100% 100%"})
+        //     $('.shu').text('');
+        // }else if($('.shu_1').text() == '%'){
+        //     // alert('出勤为空！')
+        //     $('.tan').css({"background-image":"url(templates/contest/img/he1.png)","background-size":"100% 100%"})
+        //     $('.shu_1').text('');
+
+        // }
+
+        
+var aa  = 1;
+    function dian(){
+        if(aa == 1){
+        var a = $('.fxing').css('background-image');
+        var id = $("#id").val();
+        console.log(a)
+         $.ajax({
+
+                type: 'POST',
+                dataType:'json',
+                url: "/mobile/spike_contest.php?act=spadz",
+
+                data:{
+                    id:id
+                },
+
+                success: function (res) {
+                    if (res==1) {
+                        alert("点赞成功");
+                        $('.fxing').css({"background-image":"url(templates/contest/img/dian2.png)","background-size":"100% 100%"})
+                    }else{
+                        alert("您已经点过赞了");
+
+                    }
+                    
+                }
+            });
+                 }
+        aa=2;
+        jump(3);
+    }
+     //禁止点击多次
+    function jump(count) { 
+            window.setTimeout(function(){ 
+                count--; 
+                if(count > 0) { 
+                    jump(count); 
+                } else { 
+                   aa=1; 
+                } 
+            }, 2000); 
+        } 
+</script>
+</body>
+</html>

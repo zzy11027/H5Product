@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="/mobile/templates/contest/css/sp.css">
+	<script src="/mobile/templates/contest/js/jquery.min.js"></script>
+</head>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<body>
+
+
+	<!-- banner -->
+	<div class="banner">
+        <a href="http://www.aumantruck.com/article.php?id=50489" target="_blank">
+                    
+        </a>
+    </div>
+
+
+    <div class="container">
+
+		<ul>
+			<li><a href="#"></a></li>
+			<li><a href="/mobile/spike_contest.php?act=ziye"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="/mobile/spike_contest.php?act=sp"></a></li>
+			<li><a href="/mobile/spike_contest.php?act=ziye"></a></li>
+		</ul>
+
+
+				<div class="auto">
+
+			<img src="/mobile/templates/contest/img/a.jpg" alt="">
+
+			<div class="name">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
+			<div class="find"><a href=""></a></div>
+		</div>
+
+		<div class="auto_1">
+			<img src="/mobile/templates/contest/img/a.jpg" alt="">
+
+			<div class="name_1">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
+			<div class="find_1"><a href=""></a></div>
+		</div>
+
+
+		<div class="auto_2">
+			<img src="/mobile/templates/contest/img/a.jpg" alt="">
+
+			<div class="name_2">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
+			<div class="find_2"><a href=""></a></div>
+		</div>
+
+
+		<div class="auto-middle">
+
+				<div><a href=""></a></div>
+				<div><a href=""></a></div>
+				<div><a href=""></a></div>
+				<div><a href=""></a></div>
+				<div><a href=""></a></div>
+				<div><a href=""></a></div>
+				<div><a href=""></a></div>
+		</div>
+
+		<!-- form -->
+			<form action="" class="form_1">
+
+				<input type="text" name="apply_field1_1" placeholder="请输入姓名">
+				<input type="text" name="apply_field2_1" placeholder="请输入电话">
+
+				<div class="yzm">123</div> <img src="/mobile/templates/contest/img/a.jpg" alt="">
+
+				<input class="gs" type="text" name="apply_field2_1" placeholder="请输入公司">
+
+				<div class="left" onclick="sub_form()"></div>
+				<div class="right" onclick="sub_cz()"></div>
+
+			</form>
+    </div>
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+	var a=1;
+
+    function sub_form(){
+    	 if(a==1){
+        var form = $("#form");
+        if (!$("input[name='apply_field1_1']").val()) {
+            alert('请输入姓名！');
+            return false;
+        }
+        if (!$("input[name='apply_field2_1']").val()) {
+            alert('请输入手机号！');
+            return false;
+        }
+        var tel = $("input[name='apply_field2_1']").val();
+        // var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+        var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!reg.test(tel)) {
+            alert("请输入正确的手机号!");
+            return false;
+        }
+        
+
+
+        var name =  $("input[name='apply_field1_1']").val();
+        var phone =  $("input[name='apply_field2_1']").val();
+        var province =  $("yzm").val();
+        var city =  $("select[name='apply_field4_1']").val();
+        var service_id =  $("gs").val();
+
+        $.ajax({
+            type: "POST",
+            url: "",
+            data:{},
+            success: function (res) {
+                if(res.result == 1){
+                    
+                }else{
+                   
+                }
+
+
+            }
+        });
+        a=2;
+        jump(3);        
+    }
+    }
+
+    function jump(count) { 
+        window.setTimeout(function(){ 
+            count--; 
+            if(count > 0) { 
+                jump(count); 
+            } else { 
+               a=1; 
+            } 
+        }, 1000); 
+            } 
+	function sub_cz() {
+
+	    $("input[name='apply_field1_1']").val("");
+	    $("input[name='apply_field2_1']").val("");
+	    $('.yzm').text("");
+	    $('gs').val("");
+	}
+	</script>
+</body>
+</html>

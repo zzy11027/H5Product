@@ -1,0 +1,468 @@
+﻿
+<!doctype html>
+<html dir="ltr" lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+<meta name="screen-orientation" content="portrait">
+<meta charset="utf-8">
+<title>秀车技赢好礼</title>
+<link rel="stylesheet" href="/templates/omk/biaoche/biaoche/biaoche/static/83a3be90ad264dab/game.css">
+    <script src="/templates/omk/biaoche/biaoche/biaoche/select.js"></script>
+<script>var gConfig={wxDesc:"\u6211\u8981\u9a7e\u8c6a\u8f66\u8ffd\u4e0a210\u4e2a\u59b9\u5b50\uff0c\u6253\u7834\u6700\u9ad8\u8bb0\u5f55\uff0c\u6c42\u56f4\u89c2\uff01",wxData:{appId:"",imgUrl:"http://www.zzfriend.com/demo/youxi/m/biaoche/t017bbde5550e655af3.png",link:'http://www.zzfriend.com/demo/youxi/m/biaoche/index.html',desc:"",title:"\u98d9\u8f66\u8ffd\u59b9\u5b50"},activeId:"ac174b",sApi:"http://www.zzfriend.com/demo/youxi/m/biaoche/"}</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '秀车技赢惊喜大礼', // 分享标题
+                desc: '惊喜多多', // 分享描述
+                link: 'http://omk.douyar.cc/omk/omk_oldcart.php', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/biaoche/biaoche/biaoche/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '秀车技赢惊喜大礼', // 分享标题
+                link: 'http://omk.douyar.cc/omk/omk_oldcart.php', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/superCar/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?40ec6ee52e8b369e8c69fd3d085a240c";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<input type="hidden" id="token" value="{$token}">
+<input type="hidden" id="openid" value="{$openid}">
+<div id="but" class="first" onclick="Play(this)"></div>
+<audio src="/templates/omk/omk_transport/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+你的浏览器不支持video元素
+</audio>
+<div class="zhong" style="display:none;">
+    <div class="size"></div>
+    <div class="btn" onclick="tj()"></div>
+    <input type="text" type=""  class="in1">
+    <input type="text" class="in2">
+        <select name="" class="inin1" id="field_4" onchange="getCity()">
+        <option value="100">请选择省份</option>
+        <script type="text/javascript"> 
+            for(var i=0;i<provinceArr.length;i++)    
+            {
+                document.write("<option value='"+i+"'>"+provinceArr[i]+"</option>");
+                
+            }
+        </script>
+    </select>
+
+    <select name="" class="inin2" id="field_5">
+        <option value="100">请选择城市</option>
+    </select>
+
+    <input type="text" class="in3">
+    <select name="" id="" class="in4">
+         <option value="">请选择</option>    
+         <option value="">欧马可s1</option>  
+         <option value="">欧马可s3</option> 
+         <option value="">欧马可s5</option>   
+    </select>
+</div>
+
+<div class="zj" style="display:none;">
+    <img src="/templates/omk/biaoche/biaoche/biaoche/hb1.png" alt=""  id='tu1'>
+    <p class="hbb"></p>
+    <div class="zw" onclick="zw()"></div>
+    <div class="gb" onclick="gb()"></div>
+</div>
+
+
+<div class="zj1"style="display:none;">
+    <img src="/templates/omk/biaoche/biaoche/biaoche/hyh.png" alt=""  id='tu2'>
+    
+    <div class="zw" onclick="zw()"></div>
+    <div class="gb" onclick="gb()"></div>
+</div>
+
+<div class="shi">
+    <img src="" alt="">
+    <div class="zw" onclick="zw()"></div>
+    <div class="gb" onclick="gb()"></div>
+</div>
+<div id="show" style="display:none;">
+  
+</div>
+<div class="warp" style="">
+    <div class="sy">
+        <div class="start" onclick="st()"></div>
+        <div class="rule" onclick="rule()"></div>
+    </div>
+    <div class="ru"  style="display:none;" onclick="ruhide()">
+        
+    </div>
+</div>
+<div id="main" >
+    <div id="guidePanel"></div>
+    <div id="gamePanel">
+        <div class="score-wrap">
+            <span id="score">000000</span>
+        </div>
+
+        <canvas id="stage">
+            <span>Browser does not support the canvas.</span>
+        </canvas>
+    </div>
+
+    <div id="gameoverPanel"></div>
+   
+    <div id="resultPanel" style="display:none;">
+        <div class="weixin-share"></div>
+       
+
+        <div id="scoreBoard" class="panel" >
+            <div class="rank"style="dispaly:none;">
+                <h4>追妹排行榜</h4>
+                <ul>
+                    <li class="gold">210</li>
+                    <li class="silver">190</li>
+                    <li class="bronze">189</li>
+                </ul>
+            </div>
+
+            <div class="score-result score-1">
+
+                <p class="tips">你木有追到一个妹纸哦~</p>
+                <a href="javascript:void(0)" class="share" data-desc="我开豪车一路狂飙，被妹纸们华丽丽的无视，心塞！">向基友们求人品！</a>
+            </div>
+            <div class="score-result score-2">
+                <p class="tips">矮油，成功追到<span>7</span>个妹纸</p>
+                <a href="javascript:void(0)" class="share" data-desc="喜讯：我开豪车成功追到{x}个妹纸！吼吼，请为我点赞！">向小伙伴炫耀！</a>
+            </div>
+            <div class="score-result score-3">
+                <p class="tips">哇噢，成功追到<span>20</span>个妹纸！<br>获得了一个爱心礼盒</p>
+                <a href="javascript:void(0)" class="lottery">打开礼盒</a>
+            </div>
+        </div>
+
+        <div id="prize" class="panel">
+            <div class="prize-default">
+                <img src="about:blank" class="random-prize"></img>
+                <a href="javascript:void(0)" class="share" data-desc="我开豪车搭{x}个妹纸回家~获赠平安符，好人一生平安|我开豪车搭{x}个妹纸回家~桃花运从天而降，再接再厉">向小伙伴炫耀！</a>
+            </div>
+            <div id="prizeResult" class="panel">
+                <div class="scroll-rst">
+                    <div class="prize-content">
+                        <p>恭喜您获得了（<span></span>）</p>
+                        <img src="about:blank">
+                        <div class="yards">兑奖码：<span></span><br><strong>请截屏保存兑奖码哦</strong></div>
+                    </div>
+                    <div class="intro">
+                        <h2>查看优惠码使用规则</h2>
+                        <div class="down"></div>
+                        <p>详细兑奖规则：</p>
+                        <ol>
+                            <li>请及时截屏保存兑奖码，由于误操作没有保存兑奖码，将无法兑奖，一个兑奖码仅限一人使用，转发多人无效。</li>
+                            <li>中国方程式大奖赛北京站地址：北京金港赛车场。</li>
+                            <li>获得赛车激情体验资格的幸运网友，请在8月30日15：30前到赛场联系工作人员（手机号：18911209831）凭电子码兑票，激情体验方程式赛车15分钟。</li>
+                            <li>获得赛道狂飙体验特权的幸运网友，请在8月31日8：30前到赛场联系工作人员凭电子码兑票，激情体验方程式赛道20分钟。</li>
+                            <li>获得大赛普通门票的幸运网友，请在8月31日13：00前到赛场联系工作人员凭电子码兑票入场。</li>
+                            <li>另外，获得“赛车激情体验资格”和“赛道狂飙体验特权”的用户，请最晚于8月29日前提供姓名、身份证号、手机号至邮箱：tuxueliang@360.cn，组委会将提前给大家购买50元保险（无保险不允许进赛道），费用由用户现场支付。</li>
+                            <li>赛场详细位置如图：</li>
+                        </ol>
+                        <img src="/templates/omk/biaoche/biaoche/biaoche/t01446f068c0ca06efa.png" class="map">
+                        <a href="javascript:void(0)" class="share" data-desc="喜讯：我开豪车搭{x}个妹纸回家~成功闯入方程式大赛！"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/templates/omk/biaoche/biaoche/biaoche/lib/1102.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/ba89b0f0490cebba/jquery-md5-1.2.1.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/d644f4156b92b763/Game.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/cbb66382ea62c0cb/cookie.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/d75c975aec34b3b2/weixin-api.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/2af522d526e9fb8d/iscroll.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/aef84362543b5a7a/resource.js" ></script>
+<script src="/templates/omk/biaoche/biaoche/biaoche/static/f2479112e123da44/main.js" ></script>
+
+<script>
+$("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+    function gameEnd(e){
+        var size = e;
+        $('#show').show();
+        $('.size').text(size);
+        $('.zhong').show();
+    }    
+   function tj(){
+    
+
+        var token = $("#token").val();
+        var openid = $("#openid").val();
+        var inp1 = $('.in1').val();
+        var inp2 = $('.in2').val();
+        var inp3 = $('.in3').val();
+        var inp4 = $(".in4").find("option:selected").text();
+        var prove = $(".inin1").find("option:selected").text();
+        var city = $(".inin2").find("option:selected").text();
+        if(inp1 == '' ){
+            alert('请完善填写您的信息!');
+            return false;
+        }
+        var han = /^[\u4e00-\u9fa5]+$/;
+		// if(!han.test($('.in1').val())){alert('请输入汉字！');return false;}
+        // //中文限制
+        // var reg = /^[\u4e00-\u9fa5\u3001\A-\Z\d]+$/;
+        // if (!reg.test(inp1)) {
+        //     alert("请输入正确的手机号");
+        //     return false;
+        // }
+        // var han = /^[\u4e00-\u9fa5]+$/;
+        // if(!han.test($('.inp1').val())){alert('请输入汉字！');return false;}
+       
+
+
+        if( inp2 == ''){
+            alert('请完善填写您的信息!');
+            return false;
+        }
+        if( inp3 == ''){
+            alert('请完善填写您的信息!');
+            return false;
+        }
+        if(inp4 == ''||inp4=="请选择"){
+            alert('请完善填写您的信息!');
+            return false;
+        }
+        if(prove == ''||prove=="请选择省份"){
+            alert('请完善填写您的信息!');
+            return false;
+        }
+        if(city == ''||city=="请选择城市"){
+            alert('请完善填写您的信息!');
+            return false;
+        }
+        // 手机号限制
+        var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+        if (!reg.test(inp2)) {
+            alert("请输入正确的手机号");
+            return false;
+        }
+       
+        $.ajax({
+            type: 'POST',
+            dataType:'json',
+            url : 'http://omk.douyar.cc/omk/omk_oldcart.php?step=info',
+            data: {
+                name:inp1,
+                phone:inp2,
+                dz:inp3,
+                cx:inp4,
+                prove:prove,
+                city:city,
+                openid:openid,
+            },
+            beforeSend: function(request) { 
+                request.setRequestHeader("Authorization", token); 
+            },
+            success: function(data){
+
+                if(data.res == 1){
+                    $(".hbb").text("5")
+                    $('.zj').show();
+                    $('#tu').hide();
+                    $('.zhong').hide();
+                }else  if(data.res == 2){
+                    $(".hbb").text("2")
+                    $('.zj').show();
+                    $('#tu').hide();
+                    $('.zhong').hide();
+                }else  if(data.res == 3){
+                    $(".hbb").text("1")
+                    $('.zj').show();
+                    $('#tu').hide();
+                    $('.zhong').hide();
+                }else  if(data.res == 9){
+                    
+                    $('.zj1').show();
+                    $('.zhong').hide();
+                    $('#tu').hide();
+                } else  if(data.res == 11){
+                    alert("非法请求");
+                    $('.zhong').hide();
+                    return;
+                    $('.zj1').show();
+                    $('#tu').hide();
+                    
+                }else  if(data.res == 10){
+                    $('.zj1').show();
+                    $('.zhong').hide();
+                    $('#tu').hide();
+                    
+                }else  if(data.res == 12){
+                    alert("留资失败");
+                    $('.zhong').hide();
+                    return;
+                    $('.zj1').show();
+                    $('#tu').hide();
+                    
+                }else if(data.res == 5){
+                    $('.shi').show();
+                    $('.zhong').hide();
+                    $('#tu').hide();
+                    $('.shi>img').attr('src','/templates/omk/biaoche/biaoche/biaoche/yinxiang.png');
+                }else if(data.res == 6){
+                    $('.shi').show();
+                    $('.zhong').hide();
+                    $('#tu').hide();
+                    $('.shi>img').attr('src','/templates/omk/biaoche/biaoche/biaoche/chemo.png');
+                }else if(data.res == 7){
+                    $('.shi').show();
+                    $('.zhong').hide();
+                    $('#tu').hide();
+                    $('.shi>img').attr('src','/templates/omk/biaoche/biaoche/biaoche/shuibei.png');
+                }else if(data.res == 8){
+                    $('.shi').show();
+                    $('.zhong').hide();
+                    $('#tu').hide();
+                    $('.shi>img').attr('src','/templates/omk/biaoche/biaoche/biaoche/kyinxiang.png');
+                }
+            }
+        });
+   }
+function zw(){
+    window.location.href=""
+}
+function gb(){
+    window.location.href=""
+}
+// 移动端默认初始化时暂停播放，改为初始化页面时播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+
+        var audio = document.getElementsByClassName('audio')[0];
+
+            audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+
+            audio.play();
+
+        }, false);
+
+    }
+
+    audioAutoPlay();
+});
+// 音频播放
+function Play(e) {
+    var audio = document.getElementsByClassName('audio')[0];
+
+    console.log(audio.paused);
+
+    if(audio.paused){
+
+       audio.play();
+
+        console.log('播放')
+        $("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+
+    }else{
+        $("#but").css("-webkit-animation","");
+       audio.pause();
+
+        console.log('暂停')
+
+    }
+}
+//当省份的选择发生变化时调用 该方法   将市县加载到下拉选择框
+        function getCity()
+    {
+        //1.获取省份选择框的对象
+        var provincesobj=document.getElementById("field_4");
+        //2.获取市县选择框的对象
+        var cityobj=document.getElementById("field_5");
+        //3.获取被选择的省份的索引
+        var index=provincesobj.selectedIndex;
+        
+        //alert(provincesobj[index].value+","+provincesobj[index].text);
+        ////4.通过省份的索引获取它的value值，value值也是它在数组的索引值
+        var value=provincesobj[index].value;;
+        
+        //5.获取对应省份的市县数组
+        var cityName=cityArr[value];
+        //6.将下拉框清楚索引为0之后的，只保留第一个
+        cityobj.length=1;
+        //通过循环遍历市县元素给下拉框赋值
+        for(var i=1;i<cityArr[value].length;i++)
+        {
+            console.log(cityobj.options);
+            console.log(cityobj.options.length);
+            cityobj.options[cityobj.options.length]=new Option(cityName[i],i);
+            
+        }
+
+        
+    }
+        function getCitys()
+    {
+        //1.获取省份选择框的对象
+        var provincesobj=document.getElementById("zfield_4");
+        //2.获取市县选择框的对象
+        var cityobj=document.getElementById("zfield_5");
+        //3.获取被选择的省份的索引
+        var index=provincesobj.selectedIndex;
+        
+        //alert(provincesobj[index].value+","+provincesobj[index].text);
+        ////4.通过省份的索引获取它的value值，value值也是它在数组的索引值
+        var value=provincesobj[index].value;;
+        
+        //5.获取对应省份的市县数组
+        var cityName=cityArr[value];
+        //6.将下拉框清楚索引为0之后的，只保留第一个
+        cityobj.length=1;
+        //通过循环遍历市县元素给下拉框赋值
+        for(var i=1;i<cityArr[value].length;i++)
+        {
+            cityobj.options[cityobj.options.length]=new Option(cityName[i],i);
+            
+        }
+        
+    }
+
+
+</script>
+</body>
+</html>

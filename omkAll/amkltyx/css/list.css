@@ -1,0 +1,335 @@
+.list_1{
+	width: 100%;
+	height: 113.65625rem;
+	background-image: url('../img/list_1.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+/*绿色英雄榜*/
+.ls_yxb{
+	width: 100%;
+	height: 21.9375rem;
+	background-image: url('../img/ls_yxb.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 14%;
+}
+.ls_yxb>.bang1{
+	width: 21rem;
+    height: 10rem;
+    position: absolute;
+    top: 37%;
+    left: 7%;
+    overflow: auto;
+}
+.ls_yxb>.bang1>ul{
+	width: 20rem;
+	height:2rem;
+}
+.ls_yxb>.bang1>ul>li{
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	color: #C2E2D8;
+	font-size: 14px;
+}
+.ls_yxb>.bang1>ul>li:nth-child(1){
+	width: 2rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+.ls_yxb>.bang1>ul>li:nth-child(2){
+	width: 4rem;
+    margin-left: 6.2rem;
+}
+.ls_yxb>.bang1>ul>li:nth-child(3){
+    width: 2rem;
+    margin-left: 4.5rem;
+}
+/*绿色先锋榜*/
+.ls_xfb{
+	width: 100%;
+	height: 21.75rem;
+	background-image: url('../img/ls_xfb.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 35%;
+}
+.ls_xfb>.bang1{
+	width: 21rem;
+    height: 10rem;
+    position: absolute;
+    top: 37%;
+    left: 7%;
+    overflow: auto;
+}
+.ls_xfb>.bang1>ul{
+	width: 20rem;
+	height:2rem;
+}
+.ls_xfb>.bang1>ul>li{
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	color: #C2E2D8;
+	font-size: 14px;
+}
+.ls_xfb>.bang1>ul>li:nth-child(1){
+	width: 2rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+.ls_xfb>.bang1>ul>li:nth-child(2){
+	width: 4rem;
+    margin-left: 6.2rem;
+}
+.ls_xfb>.bang1>ul>li:nth-child(3){
+    width: 2rem;
+    margin-left: 4.5rem;
+}
+
+/*操控达人榜*/
+.ck_drb{
+	width: 100%;
+	height: 21.65625rem;
+	background-image: url('../img/ck_drb.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 56%;
+}
+.ck_drb>.bang2{
+    width: 20rem;
+    height: 10rem;
+    position: absolute;
+    top: 39%;
+    left: 7%;
+    display: flex;
+    justify-content: space-between;
+}
+.bang2_lef{
+	width: 10rem;
+	height: 10rem;
+	overflow:auto;
+}
+.bang2_lef>ul{
+	width: 10rem;
+	height: 2rem;
+}
+.bang2_lef>ul>li{
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	color: #C2E2D8;
+	font-size: 14px;
+}
+.bang2_lef>ul>li:nth-child(1){
+	width: 2rem;
+	text-align: center;
+}
+.bang2_lef>ul>li:nth-child(2){
+	width: 3rem;
+	margin-left: 1rem;
+	text-align: center;
+}
+.bang2_lef>ul>li:nth-child(3){
+	width: 2rem;
+	margin-left: 1.5rem;
+	text-align: right;
+}
+.bang2_rig{
+	width: 9rem;
+	height: 10rem;
+}
+.bang2_rig{
+	width: 9rem;
+	height: 10rem;
+	overflow: auto;
+}
+.bang2_rig>ul{
+	width: 9rem;
+	height: 2rem;
+}
+.bang2_rig>ul>li{
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	color: #C2E2D8;
+	font-size: 14px;
+}
+.bang2_rig>ul>li:nth-child(1){
+	width: 2rem;
+	text-align: center;
+}
+.bang2_rig>ul>li:nth-child(2){
+	width: 3rem;
+	margin-left: 1rem;
+	text-align: center;
+}
+.bang2_rig>ul>li:nth-child(3){
+	width: 1rem;
+	margin-left: 1.5rem;
+	text-align: right;
+}
+
+/*高效先锋榜*/
+.gx_xfb{
+	width: 100%;
+	height: 21.75rem;
+	background-image: url('../img/gx_xfb.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 76%;
+}
+.gx_xfb>.bang1{
+	width: 21rem;
+    height: 10rem;
+    position: absolute;
+    top: 37%;
+    left: 7%;
+    overflow: auto;
+}
+.gx_xfb>.bang1>ul{
+	width: 20rem;
+	height:2rem;
+}
+.gx_xfb>.bang1>ul>li{
+	float: left;
+	height: 2rem;
+	line-height: 2rem;
+	color: #C2E2D8;
+	font-size: 14px;
+}
+.gx_xfb>.bang1>ul>li:nth-child(1){
+	width: 2rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+.gx_xfb>.bang1>ul>li:nth-child(2){
+	width: 4rem;
+    margin-left: 6.2rem;
+}
+.gx_xfb>.bang1>ul>li:nth-child(3){
+    width: 2rem;
+    margin-left: 4.5rem;
+}
+/*排行榜名次小图片*/
+.img_ph{
+	width:1.9375rem;
+	height: 2rem;
+}
+/*点击加载更多*/
+.more1{
+    width: 7rem;
+    height: 2rem;
+    position: absolute;
+    top: 84%;
+    left: 37%;
+}
+.more2{
+    width: 7rem;
+    height: 2rem;
+    position: absolute;
+    top: 84%;
+    left: 37%;
+}
+.more3{
+    width: 7rem;
+    height: 2rem;
+    position: absolute;
+    top: 103%;
+    left: 6%;
+}
+.more3s{
+    width: 7rem;
+    height: 2rem;
+    position: absolute;
+    top: 103%;
+    left: 60%;
+}
+.more4{
+    width: 7rem;
+    height: 2rem;
+    position: absolute;
+    top: 84%;
+    left: 37%;
+}
+/*电动组*/
+.list_2{
+	width: 100%;
+	height: 43.375rem;
+	background-image: url('../img/list_2.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	display: none;
+}
+.list_2>.gx_xfb{
+	width: 100%;
+	height: 21.78125rem;
+	background-image: url('../img/gx_xfb.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 37%;
+}
+/*柴油组电动组*/
+.two_top{
+    width: 100%;
+    height: 4.25rem;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top:27.4%;
+}
+.two_top_1{
+	width: 11.71875rem;
+	height: 4.25rem;
+	background-image: url('../img/lef_1.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.two_top_2{
+	width: 11.71875rem;
+	height: 4.25rem;
+	background-image: url('../img/rig_1.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+/*中间部分*/
+
+
+/*底部按钮*/
+.foot{
+	width: 100%;
+	height: 4.3125rem;
+	background-image: url('../img/foot.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: fixed;
+	bottom: 0%;
+}
+.a_1{
+	width: 9.9375rem;
+	height: 4.3125rem;
+	background-image: url('../img/can1.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top:3%;
+	left: 4%;
+}
+.a_2{
+	width: 9.9375rem;
+	height: 4.3125rem;
+	background-image: url('../img/jfsc.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 3%;
+	right:4%;
+}

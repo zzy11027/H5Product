@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link href="templates/2018zsj/css/zhishu.css" type="text/css" rel="stylesheet"/>
+    <script src="templates/2018zsj/js/jquery-3.2.1.js"></script>
+    <title>{$title}</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                 "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+           wx.onMenuShareAppMessage({
+                title: '{$title}', // 分享标题
+                desc: '发表低碳宣言有包包领哦~', // 分享描述
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '{$title}', // 分享标题
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b325494c3481e60fe85d78719c427ac3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <style type="text/css">
+        #share_bg{
+            position: fixed;
+            background-color: black;
+            -moz-opacity: 0.7;
+            opacity: 0.7;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            top: 0px;
+            display: none;
+            left:0;
+        }
+        
+    </style>
+
+</head>
+<body style="margin: 0 auto;background: #398CF8">
+<div class="top"></div>
+{if $yushu neq ""}
+<div class="repeat">
+	{foreach from=$yushu item=v  key=k} 
+    <div class="item i{$k}" id="{$v.id}" >
+        <input type="hidden" name="sb" value="{$v.nickname}">
+        <div class="num">{$v.id}</div>
+        <div class="icon">
+            <img src="{$v.img}" class="photo"/>
+        </div>
+        <div class="content">{$v.content}</div>
+    </div>
+	{/foreach} 
+</div>
+{/if}
+
+{foreach from=$array item=cate name=name} 
+<div class="repeat">
+    {foreach from=$cate item=child key=k}
+
+    <div class="item i{$k}" id="{$child.id}" name="{$child.id}">
+        
+        <input type="hidden" name="sb" value="{$child.nickname}">
+        <div class="num">{$child.id}</div>
+        <div class="icon">
+            <img src="{$child.img}" class="photo"/>
+        </div>
+        <div class="content">{$child.content}</div>
+    </div>
+    {/foreach} 
+</div>
+{/foreach}
+
+
+
+
+<div class="bottom"> <!--写死的 -->
+<div class="word"></div>
+
+    <div id="fabiao"></div>
+    <a href="#0" id="hqid" target="_self"><div id="chakan" onclick="chakan();" ></div></a>
+    <div id="yaoqing" onclick="yaoqing()"></div>
+
+</div>
+
+<!--查看宣言-->
+<div id="ckly_box">
+    <img class="ckly_pic"/>
+    <div class="close"></div>
+    <div class="ckly_name"></div>
+    <div class="ckly_content"></div>
+    <!-- <div class="ckly_fabiao" onclick="ckly_fabiao()"></div>
+    <div class="ckly_yaoqing" onclick="yaoqing()"></div>
+ --></div>
+
+<!--发表宣言-->
+<div id="ly_box">
+    <div class="close"></div>
+    <textarea class="ly_content"></textarea>
+    <div class="ly_tijiao" onclick="ly_tijiao()"></div>
+</div>
+
+<!--中奖弹窗-->
+<div id="zj_box">
+    <input type="hidden" id="openid" value="{$openid}" >
+    <div class="close"></div>
+    <div id="hb_num">100</div>
+    <input id="name" />
+    <input id="tel" />
+     <select id="hangye">
+        <option value="0">请选择您的运输行业</option>
+        <option value="快递快运">快递快运</option>
+        <option value="冷链生鲜">冷链生鲜</option>
+        <option value="危化品运输">危化品运输</option>
+        <option value="日用工业品运输">日用工业品运输</option>
+        <option value="农产品运输">农产品运输</option>
+        <option value="五金建材运输">五金建材运输</option>
+        <option value="酒水饮料运输">酒水饮料运输</option>
+        <option value="杂货运输">杂货运输</option>
+        <option value="工具服务用车">工具服务用车</option>
+        <option value="其它">其它</option>
+    </select>
+
+    <div id="zj_lingqu" onclick="zj_lingqu()"></div>
+</div>
+
+
+<!--领奖成功-->
+<div id="lj_box">
+    <img class="erweima" src="templates/2018zsj/images/erweima.png" />
+    <div class="close"></div>
+    <div id="lj_num">50</div>
+    <div class="lj_yaoqing" onclick="yaoqing()"></div>
+</div>
+
+
+<!--未中奖弹窗-->
+<div id="noj_box">
+    <div class="close"></div>
+    <div class="noj_yaoqing" onclick="yaoqing()"></div>
+</div>
+
+<div id="box-bg" onclick="boxbgClick()"></div>
+
+<!--分享-->
+<div id="share_bg" onclick="hideAll()">
+    <div id="share" onclick="hideAll()"></div>
+</div>
+
+<audio src="templates/2018zsj/js/1.mp3" id="music1" class="media-audio" autoplay preload loop="loop">
+
+<script>
+function audioAutoPlay(id){  
+    var audio = document.getElementById(id),  
+        play = function(){  
+            audio.play();  
+            document.removeEventListener("touchstart",play, false);  
+        };  
+    audio.play();  
+    document.addEventListener("WeixinJSBridgeReady", function () {  
+        play();  
+    }, false);  
+    document.addEventListener('YixinJSBridgeReady', function() {  
+        play();  
+    }, false);  
+    document.addEventListener("touchstart",play, false);  
+}  
+
+audioAutoPlay('music1');
+    $(".item").click(function () {
+        var content = $(this).find(".content").html();
+        var name = $(this).find("input").val();
+        var pic = $(this).find("img").attr("src");
+        $("#box-bg").show();
+        $("#ckly_box").show();
+        $("#ckly_box").find(".ckly_content").html(content);
+        $("#ckly_box").find(".ckly_name").html(name);
+        $("#ckly_box").find(".ckly_pic").attr("src",pic);
+    });
+
+    $("#fabiao").click(function () {
+       console.log("fabiao");
+        $("#box-bg").show();
+        $("#ly_box").show();
+
+    });
+
+
+    function chakan() {
+        //hideAll();
+        var openid= $("#openid").val();
+
+        $.ajax({
+            type: "POST",
+            url: "/2018zs.php?step=chakan",
+            data: {"openid":openid},
+            dataType: 'json',
+            success: function (data) {
+                if(data==2){
+                    alert("您还没有发表低碳宣言");
+                    return;
+                }else{
+                    $("#hqid").attr("href",'#'+data['id']);
+                    $("#hqid")[0].click();
+                }
+            
+            }
+        });
+        //$("#box-bg").show();
+        //$("#ckly_box").show();
+    }
+
+    function yaoqing() {
+        hideAll();
+        $("#share_bg").show();
+        $("#share").show();
+    }
+
+    function ckly_fabiao() {
+        hideAll();
+        $("#box-bg").show();
+        $("#ly_box").show();
+    }
+
+    function ly_tijiao() {
+        $("#box-bg").show();
+        var openid= $("#openid").val();
+        var content = $(".ly_content").val();
+        if(content==""){
+            alert('请输入您的低碳宣言');
+            return;
+        }
+         $.ajax({
+            type: "POST",
+            url: "/2018zs.php?step=insert",
+            data: {"content":content,"openid":openid},
+            dataType: 'json',
+            success: function (data) {
+            if(data['type']==1){
+                    alert('发表宣言成功');
+            wx.onMenuShareAppMessage({
+                title: '共植超级卡车“低碳树”，我是第'+data['zhi']+'个助力人!', // 分享标题
+                desc: '发表低碳宣言有包包领哦~', // 分享描述
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+             wx.onMenuShareTimeline({
+                title: '共植超级卡车“低碳树”，我是第'+data['zhi']+'个助力人!', // 分享标题
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+                    cj(openid);
+                    return false;
+                  }else if(data['type']==2){
+                    alert('您今天已经发表过宣言了,请明天再来');
+                     hideAll();
+                    return false;
+                  }else if(data['type']==3){
+                     cj(openid);
+                  }
+            }
+        });
+    }
+
+
+    function cj(openid){
+        $.post("2018zs.php?step=prize",{openid:openid},function(msg){
+            if(msg==1){
+                $("#zj_box").show();
+                $("#hb_num").html(2);
+                $("#lj_num").html(2);
+            }else if(msg==2){
+                $("#zj_box").show();
+                $("#hb_num").html(10);
+                $("#lj_num").html(10);
+            }else if(msg==3){
+                $("#zj_box").show();
+                $("#hb_num").html(50);
+                $("#lj_num").html(50);    
+            }else if(msg==4){
+                $('#noj_box').show();//未中奖
+            }else if(msg==6){
+                $('#noj_box').show();//未中过奖的
+            }else if(msg==7){
+                $('#noj_box').show();//已经中奖了，没有在抽的权限了
+            }else if(msg==8){
+                $('#noj_box').show();//今天抽过了，没有中奖，可以明天在抽
+            }
+        });
+    }
+
+    function zj_lingqu() {
+        
+        var name =  $("#name").val();
+        var tel =   $("#tel").val();
+        var openid= $("#openid").val();
+        var hangye = $("#hangye").val();
+        if (!name) {
+            alert('请输入姓名');
+            return;
+        }
+        if (!tel){
+            alert('请输入手机号');
+            return;
+        }
+
+        var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+        if (!reg.test(tel)) {
+            alert("请输入正确的手机号");
+            return;
+        }
+        if (hangye==0) {
+            alert('请选择行业');
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/2018zs.php?step=info",
+            data: {"name":name,"phone":tel,"hangye":hangye,"openid":openid},
+            dataType: 'json',
+            success: function (data) {
+                  if(data==1){
+                    alert('领取成功');
+                    hideAll();
+                    $("#box-bg").show();
+                    $("#lj_box").show();
+                  }
+            }
+        });
+
+
+    }
+
+
+    $(".close").click(function () {
+        hideAll();
+    });
+
+    $(document).ready(function () {
+        setTimeout(function(){
+            window.scrollTo(0,document.body.scrollHeight);
+        }, 500);
+
+    });
+
+    function hideAll() {
+        $("#box-bg").hide();
+        $("#ckly_box").hide();
+        $("#ly_box").hide();
+        $("#zj_box").hide();
+        $("#lj_box").hide();
+        $("#noj_box").hide();
+        $("#share_bg").hide();
+        $("#share").hide();
+    }
+
+
+
+
+
+    function boxbgClick() {
+//        $('#box-bg').hide();
+//        yes_scroll();
+    }
+
+    function yes_scroll() {
+        $(document.body).css({
+            "overflow-x":"auto",
+            "overflow-y":"auto"
+        });
+    }
+
+    function no_scroll() {
+        //禁止滚动条
+        $(document.body).css({
+            "overflow-x":"hidden",
+            "overflow-y":"hidden"
+        });
+    }
+
+    function fenxiang(){
+    	 wx.onMenuShareAppMessage({
+                title: '{$title}', // 分享标题
+                desc: '发表低碳宣言有包包领哦~', // 分享描述
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>绿途英雄</title>
+	<link rel="stylesheet" href="/templates/amkltyx/css/all.css">
+	<link rel="stylesheet" href="/templates/amkltyx/css/list.css">
+	<script src="/templates/amkltyx/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx3a6efa88b590d910', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我是绿途英雄', // 分享标题
+                desc: '欧马可携手北京环交所邀您共同保卫首都蓝天', // 分享描述
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我是绿途英雄', // 分享标题
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+	<!-- 排行榜第一部分 -->
+	<div class="list_1">
+
+		<!-- 绿色英雄榜 -->
+		<div class="ls_yxb">
+
+			<div class="bang1">
+				<!--{foreach from=$bang item=goods name=goods  }-->	 
+				<ul>
+					{if $smarty.foreach.goods.iteration gt 3}
+					<li>
+						{$smarty.foreach.goods.iteration}
+					</li>
+					{else}
+					<li><img src='/templates/amkltyx/img/{$smarty.foreach.goods.iteration}.png' alt="" class="img_ph"></li>
+					{/if}
+					<li>{$goods.name}</li>
+					<li>{$goods.zjf}</li>
+				</ul>
+				<!--{/foreach}-->
+			</div>
+
+
+			<!-- 点击加载更多 -->
+			<div class="more1" onclick="more1($(this),1)">
+
+			</div>
+		</div>
+		
+		<!-- 绿色先锋榜 -->
+		<div class="ls_xfb">
+
+			<div class="bang1">
+
+				<!--{foreach from=$lvbang item=goods name=goods  }-->	 
+				<ul>
+					{if $smarty.foreach.goods.iteration gt 3}
+					<li>
+						{$smarty.foreach.goods.iteration}
+					</li>
+					{else}
+					<li><img src='/templates/amkltyx/img/{$smarty.foreach.goods.iteration}.png' alt="" class="img_ph"></li>
+					{/if}
+					<li>{$goods.name}</li>
+					<li>{$goods.ls}</li>
+				</ul>
+				<!--{/foreach}-->
+
+
+			</div>
+
+			<!-- 点击加载更多 -->
+			<div class="more2" onclick="more2($(this),2)">
+
+			</div>
+		</div>
+
+		<!-- 绿色先锋榜 -->
+		<div class="ck_drb">
+
+			<div class="bang2">
+
+				<div class="bang2_lef">
+
+					<!--{foreach from=$zdbang item=goods name=goods  }-->	 
+					<ul>
+						{if $smarty.foreach.goods.iteration gt 3}
+						<li>
+							{$smarty.foreach.goods.iteration}
+						</li>
+						{else}
+						<li><img src='/templates/amkltyx/img/{$smarty.foreach.goods.iteration}.png' alt="" class="img_ph"></li>
+						{/if}
+						<li>{$goods.name}</li>
+						<li>{$goods.zhidong}</li>
+					</ul>
+					<!--{/foreach}-->
+
+					</div>
+					<!-- 点击加载更多 -->
+					<div class="more3" onclick="more3($(this),3)">
+
+					</div>
+				<div class="bang2_rig">
+
+					<!--{foreach from=$jsbang item=goods name=goods  }-->	 
+					<ul>
+						{if $smarty.foreach.goods.iteration gt 3}
+						<li>
+							{$smarty.foreach.goods.iteration}
+						</li>
+						{else}
+						<li><img src='/templates/amkltyx/img/{$smarty.foreach.goods.iteration}.png' alt="" class="img_ph"></li>
+						{/if}
+						<li>{$goods.name}</li>
+						<li>{$goods.jiasu}</li>
+					</ul>
+					<!--{/foreach}-->
+
+				</div>
+				
+				<!-- 点击加载更多 -->
+				<div class="more3s" onclick="more3s($(this),3)">
+
+				</div>
+			</div>
+
+
+		</div>
+
+		<!-- 高效先锋榜 -->
+		<div class="gx_xfb">
+
+			<div class="bang1">
+
+				<!--{foreach from=$gxbang item=goods name=goods  }-->	 
+				<ul>
+					{if $smarty.foreach.goods.iteration gt 3}
+					<li>
+						{$smarty.foreach.goods.iteration}
+					</li>
+					{else}
+					<li><img src='/templates/amkltyx/img/{$smarty.foreach.goods.iteration}.png' alt="" class="img_ph"></li>
+					{/if}
+					<li>{$goods.name}</li>
+					<li>{$goods.gx}</li>
+				</ul>
+				<!--{/foreach}-->
+
+
+			</div>
+
+			<!-- 点击加载更多 -->
+			<div class="more4" onclick="more4($(this),4)">
+
+			</div>
+		</div>
+	</div>
+	
+	<!-- 排行榜第二部分 -->
+	<div class="list_2">
+
+		<!-- 高效先锋榜 -->
+		<div class="gx_xfb">
+
+			<div class="bang1">
+
+				<!--{foreach from=$dbang item=goods name=goods  }-->	 
+				<ul>
+					{if $smarty.foreach.goods.iteration gt 3}
+					<li>
+						{$smarty.foreach.goods.iteration}
+					</li>
+					{else}
+					<li><img src='/templates/amkltyx/img/{$smarty.foreach.goods.iteration}.png' alt="" class="img_ph"></li>
+					{/if}
+					<li>{$goods.name}</li>
+					<li>{$goods.zjf}</li>
+				</ul>
+				<!--{/foreach}-->
+
+			</div>
+
+
+			<!-- 点击加载更多 -->
+			<div class="more1" onclick="more5($(this),5)">
+
+			</div>
+		</div>
+
+
+
+	</div>
+	<!-- 柴油组电动组 -->
+	<div class="two_top">
+
+		<div class="two_top_1"></div>
+		<div class="two_top_2"></div>
+
+	</div>
+	
+	<div class="foot">
+
+		<a href="{$dizhi}" class="a_1"></a>
+
+		<a href="amkltyx.php?step=jf&openid={$openid}" class="a_2"></a>
+
+	</div>
+
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+
+		// 点击切换柴油组电动组
+		$('.two_top_1').click(function(){
+
+			$(".two_top_1").css("background-image","url(/templates/amkltyx/img/lef_1.png)");
+			$(".two_top_2").css("background-image","url(/templates/amkltyx/img/rig_1.png)");
+
+			$('.list_1').show();
+			$('.list_2').hide();
+		})
+
+		$('.two_top_2').click(function(){
+
+			$(".two_top_2").css("background-image","url(/templates/amkltyx/img/rig_2.png)");
+			$(".two_top_1").css("background-image","url(/templates/amkltyx/img/lef_2.png)");
+
+			$('.list_1').hide();
+			$('.list_2').show();
+		})
+
+		var aa = 1;
+		// 点击加载更多1
+		function more1(as,b){
+
+			if(aa == 1){
+
+			var pai = parseInt(as.prev().find('ul:last').find('li').eq(0).text());
+
+			var ming = b;
+
+			// console.log(pai,ming)
+
+			$.ajax({
+	            type: "POST",
+	           	url: "amkltyx.php?step=loadmore",
+	            dataType: "json",
+	            data:{
+	            	ph:ming,num:pai
+				},
+
+	            success: function (res) {
+					console.log(res);
+	            	$(res).each(function(index,ele){
+
+						var fu = $('<ul></ul>')
+
+						fu.appendTo(as.prev())
+
+						// var xz = $('<li>'+index+'</li><li>'+ele.name'</li><li>'+ele.zjf'</li>')
+						var ind = index+pai+1;
+
+						var xz = $('<li>'+ind+'</li><li>'+ele.name+'</li><li>'+ele.zjf+'</li>')
+
+						xz.appendTo($(fu));
+			
+	            	})
+	            }
+	        });
+
+			}	    	
+			aa=2;
+			jump(3);
+		}
+
+
+		// 点击加载更多2
+		function more2(as,b){
+			if(aa == 1){
+
+			var pai = parseInt(as.prev().find('ul:last').find('li').eq(0).text());
+
+			var ming = b;
+
+			// console.log(pai,ming)
+
+			$.ajax({
+	            type: "POST",
+	           	url: "amkltyx.php?step=loadmore",
+	            dataType: "json",
+	            data:{
+	            	ph:ming,num:pai
+				},
+
+	            success: function (res) {
+					console.log(res);
+	            	$(res).each(function(index,ele){
+
+						var fu = $('<ul></ul>')
+
+						fu.appendTo(as.prev())
+
+						// var xz = $('<li>'+index+'</li><li>'+ele.name'</li><li>'+ele.zjf'</li>')
+						var ind = index+pai+1;
+
+						var xz = $('<li>'+ind+'</li><li>'+ele.name+'</li><li>'+ele.ls+'</li>')
+
+						xz.appendTo($(fu));
+			
+	            	})
+	            }
+	        });
+
+			}	    	
+			aa=2;
+			jump(3);
+		}
+
+		// 点击加载更多3
+		function more3(as,b){
+			if(aa == 1){
+
+			var pai = parseInt(as.prev().find('ul:last').find('li').eq(0).text());
+
+			var ming = b;
+
+			// console.log(pai,ming)
+
+			$.ajax({
+	            type: "POST",
+	           	url: "amkltyx.php?step=loadmore",
+	            dataType: "json",
+	            data:{
+	            	ph:ming,num:pai
+				},
+
+	            success: function (res) {
+					console.log(res);
+	            	$(res).each(function(index,ele){
+
+						var fu = $('<ul></ul>')
+
+						fu.appendTo(as.prev())
+
+						// var xz = $('<li>'+index+'</li><li>'+ele.name'</li><li>'+ele.zjf'</li>')
+						var ind = index+pai+1;
+
+						var xz = $('<li>'+ind+'</li><li>'+ele.name+'</li><li>'+ele.zhidong+'</li>')
+
+						xz.appendTo($(fu));
+			
+	            	})
+	            }
+	        });
+
+			}	    	
+			aa=2;
+			jump(3);
+		}
+
+
+		// 点击加载更多3s
+		function more3s(as,b){
+			if(aa == 1){
+
+			var pai = parseInt(as.prev().find('ul:last').find('li').eq(0).text());
+
+			var ming = b;
+
+			// console.log(pai,ming)
+
+			$.ajax({
+	            type: "POST",
+	           	url: "amkltyx.php?step=loadmore",
+	            dataType: "json",
+	            data:{
+	            	ph:ming,num:pai
+				},
+
+	            success: function (res) {
+					console.log(res);
+	            	$(res).each(function(index,ele){
+
+						var fu = $('<ul></ul>')
+
+						fu.appendTo(as.prev())
+
+						// var xz = $('<li>'+index+'</li><li>'+ele.name'</li><li>'+ele.zjf'</li>')
+						var ind = index+pai+1;
+
+						var xz = $('<li>'+ind+'</li><li>'+ele.name+'</li><li>'+ele.zhidong+'</li>')
+
+						xz.appendTo($(fu));
+			
+	            	})
+	            }
+	        });
+
+			}	    	
+			aa=2;
+			jump(3);
+		}
+
+
+		// 点击加载更多4
+		function more4(as,b){
+			if(aa == 1){
+
+			var pai = parseInt(as.prev().find('ul:last').find('li').eq(0).text());
+
+			var ming = b;
+
+			// console.log(pai,ming)
+
+			$.ajax({
+	            type: "POST",
+	           	url: "amkltyx.php?step=loadmore",
+	            dataType: "json",
+	            data:{
+	            	ph:ming,num:pai
+				},
+
+	            success: function (res) {
+					console.log(res);
+	            	$(res).each(function(index,ele){
+
+						var fu = $('<ul></ul>')
+
+						fu.appendTo(as.prev())
+
+						// var xz = $('<li>'+index+'</li><li>'+ele.name'</li><li>'+ele.zjf'</li>')
+						var ind = index+pai+1;
+
+						var xz = $('<li>'+ind+'</li><li>'+ele.name+'</li><li>'+ele.jiasu+'</li>')
+
+						xz.appendTo($(fu));
+			
+	            	})
+	            }
+	        });
+
+			}	    	
+			aa=2;
+			jump(3);
+		}
+
+		// 点击加载更多5
+		function more5(as,b){
+			if(aa == 1){
+
+			var pai = parseInt(as.prev().find('ul:last').find('li').eq(0).text());
+
+			var ming = b;
+
+			// console.log(pai,ming)
+
+			$.ajax({
+	            type: "POST",
+	           	url: "amkltyx.php?step=loadmore",
+	            dataType: "json",
+	            data:{
+	            	ph:ming,num:pai
+				},
+
+	            success: function (res) {
+					console.log(res);
+	            	$(res).each(function(index,ele){
+
+						var fu = $('<ul></ul>')
+
+						fu.appendTo(as.prev())
+
+						// var xz = $('<li>'+index+'</li><li>'+ele.name'</li><li>'+ele.zjf'</li>')
+						var ind = index+pai+1;
+
+						var xz = $('<li>'+ind+'</li><li>'+ele.name+'</li><li>'+ele.zjf+'</li>')
+
+						xz.appendTo($(fu));
+			
+	            	})
+	            }
+	        });
+
+			}	    	
+			aa=2;
+			jump(3);
+		}
+
+		function jump(count) { 
+            window.setTimeout(function(){ 
+                count--; 
+                if(count > 0) { 
+                    jump(count); 
+                } else { 
+                   aa=1; 
+                } 
+            }, 2000); 
+        } 
+	</script>
+	
+</body>
+</html>

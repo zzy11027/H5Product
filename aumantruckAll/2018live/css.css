@@ -1,0 +1,30 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;}
+body{height: auto;position: relative;}
+
+.one{background-image: url(./index_1.jpg);background-repeat: no-repeat;background-size: 100% 100%;width: 23.4375rem;height: 37.6875rem;position: relative;}
+
+.a_1{text-align: center;width: 9.5rem;height: 2.5rem;line-height: 2.5rem;position: absolute;bottom: 5%;left: 30%;z-index: 10;background: transparent;border: none;border-radius: 20px;}
+
+#imgBox{background-image: url(./index_2.png);background-repeat: no-repeat;background-size: 100% 100%;width: 23.4375rem;height: 37.6875rem;position: relative;display: none;}
+
+.img_wrap{display: none;width:4.9375rem;height:7.25rem;position: absolute;border-style: 0;/*border-radius: 50%;*//*opacity: 0;*/}
+
+.tu{display: block;width: 23.4375rem;height: 37.6875rem;}
+
+.inp_1{width: 11.5rem;height: 1.1rem;position: absolute;top: 37.1%;left: 38%;outline: none;border: none;/*color: #f0f0f0;*/background:#fff;font-size: 16px;line-height: 1.3rem;}
+
+.inp_2{width: 11.5rem;height: 1.1rem;position: absolute;top: 45.8%;left: 38%;outline: none;border: none;/*color: #f0f0f0;*/background:#fff;font-size: 16px;line-height: 1.3rem;}
+
+.inp_3{width: 11.5rem;height: 1.1rem;line-height: 1.3rem;position: absolute;top: 54.8%;left: 38%;border: none;outline: none;color:#000;background: #fff;font-size: 16px;}
+
+/*.button_1{width: 5.1rem;height: 7.5rem;position: absolute;top: 65%;left: 45%;z-index: 10;border: none;background-image: url(./);background-size: 100% 100%;}*/
+
+.button_2{text-align: center;line-height: 2.5rem;width: 9.5rem;height: 2.5rem;line-height: 1.5rem;position: absolute;
+bottom: 5%;left: 30%;z-index: 10;background: transparent;border: none;border-radius: 20px;}
+
+#upload{background: transparent;border:none;outline:medium;opacity: 0;width: 5.1rem;height: 7rem;position: absolute;top: 63.5%;left: 45%;z-index: 100;}
+
+.aa{display: block;width: 6.25rem;height: 1.25rem;}
+
+
+.a_2{position:absolute;display:none;text-align: center;width: 23.4375rem;height: 2.375rem;line-height: 2.375rem;bottom: 0%;z-index: 10;background: #fff;color:#D7000F;font-size:15px;border: none;}

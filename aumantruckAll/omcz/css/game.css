@@ -1,0 +1,128 @@
+* {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{
+	width: 23.4375rem;
+	height:auto;
+/*	background-image: url(../img/supercar.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;*/
+}
+
+.swiper-container{
+	width: 23.4375rem;
+	height: 37.6875rem;
+}
+.sli_1{
+	width: 23.4375rem;
+	height:37.6875rem;
+	background-image: url(../img/game.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.rut{
+    width: 6.125rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 4%;
+}
+.rut>a{
+	display: block;
+	width: 6.125rem;
+	height: 2.875rem;
+}
+video{
+    width: 18.7rem;
+    height: 11.5rem;
+    object-fit: fill;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 47.2%;
+    left: 10%;
+    border-radius: 1.125rem;
+    display: none;
+}
+.sli_2{
+	width: 23.4375rem;
+	height:37.6875rem;
+	background-image: url(../img/bao.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.pos{
+	width: 23.4375rem;
+	height:18rem;
+	position: absolute;
+	top: 56%;
+	z-index: 1;
+}
+input:-moz-placeholder,   
+textarea:-moz-placeholder {   
+    color: #f0f0f0;   
+} 
+input:-ms-input-placeholder,   
+textarea:-ms-input-placeholder {   
+    color: #f0f0f0;   
+}   
+  
+input::-webkit-input-placeholder,   
+textarea::-webkit-input-placeholder {   
+    color: #f0f0f0;   
+}    
+.inp_1{
+	width: 12.5rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 2.7%;
+    left: 15%;
+    outline: none;
+    border: none;
+    background: #04101C;
+    color: #f0f0f0;
+    font-size: 16px;
+    line-height: 1.875rem;
+}
+.inp_2{
+	width: 12.5rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 25.7%;
+    left: 15%;
+    outline: none;
+    border: none;
+    background: #04101C;
+    color: #f0f0f0;
+    font-size: 16px;
+    line-height: 1.875rem;
+}
+.inp_3{
+	width: 12.5rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 48.9%;
+    left: 15%;
+    outline: none;
+    border: none;
+    background: #04101C;
+    color: #f0f0f0;
+    font-size: 16px;
+    line-height: 1.875rem;
+}
+.but{
+	width: 6.125rem;
+    height: 2.875rem;
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 37%;
+}
+.non{
+    width: 23.4375rem;
+    height:37.6875rem;
+    background-image: url(../img/ewm.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+}

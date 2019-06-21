@@ -1,0 +1,59 @@
+body{
+	margin: 0;
+	padding: 0;
+	  -moz-user-select: none; 
+-webkit-user-select: none; 
+-ms-user-select: none; 
+-khtml-user-select: none; 
+user-select: none; 	
+}
+.mian{
+	max-width: 680px;
+	width: 100%;
+	/*background: url(../img/home.jpg);*/
+}
+.anniu{
+	position:absolute;
+	z-index: 5;
+	width: 100%;
+	text-align: center;
+}
+.yx{
+    width: 31%;
+    height: 4.25rem;
+    background-image: url(../img/ks.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 86%;
+    left: 32%;
+}
+.inp1{
+	width: 81%;
+	height: 77px;
+	position: absolute;
+	top: 28.5%;
+	left: 10%;
+	border: none;
+	background: none;
+	outline: none;
+	font-size: 20px;
+}
+.inp2{
+    width: 81%;
+    height: 77px;
+    position: absolute;
+    top: 49%;
+    left: 10%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 20px;
+}
+.zc{
+    width: 40%;
+    height: 92px;
+    position: absolute;
+    top: 82%;
+    left: 30%;
+}

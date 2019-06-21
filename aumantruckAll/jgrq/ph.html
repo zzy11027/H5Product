@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>合伙赚钱，相荐恨晚！</title>
+	<link rel="stylesheet" href="/mobile/templates/jgrq/css/ph.css">
+	<script src="/mobile/templates/jgrq/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5153d9e21ba9617add22808ebf4e594f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+	<input type="hidden" value="{$openid}" id="openid" name="openid">
+	<input type="hidden" value="{$u_name}" id="u_name" name="u_name">
+	<a href="http://www.aumantruck.com/mobile/spike_jgrq.php" class="a_1"></a>
+
+	<a href="http://www.aumantruck.com/mobile/spike_jgrq.php" class="return">
+		
+	</a>
+	{if $cont!=""}<div class="help">{$cont}</div>{else}<div class="help">您已帮{$name}增加{$money}元梦想奖金</div>{/if}
+	
+
+	<div class="help_1">
+		<ul class="ul_1">
+			<li>姓名</li>
+			<li>奖金</li>
+		</ul>
+		{foreach from=$tjrli item=list key=k}
+		<ul>
+			<li>{$list.btj_name}</li>
+			<li>{$list.money}</li>
+		</ul>
+		{/foreach}
+	
+	</div>
+
+	<div class="ph">
+		
+		<ul class="ul_1">
+			<li>姓名</li>
+			<li>奖金</li>
+		</ul>
+
+		{foreach from=$mxhhrph item=mxph key=k}
+		<ul>
+			<li>{$mxph.username}</li>
+			<li>{$mxph.pmoney}</li>
+		</ul>
+		{/foreach}
+		
+	</div>
+
+<!-- 	<div class="ph_1">
+		
+		<ul class="ul_2">
+			<li>姓名</li>
+			<li>推荐人数</li>
+		</ul>
+
+		{foreach from=$tjph item=list key=k}
+		<ul>
+			<li>{$list.name}</li>
+			<li>{$list.num}</li>
+		</ul>
+		{/foreach}
+	</div> -->
+
+	<!-- 规则弹窗 -->
+	<div class="guize">
+		
+		<div class="close_gz">
+
+		</div>
+		<div class="guize_nei">
+			
+			<img src="/mobile/templates/jgrq/img/guize_nei.png" alt="">
+		</div>
+	</div>
+	<div class="gz_1">
+
+
+	</div>
+	<div class="a">
+		<a class="aa_1"></a>
+
+		<a href="spike_jgrq.php?step=myself&openid={$openid}&u_name={$u_name}"></a>
+	</div>
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+		$(function(){
+
+			var openid = $("#openid").val();
+			 wx.config({
+	            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+	            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+	            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+	            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+	            signature: '{$arr.sha1}',// 必填，签名，见附
+	            jsApiList: [
+	                "onMenuShareTimeline",
+	                "scanQRCode",
+	                "onMenuShareAppMessage",
+	                "onMenuShareQQ",
+	                "onMenuShareWeibo",
+	                "onMenuShareQZone"
+	            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+	        });
+	        wx.ready(function () {
+	            wx.onMenuShareAppMessage({
+	                title: '合伙赚钱，相荐恨晚！全民合伙人荐购大赛第二季强势来袭！', // 分享标题
+	                desc: '荐购大赛第二季奖励升级，月赚十万，就等你来！', // 分享描述
+	                link: 'http://www.aumantruck.com/mobile/spike_jgrq.php?step=test&id='+openid, // 分享链接
+	                imgUrl: 'http://www.aumantruck.com/mobile/templates/jgrq/img/logo.jpg', // 分享图标
+	                type: '', // 分享类型,music、video或link，不填默认为link
+	                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+	                success: function () {
+	                    //alert("分享成功");
+	                    // 用户确认分享后执行的回调函数
+	                },
+	                cancel: function () {
+	                    //alert("取消成功");
+	                    // 用户取消分享后执行的回调函数
+	                }
+
+	            });
+	            wx.onMenuShareTimeline({
+	                title: '合伙赚钱，相荐恨晚！全民合伙人荐购大赛第二季强势来袭！', // 分享标题
+	                link: 'http://www.aumantruck.com/mobile/spike_jgrq.php?step=test&id='+openid, // 分享链接
+	                imgUrl: 'http://www.aumantruck.com/mobile/templates/jgrq/img/logo.jpg', // 分享图标
+	                success: function () {
+	                  //  alert("分享成功");
+	                    // 用户确认分享后执行的回调函数
+	                },
+	                cancel: function () {
+	                  //  alert("取消成功");
+	                    // 用户取消分享后执行的回调函数
+	                }
+	            });
+	        })
+		});
+
+		// 点击出现规则
+		$('.aa_1').click(function(){
+			$('.gz_1').fadeIn();
+			$('.guize').fadeIn();
+		})
+
+		// 关闭规则弹窗
+		$('.close_gz').click(function(){
+			$('.gz_1').fadeOut();
+			$('.guize').fadeOut();
+		})
+	</script>
+</body>
+</html>

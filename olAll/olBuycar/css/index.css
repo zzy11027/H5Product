@@ -1,0 +1,228 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+/*-webkit-appearance: none;*/
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:auto;
+	position: relative;
+	background: #A92922;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+/*遮罩层*/
+.containerss{
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 0%;
+}
+/*固定屏幕*/
+.ovfHiden{overflow: hidden;height: 100%;}
+
+.but1{
+    width: 100%;
+    height: 8.5rem;
+    position: absolute;
+    top: 33%;
+}
+.but2{
+    width: 100%;
+    height: 8.5rem;
+    position: absolute;
+    top: 48.8%;
+}
+.but3{
+    width: 100%;
+    height: 8.5rem;
+    position: absolute;
+    top: 64.5%;
+}
+
+
+/*表单样式11111111111111111111111111111111*/
+.form1{
+    width: 21.875rem;
+    height: 21.03125rem;
+    background-image: url(../img/form1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999999999999;
+    display: none;
+}
+input{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+}
+.inp1{
+    position: absolute;
+    top: 37.8%;
+    left: 35%;
+    width: 50%;
+    height: 1.4rem;
+}
+.inp2{
+    position: absolute;
+    top: 48.8%;
+    left: 35%;
+    width: 50%;
+    height: 1.4rem;
+}
+.inp3{
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    position: absolute;
+    top: 59.8%;
+    left: 35%;
+    width: 50%;
+    height: 1.4rem;
+}
+
+.inp4{
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    position: absolute;
+    top: 71.5%;
+    left: 35%;
+    width: 50%;
+    height: 1.4rem;
+}
+
+.tj1{
+    position: absolute;
+    top: 82.5%;
+    left: 34.8%;
+    width: 6.65625rem;
+    height: 3.0rem;
+}
+
+
+
+/*中奖弹窗样式1111111111111111111111111111111*/
+.succs{
+    width: 18.75rem;
+    height: 27.9375rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(../img/succs.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    z-index: 99999999999;
+}
+
+.succs>div{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    top: 37%;
+    text-align: center;
+    color: #fff;
+    z-index: 999999;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 99999999999999999;
+}
+
+
+.ma{
+    width: 21.875rem;
+    height: 31.1875rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(../img/ma.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    z-index: 99999999999;
+}
+.ma>div{
+    display: block;
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    top: 34%;
+    text-align: center;
+    color: #fff;
+    z-index: 999999;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 99999999999999999;
+}
+.ma>a{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    position: absolute;
+    top: 89%;
+    text-align: center;
+    color: #fff;
+    z-index: 999999;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 99999999999999999;
+}
+
+
+/*音频开始*/
+audio{
+    opacity: 0;
+}
+#but{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 99999999999999;
+    background-image: url('../img/mus.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    /*animation: rotating 1.2s linear infinite;*/
+}
+@keyframes rotating{
+    0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(0.5turn);
+}
+100% {
+    transform: rotate(1turn);
+}
+}

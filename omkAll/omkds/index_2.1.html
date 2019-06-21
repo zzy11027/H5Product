@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link href="templates/omkds/css/fh.css" type="text/css" rel="stylesheet"/>
+    <link href="templates/omkds/css/swiper-3.4.2.min.css" rel="stylesheet">
+    <script src="templates/omkds/js/jquery-3.2.1.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <title>为冠军点赞，赢百元话费大礼！</title>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18234d1cb5d10c8b62604ae894859706";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '为冠军点赞，赢百元话费大礼！', // 分享标题
+                desc: '2017中国高效物流卡车公开赛总决赛中卡组人气冠军赛手评选', // 分享描述
+                link: 'http://fh.douyar.cc/spike_omkds.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/vrx/img/cnmbs2.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '为冠军点赞，赢百元话费大礼！', // 分享标题
+                link: 'http://fh.douyar.cc/', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/vrx/img/cnmbs2.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+
+</head>
+<body style="margin: 0 auto">
+<input type="hidden" value="{$openid}" id="openid" name="openid" />
+<!--列表-->
+<div class="bg2">
+    <div class="list">
+     {foreach from=$gjlist item=list key=k name=name }
+        <div class="item">
+            <div class="yiya"></div>
+            <img class="photo" src="templates/omkds/images/{$list.om_userimg}"/>
+            {if $smarty.foreach.name.iteration == 1}
+            <div class="photo_text">人气第一</div>
+            <!--第一个才显示 start-->
+            <div class="n1"></div>
+            <!--第一个才显示 end-->
+            {else}
+            <div class="photo_text">与前一名相差<span style="color:#FC151C">{$list.fhz_cha}</span>烽火值</div>
+            {/if}
+            <div class="r_content">
+                <div class="r_v">姓名:{$list.om_username}</div>
+                <div class="r_v">成绩:{$list.om_zzcj}</div>
+                <div class="r_v">赛区:{$list.om_fzdq}</div>
+                <div class="r_v">公司:{$list.om_gsmc}</div>
+                <div class="r_v">行业:{$list.om_hy}</div>
+                <!-- <input type="hidden" value="{$list.om_id}"  name="xsid" id="xsid{$k}" /> -->
+                <div class="r_v" style="text-align: right;margin-right: 30px;float: right;margin-top: 10px;padding-right: 10px;">{$list.om_fhz}</div>
+                <div class="fh" style="margin-top: 15px"></div>
+                <div class="r_v" style="text-align: right;margin-right: 10px;float: right;margin-top: 10px">烽火值</div>
+                <div class="r_b" id="{$list.om_id}"></div>
+            </div>
+        </div>
+        {/foreach}
+       
+    </div>
+    <div class="bottom">
+        <div id="fhz">{$usfhz}</div>
+        <div id="hb">{if $usfhz < 100 }0{elseif $usfhz < 500}2{elseif  $usfhz < 500 }10{elseif $usfhz > 1000 }50{/if}</div>
+        <div id="yhdhb">{if $usfhz < 100 }未获得{elseif $usfhz < 500}已获得2元{elseif  $usfhz < 500 }已获得10元{elseif $usfhz > 1000 }已获得50元{/if}</div>
+        <div id="yhdcar">{if $uspri == "欧马可车膜"}已获得{else}未获得{/if}</div>
+        {if $usfhz > 100}<div id="hb_cover" style="display: none;"></div>{else}<div id="hb_cover" style="display: block;"></div>{/if}
+        {if $uspri == "欧马可车膜"}<div id="car_cover" style="display: none;"></div>{else}<div id="car_cover" style="display: block;"></div>{/if}
+    </div> 
+</div>
+
+<!--抽中-->
+<div class="bg3_yes">
+    <div id="fhz_add"></div>
+    <div id="hb_add"></div>
+    <input class="name" />
+    <input class="tel" />
+    <select class="industry">
+        <option value="0">请选择</option>
+        <option value="1">快递快运</option>
+        <option value="2">冷链生鲜</option>
+        <option value="3">危化品运输</option>
+        <option value="4">日用工业品运输</option>
+        <option value="5">农产品运输</option>
+        <option value="6">五金建材运输</option>
+        <option value="7">酒水饮料运输</option>
+        <option value="8">杂货运输</option>
+         <option value="9">工具服务用车</option>
+          <option value="10">其它</option>
+    </select>
+    <!--<div class="gz">-->
+        <!--<div id="c" class="c_no"></div>-->
+    <!--</div>-->
+    <div class="bg3_btn" onclick="lqhb()"></div>
+    <div class="hdgz_bg">
+        <div class="hdgz"></div>
+    </div>
+    <div class="jiantou"></div>
+</div>
+
+<!--没抽中-->
+<div class="bg3_no">
+    <input class="name" />
+    <input class="tel" />
+    <select class="industry">
+        <option value="0">请选择</option>
+        <option value="1">快递快运</option>
+        <option value="2">冷链生鲜</option>
+        <option value="3">危化品运输</option>
+        <option value="4">日用工业品运输</option>
+        <option value="5">农产品运输</option>
+        <option value="6">五金建材运输</option>
+        <option value="7">酒水饮料运输</option>
+        <option value="8">杂货运输</option>
+        <option value="9">工具服务用车</option>
+        <option value="10">其它</option>
+    </select>
+
+    <div class="bg3_btn" onclick="wqchb()"></div>
+    <div class="hdgz_bg">
+        <div class="hdgz"></div>
+    </div>
+    <div class="jiantou"></div>
+</div>
+
+<!--抽中弹窗-->
+<div id="cz_box">
+    <div id="cz_fh_num"></div>
+    <div id="cz_hb_num"></div>
+    <div class="confirm" onclick="boxbgClick()"></div>
+</div>
+
+<!--未中弹窗-->
+<div id="wz_box">
+    <div id="wz_fh_num"></div>
+    <div class="confirm" onclick="boxbgClick()"></div>
+</div>
+
+<!--活动结束弹窗-->
+<div id="hdjs_box">
+    <div class="confirm" onclick="boxbgClick()"></div>
+</div>
+
+<!--火种用完弹窗-->
+<div id="hzyw_box">
+    <div class="confirm" onclick="boxbgClick()"></div>
+</div>
+
+
+<div id="box-bg" onclick="boxbgClick()"></div>
+
+<script>
+var CURRENT = 0;
+   $('.r_b').click(function () {
+      CURRENT = this.id;
+      $openid = $('#openid').val();
+      $xsid = CURRENT;
+      $names = "";
+      $tel = "";
+      $hy = "--";
+      $.ajax({
+                type: 'POST',
+                dataType:'json',
+                url : 'spike_omkds.php?step=prize',
+                 data: {
+                        "openid":$openid,
+                        "xsid":$xsid,
+                        "names":$names,
+                        "tel":$tel,
+                        "hy":$hy
+
+                        },
+                success: function(data){
+               
+                     if (data['rid'] == '1') {
+                        $('.bg2').hide();
+                        $('.bg3_yes').show();
+                        $('#fhz_add').html(data['fhz']);
+                        $('#hb_add').html("车膜");
+                    }
+                     if (data['rid'] == '11') {
+                        $('.bg2').hide();
+                        $('.bg3_yes').show();
+                        $('#fhz_add').html(data['fhz']);
+                        $('#hb_add').html("2");
+                    }
+                    if (data['rid'] == '2') {
+                        $('.bg2').hide();
+                        $('.bg3_yes').show();
+                        $('#fhz_add').html(data['fhz']);
+                        $('#hb_add').html("2");
+                    }
+
+                    if (data['rid'] == '3') {
+                        $('.bg2').hide();
+                        $('.bg3_no').show();
+
+                    }
+                    if (data['rid'] == '7') {
+                        $('#hzyw_box').show();
+                    }
+                    if (data['rid'] == '8') {
+                        $('#wz_box').show();
+                        $('#wz_fh_num').html(data['fhz']);
+                    }
+
+                 }
+            });
+   });
+
+   $('.gz').click(function () {
+       if ($('#c').attr('class') == 'c_no'){
+           $('#c').removeClass('c_no');
+           $('#c').addClass('c_yes');
+       }else {
+           $('#c').removeClass('c_yes');
+           $('#c').addClass('c_no');
+       }
+   });
+
+    function boxbgClick() {
+        $('#box-bg').hide();
+        $('#cz_box').hide();
+        $('#hdjs_box').hide();
+        $('#hzyw_box').hide();
+        $('#wz_box').hide();
+        window.location.href='spike_omkds.php';
+
+
+    }
+
+    function lqhb() {
+        $name = $('.bg3_yes').find('.name').val();
+        $tel = $('.bg3_yes').find('.tel').val();
+        $hy = $('.bg3_yes').find('.industry').val();
+        $openid = $('#openid').val();
+
+        if ($name=='') {
+            alert("请输入姓名");
+            return false;
+        }
+        if ($tel=='') {
+            alert("请输入电话");
+            return false;
+        }else if (!(/^[1][3,4,5,7,8][0-9]{9}$/.test($tel))) {
+            alert("请输入正确的电话号码");
+            return false;
+        }
+        if ($hy=='0') {
+            alert("请选择行业");
+            return false;
+        }
+        if ($hy=='1') {
+            $hy="快递快运"
+        }
+        if ($hy=='2') {
+            $hy="冷链生鲜"
+        }
+        if ($hy=='3') {
+            $hy="危化品运输"
+        }
+        if ($hy=='4') {
+            $hy="日用工业品运输"
+        }
+        if ($hy=='5') {
+            $hy="农产品运输"
+        }
+        if ($hy=='6') {
+            $hy="五金建材运输"
+        }
+        if ($hy=='7') {
+            $hy="酒水饮料运输"
+        }
+        if ($hy=='8') {
+            $hy="其杂货运输"
+        }
+        if ($hy=='9') {
+            $hy="工具服务用车"
+        }
+        if ($hy=='10') {
+            $hy="其他"
+        }
+
+        $.ajax({
+                type: 'POST',
+                dataType:'text',
+                url : 'spike_omkds.php?step=info',
+                 data: {
+                        "openid":$openid,
+                        "name":$name,
+                        "tel":$tel,
+                        "hy":$hy
+                        },
+                success: function(data){
+                    if (data == 1) {
+                        $('.bg2').show();
+                        $('.bg3_yes').hide();
+                        window.location.href='spike_omkds.php';
+                    }else{
+                        $('.bg2').show();
+                        $('.bg3_yes').hide();
+                        window.location.href='spike_omkds.php';
+                    }
+
+                 }
+            });
+
+        //alert("领取红包");
+
+    }
+
+    function wqchb() {
+
+        $names = $('.bg3_no').find('.name').val();
+        $tel = $('.bg3_no').find('.tel').val();
+        $hy = $('.bg3_no').find('.industry').val();
+        $xsid = CURRENT;
+ 
+        $openid = $('#openid').val();
+
+        if ($names=='') {
+            alert("请输入姓名");
+            return false;
+        }
+        if ($tel=='') {
+            alert("请输入电话");
+            return false;
+        }else if (!(/^[1][3,4,5,7,8][0-9]{9}$/.test($tel))) {
+            alert("请输入正确的电话号码");
+            return false;
+        }
+        if ($hy=='0') {
+            alert("请选择行业");
+            return false;
+        }
+        if ($hy=='1') {
+            $hy="快递快运"
+        }
+        if ($hy=='2') {
+            $hy="冷链生鲜"
+        }
+        if ($hy=='3') {
+            $hy="危化品运输"
+        }
+        if ($hy=='4') {
+            $hy="日用工业品运输"
+        }
+        if ($hy=='5') {
+            $hy="农产品运输"
+        }
+        if ($hy=='6') {
+            $hy="五金建材运输"
+        }
+        if ($hy=='7') {
+            $hy="酒水饮料运输"
+        }
+        if ($hy=='8') {
+            $hy="其杂货运输"
+        }
+        if ($hy=='9') {
+            $hy="工具服务用车"
+        }
+        if ($hy=='10') {
+            $hy="其他"
+        }
+
+        $.ajax({
+                type: 'POST',
+                dataType:'json',
+                url : 'spike_omkds.php?step=prize',
+                 data: {
+                        "openid":$openid,
+                        "names":$names,
+                        "tel":$tel,
+                        "hy":$hy,
+                        "xsid":$xsid,
+                        },
+                success: function(data){
+                   
+                    if (data['rid'] == '1') {
+                       
+                        $('#cz_box').show();
+                        $('#box-bg').show();
+                        $('#cz_fh_num').html(data['fhz']);
+                        $('#cz_hb_num').html("车膜");
+                    }
+                     if (data['rid'] == '2') {
+                        $('#cz_box').show();
+                        $('#box-bg').show();
+                        $('#cz_fh_num').html(data['fhz']);
+                        $('#cz_hb_num').html("2");
+                    }
+                    if (data['rid'] == '3') {
+                        $('.bg2').hide();
+                        $('.bg3_no').show();
+                        // $('#wz_box').show();
+                        // $('#wz_fh_num').html(data['fhz']);
+                         //window.location.href='spike_omkds.php';
+                    }
+                    if (data['rid'] == '7') {
+                        $('#hzyw_box').show();
+                    }
+                    if (data['rid'] == '8') {
+                        $('#wz_box').show();
+                        $('#wz_fh_num').html(data['fhz']);
+                         window.location.href='spike_omkds.php';
+                       //alert(data['fhz']);
+                    }
+
+                 }
+            });
+
+        // alert("我要抽红包");
+    }
+
+
+
+
+</script>
+</body>
+</html>

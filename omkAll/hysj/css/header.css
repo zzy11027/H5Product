@@ -1,0 +1,162 @@
+/*
+* @Author: dhl
+* @Date:   2017-08-17 09:11:36
+* @Last Modified by:   dhl
+* @Last Modified time: 2017-08-17 11:23:04
+*/
+
+/* 初始化文件 */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  font-family: "微软雅黑";
+  color: #999;
+}
+body,html {
+  background-color: #f6f6f6;
+}
+a {
+ text-decoration: none;
+ color: #999;
+}
+
+a:hover {
+  color: #c81623;
+}
+
+img,input {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  outline-style: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+   zoom: 1;
+}
+.w {
+ width: 1300px;
+ margin: 0 auto;
+}
+
+.nav{
+ width: 100%;
+ border-bottom: 1px solid #f0f0f0;
+ height: 68px;
+ background-color: #fff;
+}
+.w1200{
+ width: 1200px;
+ margin: 0 auto;
+}
+.logo{
+ margin-top: 14px;
+ float: left;
+}
+ul li{
+ list-style: none;
+}
+img{
+ vertical-align: bottom;
+}
+a{
+ color: #000;
+ text-decoration: #000;
+}
+.navUl{
+ display: inline-block;
+}
+.navUl li{
+ text-align: center;
+ margin-left: 40px;
+ line-height: 68px;
+}
+.navUl li, .ulRight li{
+ float: left;
+ height: 68px;
+ line-height: 68px;
+}
+.aOn{
+ color: black;
+ border-bottom: #3ca5f6 3px solid;
+ padding-bottom: 3px;
+}
+.ulRight{
+ float: right;
+ position: relative;
+}
+.ulRight li{
+ margin-left: 6px;
+}
+.navUl li, .ulRight li{
+ float: left;
+ height: 68px;
+ line-height: 68px;
+}
+
+.nav{
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  height: 68px;
+  background-color: #fff;
+}
+.w1200{
+  width: 1200px;
+  margin: 0 auto;
+}
+.logo{
+  margin-top: 14px;
+  float: left;
+}
+ul li{
+  list-style: none;
+}
+img{
+  vertical-align: bottom;
+}
+a{
+  color: #000;
+  text-decoration: #000;
+}
+.navUl{
+  display: inline-block;
+}
+.navUl li{
+  text-align: center;
+  margin-left: 40px;
+  line-height: 68px;
+}
+.navUl li, .ulRight li{
+  float: left;
+  height: 68px;
+  line-height: 68px;
+}
+.aOn{
+  color: black;
+  border-bottom: #3ca5f6 3px solid;
+  padding-bottom: 3px;
+}
+.ulRight{
+  float: right;
+  position: relative;
+}
+.ulRight li{
+  margin-left: 6px;
+}
+.navUl li, .ulRight li{
+  float: left;
+  height: 68px;
+  line-height: 68px;
+}

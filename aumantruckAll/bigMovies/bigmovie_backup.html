@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title>卡车人的辛苦付出，你是不是真的懂？</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/indexs.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/alloy_paper.js"></script>
+    <script src="./js/alloy_finger.js"></script>
+    <script src="./js/swiper.min1.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '卡车人的辛苦付出，你是不是真的懂？', // 分享标题
+                desc: '欧曼特别赞助中国首部公路物流大电影《超级队长》，向所有卡车人致敬！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/bigmovie.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com./img/fenx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '卡车人的辛苦付出，你是不是真的懂？', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/bigmovie.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com./img/fenx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+    <!-- 预加载 -->
+    <div class="loading">
+        <div class="xl-progress-wp">
+            <div class="xl-progress">
+                <i class="xl-progress__inner" style="width:0%;"></i>
+            </div>
+            <div class="xl-progress__txt">0%</div>
+        </div>
+        <!-- <img src="./img/comein.png" alt="" class="img3ss"> -->
+    </div>
+    <div class="first"></div>
+    <div class="video_con">
+        <div id="but" onclick="mute()"></div>
+        <img src="./img/skip.png" alt="" class="skip" onclick="skips()">
+        <video src="./img/1.mp4" width="750" height="1334" id="video_1" _type="video"
+            webkit-playsinline="true" webkit-playsinline playsinline x5-playsinline x5-video-player-fullscreen="true"  class="video_1" preload="preload" playsinline="true" x5-video-player-type="h5">
+        该浏览器不支持video属性
+        </video>
+    </div>
+    <audio src="./img/1.mp3" id="music1" class="audio"    preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+    <audio src="./img/2何卓恩女司机小南.mp3" id="music2" class="audio"    preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+    <audio src="./img/3小慧.mp3" id="music3" class="audio" preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+    <audio src="./img/4张鼎饰演小五.mp3" id="music4" class="audio"    preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+    <audio src="./img/come.mp3" id="music5" class="come" loop="loop"    preload="auto" >
+        你的浏览器不支持video元素
+    </audio>
+
+    <div class="Answerbj">
+        <span>张赫宣  来电</span>
+        <div class="Answer" onclick="Play(0)"></div>
+    </div>
+
+    <div class="people" style="display: none;">
+        <span>张赫宣</span>
+        <img src="./img/people1.jpg" alt="">
+        <div class="hang" onclick="hang(0)"></div>
+        <p>触摸以继续</p>
+    </div>
+
+<!--     <div class="guide" onclick="guides()">
+        <div class="words"></div>
+    </div> -->
+    <div class="uploads">
+        <a href="http://www.aumantruck.com/mobile/cjdz5.php"><img src="./img/ljxq.png" alt="" class="img3s"></a>
+        <div class="sel1 sel" onclick="draw()">
+        </div>
+        <div class="sel2 sel">
+            <select name="" id="" class="whoaudio" onchange="chang()">
+                <option value="">听听其他人的祝福</option>
+                <option value="0">何卓恩-饰演《超级队长》季小楠</option>
+                <option value="1">林小慧-饰演《超级队长》刘玉</option>
+                <option value="2">张鼎-饰演《超级队长》小武</option>
+            </select>
+        </div>
+        <div class="sel3 sel" onclick="again()">
+        </div>
+    </div>
+    
+    <div class="man_wo">
+        <div class="man"  onclick="mans()"></div>
+        <div class="woman" onclick="womans()"></div>
+        <img src="./img/return.png" alt="" class="return">
+    </div>
+
+    <!-- 选择模板页 -->
+    <div class="choice">
+        <img src="./img/choice.png" alt="" class="god">
+        <div class="swiper-container swiper-container1" id="swip" style="display: none">
+            <div class="swiper-wrapper">
+                <!-- 11111111111111111111111111111111111111111 fadeOutRight-->
+                <section class="swiper-slide " id="swiper-slide1" data-slide="0">
+                </section>
+                <!-- 555555555555555555555555555555555555555555555555555555555555555555555555555 -->
+                <section class="swiper-slide " id="swiper-slide5" data-slide="1">
+                </section>
+                <!-- 66666666666666666666666666666666666666666666666666666666666666666 -->
+                <section class="swiper-slide " id="swiper-slide6" data-slide="2">
+                </section>
+            </div>
+        </div>
+        <div class="swiper-container swiper-container2" id="swip" style="display: none">
+            <div class="swiper-wrapper">
+                <!-- 44444444444444444444444444444444444444444444444444444444444444444 -->
+                <section class="swiper-slide " id="swiper-slide4" data-slide="3">
+                </section>
+                <!-- 22222222222222222222222222222222222222222222222 -->
+                <section class="swiper-slide " id="swiper-slide2" data-slide="4">
+                </section>
+                <!-- 333333333333333333333333333333333333333333333333333333333333 -->
+                <section class="swiper-slide " id="swiper-slide3" data-slide="5">
+                </section>
+                <!-- 66666666666666666666666666666666666666666666666666666666666666666 -->
+                <section class="swiper-slide " id="swiper-slide6" data-slide="6">
+                </section>
+            </div>
+        </div>
+        <div class="sure"></div>
+        <img src="./img/return.png" alt="" class="return">
+    </div>
+    <!-- 模板Ending.............. -->
+
+    <div class="Synthesis">
+        <img src="./img/tishi.png" alt="" class="tishi">
+        <img src="" alt="" class="fales" style="display: none;">
+        <canvas id="c2" width="750" height="1334"></canvas>
+        <div class="sel4 sels" onclick="Synthesis()">
+            
+        </div>
+        <input id="upload"  class="upload1" name="file" type="file"  accept="image/*" />
+        <div class="sel5 sels">
+           
+        </div>
+        <a href="https://www.iqiyi.com/v_19rqqnve40.html#vfrm=2-4-0-1"></a>
+        <img src="./img/return.png" alt=""  class="return">
+    </div>
+    
+    <!-- 生成页面 -->
+    <div class="xz">
+        <img src="" alt="" id="screenShotImg">
+        <img src="./img/return.png" alt="" class="return">
+    </div>
+
+    <script src="./js/canvassback.js"></script>
+    <script src="./js/lrz.all.bundle.js"></script>
+    <script src="./js/preload.js"></script>
+    <script>
+//预加载
+var no = false;//判断是否加载完成
+var img = [
+    './img/first.jpg',
+    './img/1.mp3',
+    './img/1.mp4',
+    './img/1.png',
+    './img/2何卓恩女司机小南.mp3',
+    './img/3小慧.mp3',
+    './img/4张鼎饰演小五.mp3',
+    './img/Answer.png',
+    './img/Answers.png',
+    './img/dui.png',
+    './img/guide.png',
+    './img/hang.png',
+    './img/ing.png',
+    './img/ings.png',
+    './img/ljxq.png',
+    './img/people1.jpg',
+    './img/people2.jpg',
+    './img/people3.jpg',
+    './img/people4.jpg',
+    './img/words.png',
+    './img/单人照.png',
+];
+var index = 0,
+    len = img.length,
+    progressInner = $(".xl-progress__inner"),
+    progressTxt = $('.xl-progress__txt');
+//图片预加载
+$.preload(img, {
+    minTimer: 3000,
+    //每加载完一张执行的方法
+    each: function (count) {
+        var percent = Math.round((count+1) / len * 100) + '%';
+        progressInner.css("width",percent);
+        progressTxt.html(percent);
+    },
+    // 加载完所有的图片执行的方法
+    end: function () {
+        console.log('预加载完成');
+        no = true;
+        $('.loading').hide();
+        $('.first').fadeIn();
+    }
+});
+    </script>
+</body>
+</html>

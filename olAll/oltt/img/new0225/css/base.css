@@ -1,0 +1,88 @@
+/*张捷  2015-9-14  17:00 */
+body{
+margin:0;
+padding:0;
+font-family:"微软雅黑","宋体",arial,verdana,sans-serif;
+line-height:1.2;
+background:#f5f5f5;
+
+}
+*{
+	margin:0;
+	padding:0;
+}
+dl,dd,dt,ol,ul,li{
+	list-style-type:none;
+}
+img{
+	border:0;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clr{
+	clear:both;
+	font-size:0;
+}
+.dpb{
+	display:block;
+}
+.dpi{
+	display:inline;
+}
+.dpn{
+	display:none;
+}
+.tal{
+	text-align:left;
+}
+.tar{
+	text-align:right;
+}
+.tac{
+	text-align:center;
+}
+input[type="button"], input[type="submit"], input[type="reset"] {
+	-webkit-appearance: none;/*去掉iPhone、iPad的默认按钮、输入框样式*/
+}
+
+
+textarea{ 
+	-webkit-appearance: none;
+}   
+
+
+// get a larger input, and align it with submit button
+.form-inline .form-group > div.col-xs-8 {
+    padding-left: 0;
+    padding-right: 0;
+}
+// vertical align label
+.form-inline label {
+    line-height: 34px;
+}
+// force inline control to fit container width
+// http://getbootstrap.com/css/#forms-inline
+.form-inline .form-control {
+    width: 100%;
+}
+// Reset margin-bottom for our multiline form
+@media (min-width: 768px) {
+  .form-inline .form-group {
+    margin-bottom: 15px;
+  }
+}

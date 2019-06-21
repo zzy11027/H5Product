@@ -1,0 +1,384 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title>看直播1元秒杀，1000元购车神劵</title>
+    <link rel="stylesheet" href="/mobile/templates/shoping/css/yearEnd.css">
+    <script src="/mobile/templates/shoping/js/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<input type="hidden" id='openid' value="{$openid}">
+<input type="hidden" id="token" value="{$token}">
+<input type="hidden" id="num" value="{$number}">
+<input type="hidden" id="msnum" value="{$msnum}">
+<input type="hidden" value="{$zdanmu}" id="danmu"/>
+<input type="hidden" value="{$bf}" id="bf"/>
+<!-- 遮罩层 -->
+<div class="zz"></div>
+<div class="bj">
+    <!-- 直播 -->
+	<video src="/mobile/templates/shoping/img/1.mp4"  poster="/mobile/templates/shoping/img/poster.png" id="video_1" _type="video"
+	       	webkit-playsinline="true" webkit-playsinline playsinline x5-playsinline x5-video-player-fullscreen="true" preload="auto"  class="video video_1"  playsinline="true" x5-video-player-type="h5">
+	    该浏览器不支持video属性
+	</video>
+	<input type="text" class="dm" id="reply-write">
+	<div class="send" onClick="sendreply()">发送</div>
+    <div class="d-show"></div>
+    {if $type eq "1"}
+    <div class="order">
+        <span class="numm" style="color: #7B7652">秒杀即将开始</span>
+    </div>
+    {elseif $type eq "2"}
+    <div class="order" onclick="qiang($(this))">
+        <span class="numm">开始秒杀</span>
+    </div>
+    <script>
+    // window.onload = function()  {
+	    function qiang(s){
+	        var num =  $("#num").val();
+	        if(num==0){
+	            alert('您没有秒杀资格！');
+	            return false;
+	        }
+	        var openid = $("#openid").val();
+	        var token = $("#token").val();
+	        $.ajax({
+	            type: 'POST',
+	            dataType:'json',
+	            url : '/mobile/shoping.php?step=timeTwo',
+	            data: {openid:openid},
+	            beforeSend: function(request) { 
+	                request.setRequestHeader("Authorization", token); 
+	            }, 
+	            success: function(data){
+	            	if(data == 1){
+	            		alert('未知错误！');
+	            	}
+	            	if(data == 2){
+	            		alert('未知错误！');
+	            	}
+	            	if(data == 3){//loading
+        				$('.zz').show();
+	            		$('.loadings').show();
+	            		oTimer = setInterval("queryHandle()",1000);
+	            	}else if(data == 4){//失败
+	            		alert('秒杀失败！');
+                        $('.order').empty();
+                        $('<span class="numm">秒杀结束</span>').appendTo($('.order'));
+	            	}else if(data == 5){
+                        alert('手速太慢啦。明天再来哦~');
+                        $('.order').empty();
+                        $('<span class="numm">秒杀结束</span>').appendTo($('.order'));
+                    }else if(data == 6){
+                        alert('您已经没有秒杀资格了！');
+                    }else if(data == 7){
+                        alert('您已经没有秒杀资格了！');
+                    }
+	            }
+	        });
+	    }
+    // }
+    </script>
+    
+    {else}
+        <div class="order">
+        <span class="numm" style="color: #7B7652">秒杀结束</span>
+        </div>
+
+    {/if} 
+
+    <!-- 第二个按钮 -->
+    <div class="message" onclick="jqqd()">
+        <span class="numms">第二场秒杀倒计时:</span>
+        <span class="time"></span>
+    </div>
+
+    <!-- 第三个按钮 -->
+    <div class="make" onclick="jqqd()">
+        <span class="numms">第三场秒杀倒计时:</span>
+        <span class="times"></span>
+    </div>
+
+    <!-- 状态   描述 -->
+    <div class="state">您还可以继续获取秒杀机会</div>
+    <!-- <div class="state">您的秒杀机会用完了哦</div> -->
+	<!-- <div class="state">您错过了这次秒杀，等待下一次吧</div> -->
+
+    <!-- 每个按钮的    选中后的样式 -->
+	<div class="arrow1"></div>
+	<div class="arrow2" style="display: none;"></div>
+	<div class="arrow3" style="display: none;"></div>
+
+    <!-- 弹窗 -->
+    <div class="tan1">
+        <p>5</p>
+    </div>
+
+    <div class="tan2">
+
+    </div>
+
+	<div class="loadings">
+
+	</div>
+
+    <div class="but" onclick="but()">
+    </div>
+	<a href="http://www.aumantruck.com/shoping/index.php" class="yy"></a>
+    <img src="/mobile/templates/shoping/img/er.png" class="er"></img>
+</div>
+
+<script src="/mobile/templates/shoping/js/yeareEnd.js"></script>
+<script type="text/javascript">
+var w = 375;
+var f = 16;
+var c = document.documentElement.clientWidth;
+var nf = c * f / w;
+document.documentElement.style.fontSize = nf + 'px';
+(function(){
+    init_screen();
+	var bf = $("#bf").val();
+	console.log(bf);
+	if(bf > 0){
+		var video = document.querySelectorAll('video');
+		console.log(video,video[0]);
+		video[0].currentTime = bf;
+		video[0].play();
+		// $('.video_1').trigger('play');
+	}
+})();
+document.addEventListener('touchstart',touch,false);
+function touch (event){
+    var event = event || window.event;
+	var video = document.querySelectorAll('video');
+    switch(event.type){
+        case "touchstart":
+ 			video[0].play();
+            break;
+    }
+ 
+}
+// 弹幕
+function sendreply() {
+    var content = $("#reply-write").val();
+    if ($.trim(content) == "") {
+        alert("亲，请输入你的想说的话！");
+        return false;
+    }
+    var text=$("#reply-write").val();
+    var colortxt = getReandomColor();
+    var div='<div style="'+'font-size:14px;width:100%;color:'+colortxt+';"><p>'+text+'</p></div>';
+    $("#reply-write").val("");
+    $(".d-show").append(div);
+    init_screen();
+    $.ajax({
+        url: '/mobile/shoping.php?step=danmu',
+        type: 'post',
+        data: 'content=' + text,
+        //  async : true, //默认为true 异步
+        error: function () {
+
+        },
+        success: function (data) {
+
+        }
+    });
+}
+function init_screen() {
+    var _top = 0;
+    $(".d-show").find("div").show().each(function () {
+        var _left = 650;
+        var _height = 340;
+
+        _top = _top + 36;
+        if(_top > 145){_top = 0};
+        if (_top >= _height - 120) {
+            _top = 40;
+        }
+        $(this).css({left: _left, top: _top});
+        var time = 10000;
+        if ($(this).index() % 2 == 0) {
+            time = 12000;
+        }
+        if ($(this).index() % 3 == 0) {
+            time = 14000;
+        }
+        if ($(this).index() % 4 == 0) {
+            time = 16000;
+        }
+        if ($(this).index() % 5 == 0) {
+            time = 18000;
+        }
+        if ($(this).index() % 7 == 0) {
+            time = 20000;
+        }
+        if ($(this).index() % 8 == 0) {
+            time = 23000;
+        }
+        $(this).animate({left: "-" + _left + "px"}, time, function () {
+        });
+    });
+}
+function test() {
+    var i = 0;
+    var aa = $("#danmu").val();
+    var ss = aa.split(",");
+	var colortxt = getReandomColor();
+	console.log(colortxt);
+    (function () {
+        if (i > ss.length-1 ) {
+          //  test();
+            return;
+        }
+        else
+        {
+            var div='<div style="'+'font-size:14px;width:100%;color:'+colortxt+'"><p>'+ss[i]+'</p></div>';
+            $(".d-show").append(div);
+            init_screen();
+            i++;
+            window.setTimeout(arguments.callee, 3000);
+        }
+
+
+    })();
+}
+test();
+//随机获取颜色值
+function getReandomColor() {
+    return '#' + (function (h) {
+                return new Array(7 - h.length).join("0") + h
+            })((Math.random() * 0x1000000 << 0).toString(16))
+}
+    var endTime = 1553140800;//结束时间
+    var startTime = {$dqtime};//开始时间
+    var cha = endTime - startTime;
+    var endTimes = 1553227200;//结束时间
+    var startTimes = {$dqtime};//开始时间
+    var chas = endTimes - startTimes;
+
+    function count(){
+        var day=parseInt(cha/3600/24);
+        //获取还剩多少小时
+        var hour=parseInt(cha/3600%24);
+        //获取还剩多少分钟
+        var minute=parseInt(cha/60%60);
+        var str = day + ':' + hour + ':' + minute;
+        $('.time').text(str);
+        cha--;
+        if(cha < 0){
+            clearInterval(timer);
+            $('.message').empty();
+            $('<span class="numm">开始秒杀</span>').appendTo($('.message'));
+                $('<span class="numm">秒杀结束</span>').appendTo($('.order'));
+            //$('.order').removeAttr('onclick','qiang($(this))');
+            $('.order').attr('onclick','over()');
+            $('.message').attr('onclick','qiang($(this))');
+        }
+    }
+    timer = setInterval(count, 1000); 
+    count();//秒杀二倒计时调用
+
+    function counts(){
+    var days=parseInt(chas/3600/24);
+    //获取还剩多少小时
+    var hours=parseInt(chas/3600%24);
+    //获取还剩多少分钟
+    var minutes=parseInt(chas/60%60);
+    var strs = days + ':' + hours + ':' + minutes;
+    $('.times').text(strs);
+    chas--;
+    if(chas < 0){
+        clearInterval(timers);
+        $('.make').empty();
+        $('<span class="numm">开始秒杀</span>').appendTo($('.make'));
+        $('.message').empty();
+        $('<span class="numm">秒杀结束</span>').appendTo($('.message'));
+        $('.order').empty();
+        $('<span class="numm">秒杀结束</span>').appendTo($('.order'));
+        $('.order').removeAttr('onclick','qiang($(this))');
+        $('.message').removeAttr('onclick','qiang($(this))');
+        $('.order').attr('onclick','over()');
+        $('.message').attr('onclick','over()');
+        $('.make').removeAttr('onclick','jqqd()');
+        $('.make').attr('onclick','qiang($(this))');
+    }
+    }
+    timers = setInterval(counts, 1000); 
+    counts();//秒杀三倒计时调用
+    
+    function jqqd(){
+        alert('敬请期待！');
+    }
+    function over(){
+        alert('已结束！');
+    }
+    function but(s){
+        var num = $("#msnum").val();
+        if(num==''){
+            alert('请秒杀');
+            return false;
+        }
+        if(num==5){
+            $('.tan2').show();
+        }else{
+            $('.tan1').show();
+            $('.zz').show();
+            $('.tan1>p').text(num);
+        }
+    }
+    
+    $('.tan1').click(function(){
+        $('.tan1').hide();
+        $('.zz').hide();
+    })
+    $('.tan2').click(function(){
+        $('.tan2').hide();
+        $('.zz').hide();
+    })
+ 
+	function queryHandle(){
+    	var openid = $('#openid').val();
+		$.ajax({
+		    type: 'POST',
+		    dataType:'json',
+		    url : '/mobile/shoping.php?step=selectOpenid',
+		    data: {openid:openid},
+		    success: function(data){
+                // if(data){//不足五张秒杀卷
+                //     $(s).empty();//清空按钮文字
+                //     $('<span class="numm">活动已结束</span>').appendTo($(s));//活动已结束放入按钮
+                //     $('.tan1').show();
+                //     $('.tan1>p').text(data.num);
+                // }else{//五张秒杀券
+                //     $('.tan2').show();
+                // }
+                if(data == null){
+                	console.log(data);
+                }else if(data != null && data != false){	
+                	console.log(data);
+                	$('.loadings').hide();
+                	$('.tan1>p').text(data.username);
+                	$('.tan1').show();
+                    $('.order').empty();
+                    $('<span class="numm">秒杀结束</span>').appendTo($('.order'));
+                    $('.order').removeAttr('onclick','over()');
+                    clearInterval(oTimer);
+                }
+		    }
+		});
+	}
+
+</script>
+</body>
+</html>

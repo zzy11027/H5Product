@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <title>降本增效，我是冠军</title>
+	<meta name="keywords" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+	<meta name="description" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+    <link href="new0225/css/css.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/mobile/templates/contest/css/sp.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="/mobile/templates/contest/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/mobile/templates/2018live/register_message.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '降本增效，我是冠军', // 分享标题
+                desc: '2018年中国高效物流卡车公开赛危化品行业郑州启动', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_contest.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '降本增效，我是冠军', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_contest.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/logo.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</head>
+<body>
+	
+		<div class="banner">
+	        <a href="http://www.aumantruck.com/article.php?id=50489" target="_blank">
+	                    
+	        </a>
+    	</div>
+
+
+        <div class="containerss"></div>
+		<div class="container">
+
+			<ul class="ul_1">
+				<li class=""><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=ln"></a></li>
+				<!-- <li class=""><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=wxp"></a></li> -->
+				<li><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=ln"></a></li>
+				<li><a href="javascript:alert('敬请期待')"></a></li>
+				<li><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=ln"></a></li>
+				<li><a href="javascript:alert('敬请期待')"></a></li>
+				<!-- <li><a href="/mobile/spike_jc.php"></a></li> -->
+			</ul>
+
+
+			<!-- 产看成绩 -->
+            <div class="look">
+
+
+                <input type="text" class="inp_1" placeholder="请输入车牌号">
+
+
+                <input type="text" class="inp_2" placeholder="请输入参赛企业">
+            
+                    
+                <div class="find" onclick="find()"></div>
+
+            </div>
+
+
+		  <!-- 保存图片的div -->
+            <div class="imim"></div>
+
+
+            <!-- 分类 -->
+            <ul class="ul_2">
+                <li><a href="http://www.aumantruck.com/spike_contest.php?act=spa"></a></li>
+                <li><a href="http://www.aumantruck.com/spike_contest.php?act=spa"></a></li>
+                <li><a href="http://www.aumantruck.com/spike_contest.php?act=spa"></a></li>
+                <li><a href="http://www.aumantruck.com/spike_contest.php?act=spa"></a></li>
+                <li onclick="on_1()"></li>
+                <li onclick="on_2()"></li>
+                <li onclick="on_3()"></li>
+            </ul>
+
+
+        <!-- 第一块 -->
+            <!-- 危化品运输 -->
+            <div class="p1">
+                <!-- 排行榜1 -->
+                <div class="ph_1">
+                    {foreach from=$vyhpy item=p key=k}
+                    <ul>
+                        <li>{$p.cph}</li>
+                        <li>{$p.qycm}</li>
+                        <li>{$p.rxs}</li>
+                        <li>{$p.rcs}</li>
+                        <li>{$p.bgl}</li>
+                        <li>{$p.cx}</li>
+                    </ul>
+                    {/foreach}
+                </div>
+            </div>
+
+
+
+            <!-- 冷链运输 -->
+            <div class="p2" style="display:none">
+                <!-- 排行榜1 -->
+                <div class="ph_1">
+                    
+                    {foreach from=$llhpy item=p key=k}
+                    <ul>
+                        <li>{$p.cph}</li>
+                        <li>{$p.qycm}</li>
+                        <li>{$p.rxs}</li>
+                        <li>{$p.rcs}</li>
+                        <li>{$p.bgl}</li>
+                        <li>{$p.cx}</li>
+                    </ul>
+                    {/foreach}
+                </div>
+            </div>
+
+            
+            <!-- 快递快运 -->
+            <div class="p3" style="display:none">
+                <!-- 排行榜1 -->
+                <div class="ph_1">
+                    
+                    {foreach from=$kdhpy item=p key=k}
+                    <ul>
+                        <li>{$p.cph}</li>
+                        <li>{$p.qycm}</li>
+                        <li>{$p.rxs}</li>
+                        <li>{$p.rcs}</li>
+                        <li>{$p.bgl}</li>
+                        <li>{$p.cx}</li>
+                    </ul>
+                    {/foreach}
+
+                </div>
+            </div>
+
+        
+
+        <!-- 第二块 -->
+            <!-- 危化品运输 -->
+            <div class="p1">
+                <!-- 排行榜2 -->
+                <div class="ph_2">
+                    
+                    {foreach from=$vyhpc item=p key=k}
+                    <ul>
+                        <li>{$p.cph}</li>
+                        <li>{$p.qycm}</li>
+                        <li>{$p.rxs}</li>
+                        <li>{$p.rcs}</li>
+                        <li>{$p.zlc}</li>
+                        <li>{$p.cx}</li>
+                    </ul>
+                    {/foreach}
+
+                </div>
+            </div>
+
+            <!-- 冷链运输 -->
+            <div class="p2" style="display:none">
+                <!-- 排行榜2 -->
+                <div class="ph_2">
+                    
+                    {foreach from=$llhpc item=p key=k}
+                    <ul>
+                        <li>{$p.cph}</li>
+                        <li>{$p.qycm}</li>
+                        <li>{$p.rxs}</li>
+                        <li>{$p.rcs}</li>
+                        <li>{$p.bgl}</li>
+                        <li>{$p.cx}</li>
+                    </ul>
+                    {/foreach}
+
+                </div>
+            </div>
+
+
+            <!-- 快递快运 -->
+            <div class="p3" style="display:none">
+                <!-- 排行榜2 -->
+                <div class="ph_2">
+                    
+                    {foreach from=$kdhpc item=p key=k}
+                    <ul>
+                        <li>{$p.cph}</li>
+                        <li>{$p.qycm}</li>
+                        <li>{$p.rxs}</li>
+                        <li>{$p.rcs}</li>
+                        <li>{$p.bgl}</li>
+                        <li>{$p.cx}</li>
+                    </ul>
+                    {/foreach}
+
+                </div>
+            </div>
+
+            
+
+        <!-- 第三块 -->
+            <!-- 危化品运输 -->
+            <div class="p1">
+                <!-- 排行榜1 -->
+                <div class="ph_3">
+                    {foreach from=$list item=p key=k}
+                    <ul>
+                        <li></li>
+                        <li>{$p.jc}</li>
+                        <li>{$p.like}</li>
+                    </ul>
+                    {/foreach}
+                </div>
+            </div>
+
+
+            <!-- 冷链运输 -->
+            <div class="p2" style="display:none">
+                <!-- 排行榜1 -->
+                <div class="ph_3">
+                    
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- 快递快运 -->
+            <div class="p3" style="display:none">
+                <!-- 排行榜1 -->
+                <div class="ph_3">
+                    
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- 弹窗 -->
+            <div class="tan">
+                <div class="close">
+                </div>
+                
+                
+                <div class="bao"></div>
+
+                <div class="le" onclick="le()"></div>
+
+
+                <div class="ri" onclick="ri()"></div>
+
+                <div class="bao"></div>
+                <div class="contai">
+                    <div class="con_1"></div>
+                    <div class="con_2"></div>
+                    <div class="con_3"></div>
+                    <div class="con_4"></div>
+                    <div class="con_5"></div>
+                    <div class="con_6"></div>
+                    <div class="con_7"></div>
+                    <div class="con_8"></div>
+
+                </div>
+
+                <div class="shu"></div>
+                <div class="shu_1"></div>
+
+                <!-- 点击分享 -->
+                <div class="fxing"></div>
+
+                <!-- <img src="/themes/default/contest/img/a.jpg" alt="" class="img_3" > -->
+
+            </div>
+
+
+
+
+
+
+		</div>
+        <!-- 脚部顶起来 -->
+        <div class="ding"></div>
+
+
+
+
+        <div class="navWrapper boxShadow" style="position: fixed;
+        bottom: 0px;
+        height: 73px;
+        padding-top: 15px;
+        width: 100%;
+        background-color: #fff;
+        left: 50%;
+        margin-left: -375px;
+        z-index: 200;">
+        <div class="innerWrap">
+        <div class="footNav">
+        <a href="index.php" target="_parent" name="home"><img src="new0225/images/home.png">首页</a>
+        <a href="mall.php?act=index" name="truck" target="_parent"><img src="new0225/images/truck.png">商城</a>
+        <a href="http://bbs.aumantruck.com" target="_parent" name="community"><img src="new0225/images/community.png">社区                        </a>
+        <a href="service.php" target="_parent" name="server"><img src="new0225/images/server.png">服务</a>
+
+        <a href="user.php?act=membercenter" id="login1"> <img src="new0225/images/people.png">我</a>
+
+        </div>
+        </div>
+        </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+<script>
+
+    
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+        console.log(nf,c)
+
+
+        // 危化品运输
+        function on_1(){
+            $('.p1').show();
+            $('.p2').hide();
+            $('.p3').hide();
+        }
+
+        // 冷链运输
+        function on_2(){
+            $('.p2').show();
+            $('.p1').hide();
+            $('.p3').hide();
+        }
+        // 快递快运
+        function on_3(){
+            $('.p2').hide();
+            $('.p1').hide();
+            $('.p3').show();
+        }
+
+
+    function find(){
+
+        var inp_1 = $('.inp_1').val();
+
+        var inp_2 = $('.inp_2').val();
+        if (inp_1=='' && inp_2=='') {
+            alert("至少输入一项");
+            return false;
+        }
+
+        $.ajax({
+
+           type: 'POST',
+           dataType:'json',
+            url: "spike_contest.php?act=spacx",
+
+            data:{cph:inp_1,qy:inp_2},
+
+            success: function (res) {
+                console.log(res.length)
+                if(res.cph==inp_1){
+                    $('.tan').show();
+                    $('.containerss').show();
+                    alert('车牌查询')
+                    $('.contai').find('.con_1').text(res.cph);
+                    $('.contai').find('.con_2').text(res.qycm);
+                    $('.contai').find('.con_3').text(res.bgl);
+                    $('.contai').find('.con_4').text(res.zlc);
+                    $('.contai').find('.con_5').text(res.cx);
+                    $('.contai').find('.con_6').text(res.ml);
+                    $('.contai').find('.con_7').text();
+                    $('.contai').find('.con_8').text(res.zz);
+                    $('.shu').text(res.fs+'%');
+                    $('.shu_1').text(res.cq+'%');
+                    //点击分享出现二维码
+                    var id_1 = res.id;
+                    $('.img_3').attr('src','http://www.aumantruck.com/spike_contest.php?act=sparwm&id='+id_1);
+                    return false;
+                }
+
+                if (res) {
+
+                    $('.tan').show();
+                    $('.containerss').show();
+
+                    console.log(res)
+                    console.log(res.length)
+
+                    $(res).each(function(i){
+
+                        $('.contai_0').show();
+
+                        console.log(i)
+
+                        var parentdiv=$('<div></div>');  
+
+                        parentdiv.attr('class','contai_'+i);
+
+                        parentdiv.attr('id','contai'); 
+
+                        parentdiv.appendTo($('.bao'));
+
+                        console.log($('.contai_'+i))
+
+                        for(var q=1;q<9;q++){
+
+                            var childdiv=$('<div></div>');
+
+                            childdiv.attr('class','con_'+q);
+
+                            childdiv.appendTo($('.contai_'+i));
+
+                        }
+
+                        $('.contai_'+i).find('.con_1').text(res[i].cph);
+                        $('.contai_'+i).find('.con_2').text(res[i].qycm);
+                        $('.contai_'+i).find('.con_3').text(res[i].bgl);
+                        $('.contai_'+i).find('.con_4').text(res[i].zlc);
+                        $('.contai_'+i).find('.con_5').text(res[i].cx);
+                        $('.contai_'+i).find('.con_6').text(res[i].ml);
+                        $('.contai_'+i).find('.con_7').text();
+                        $('.contai_'+i).find('.con_8').text(res[i].zz);
+                        $('.shu').text(res[i].fs+'%');
+                        $('.shu_1').text(res[i].cq+'%');
+
+                        //点击分享出现二维码
+                        var tu = $("<img src=''/>");
+                        
+                        tu.attr('class','img_'+i);
+                        tu.attr('id','img_3');
+                        tu.appendTo(".imim");
+                        var id_2 = res[i].id;
+                        $('.img_'+i).attr('src','http://www.aumantruck.com/spike_contest.php?act=sparwm&id='+id_2);
+                    })
+
+
+                }else{
+                    alert("未查到车手信息");
+                    return false;
+                }
+                
+            }
+        });
+       
+    }
+ 
+
+    function le(){
+
+        if(m>0){
+            m--;
+            console.log(m) 
+        }
+        console.log(m)
+        $('.bao').children().length;
+
+        var len = $('.bao').children().length;
+
+
+        $('.contai_'+m).show();     
+        $('.contai_'+m).siblings().hide(); 
+        $('.img_'+m).css('z-index','99999999999999999999999')
+        $('.img_'+m).siblings().css('z-index','0')
+        $('.img_'+m).css('display','none');
+
+    }
+
+    var m = 0;
+    function ri(){
+
+        var len = $('.bao').children().length;
+        console.log(len);
+        if(m<len){
+            m++;
+            console.log(m) 
+        }
+
+        if(m==len){
+            m=len;
+        }
+
+        $('.contai_'+m).show();     
+        $('.contai_'+m).siblings().hide();
+        $('.img_'+m).css('z-index','99999999999999999999999')
+        $('.img_'+m).siblings().css('z-index','0');
+        $('.img_'+m).css('display','none');
+    
+    }
+
+
+    // 点击关闭
+    $('.close').click(function(){
+        $('.tan').hide();
+        $('.containerss').hide();
+        $('.bao').children().remove();
+        $('.img_'+(m-1)).css('display','none');
+    })
+
+    // 点击分享
+    $('.fxing').click(function(){
+
+        // $('.img_'+(m-1)).css('display','block');
+        
+
+    })
+
+    $('.img_'+m).click(function(){
+        alert('123')
+        $('.img_'+m).css('display','none');
+
+    })
+</script>
+</body>
+</html>

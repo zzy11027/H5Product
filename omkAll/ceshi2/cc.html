@@ -1,0 +1,13 @@
+<script type="text/javascript">
+var u = navigator.userAgent;
+var device =""; //当前设备信息
+if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+    device = "Android";
+} else if (u.indexOf('iPhone') > -1) {//苹果手机
+    device = "iPhone";
+} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+    device = "WindowsPhone";
+}
+
+alert(device);
+</script>

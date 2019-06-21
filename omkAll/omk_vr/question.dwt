@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,user-scalable=no">
+     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <link rel="stylesheet" href="vr/css/css.css">
+    <title>答题</title>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?56f77c39f964e18a9c52332bfd1caf59";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '超卡VR内饰抢鲜看，答题赢红包！ ', // 分享标题
+                desc: '全新平台欧马可超级卡车，全景内饰抢鲜看，万元红包等你抢！', // 分享描述
+                link: 'http://huodong.chaojikache.com/omk_vr.php', // 分享链接
+                imgUrl: 'http://huodong.chaojikache.com/vr/img/fenxiang.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '超卡VR内饰抢鲜看，答题赢红包！', // 分享标题
+                link: 'http://huodong.chaojikache.com/omk_vr.php', // 分享链接
+                imgUrl: 'http://huodong.chaojikache.com/vr/img/fenxiang.jpg', // 分享图标
+                success: function () {
+                    alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+{if $xz_chexing eq 's1'}
+    <div class="all" id="all">
+        <div style="text-align:center">
+            <img src="vr/img/banner.jpg">
+        </div>
+        <div class="question">
+            <div class="out_p">
+                <p class="question1">1、以下对欧马可S1超级轻车描述不准确的是？</p>
+                <img id="img1_s1">
+            </div>
+
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s1('img1_s1',0,'A')"/> A.深度链合康明斯、采埃孚、威伯科、大陆电子等全球汽车产业领导者共同打造
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s1('img1_s1',0,'B')"/> B.数字化工厂智能制造、严苛的产品验证流程
+            </label>
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s1('img1_s1',0,'C')"/> C.全新平台微卡产品
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s1('img1_s1',0,'D')"/> D.汇聚欧洲领先科技
+            </label>
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">2、欧马可S1超级轻卡驾乘空间全面升级，以下对欧马可S1超级轻卡驾驶室的描述不正确的是？</p>
+                <img id="img2_s1">
+            </div>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s1('img2_s1',1,'A')"/> A.驾驶室宽度加大80mm</label>
+            &nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s1('img2_s1',1,'B')"/> B.无中控锁和电动门窗
+            </label>
+            <br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s1('img2_s1',1,'C')"/>
+                C.驾驶室A柱倾角仅18°，视野更开阔</label>
+            &nbsp;&nbsp;&nbsp;<br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s1('img2_s1',1,'D')"/> D.驾驶室温控设备升级
+            </label>
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">3、以下针对欧马可S1超级轻卡主被动安全配置描述不正确的是？</p>
+                <img id="img3_s1">
+            </div>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s1('img3_s1',2,'A')"/> A.无LED日间行车灯
+            </label>&nbsp;&nbsp;&nbsp; <br>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s1('img3_s1',2,'B')"/> B.高强度安全车身</label><br> <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s1('img3_s1',2,'C')"/> C.采用世界先进的WABCO制动系统
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s1('img3_s1',2,'D')"/> D.标配ABS
+            </label>
+
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">4、以下对欧马可S1智能互联特性描述正确的是？</p>
+                <img id="img4_s1">
+            </div>
+            <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s1('img4_s1',3,'A')"/> A.采用欧洲先进CAN总线架构，90%负载率的高拓展空间
+            </label>     <br>  <br>
+
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s1('img4_s1',3,'B')"/> B.采用欧洲先进CAN总线架构，无拓展空间</label><br> <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s1('img4_s1',3,'C')"/> C.配装iFoton车联网系统，无拓展空间
+            </label>&nbsp;&nbsp;&nbsp;
+
+
+        </div>
+        <input id="tijiao" type="button"  onclick="sub_s1()">
+        <a href="http://720yun.com/t/0e3jOzewkk3"><input id="tijiao2" type="button" > </a>
+        <img src="vr/img/bg1.png" id="img_bg">
+        <img src="vr/img/button1.png" id="img_button" onclick="yincang()">
+        <div id="zhongjiang">
+            <img src="vr/img/bg3.png" class="img_bg">
+            <img src="vr/img/button2.png" id="img_button2">
+            <input type="button" onclick="notnull()" id="sc1">
+            <p id="zjxx">中奖信息</p>
+            <div class="zz">
+                <p class="question1">姓名:</p>
+                <input type="text" class="sr" id="name" placeholder="请输入真实姓名">
+            </div>
+            <div class="zz2">
+                <p class="question1">手机:</p>
+                <input type="text" class="sr" id="phone" placeholder="请输入抽奖手机号">
+            </div>
+            <div class="zz3">
+                <p class="question1"> 您喜欢的车型:</p>
+                <select id="chexing" style="font-size: 20px">
+                    <option value="">请选择</option>
+                    <option value="欧马可S5">欧马可S5</option>
+                    <option value="欧马可S3">欧马可S3</option>
+                    <option value="欧马可S1">欧马可S1</option>
+                    <option value="欧马可5系">欧马可5系</option>
+                    <option value="欧马可3系">欧马可3系</option>
+                    <option value="欧马可1系">欧马可1系</option>
+                </select>
+
+            </div>
+
+        </div>
+        <!-- <img src="vr/img/cnm.jpg" style="position: absolute;width: 100%;height:1008px;display: none;z-index: 99999;top:0px" id="cnm"> -->
+
+    </div>
+{/if}
+{if $xz_chexing eq 's3'}
+    <div class="all" id="all">
+        <div style="text-align:center">
+            <img src="vr/img/banner.jpg">
+        </div>
+        <div class="question">
+            <div class="out_p">
+                <p class="question1">1、以下对欧马可S3超级轻卡的高效性描述不正确的是？</p>
+                <img id="img1_s3">
+            </div>
+
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s3('img1_s3',0,'A')"/> A.货厢容积提升10%
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s3('img1_s3',0,'B')"/> B.高风阻车身设计
+            </label>
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s3('img1_s3',0,'C')"/> C.全系装配康明斯领先的节油动力
+            </label>
+            <br>
+            <br>
+
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s3('img1_s3',0,'D')"/> D.整车模块化、轻量化设计，大幅降低自重，提升承载能力
+            </label>
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">2、对欧马可S3超级轻卡配置描述不正确的是？</p>
+                <img id="img2_s3">
+            </div>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s3('img2_s3',1,'A')"/> A.只配装暖风加热，没有制冷空调</label>
+            &nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s3('img2_s3',1,'B')"/> B.定速巡航系统
+            </label>
+            <br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s3('img2_s3',1,'C')"/>
+                C.EBP 电子节油开关</label>
+            &nbsp;&nbsp;&nbsp;<br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s3('img2_s3',1,'D')"/> D.LCD显示屏仪表盘
+            </label>
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">3、以下哪项对欧马可S3超级轻卡可靠性描述不正确？</p>
+                <img id="img3_s3">
+            </div>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s3('img3_s3',2,'A')"/> A.严格按照戴姆勒-奔驰公司的研发验证流程
+            </label>&nbsp;&nbsp;&nbsp; <br>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s3('img3_s3',2,'B')"/> B.欧洲技术打造全新平台</label><br> <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s3('img3_s3',2,'C')"/> C.数字化工厂智能制造
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s3('img3_s3',2,'D')"/> D.产品验证流程随意没有标准可依
+            </label>
+
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">4、以下对欧马可S3超级轻卡产品运营价值描述不正确的是？</p>
+                <img id="img4_s3">
+            </div>
+            <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s3('img4_s3',3,'A')"/> A.整车2 万公里保养周期，更高出勤率，更低保养成本
+            </label>&nbsp;&nbsp;&nbsp; <br>
+            <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s3('img4_s3',3,'B')"/> B.多重节油保障，综合油耗更低 </label><br> <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s3('img4_s3',3,'C')"/> C.可靠耐久，二手车残值更高
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s3('img4_s3',3,'D')"/> D.可靠耐久，二手车残值不高
+            </label>
+
+            <br>
+            <br>
+
+        </div>
+        <input id="tijiao" type="button"  onclick="sub_s3()">
+        <a href="http://720yun.com/t/0e3jOzewkk3"><input id="tijiao2" type="button" > </a>
+        <img src="vr/img/bg1.png" id="img_bg">
+        <img src="vr/img/button1.png" id="img_button" onclick="yincang()">
+        <div id="zhongjiang">
+            <img src="vr/img/bg3.png" class="img_bg">
+            <img src="vr/img/button2.png" id="img_button2">
+            <input type="button" onclick="notnull()" id="sc1">
+            <p id="zjxx">中奖信息</p>
+            <div class="zz">
+                <p class="question1">姓名:</p>
+                <input type="text" class="sr" id="name" placeholder="请输入真实姓名">
+            </div>
+            <div class="zz2">
+                <p class="question1">手机:</p>
+                <input type="text" class="sr" id="phone" placeholder="请输入抽奖手机号">
+            </div>
+            <div class="zz3">
+                <p class="question1"> 您喜欢的车型:</p>
+                <select id="chexing" style="font-size: 20px">
+                    <option value="">请选择</option>
+                    <option value="欧马可S5">欧马可S5</option>
+                    <option value="欧马可S3">欧马可S3</option>
+                    <option value="欧马可S1">欧马可S1</option>
+                    <option value="欧马可5系">欧马可5系</option>
+                    <option value="欧马可3系">欧马可3系</option>
+                    <option value="欧马可1系">欧马可1系</option>
+                </select>
+
+            </div>
+
+        </div>
+        <!-- <img src="vr/img/cnm.jpg" style="position: absolute;width: 100%;height:1008px;display: none;z-index: 99999;top:0px" id="cnm"> -->
+
+    </div>
+{/if}
+{if $xz_chexing eq 's5'}
+    <div class="all" id="all">
+        <div style="text-align:center">
+            <img src="vr/img/banner.jpg">
+        </div>
+        <div class="question">
+            <div class="out_p">
+                <p class="question1">1、以下对欧马可S5超级中卡高效性描述不正确的是？</p>
+                <img id="img1_s5">
+            </div>
+
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s5('img1_s5',0,'A')"/> A.2200mm超宽车身，大货厢，装载效率更高
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s5('img1_s5',0,'B')"/> B.最高车速仅达60km/h
+            </label>
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s5('img1_s5',0,'C')"/> C.配装康明斯量身打造专属动力
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="first_question" type="radio" onclick="response_s5('img1_s5',0,'D')"/> D.轻量化设计，承载力更强
+            </label>
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">2、以下对欧马可S5超级中卡安全可靠性描述不恰当的是？</p>
+                <img id="img2_s5">
+            </div>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s5('img2_s5',1,'A')"/> A.戴姆勒-奔驰的研发、验证流程</label>
+            &nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s5('img2_s5',1,'B')"/> B.世界先进的制造执行系统和制造设备
+            </label>
+            <br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s5('img2_s5',1,'C')"/>
+                C.全面的被动安全保障，车身强度、安全带、底盘防护完全满足国标强检法规要求</label>
+            &nbsp;&nbsp;&nbsp;<br>
+            <br>
+            <label class="question1"><input name="second_question" type="radio" onclick="response_s5('img2_s5',1,'D')"/> D.未进行环境测试
+            </label>
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">3、欧马可S5超级中卡全新欧系车身设计，超大驾乘空间，人性化设计，驾乘舒适。请问欧马可S5的卧铺宽度达到多少？</p>
+                <img id="img3_s5">
+            </div>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s5('img3_s5',2,'A')"/> A.没有卧铺
+            </label>&nbsp;&nbsp;&nbsp; <br>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s5('img3_s5',2,'B')"/> B.500mm</label><br> <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s5('img3_s5',2,'C')"/> C.520mm
+            </label>&nbsp;&nbsp;&nbsp;
+            <br>
+            <br>
+            <label class="question1"><input name="third_question_1" type="radio" onclick="response_s5('img3_s5',2,'D')"/> D.620mm
+            </label>
+
+            <br>
+            <br>
+            <div class="out_p">
+                <p class="question1">4、以下对欧马可S5超级中卡服务内容描述正确的是？</p>
+                <img id="img4_s5">
+            </div>
+            <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s5('img4_s5',3,'A')"/> A.整车3年或10万公里超长保修
+            </label>&nbsp;&nbsp;&nbsp;   <br>
+            <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s5('img4_s5',3,'B')"/> B.整车3年或20万公里超长保修</label><br> <br>
+            <label class="question1"><input name="third_question_2" type="radio" onclick="response_s5('img4_s5',3,'C')"/> C.整车2年或5万公里超长保修
+            </label>&nbsp;&nbsp;&nbsp;
+
+
+            <br>
+            <br>
+
+        </div>
+        <input id="tijiao" type="button"  onclick="sub_s5()">
+        <a href="http://720yun.com/t/0e3jOzewkk3"><input id="tijiao2" type="button" > </a>
+        <img src="vr/img/bg1.png" id="img_bg">
+        <img src="vr/img/button1.png" id="img_button" onclick="yincang()">
+        <div id="zhongjiang">
+            <img src="vr/img/bg3.png" class="img_bg">
+            <img src="vr/img/button2.png" id="img_button2">
+            <input type="button" onclick="notnull()" id="sc1">
+            <p id="zjxx">中奖信息</p>
+            <div class="zz">
+                <p class="question1">姓名:</p>
+                <input type="text" class="sr" id="name" placeholder="请输入真实姓名">
+            </div>
+            <div class="zz2">
+                <p class="question1">手机:</p>
+                <input type="text" class="sr" id="phone" placeholder="请输入抽奖手机号">
+            </div>
+            <div class="zz3">
+                <p class="question1"> 您喜欢的车型:</p>
+                <select id="chexing" style="font-size: 20px">
+                    <option value="">请选择</option>
+                    <option value="欧马可S5">欧马可S5</option>
+                    <option value="欧马可S3">欧马可S3</option>
+                    <option value="欧马可S1">欧马可S1</option>
+                    <option value="欧马可5系">欧马可5系</option>
+                    <option value="欧马可3系">欧马可3系</option>
+                    <option value="欧马可1系">欧马可1系</option>
+                </select>
+
+            </div>
+
+        </div>
+        <!-- <img src="vr/img/cnm.jpg" style="position: absolute;width: 100%;height:1008px;display: none;z-index: 99999;top:0px" id="cnm"> -->
+
+    </div>
+{/if}
+<img src="vr/img/cnm.jpg" style="position: absolute;width: 100%;height:100%;display: none;z-index: 99999;top:0px" id="cnm">
+<script src="vr/jq.js"></script>
+<script>
+//s1
+    var answer_s1 = ["C", "B", "A","A"];
+    var all_s1 = [false, false, false, false];
+    function response_s1(id, index, choose) {
+        if (choose == answer_s1[index]) {
+            document.getElementById(id).src = "vr/img/datiyouliduihao.png";
+            all_s1[index] = true;
+        } else {
+            document.getElementById(id).src = "vr/img/datiyoulicuo.png";
+            all_s1[index] = false;
+        }
+    }
+    function sub_s1() {
+
+        for (i = 0; i < all_s1.length; i++) {
+            if (!all_s1[i]) {
+                zhanshi("vr/img/bg1.png","vr/img/button1.png");
+                return false;
+            }
+            
+        }
+
+        $.ajax({
+                    url: 'omk_vr.php?step=panduan',
+                    type: 'post',
+                   // data: 'msgtxt=' + msgtxt,
+                    //  async : true, //默认为true 异步
+                    error: function () {
+
+                    },
+                    success: function (rec) {
+                        console.log(rec);
+                        var temp = 0;
+                        if (rec == 13) {
+                            alert('抽奖活动将于4月16日 09:00开始');
+                        }
+                        if (rec == 12) {
+                            alert('抽奖以结束');
+                        }
+                        else if (rec == 20) {
+                            zhanshi("vr/img/bg2.png","vr/img/button1.png");
+                        }
+                        else if (rec == 6) {
+                            alert('您已中过一次奖了！');
+                        }
+                        else if (rec == 5) {
+                            zhanshi("vr/img/bg2.png","vr/img/button1.png");
+                        }
+                        else if (rec == 4) {
+                            zhongjiang("获得100元话费");
+                        }
+
+                        else if (rec == 3) {
+                            zhongjiang("获得10元话费");
+                        }
+                        else if (rec == 2) {
+                            zhongjiang("获得2元话费");
+                        }
+                        else if (rec == 1) {
+                            zhongjiang("获得1元话费");
+                        }
+                    }
+
+
+                });
+
+        
+    }
+
+
+
+    //s3D
+    var answer_s3 = ["B", "A","D","D"];
+    var all_s3 = [false, false, false, false];
+    function response_s3(id, index, choose) {
+        if (choose == answer_s3[index]) {
+            document.getElementById(id).src = "vr/img/datiyouliduihao.png";
+            all_s3[index] = true;
+        } else {
+            document.getElementById(id).src = "vr/img/datiyoulicuo.png";
+            all_s3[index] = false;
+        }
+    }
+    function sub_s3() {
+        for (i = 0; i < all_s3.length; i++) {
+            if (!all_s3[i]) {
+                zhanshi("vr/img/bg1.png","vr/img/button1.png");
+                return false;
+            }
+            
+        }
+
+        $.ajax({
+                    url: 'omk_vr.php?step=panduan',
+                    type: 'post',
+                    // data: 'msgtxt=' + msgtxt,
+                    //  async : true, //默认为true 异步
+                    error: function () {
+
+                    },
+                    success: function (rec) {
+                        var temp = 0;
+                        if (rec == 13) {
+                            alert('抽奖活动将于4月16日 09:00开始');
+                        }
+                        if (rec == 12) {
+                            alert('抽奖以结束');
+                        }
+                        else if (rec == 20) {
+                            zhanshi("vr/img/bg2.png","vr/img/button1.png");
+                        }
+                        else if (rec == 6) {
+                            alert('您已中过一次奖了！');
+                        }
+                        else if (rec == 5) {
+                            zhanshi("vr/img/bg2.png","vr/img/button1.png");
+                        }
+                        else if (rec == 4) {
+                            zhongjiang("获得100元话费");
+                        }
+
+                        else if (rec == 3) {
+                            zhongjiang("获得10元话费");
+                        }
+                        else if (rec == 2) {
+                            zhongjiang("获得2元话费");
+                        }
+                        else if (rec == 1) {
+                            zhongjiang("获得1元话费");
+                        }
+                    }
+
+
+                });
+        
+    }
+
+
+
+   //s5
+
+var answer_s5 = ["B", "D","D","B"];
+var all_s5 = [false, false, false, false];
+function response_s5(id, index, choose) {
+    if (choose == answer_s5[index]) {
+        document.getElementById(id).src = "vr/img/datiyouliduihao.png";
+        all_s5[index] = true;
+    } else {
+        document.getElementById(id).src = "vr/img/datiyoulicuo.png";
+        all_s5[index] = false;
+    }
+}
+function sub_s5() {
+    for (i = 0; i < all_s5.length; i++) {
+        if (!all_s5[i]) {
+            zhanshi("vr/img/bg1.png","vr/img/button1.png");
+            return false;
+        }
+    }
+    $.ajax({
+                url: 'omk_vr.php?step=panduan',
+                type: 'post',
+                // data: 'msgtxt=' + msgtxt,
+                //  async : true, //默认为true 异步
+                error: function () {
+
+                },
+                success: function (rec) {
+                    var temp = 0;
+                    if (rec == 13) {
+                        alert('抽奖活动将于4月16日 09:00开始');
+                    }
+                    if (rec == 12) {
+                        alert('抽奖以结束');
+                    }
+                    else if (rec == 20) {
+                        zhanshi("vr/img/bg2.png","vr/img/button1.png");
+                    }
+                    else if (rec == 6) {
+                        alert('您已中过一次奖了！');
+                    }
+                    else if (rec == 5) {
+                        zhanshi("vr/img/bg2.png","vr/img/button1.png");
+                    }
+                    else if (rec == 4) {
+                        zhongjiang("获得100元话费");
+                    }
+
+                    else if (rec == 3) {
+                        zhongjiang("获得10元话费");
+                    }
+                    else if (rec == 2) {
+                        zhongjiang("获得2元话费");
+                    }
+                    else if (rec == 1) {
+                        zhongjiang("获得1元话费");
+                    }
+                }
+
+
+            });
+    
+}
+
+
+
+    function zhanshi(img1, img2) {
+        var imgel1 = document.getElementById("img_bg");
+        var imgel2 = document.getElementById("img_button");
+            imgel1.style.display = "block";
+            imgel1.src = img1;
+            imgel2.style.display = "block";
+            imgel2.src = img2;
+    }
+    function yincang() {
+        var imgel1 = document.getElementById("img_bg");
+        var imgel2 = document.getElementById("img_button");
+        imgel1.style.display = "none";
+        imgel2.style.display = "none";
+
+    }
+    function zhongjiang(text1) {
+
+        var imgel1 = document.getElementById("zhongjiang");
+        imgel1.style.display = "block";
+        var ztext = document.getElementById("zjxx");
+        ztext.innerHTML = text1;
+    }
+    function zjtj() {
+        var imgel1 = document.getElementById("zhongjiang");
+        imgel1.style.display = "none";
+        qwe();
+    }
+    function notnull() {
+        var name = document.getElementById("name");
+        var phone = document.getElementById("phone");
+        var chexing = document.getElementById("chexing");
+        var text_name = name.value;
+        var text_phone = phone.value;
+        var text_chexing = chexing.value;
+        if(text_name == null || text_name == ""){
+            alert("用户名不得为空");
+            return;
+        }
+        if(!isphone2(text_phone)){
+            alert("请填入正确的手机格式");
+            return
+        }
+        if(!text_chexing){
+            alert("请选择喜欢的车型");
+            return
+        }
+        tijiao();
+    }
+    function isphone2(inputString)
+    {
+        var partten = /^1[3,5,8]\d{9}$/;
+        var fl=false;
+        if(partten.test(inputString))
+        {
+            //alert('是手机号码');
+            return true;
+        }
+        else
+        {
+            return false;
+            //alert('不是手机号码');
+        }
+    }
+    function tijiao(){
+
+        var name=document.getElementById("name").value;
+        var phone=document.getElementById("phone").value;
+        var chexing=document.getElementById("chexing").value;
+        $.ajax({
+            type: "GET",
+            url: "omk_vr.php?step=baocun&name=" + name + "&phone=" + phone +"&chexing=" + chexing,
+            dataType: 'json',
+            success: function (rec) {
+                if (rec.result == 1) {
+                    alert('提交成功');
+                    zjtj();
+                    yanZhengFlag = true;
+                } else {
+                    alert('提交失败');
+                    zjtj();
+                    yanZhengFlag = true;
+                }
+            }
+        });
+    }
+    function qwe(){
+        var zz = document.getElementById("cnm");
+        var all = document.getElementById("all");
+        if(zz.style.display=="none"){
+            zz.style.display = "block";
+            all.style.display = "none";
+        }else {
+            zz.style.display = "none";
+            all.style.display = "block";
+            ooq();
+        }
+    }
+    function ooq(){
+        wx.closeWindow();
+    }
+</script>
+</body>
+</html>

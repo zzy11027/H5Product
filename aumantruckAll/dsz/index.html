@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="templates/dsz/css/index.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script src="templates/dsz/js/jquery.min.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '到底多优秀？各位老司机，欧曼官方给你来认证！', // 分享标题
+                desc: '证明自己的时候到了，如果你来高效物流卡车公开赛，会有什么表现？', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_dsz.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/dsz/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '到底多优秀？各位老司机，欧曼官方给你来认证！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_dsz.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/dsz/img/fx.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bfff5f6ba8afbd36d93ff9d7d12d9007";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+
+<!-- 开屏页 -->
+	<div class="index">
+
+		<!-- 开始 -->
+		<div class="start">
+
+
+		</div>
+
+
+	</div>
+
+<!-- 第一题 -->
+
+	<div class="one">
+
+		<input type="radio" name="x" value="a" class="inp inp_1">
+		<input type="radio" name="x" value="b" class="inp inp_2">
+		<input type="radio" name="x" value="c" class="inp inp_3">
+		<input type="radio" name="x" value="d" class="inp inp_4">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next">
+
+
+		</div>
+	</div>
+
+
+	<!-- 第二题 -->
+
+	<div class="two">
+
+		<input type="radio" name="z" value="a" class="inp inp_1">
+		<input type="radio" name="z" value="b" class="inp inp_2">
+		<input type="radio" name="z" value="c" class="inp inp_3">
+		<input type="radio" name="z" value="d" class="inp inp_4">
+		
+		<div class="two_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next_1">
+
+
+		</div>
+	</div>
+
+	<!-- 第三题 -->
+
+	<div class="three">
+
+		<input type="radio" name="y" value="a" class="inp inp_1">
+		<input type="radio" name="y" value="b" class="inp inp_2">
+		<input type="radio" name="y" value="c" class="inp inp_3">
+		<input type="radio" name="y" value="d" class="inp inp_4">
+		<input type="radio" name="y" value="e" class="inp inp_5">
+		
+		<div class="three_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+			<div class="one_dui_5"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next_2">
+
+	
+		</div>
+	</div>
+
+
+	<!-- 第四题 -->
+	<div class="four">
+
+		<input type="text" class="xm" maxlength="4">
+
+		<!-- 下一题 -->
+		<div class="next_3" onclick="test()">
+
+	
+		</div>
+
+	</div>
+
+
+
+	<!-- loading -->
+
+	<div class="spinner">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+		<p id="i">
+			正在生成，请稍后……
+		</p>
+	</div>
+
+
+	<img src="templates/dsz/img/kai.jpg" alt="" id="screenShotImg">
+	<img src="templates/dsz/img/an.png" alt="" id="screenShotImg_1">
+	<script src='templates/dsz/js/cont.js'></script>
+</body>
+</html>

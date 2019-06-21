@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, initial-scale=1, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <title>绿通之星 高效畅行 包包如雨助力超卡运输</title>
+    <link rel="stylesheet" href="templates/omkhd/css/index.css"/>
+    <script type="text/javascript" src="templates/omkhd/js/jquery.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+
+        wx.config({
+            debug: false, //开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+                
+            wx.onMenuShareTimeline({
+                title: '绿通之星 高效畅行 包包如雨助力超卡运输', // 分享标题
+                link: 'http://jhb.douyar.cc/omk_hd.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/omkhd/img/logo.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        });
+
+
+
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b553c4ab92674a037cc5ac1af1f8ff0b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+    <input type="hidden" id="openid" value="{$openid}" >
+<div id="ing" style="display: block;">
+    <div id='suju' kiy='1'></div>
+    <!--<div class="beijinzez">-->
+    <!--<div class="shellstart">-->
+    <!--<div onclick="funrun()" class="start">-->
+    <!---->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="timeshell">
+        <span id="time1" style="background: transparent;color: #F0C68F;margin-left: 35px;margin-top: 65px;font-size: 27px;">15秒</span>
+        <span id="czsl" style="background: transparent;color: #F0C68F;margin-right: 25px;margin-top: 65px;font-size:27px;width: 100px;">0个</span>
+    </div>
+    <div id='beijin' kiy='1'></div>
+    <div id="mian" class="mian">
+
+    </div>
+    <div class="bott">
+        <!-- <div class="bott_left"></div> -->
+        <div id="person" class="car2" i='0' fens='0'>
+
+        </div>
+        <div id="boom"></div>
+        <!-- <div class="bott_right"></div> -->
+    </div>
+</div>
+
+
+
+
+
+<div id="bg2"></div>
+
+<div id="hb_box">
+    <div id="chai" onclick="chai()"></div>
+    <div id="hb_num1"></div>
+    <div id="hb_num2"></div>
+    <div style="position: absolute;width: 300px;height: 100px;left: 50%;margin-left: -144px;bottom: 74px;" onclick="zlyc();"></div>
+    <!-- -->
+</div>
+
+<div id="zj_box">
+    <div id="hf_num"></div>
+    <input id="name"/>
+    <input id="tel"/>
+    <select id="hangye">
+        <option value="">请选择您的运输行业</option>
+        <option value="快递快运">快递快运</option>
+        <option value="冷链生鲜">冷链生鲜</option>
+        <option value="危化品运输">危化品运输</option>
+        <option value="日用工业品运输">日用工业品运输</option>
+        <option value="农产品运输">农产品运输</option>
+        <option value="五金建材运输">五金建材运输</option>
+        <option value="酒水饮料运输">酒水饮料运输</option>
+        <option value="杂货运输">杂货运输</option>
+        <option value="工具服务用车">工具服务用车</option>
+        <option value="其它">其它</option>
+    </select>
+
+    <div id="tijiao" onclick="tijiao()"></div>
+</div>
+
+<div id="no_zj_box">
+    <div style="position: absolute;width: 400px;height: 100px;left: 50%;margin-left: -200px;bottom: 344px;" onclick="queding()"></div>
+</div>
+
+<div id="cj_box">
+    <div id="cj_num1"></div>
+    <div id="cj_num2"></div>
+    <img src="templates/omkhd/img/erwema.jpg" class="erweima">
+    <div id="xycj" onclick="xycj()"></div>
+</div>
+
+<div id="fenxiangbg" onclick="fenxiangbgClick()">
+</div>
+
+<div id="box_bg" onclick="boxBgClick()"></div>
+<audio src="templates/omkhd/2.mp3" id="music1" class="media-audio" autoplay preload loop="loop">
+</audio> 
+<script type="text/javascript" src="templates/omkhd/js/index.js"></script>
+</body>
+</html>
+<script src="templates/omkhd/js/fastclick.min.js"></script>
+<script type="text/javascript">
+function audioAutoPlay(id){  
+    var audio = document.getElementById(id),  
+        play = function(){  
+            audio.play();  
+            document.removeEventListener("touchstart",play, false);  
+        };  
+    audio.play();  
+    document.addEventListener("WeixinJSBridgeReady", function () {  
+        play();  
+    }, false);  
+    document.addEventListener('YixinJSBridgeReady', function() {  
+        play();  
+    }, false);  
+    document.addEventListener("touchstart",play, false);  
+}  
+
+audioAutoPlay('music1'); 
+    function chai(){
+        var openid = $("#openid").val();
+         $.post("omk_hd.php?step=prize",{openid:openid},function(msg){
+            if(msg==1){
+                hideAll();
+                $("#zj_box").show();
+                $("#hf_num").html(2);
+            }else if(msg==2){
+                hideAll();
+                $("#zj_box").show();
+                $("#hf_num").html(10);
+            }else if(msg==3){
+                hideAll();
+                $("#zj_box").show();
+                $("#hf_num").html(50);
+            }else if(msg==4){
+                hideAll();
+                $('#no_zj_box').show();//未中奖
+            }else if(msg==6){
+                hideAll();
+                $('#no_zj_box').show();//未中过奖的
+            }else if(msg==7){
+                hideAll();
+                $('#no_zj_box').show();//已经中奖了，没有在抽的权限了
+            }else if(msg==8){
+                hideAll();
+                $('#no_zj_box').show();//今天抽过了，没有中奖，可以明天在抽
+
+            }
+        });
+    }
+
+    function tijiao(){
+       
+        var name =  $("#name").val();
+        var tel =   $("#tel").val();
+        var openid= $("#openid").val();
+        var hangye = $("#hangye").val();
+        if (!name) {
+            alert('请输入姓名');
+            return false;
+        }
+        if (!tel){
+            alert('请输入手机号');
+            return false;
+        }
+
+        var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+        if (!reg.test(tel)) {
+            alert("请输入正确的手机号");
+            return false;
+        }
+        if (!hangye) {
+            alert('请选择行业');
+            return false;
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: "/omk_hd.php?step=info",
+            data: {"name":name,"phone":tel,"hangye":hangye,"openid":openid},
+            dataType: 'json',
+            success: function (data) {
+                  if(data==1){
+                    alert('领取成功');
+                    hideAll();
+                    $("#cj_box").show();
+                  }
+            }
+        });
+    }
+
+    // window.addEventListener('load', function() { 
+    //     FastClick.attach(document.body); 
+    // }, false);
+
+    $('#name').on('focus',function () {
+        // window.scrollTo(0,100);
+    });
+
+    $('#tel').on('focus',function () {
+        // window.scrollTo(0,-100);
+        // $('#zj_box').css({
+        //     'top':'-200px'
+        // });
+    });
+
+    $("#tel").focus(function(){
+      $('#zj_box').css({
+            'top':'-200px'
+      });
+    });
+
+    $("#tel").blur(function(){
+      $('#zj_box').css({
+            'top':'0px'
+        });
+    });
+
+    var winHeight = $(window).height();  //获取当前页面高度
+    $(window).resize(function () {
+        var thisHeight = $(this).height();
+        if ( winHeight - thisHeight > 140 ) {
+            //键盘弹出
+            $('#zj_box').css({
+                'top':'-200px'
+            });
+        } else {
+            //键盘收起
+            $('#zj_box').css({
+                'top':'0px'
+            });
+        }
+    })
+
+    document.oncontextmenu = function (e) {  
+        e.preventDefault();  
+    }
+
+</script>

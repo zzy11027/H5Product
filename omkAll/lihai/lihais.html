@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>厉害了，我的国！</title>
+	<link rel="stylesheet" href="templates/lihai/css/reset.css">
+	<link rel="stylesheet" href="templates/lihai/css/ios1.css">
+  <link rel="stylesheet" href="templates/ceshi2/css/test.css"/>
+	<script src="templates/lihai/js/jquery.min.js"></script>
+
+	
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d7256b7aa83b670e158190e2129c729";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '厉害了,我的国!', // 分享标题
+                desc: '为祖国点赞,福田汽车为你加油，京东物流好礼相赠！', // 分享描述
+                link: 'http://cz.douyar.cc/spike_hxcx.php?step=lihai', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/lihai/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '厉害了,我的国!', // 分享标题
+                link: 'http://cz.douyar.cc/spike_hxcx.php?step=liha', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/liha/img/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="hidden" name="" id="inp" value="">
+<!-- 首页！！！！！！！！！！！！！！ -->
+	<div class="index">
+		<div class="zan">
+
+		</div>
+	</div>
+    <!-- <section class="section" id="first" style="position: absolute;top: 50%;left: 20%;z-index: 15;"> -->
+        <!-- <img src="img/blank.gif" data-src="templates/ceshi2/img/slogan.png" class="slogan"/>
+        <img src="img/blank.gif" data-src="templates/ceshi2/img/father.png" class=" father-img"/> -->
+        <p class="xishi" style="display: none;position: absolute;top: 20%;left: 36%;color: red;font-size: 16px; width:200px;margin-top: 67px;z-index: 5;">可拖拽调整图片</p>
+<!--         <p class="xishi" style="display: none;position: absolute;top: 25%;left: 36%;color: red;font-size: 16px; width:200px;margin-top: 67px;z-index: 5;">可拖拽操作图片</p> -->
+        <!-- <div class="zx"></div> -->
+
+    <!-- </section> -->
+
+<!-- 恭喜页!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<div id="imgBox" style="width: 23.4375rem;height: 41.6875rem;position: absolute;">
+
+</div>
+<!-- 	<p class="p_1"></p>
+	<p class="p_2"></p> -->
+	<input type="hidden" id="openid" value="{$openid}" />
+<!-- 背景页第一个！！！！！！！！！！！！！！！！！ -->
+		<div class="k1">
+			
+		</div>
+<!-- 	<div class="bj_1">
+	<p class="ppp">点击上传照片</p>
+		<img src="" alt="" class="img_wrap" style="">
+		<input type="file" multiple="multiple" accept="image/*" class="upload1" capture="camera" id="upload" style="" ;" oninput="shangc()" onchange="selectFileImage(this);"> 
+
+		<div class="but_1"  onclick="hecheng()">
+
+		</div>
+		<div class="dian_1">
+
+		</div>
+		<div class="dian_2">
+
+		</div>
+    
+    <canvas id="cvs" class="img_wrap"></canvas>
+    
+	</div> -->
+
+<!-- 背景页第二个！！！！！！！！！！！！！！！！！ -->
+<!-- 		<div class="k2">
+			
+		</div>
+	<div class="bj_2">
+	<p class="ppp">点击上传照片</p>
+		<img src="" alt="" class="img_wrap" style="">
+		<input type="file" multiple="multiple" accept="image/*" class="upload2" capture="camera" id="upload" style="" ;"> 
+
+		<div class="but_1"  onclick="hecheng()">
+
+		</div>
+		<div class="dian_1">
+
+		</div>
+		<div class="dian_2">
+
+		</div>
+
+		</div>
+	</div> -->
+<!-- 背景页第三个！！！！！！！！！！！！！！！！！ -->
+<!-- 		<div class="k3">
+			
+		</div>
+	<div class="bj_3">
+	<p class="ppp">点击上传照片</p>
+		<img src="" alt="" class="img_wrap" style="">
+		<input type="file" multiple="multiple" accept="image/*" capture="camera" class="upload3" id="upload" style=""> 
+
+		<div class="but_1"  onclick="hecheng()">
+
+		</div>
+		<div class="dian_1">
+
+		</div>
+		<div class="dian_2">
+
+		</div>
+	</div> -->
+<!-- 领奖 <! 领奖京东卡1！！！！！！！！！！！！！！ -->
+<div class="lq">
+<div style="position: relative;top: 40.5%;width: 23.4375rem;height: 7.75rem;z-index: 999">
+<input type="text" class="name yi_1" placeholder="姓名" />
+<input type="text" class="phone yi_2" placeholder="电话"/>
+</div>
+<p class="lp_3_1"></p>
+
+<div class="tijiao"></div>
+</div>
+<!-- 领奖加油卡！！！！！！！！！！！！！！！！！ -->
+<div class="lq1">
+<div style="position: relative;top: 40.5%;width: 23.4375rem;height: 7.75rem;z-index: 999">
+<input type="text" class="name_1 name" placeholder="姓名" />
+<input type="text" class="phone_1 phone" placeholder="电话"/>
+</div>
+<p class="lp_3"></p>
+<div class="tijiao"></div>
+</div>
+
+<!--  -->
+<!-- 话费红包五元 -->
+<div class="lq2_2">
+<div style="position: relative;top: 40.5%;width: 23.4375rem;height: 7.75rem;z-index: 999">
+<input type="text" class="name_2 name" placeholder="姓名" />
+<input type="text" class="phone_2 phone" placeholder="电话"/>
+</div>
+<!-- 第几位点赞的 -->
+<p class="lp_2_3"></p>
+<!-- 几元红包 -->
+<p class="mj_2"></p>
+<div class="tijiao tijiao1"></div>
+</div>
+
+
+<!-- 没中奖  继续点赞 或者 去看照片合成！！！！！！！！ -->
+<div class="lq3">
+
+<p class="lq_p_3"></p>
+<p class="qian"></p>
+<div class="dianji">
+
+<div class="jixu"><a href="http://cz.douyar.cc/spike_hxcx.php?step=lihai"></a></div>
+<div class="jixu_1"></div>
+
+</div>
+
+</div>
+
+
+
+    <section class="section section-top bj_1" style="display: none" id="second">
+      <div class="buut">上传</div>
+       <button type="button" id="btnGenerate" class="btn-large-x"   data-track="生成父亲节海报">
+            <input id="upload"  class="upload1" name="upload" type="file" accept="image/*" onfocus="this.blur()"/>
+     
+        </button>
+
+        <div class="frame" id="frame">
+        <p class="djw" style="width: 12.5rem;height: 40px;color: red;position: absolute;top: 11%;"></p>
+            <img src="templates/ceshi2/img/blank.gif" data-src="templates/lihai/img/mjj.png" style="position:absolute;z-index: 40;" class="word" id="word"/>
+            <img src="templates/ceshi2/img/blank.gif" id="frameImg" style="position: absolute;z-index: 20;" class="frame-img"/>
+        </div>
+        <div class="ui-justify" style="display: none;height: 3.75rem;position: absolute;top: 75%;z-index: 41;">
+            
+            <button type="button" id="btnRotate" class="btn-middle btn-middle1">旋转</button>
+             <button type="button" id="btnConfirm" class="btn-middle btn-middles bbt" data-track="确认" ">确认</button><!-- onclick="hecheng() -->
+            <!-- <div  id="btnConfirms" class="btn-middle btn-middle3 " data-track="确认" >提交</div> -->
+
+        </div>
+
+    </section>
+
+    <section class="section section-top2" style="display: none;position: absolute;z-index: 1;" id="third">
+        <div class="frame">
+      <!--   <p class="p_1" style="width: 12.5rem;height: 40px;color: red;position: absolute;top: 11%;"></p> -->
+            <img src="templates/ceshi2/img/blank.gif" class="db-img" id="compose"/>
+        </div>
+        <div class="ui-justify" style="position: absolute;top: 69%;width: 342px;z-index: 10000;left: 0%;">
+         <!--    <button type="button" id="btnConfirm" class="btn-middle btn-middle2 bbt" data-track="确认"> -->
+<!--               <a href="" style="display:block;width: 5.133333rem;height: 2rem;text-align:center;line-height:2rem;background-position: 0 70.27027%;color: #D5241E;font-size: 20px;border-radius: 20px;background: #ccc;margin-left: 0.8125rem;margin-top: 2rem;font-weight: bold;">返回</a> -->
+            <div  id="btnConfirms" class="btn-middle btn-middle3 " data-track="确认" onclick="tj()";>提交</div>
+        </div>
+
+    </section>
+
+    <script src="templates/lihai/js/exif.js"></script>
+    <script src="templates/ceshi2/build/js/touch.js"></script>
+    <script src="templates/ceshi2/build/js/index.bundle1.js"></script>
+
+ 
+	<script type="text/javascript">
+   function selectFileImage(fileObj){
+     var file = fileObj.files['0']; 
+     console.log(file); 
+
+          EXIF.getData(file, function() {  
+            // alert(EXIF.pretty(this));  
+            EXIF.getAllTags(file);   
+            //alert(EXIF.getTag(this, 'Orientation'));   
+            Orientation = EXIF.getTag(file, 'Orientation'); 
+            console.log(Orientation); 
+            //return;  
+
+
+          if (navigator.userAgent.match(/iphone/i)) {
+            var cvs = document.getElementById("cvs");
+
+            //创建image对象
+            var imgObj = new Image();
+            imgObj.src = $('.img_wrap').attr('src');
+            //待图片加载完后，将其显示在canvas上
+            imgObj.onload = function(){
+              var ctx = cvs.getContext('2d');
+              ctx.drawImage(this, 0, 0,285,285);//this即是imgObj,保持图片的原始大小：470*480
+              //ctx.drawImage(this, 0, 0,1024,768);//改变图片的大小到1024*768
+            
+                    console.log('iphone');  
+                    //alert(expectWidth + ',' + expectHeight);  
+                    //如果方向角不为1，都需要进行旋转 added by lzk  
+                    
+                    if(Orientation != "" && Orientation != 1){  
+                        alert('旋转处理');  
+                        switch(Orientation){  
+                            case 6:
+                                //需要顺时针（向左）90度旋转  
+                                ctx.rotate(90 * Math.PI / 180);
+                                break; 
+                            case 8://需要逆时针（向右）90度旋转  
+                                alert('需要顺时针（向右）90度旋转');  
+
+                                break;  
+                            case 3://需要180度旋转  
+                                alert('需要180度旋转');  
+
+                                break;  
+                        }         
+                    }  
+   }
+   base64 = cvs.toDataURL("image/jpeg", 0.8); 
+ }
+     });
+ }
+
+   
+	// $('.guan').click(function(){
+	// 	$('.lq3').hide();
+	// 	$('#imgBox').show();
+	// 	$('.p_1').show();
+	// 	$('.p_2').show();
+	// })
+		var mmm;
+		var data;
+		var inde = 0;
+    var aaa = 0;
+		var browser = {
+	versions: function () {
+	var u = navigator.userAgent, app = navigator.appVersion;
+	return { //移动终端浏览器版本信息 
+	ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端 
+	android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器 
+	iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器 
+	iPad: u.indexOf('iPad') > -1, //是否iPad 
+	};
+	}(),
+};
+// if (browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) {
+//     document.write('<link rel="stylesheet" type="text/css" href="templates/lihai/css/ios.css"/>');  
+// }
+// if (browser.versions.android) {
+// document.write('<link rel="stylesheet" type="text/css" href="templates/lihai/css/android.css"/>');  
+// }
+		//通过比例计算不同设备的根元素的字体大小
+
+		//1.定义参照设备的宽度
+		var w = 375;
+var a=0;
+		//2.定义参照设备的默认根元素的字体大小
+		var f = 16;
+
+		//3.获取打开该文件的设备的视图宽度
+		var c = document.documentElement.clientWidth;
+		console.log(c)
+		//4.进行不同设备根元素字体大小的计算
+		var nf = c * f / w;
+		console.log(nf)
+
+		//5.设置打开该文件的设备的根元素的字体大小即可
+		document.documentElement.style.fontSize = nf + 'px';
+		//判断是否为ios 加载相应css
+
+      $('.bbt').click(function(){
+        $('.xishi').hide();
+        $('.xishi').remove();
+      })
+
+      document.getElementsByClassName("img_wrap").onclick = function() {
+        EXIF.getData(this, function() {
+            var make = EXIF.getTag(this, "Make"),
+                model = EXIF.getTag(this, "Model");
+            alert("I was taken by a " + make + " " + model);
+        });
+}
+ 
+        function getExif() {
+            var img1 = document.getElementsByClassName("img_wrap");
+            EXIF.getData(img1, function() {
+                var model = EXIF.getAllTags(img1);
+                console.log(model);
+            });
+         
+            // var img2 = document.getElementById("img2");
+            // EXIF.getData(img2, function() {
+            //     var allMetaData = EXIF.getAllTags(this);
+            //     var allMetaDataSpan = document.getElementById("allMetaDataSpan");
+            //     allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+            // });
+        }
+
+		// function selectFileImage(fileObj){
+
+		// 	var file = fileObj; 
+  // 			//图片方向角 added by lzk 
+  // 			var Orientation = null;
+  // 			getPhotoOrientation(file);
+
+  // 			var img = new Image(),
+  //           maxH = 300;
+ 
+  //       img.onload = function () {
+  //           var cvs = document.createElement('canvas'),
+  //               ctx = cvs.getContext('2d');
+ 				
+  //           if(img.height > maxH) {
+  //               img.width *= maxH / img.height;
+  //               img.height = maxH;
+  //           }
+  //           cvs.width = img.width;
+  //           cvs.height = img.height;
+  //           ctx.clearRect(0, 0, cvs.width, cvs.height);
+  //           ctx.drawImage(img, 0, 0, img.width, img.height);
+            // ctx.save();
+            // ctx.translate(50,50);
+            // ctx.rotate(90 * Math.PI / 180);
+            // ctx.translate(-200,-50);
+            // ctx.drawImage(img, 0, 0, img.width, img.height);
+            // ctx.restore();
+//             var dataUrl = cvs.toDataURL('image/jpeg', 1); 
+//             // $(".img_wrap").attr("src",dataUrl);
+//             // $(".img_wrap").show();
+
+//                     //修复ios 
+//         if (navigator.userAgent.match(/iphone/i)) { 
+//           console.log('iphone'); 
+//           //alert(expectWidth + ',' + expectHeight); 
+//           //如果方向角不为1，都需要进行旋转 added by lzk 
+//           if(Orientation != "" && Orientation != 1){ 
+//             alert('旋转处理'); 
+//             switch(Orientation){ 
+//               case 6://需要顺时针（向左）90度旋转 
+//                 alert('需要顺时针（向左）90度旋转'); 
+//                 rotateImg(this,'left',cvs); 
+//                 break; 
+//               case 8://需要逆时针（向右）90度旋转 
+//                 alert('需要顺时针（向右）90度旋转'); 
+//                 rotateImg(this,'right',cvs); 
+//                 break; 
+//               case 3://需要180度旋转 
+//                 alert('需要180度旋转'); 
+//                 rotateImg(this,'right',cvs);//转两次 
+//                 rotateImg(this,'right',cvs); 
+//                 break; 
+//             }     
+//           }
+//           }
+//           	base64 = canvas.toDataURL("image/jpeg", 0.8);
+//           	document.getElementById('imgBox').innerHTML='<img class="img_hc" src="'+base64+'">';
+// 		}
+// }
+		// function rotateImg(img, direction,canvas) {  
+  //   //alert(img); 
+  //   //最小与最大旋转方向，图片旋转4次后回到原方向  
+  //   var min_step = 0;  
+  //   var max_step = 3;  
+  //   //var img = document.getElementById(pid);  
+  //   if (img == null)return;  
+  //   //img的高度和宽度不能在img元素隐藏后获取，否则会出错  
+  //   var height = img.height;  
+  //   var width = img.width;  
+  //   //var step = img.getAttribute('step');  
+  //   var step = 2;  
+  //   if (step == null) {  
+  //     step = min_step;  
+  //   }  
+  //   if (direction == 'right') {  
+  //     step++;  
+  //     //旋转到原位置，即超过最大值  
+  //     step > max_step && (step = min_step);  
+  //   } else {  
+  //     step--;  
+  //     step < min_step && (step = max_step);  
+  //   }  
+    //img.setAttribute('step', step);  
+    /*var canvas = document.getElementById('pic_' + pid);  
+    if (canvas == null) {  
+      img.style.display = 'none';  
+      canvas = document.createElement('canvas');  
+      canvas.setAttribute('id', 'pic_' + pid);  
+      img.parentNode.appendChild(canvas);  
+    } */
+    //旋转角度以弧度值为参数  
+  //   var degree = step * 90 * Math.PI / 180;  
+  //   var ctx = canvas.getContext('2d');  
+  //   switch (step) {  
+  //     case 0:  
+  //       canvas.width = width;  
+  //       canvas.height = height;  
+  //       ctx.drawImage(img, 0, 0);  
+  //       break;  
+  //     case 1:  
+  //       canvas.width = height;  
+  //       canvas.height = width;  
+  //       ctx.rotate(degree);  
+  //       ctx.drawImage(img, 0, -height);  
+  //       break;  
+  //     case 2:  
+  //       canvas.width = width;  
+  //       canvas.height = height;  
+  //       ctx.rotate(degree);  
+  //       ctx.drawImage(img, -width, -height);  
+  //       break;  
+  //     case 3:  
+  //       canvas.width = height;  
+  //       canvas.height = width;  
+  //       ctx.rotate(degree);  
+  //       ctx.drawImage(img, -width, 0);  
+  //       break;  
+  //   }  
+  // }  
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+		//判断手机是否为ios
+		var file = document.getElementById('upload');
+        if (getIos()) {
+            file.removeAttribute("capture");
+        }
+        function getIos() {
+            var ua=navigator.userAgent.toLowerCase();
+            if (ua.match(/iPhone\sOS/i) == "iphone os") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+		$('.zan').click(function(){
+      $('.xishi').show();
+      $('.p_1').show();
+			$('.index').hide();
+			$('.bj_1').show();
+      $('.ui-justify').show();
+		})
+
+		$('.dian_1').click(function(){
+			if(inde==0){
+				$('.k2').show();
+				$('.k1').hide();
+				$('.k3').hide();
+				inde++;
+			}else if(inde==1){
+				$('.k3').show();				
+				$('.k2').hide();				
+				$('.k1').hide();	
+				inde++;			
+			}else if(inde==2){
+				$('.k1').show();
+				$('.k2').hide();
+				$('.k3').hide();
+				inde=0;
+			}
+		})
+		$('.dian_2').click(function(){
+			if(inde==0){
+				$('.k2').show();
+				$('.k1').hide();
+				$('.k3').hide();
+				inde++;
+			}else if(inde==1){
+				$('.k3').show();
+				$('.k1').hide();
+				$('.k2').hide();
+				inde++;
+			}else if(inde==2){
+				$('.k1').show();
+				$('.k2').hide();
+				$('.k3').hide();
+				inde=0;
+			}
+		})
+
+		// 第一页点击事件触发ajax
+		function tes(){
+
+		}
+var demo_h5_upload_ops = {
+    init:function(){
+        this.eventBind();
+    },
+    eventBind:function(){
+        var that = this;
+        $("#upload").change(function(){
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                that.compress(this.result);
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+    },
+    compress : function (res) {
+        var that = this;
+        var img = new Image(),
+            maxH = 600;
+ 
+        img.onload = function () {
+            // var cvs = document.createElement('canvas'),
+            //     ctx = cvs.getContext('2d');
+ 				
+            // if(img.height > maxH) {
+            //     img.width *= maxH / img.height;
+            //     img.height = maxH;
+            // }
+            // cvs.width = img.width;
+            // cvs.height = img.height;
+            // ctx.clearRect(0, 0, cvs.width, cvs.height);
+            // ctx.drawImage(img, 0, 0, img.width, img.height);
+            // ctx.save();
+            // ctx.translate(50,50);
+            // ctx.rotate(90 * Math.PI / 180);
+            // ctx.translate(-200,-50);
+            // ctx.drawImage(img, 0, 0, img.width, img.height);
+            // ctx.restore();
+            // var dataUrl = cvs.toDataURL('image/jpeg', 1); 
+            // $(".img_wrap").attr("src",dataUrl);
+            // $(".img_wrap").show();
+            // 上传略
+            that.upload();
+        };
+ 
+        img.src = res;
+    },
+    upload:function( image_data ){
+    // 	var openid = $("#openid").val();
+    // 	var formData = new FormData();
+  		// formData.append('file', $(".upload1")[0].files[0]);
+  		// formData.append('file2', $(".upload2")[0].files[0]);
+  		// formData.append('file3', $(".upload3")[0].files[0]);
+  		// var openid = $("#openid").val();
+  		// formData.append('openid', openid);
+    //   console.log(openid);
+    //   console.log(EXIF);
+
+  		// $.ajax({
+    //         url: 'spike_hxcx.php?step=lihai_tup',
+    //         type: 'POST',
+    //         cache: false,
+    //         data: formData,
+    //         processData: false,
+    //         contentType: false
+    //     }).done(function(res) {
+    //         var im = '/templates/hxcx/upload/'+res;
+            
+
+            
+    //        if(res){
+    //          $('.img_wrap').attr('src',im);
+    //        }
+
+    //        getExif();
+    //         var da1=[im,'templates/lihai/img/b1.png'];
+    //         var da2=[im,'templates/lihai/img/b2.png'];
+    //         var da3=[im,'templates/lihai/img/b3.png'];
+    //         if(inde==0){
+    //             data=da1
+    //         }else if(inde==1){
+    //             data=da2;
+    //         }else if(inde==2){
+    //             data=da3
+    //         }           
+    //     }).fail(function(res) {
+    //         console.log(res);
+    //     });
+    /* $.ajax({
+        type:"POST",
+        dataType:'json',
+        url:"spike_hxcx.php?step=lihai_tup",
+        data:{
+          "image_data":image_data,
+        },
+        success:function(data){
+        	console.log(data);
+        }
+    })*/
+
+
+    }
+};
+var base64=[];
+// var data=['./img/2.jpg','./img/5.png'];
+// var base64=[];
+// 合成
+
+var b= 0;
+function tj(){
+  console.log('ok');
+  $('.xishi').remove();
+  if(b == 0 ){
+    a++
+$('.xishi').hide();
+$('.section-top2').hide();
+$('.upload1').hide();
+	// draw(function(){
+
+	// 	document.getElementById('imgBox').innerHTML='<img class="img_hc" src="'+base64[0]+'">';
+	// })
+// ajax在这里写！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+	            var openid = $("#openid").val();
+              console.log('ok')
+			        $.ajax({
+			            type:"POST",
+			            dataType:'json',
+			            url:"spike_hxcx.php?step=lihai_chaxun",
+			            data:{
+			              "openid":openid,
+			            },
+			            success:function(data){
+			            	console.log(data);
+			            	//if (data==1) {}
+			              //console.log(data);
+			              if (data.rid==1) {
+                            $('.bj_1').hide();
+                            $('.bj_2').hide();
+                            $('.bj_3').hide();
+                            $('.k1').hide();
+                            $('.k2').hide();
+                            $('.k3').hide();
+                            $('.lq').show();    
+                            $('.lp_3_1').show();   
+                            //第几位data.ju
+                            $('.lp_3').html(data.ju);	
+                            $('.yi_1').show();  
+                            $('.yi_2').show();	
+			              }
+			              if (data.rid==2) {
+                            $('.bj_1').hide();
+                            $('.bj_2').hide();
+                            $('.bj_3').hide();
+                            $('.k1').hide();
+                            $('.k2').hide();
+                            $('.k3').hide();
+                            $('.lp_3').html(data.ju);       
+                            $('.lp_3').show();
+                            $('.lq1').show();   
+                            $('.name_1').show();   
+                            $('.phone_1').show();   
+                              //第几位data.ju		
+			              }
+			              if (data.rid=='5元话费红包1个') {
+                            $('.bj_1').hide();
+                            $('.bj_2').hide();
+                            $('.bj_3').hide();
+                            $('.k1').hide();
+                            $('.k2').hide();
+                            $('.k3').hide();
+                            $('.lq2_2').show();
+                            $('.mj_2').show();
+                            $('.mj_2').html('5');//css
+                            $('.lp_2_3').show();//css
+                            $('.lp_2_3').html(data.ju);
+			              }
+			              if(data.rid=='未中奖'){
+                            $('.bj_1').hide();
+                            $('.bj_2').hide();
+                            $('.bj_3').hide();
+                            $('.k1').hide();
+                            $('.k2').hide();
+                            $('.k3').hide();
+                            $('.lq_p_3').html(data.ju);     
+                            $('.lq_p_3').show();
+                           $('.lq3').show();
+                           $('.qian').html('');
+                           $('.p_1').show();
+                           $('.p_1').html(data.ju);
+			              }
+			            }
+			          }) 
+
+
+}
+}
+$('.jixu_1').click(function(){
+    $('.lq3').hide();
+    $('#third').show();
+    $('.section-top2').show();
+})
+
+function draw(fn){
+
+	var c=document.createElement('canvas'),
+		ctx=c.getContext('2d'),
+		len=data.length;
+	c.width=290*9;
+	c.height=290*9;
+	ctx.rect(0,0,c.width,c.height);
+	ctx.fillStyle='#fff';
+	ctx.fill();
+	function drawing(n){
+		if(n<len){
+			var img=new Image;
+
+			// img.crossOrigin = 'Anonymous'; //解决跨域
+			img.src=data[n];
+			img.onload=function(){
+        if(aaa==0){
+          aaa=1;
+
+          ctx.drawImage(img,300,150,290*7,290*5.5);
+        }else{
+          ctx.drawImage(img,-15,0,290*9,290*9);          
+        }
+// ctx.drawImage(img,-15,0,290*9,290*9);
+				drawing(n+1);//递归
+			}
+		}else{
+			//保存生成作品图片
+			base64.push(c.toDataURL("image/jpeg",1));
+			//alert(JSON.stringify(base64));
+			fn();
+		}
+	}
+	drawing(0);
+}
+$(document).ready( function(){
+    demo_h5_upload_ops.init();
+} );
+	
+$(".tijiao").click(function(){
+
+  var name = $(this).parent().find(".name").val();
+  var phone = $(this).parent().find(".phone").val();
+  var openid = $("#openid").val();
+  if (!name) {
+    alert("请输入姓名");
+     return false;
+  }
+  if (!phone) {
+    alert("请输入手机号");
+     return false;
+  }
+  var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+  if (!reg.test(phone)) {
+      alert("请输入正确的手机号");
+      return false;
+  }
+    $.ajax({
+            type:"POST",
+            dataType:'json',
+            url:"spike_hxcxaa.php?step=lihai_info",
+            data:{
+              "name":name,
+              "phone":phone,
+              "openid":openid
+            },
+            success:function(data){
+              //console.log(data);
+              if (data.rid==1) {
+              	// 合成的图片显示！！！！！！！！！！！
+
+				$('#imgBox').show();
+        $('.section-top2').show();
+				$('.p_1').show();
+				$('.p_2').show();
+				$('.p_1').html(data.name);
+				$('.p_2').html(data.id);
+				$('.name').hide();
+				$('.phone').hide();
+				$('.lp_2').hide();
+                $('.lq').hide();
+                $('.lq1').hide();
+                $('.lq2').hide();
+                $('.lq2_1').hide();
+                $('.lq2_2').hide();
+                $('.lq3').hide();
+              	}
+              if (data.rid==9) {
+                alert("已经领取过了");
+              }
+              
+            }
+          }) 
+})
+	
+
+
+	</script>
+</body>
+</html>

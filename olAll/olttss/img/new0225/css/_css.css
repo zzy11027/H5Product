@@ -1,0 +1,7 @@
+/* CSS Document */	
+.sliderWrapper{width:100%;overflow:hidden;position:relative;}
+.sliderUl{overflow:hidden;}
+.sliderUl li{float:left;}
+.countUl{position:absolute;bottom:10px;overflow:hidden;width:100%;text-align:center;}
+.countUl li{display:inline-block;margin-left:10px;font-size:0px;width:10px;height:10px;border-radius:50%;background-color:#ccc;}
+.countUl li._onLi{background-color:#333;}

@@ -1,0 +1,257 @@
+* {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+.index{
+	width: 23.4375rem;
+	height:61.46875rem;
+	background-image: url(../img/1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.bj_1{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+	position: absolute;
+}
+.zan{
+	width: 23.4375rem;
+	height: 6.25rem;
+	position: absolute;
+	top: 56%;
+}
+.k1{
+    width: 23.4375rem;
+    height: 23.375rem;
+    background-image: url(../img/k1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+    /*display: none;*/
+}
+.bj_2{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+	position: absolute;
+}
+.k2{
+    width: 23.4375rem;
+    height: 23.375rem;
+    background-image: url(../img/k2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 4;
+    display: none;
+}
+.bj_3{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+	position: absolute;
+}
+.k3{
+    width: 23.4375rem;
+    height: 23.375rem;
+    background-image: url(../img/k3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 4;
+    display: none;
+}
+.dian_1{
+	width: 5.5rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 70.5%;
+    left: 6%;
+}
+.dian_2{
+	width: 5.5rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 70.5%;
+    right: 39%;
+}
+/*拍照*/
+#upload{
+	display: block;
+    width: 18.4rem;
+    height: 18rem;
+    position: absolute;
+    top: 14.5%;
+    left: 10.7%;
+    border-radius: 1.25rem;
+    border: none;
+    background: transparent;
+    opacity:0;
+    z-index: 5; 
+    outline:medium;
+}
+.img_wrap{
+	display: block;
+    width: 18.4rem;
+    height: 18.4rem;
+    position: absolute;
+    top: 14.5%;
+    left: 10.7%;
+    z-index: 1;
+    border-radius: 1.25rem;
+    border: none;
+/*    transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 	
+	-moz-transform:rotate(90deg); 
+	-webkit-transform:rotate(90deg); 
+	-o-transform:rotate(90deg);*/
+}
+.but_1{
+	width: 6.125rem;
+    height: 2.125rem;
+    position: absolute;
+    top: 72%;
+    left: 68%;
+}
+/*领奖*/
+.lq{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/lq1.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+}
+.lq1{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/lq2.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+}
+.lq2{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/lq3.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+}
+.lq3{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/lq4.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+}
+.jixu{
+	width: 13.75rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 56%;
+    left: 20%;
+}
+.jixu>a{
+	display: block;
+	width: 13.75rem;
+    height: 2.5rem;
+}
+/*恭喜页面*/
+#imgBox{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	display: none;
+	background-image: url(../img/3.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.p_1{
+    width: 3.125rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 69%;
+    left: 44%;
+    color: red;
+    font-size: 1.0rem;
+    text-align: center;
+    line-height: 1.875rem;
+}
+.p_2{
+    width: 3.125rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 74%;
+    left: 28%;
+    color: red;
+    font-size: 1.0rem;
+    text-align: center;
+    line-height: 1.875rem;
+}
+.name{
+	width: 12.5rem;
+    height: 1.875rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 47%;
+    line-height: 1.875rem;
+    left: 15%;
+    font-size: 14px;
+    color: #000;
+}
+.phone{
+	width: 12.5rem;
+    height: 1.875rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 55.5%;
+    line-height: 1.875rem;
+    left: 15%;
+    font-size: 14px;
+    color: #000;
+}
+.tijiao{
+	width: 6.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 65%;
+    left: 36%;
+}
+.img_hc{
+    width: 23.4375rem;
+    height: 23.4375rem;
+    position: absolute;
+    top: 10%;
+}
+.p_3{
+	position: absolute;
+    top: 31%;
+    left: 30%;
+    width: 3rem;
+    height: 1.5rem;
+    z-index: 10;
+    display: block;
+    color: red;
+    font-size: 16px;
+}

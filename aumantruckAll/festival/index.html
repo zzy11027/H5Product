@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>解“谜”元宵节，超卡带你赢大奖！</title>
+	<link rel="stylesheet" href="/mobile/templates/festival/css/index.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script src="/mobile/templates/festival/js/jquery.min.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '解“谜”元宵节，超卡带你赢大奖！', // 分享标题
+                desc: '元宵节的秘密你知道了吗？', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/choice.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/festival/img/fx.png', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                	var openid = $("#openid").val();
+                	var token = $("#token").val();
+                    $.ajax({
+				        type: "POST",
+				        url: "/mobile/choice.php?step=jia",
+				        data:{
+				        	openid:openid
+						},
+				    	beforeSend: function(request) { 
+							request.setRequestHeader("Authorization", token); 
+						}, 
+				        success: function (res) {
+				        	alert("分享成功");
+				        }
+				    });
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '解“谜”元宵节，超卡带你赢大奖！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/choice.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/festival/img/fx.jpg', // 分享图标
+                success: function () {
+                  	var openid = $("#openid").val();
+                  	var token = $("#token").val();
+                    $.ajax({
+				        type: "POST",
+				        url: "/mobile/choice.php?step=jia",
+				        data:{
+				        	openid:openid
+						},
+				    	beforeSend: function(request) { 
+							request.setRequestHeader("Authorization", token); 
+						}, 
+				        success: function (res) {
+				        	alert("分享成功");
+				        }
+				    });
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+<body>
+<input type="hidden" value="{$openid}" id="openid">
+<input type="hidden" value="{$token}" id="token">
+<input type="hidden" value="{$name}" id="name">
+<div class="container"></div>
+<!-- 开屏页 -->
+	<div class="index">
+		<img src="/mobile/templates/festival/img/1logo.png" alt="" class="logo">
+		<!-- 开始 -->
+		<div class="start" onclick="start()">
+		</div>
+		<img src="/mobile/templates/festival/img/gz.png" alt="" class="gz">
+		<img src="/mobile/templates/festival/img/gz_con.png" alt="" class="gz_con">
+		<div class="close"></div>
+		<div class="open" onclick="start()"></div>
+		<div class="without">
+			<div class="closes" onclick="window.location.href = '';"></div>
+			<div class="fx"></div>
+		</div>
+	</div>
+
+<!-- 第一题 -->
+
+	<div class="one">
+		<img src="/mobile/templates/festival/img/1logo.png" alt="" class="logo">
+		<img src="/mobile/templates/festival/img/1-1.png" alt="" class="one1">
+		<img src="" alt="" class="ti1">
+		<input type="radio" name="x" value="a" class="inp inp_1">
+		<input type="radio" name="x" value="b" class="inp inp_2">
+		<input type="radio" name="x" value="c" class="inp inp_3">
+		<input type="radio" name="x" value="d" class="inp inp_4">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next">
+
+
+		</div>
+	</div>
+
+
+	<!-- 第二题 -->
+
+	<div class="two">
+		<img src="/mobile/templates/festival/img/1logo.png" alt="" class="logo">
+		<img src="/mobile/templates/festival/img/2-2.png" alt="" class="one1">
+		<img src="" alt="" class="ti1">
+		<input type="radio" name="z" value="a" class="inp inp_1">
+		<input type="radio" name="z" value="b" class="inp inp_2">
+		<input type="radio" name="z" value="c" class="inp inp_3">
+		<input type="radio" name="z" value="d" class="inp inp_4">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next_1">
+
+
+		</div>
+	</div>
+
+	<!-- 第三题 -->
+
+	<div class="three">
+		<img src="/mobile/templates/festival/img/1logo.png" alt="" class="logo">
+		<img src="/mobile/templates/festival/img/3-3.png" alt="" class="one1">
+		<img src="" alt="" class="ti1">
+		<input type="radio" name="y" value="a" class="inp inp_1">
+		<input type="radio" name="y" value="b" class="inp inp_2">
+		<input type="radio" name="y" value="c" class="inp inp_3">
+		<input type="radio" name="y" value="d" class="inp inp_4">
+		<input type="radio" name="y" value="e" class="inp inp_5">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next_2">
+
+	
+		</div>
+	</div>
+
+
+	<!-- 第四题 -->
+	<div class="four">
+		<img src="/mobile/templates/festival/img/1logo.png" alt="" class="logo">
+		<img src="/mobile/templates/festival/img/4-4.png" alt="" class="one1">
+		<img src="" alt="" class="ti1">
+		<input type="radio" name="q" value="a" class="inp inp_1">
+		<input type="radio" name="q" value="b" class="inp inp_2">
+		<input type="radio" name="q" value="c" class="inp inp_3">
+		<input type="radio" name="q" value="d" class="inp inp_4">
+		<input type="radio" name="q" value="e" class="inp inp_5">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+
+		<!-- 下一题 -->
+		<div class="next_3">
+
+	
+		</div>
+	</div>
+
+	<!-- 第五题 -->
+	<div class="five">
+		<img src="/mobile/templates/festival/img/1logo.png" alt="" class="logo">
+		<img src="/mobile/templates/festival/img/5-5.png" alt="" class="one1">
+		<img src="" alt="" class="ti1">
+		<input type="radio" name="w" value="a" class="inp inp_1">
+		<input type="radio" name="w" value="b" class="inp inp_2">
+		<input type="radio" name="w" value="c" class="inp inp_3">
+		<input type="radio" name="w" value="d" class="inp inp_4">
+		<input type="radio" name="w" value="e" class="inp inp_5">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+		<!-- 下一题 -->
+		<div class="next_4" onclick="test()">
+		</div>
+	</div>
+	<div class="yes">
+		<div class="chou"></div>
+		<div class="closes" onclick="window.location.href = '';"></div>
+	</div>
+	<div class="no">
+		<p></p>
+		<div class="tj" onclick="news()"></div>
+		<div class="fx"></div>
+		<div class="closes" onclick="window.location.href = '';"></div>
+	</div>
+	<div class="fxs"></div>
+
+	<div class="lz">
+		<input type="text" placeholder="请输入您的姓名"  class="name">
+		<input type="text" placeholder="请输入您的电话"  class="phone">
+		<div class="tjss" onclick="tj()"></div>
+		<div class="closes" onclick="window.location.href = '';"></div>
+	</div>
+	<div class="prize">
+		<p></p>
+		<div class="fx"></div>
+		<div class="tj_s" onclick="news()"></div>
+		<div class="closes" onclick="window.location.href = '';"></div>
+	</div>
+	<div class="noprize">
+		<div class="tj" onclick="news()"></div>
+		<div class="fx"></div>
+		<div class="closes" onclick="window.location.href = '';"></div>
+	</div>
+	<div class="prizecar">
+		<!-- <div class="fx"></div> -->
+		<div class="tjs" onclick="news()"></div>
+		<div class="closes" onclick="window.location.href = '';"></div>
+	</div>
+	<script src='/mobile/templates/festival/js/cont.js'></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+body{
+	position: relative;
+	width: 100%;
+	height: 62.53125rem;
+	background-image: url(../img/myself_2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.a_1{
+	display: block;
+    width: 3.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 30%;
+    right: 1%;
+}
+.two{
+    width: 15.5rem;
+    height: 3rem;
+    position: absolute;
+    top: 41%;
+    left: 16%;
+    display: flex;
+    justify-content: space-between;
+}
+.two>a{
+	display: block;
+	width: 7rem;
+	height: 3rem;
+}
+.jiang{
+    width: 16.5rem;
+    height: 7.5rem;
+    position: absolute;
+    top: 47%;
+    left: 15%;
+    overflow: auto;
+}
+.ul_1{
+	width: 16.5rem;
+	height: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+.jiang>.ul_1>li{
+	width: 16.5rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+.jiang>ul{
+	width: 16.5rem;
+	height: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+.jiang>ul>li:nth-child(1){
+	width: 4.125rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+.jiang>ul>li:nth-child(2){
+	width: 8.125rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+.jiang>ul>li:nth-child(3){
+	width: 4.125rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+.a_2{
+    display: block;
+    width: 7.375rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 60%;
+    left: 34%;
+}
+.jiang_1{
+	width: 13.6rem;
+    height: 9.7rem;
+    position: absolute;
+    top: 67%;
+    left: 21%;
+    overflow: auto;
+}
+.ul_2{
+	width: 13.6rem;
+	height: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+.jiang_1>.ul_2>li{
+	width: 4.125rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+.jiang_1>ul{
+	width: 13.6rem;
+	height: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+.jiang_1>ul>li{
+	width: 4.125rem;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+
+.a{
+	width: 15.75rem;
+    height: 3rem;
+    position: absolute;
+    top: 89%;
+    left: 16%;
+    display: flex;
+    justify-content: space-between;
+}
+.a>a{
+	display: block;
+	width: 7.25rem;
+	height: 3rem;
+}
+
+/*规则隐藏层*/
+.guize{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/guize.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 31%;
+    display: none;
+}
+.guize_nei{
+    width: 17.3rem;
+    height: 22.5rem;
+    position: absolute;
+    top: 40%;
+    left: 13%;
+    overflow: auto;
+}
+.guize_nei>img{
+    width:17rem;
+    height: 37.1875rem;
+    display: block;
+    position: absolute;
+    left: 1%;
+    top: 1%;
+}
+/*关闭规则*/
+.close_gz{
+    width: 3.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 29%;
+    right: 4%;
+}

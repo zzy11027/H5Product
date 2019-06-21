@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>福田欧马可</title>
+	<link rel="stylesheet" href="templates/code/css/reset.css">
+</head>
+<style>
+body{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(templates/code/img/index.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.img_1{
+	display: block;
+	width: 10.75rem;
+	height: 10.75rem;
+	position: absolute;
+	top: 67%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+}
+@media only screen and (device-width: 414px) and (device-height: 828px){
+	body{
+		width: 23.4375rem;
+		height: 51.75rem;
+		background-image: url(templates/code/img/index.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+	.img_1{
+		display: block;
+		width: 10.75rem;
+		height: 10.75rem;
+		position: absolute;
+		top: 67%;
+		left: 50%;
+		transform:translate(-50%,-50%);
+		-webkit-transform:translate(-50%,-50%);
+		-moz-transform:translate(-50%,-50%);
+		-ms-transform:translate(-50%,-50%);
+	}	
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+	body{
+		width: 23.4375rem;
+		height:50.75rem;
+		background-image: url(templates/code/img/index.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+	.img_1{
+		display: block;
+		width: 10.75rem;
+		height: 10.75rem;
+		position: absolute;
+		top: 67%;
+		left: 50%;
+		transform:translate(-50%,-50%);
+		-webkit-transform:translate(-50%,-50%);
+		-moz-transform:translate(-50%,-50%);
+		-ms-transform:translate(-50%,-50%);
+	}
+}
+</style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1dbb9b28ea6b28ceb24090ef2eac3222";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<body>
+	<img src="templates/code/img/ewm.jpg" class="img_1">
+	<script type="text/javascript">
+
+		//通过比例计算不同设备的根元素的字体大小
+
+		//1.定义参照设备的宽度
+		var w = 375;
+
+		//2.定义参照设备的默认根元素的字体大小
+		var f = 16;
+
+		//3.获取打开该文件的设备的视图宽度
+		var c = document.documentElement.clientWidth;
+		console.log(c)
+		//4.进行不同设备根元素字体大小的计算
+		var nf = c * f / w;
+		console.log(nf)
+
+		//5.设置打开该文件的设备的根元素的字体大小即可
+		document.documentElement.style.fontSize = nf + 'px';
+
+		// var dpi = window.devicePixelRatio;//获取屏幕分辨率
+		// alert("dpi为："+dpi);
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>  
+<html>  
+<head lang="en">  
+    <meta charset="UTF-8">  
+    <title>html 表格导出道</title>  
+    <script src="js/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        function method5() {  
+            $.ajax({
+                type: 'POST',
+                dataType:'json',
+                url : 'http://www.aumantruck.com/mobile/export.php?step=daochu',
+                data: {
+                },
+                success: function(data){
+                    console.log('ok!');
+                }
+
+            });
+        }  
+
+    </script>  
+</head>  
+<body>  
+
+<div >  
+    <!-- <button type="button" onclick="method5()">导出Excel方法五</button>   -->
+    <a href="http://www.aumantruck.com/mobile/export.php?step=daochu">导出</a>
+</div>  
+<div id="myDiv">  
+<table id="tableExcel" width="100%" border="1" cellspacing="0" cellpadding="0">  
+    <tr>  
+        <td colspan="11" align="center">html 表格导出道Excel</td>  
+    </tr>  
+    <tr>  
+        <td>姓名</td>  
+        <td>手机号</td>  
+        <td>车型</td>  
+        <td>数量</td>  
+        <td>所在省</td>  
+        <td>所在市</td>  
+        <td>经销商</td>  
+        <td>时间</td>  
+        <td>优惠卷</td>  
+        <td>实物奖品</td>  
+        <td>地址</td>  
+        <td>openid</td>  
+        <td>DMP</td>  
+    </tr>  
+    {foreach from = $res item = item}
+    <tr id="trs">  
+        <td>{$item.name}</td>  
+        <td>{$item.phone}</td>  
+        <td>{$item.pg}</td>  
+        <td>{$item.num}</td>  
+        <td>{$item.province}</td>
+        <td>{$item.city}</td>  
+        <td>{$item.jxs}</td>  
+        <td>{$item.adddate}</td>  
+        <td>{$item.prize}</td>  
+        <td>{$item.s_prize}</td>  
+        <td>{$item.address}</td>  
+        <td>{$item.openid}</td>  
+        <td>{$item.dmp}</td>  
+    </tr>
+    {/foreach}
+</table>  
+</div> 
+</body>  
+</html> 

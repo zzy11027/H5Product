@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>我心中的奥铃精神</title>
+	<link rel="stylesheet" href="/templates/ol/olfestival/css/index.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script src="/templates/ol/olfestival/js/jquery.min.js"></script>
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我心中的奥铃精神', // 分享标题
+                desc: '您有一份专属礼品未领取', // 分享描述
+                link: 'http://al.douyar.cc/ol/ol_spirit.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olfestival/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我心中的奥铃精神', // 分享标题
+                desc: '您有一份专属礼品未领取', // 分享描述
+                link: 'http://al.douyar.cc/ol/ol_spirit.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olfestival/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+</head>
+<body>
+<input type="hidden" value="{$openid}" id="openid">
+<input type="hidden" value="{$token}" id="token">
+<div class="zz"></div>
+<div class="container"></div>
+<!-- 开屏页 -->
+	<div class="index">
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+		<!-- 开始 -->
+		<div class="start">
+		</div>
+		<div class="title"></div>
+		<div class="xq" onclick="xq()"></div>
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+	<div class="xqs"></div>
+
+<!-- 第一题 -->
+	<div class="one">
+		<div class="bj1">
+			<input type="radio" name="x" value="a" class="inp inp_1">
+			<input type="radio" name="x" value="b" class="inp inp_2">
+			<input type="radio" name="x" value="c" class="inp inp_3">
+			<div class="one_dui">
+				<div class="one_dui_1"></div>
+				<div class="one_dui_2"></div>
+				<div class="one_dui_3"></div>
+			</div>
+			<!-- 下一题 -->
+			<div class="next next_0">
+			</div>
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+
+
+	<!-- 第二题 -->
+
+	<div class="two">
+		<div class="bj2">
+			<input type="radio" name="z" value="a" class="inp inp_1">
+			<input type="radio" name="z" value="b" class="inp inp_2">
+			<input type="radio" name="z" value="c" class="inp inp_3">
+			
+			<div class="two_dui">
+				<div class="one_dui_1"></div>
+				<div class="one_dui_2"></div>
+				<div class="one_dui_3"></div>
+			</div>
+			<!-- 下一题 -->
+			<div class="next_1 next">
+			</div>
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+
+	<!-- 第三题 -->
+
+	<div class="three">
+		<div class="bj3">
+			<input type="radio" name="y" value="a" class="inp inp_1">
+			<input type="radio" name="y" value="b" class="inp inp_2">
+			<input type="radio" name="y" value="c" class="inp inp_3">
+			<div class="three_dui">
+				<div class="one_dui_1"></div>
+				<div class="one_dui_2"></div>
+				<div class="one_dui_3"></div>
+			</div>
+			<!-- 下一题 -->
+			<div class="next_2 next">
+			</div>
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+
+
+	<!-- 第四题 -->
+	<div class="four">
+		<div class="bj4">
+			<input type="radio" name="m" value="a" class="inp inp_1">
+			<input type="radio" name="m" value="b" class="inp inp_2">
+			<input type="radio" name="m" value="c" class="inp inp_3">
+			<div class="four_dui">
+				<div class="one_dui_1"></div>
+				<div class="one_dui_2"></div>
+				<div class="one_dui_3"></div>
+			</div>
+			<!-- 下一题 -->
+			<div class="next_3 next">
+			</div>
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+
+	<!-- 第五题 -->
+	<div class="five">
+		<div class="bj5">
+			<input type="radio" name="n" value="a" class="inp inp_1">
+			<input type="radio" name="n" value="b" class="inp inp_2">
+			<input type="radio" name="n" value="c" class="inp inp_3">
+			<div class="five_dui">
+				<div class="one_dui_1"></div>
+				<div class="one_dui_2"></div>
+				<div class="one_dui_3"></div>
+			</div>
+			<!-- 下一题 -->
+			<div class="next_4 next">
+			</div>
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+
+
+	<!-- 第六题 -->
+	<div class="six">
+		<div class="bj6">
+			<input type="radio" name="n1" value="a" class="inp inp_1">
+			<input type="radio" name="n1" value="b" class="inp inp_2">
+			<input type="radio" name="n1" value="c" class="inp inp_3">
+			<div class="six_dui">
+				<div class="one_dui_1"></div>
+				<div class="one_dui_2"></div>
+				<div class="one_dui_3"></div>
+			</div>
+			<!-- 下一题 -->
+			<div class="next" onclick="test()">
+			</div>
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+	<!-- 上传页 -->
+	<div class="seven">
+		<div class="bj7">
+			<img src="" alt="" class="titles">
+			<img src="" alt="" class="texts">
+			<div class="pai"></div>
+			<input id="upload"  class="upload1" name="file" type="file"  accept="image/*" />
+			<div class="upload" onclick="draw()"></div>
+			<img src="/templates/ol/olfestival/img/tishi.png" alt="" class="tishi">
+		</div>
+		<img src="/templates/ol/olfestival/img/logo1.png" alt="" class="logo1">
+
+		<img src="/templates/ol/olfestival/img/logo2.png" alt="" class="logo2">
+
+		<img src="/templates/ol/olfestival/img/logo3.png" alt="" class="logo3">
+	</div>
+
+    <!-- 生成页面 -->
+    <div class="xz">
+    	<textarea name="" id="" cols="30" rows="10" class="inps" onfocus="this.value=''; this.onfocus=null;">点击输入您的奥铃精神寄语</textarea>
+        <img src="" alt="" id="screenShotImg">
+        <div class="draw" onclick="liji()"></div>
+    </div>
+
+	<!-- 第二个生成 -->
+	<div class="eight">
+		<img src="" alt="" id="screenShotImgss">
+		<div class="fen"></div>
+		<div class="chou" onclick="prize()"></div>
+	</div>
+	<!-- 分享指示图 -->
+	<img src="/templates/ol/olfestival/img/fenxiang.png" alt="" class="fenxiang">
+
+	<!-- 中奖页 -->
+	<div class="prize">
+		<p>10</p>
+		<input type="text" placeholder="请输入您的姓名" class="inp1" id="names">
+		<input type="text" placeholder="请输入您的电话" class="inp2" id="password">
+		<div class="mg" onclick="tj()"></div>
+	</div>
+
+	<!-- 未奖页 -->
+	<div class="no-prize"></div>
+	<script src='/templates/ol/olfestival/js/cont.js'></script>
+	<script src='/templates/ol/olfestival/js/lrz.all.bundle.js'></script>
+	<script>
+// 适配华为键盘影响布局的问题
+var h = window.innerHeight;
+var myInput = document.getElementById('names');
+var myInputs = document.getElementById('password');
+myInput.addEventListener('focus',handler,false);
+myInputs.addEventListener('focus',handlers,false);
+function handler(){
+	$('body').height(h);
+}
+
+function handlers(){
+    $('body').height(h);
+}
+	</script>
+</body>
+</html>

@@ -1,0 +1,1298 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+/*-webkit-appearance: none;*/
+border-radius: 0;
+}
+body{
+	width: 100%;
+}
+body>img{
+  width: 13%;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+input{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+}
+div{
+      -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+}
+
+/*..............................................*/
+/*遮罩层*/
+.ovfHiden{overflow: hidden;height: 100%;background: rgba(0,0,0,0.75);}
+.containerss{
+  width: 100%;
+  height: 41.6875rem;
+  background:rgba(0,0,0,0.65);
+  position: fixed;
+  top: 0%;
+  z-index: 999;
+  display: none;
+}
+.containerss1{
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.65);
+  position: fixed;
+  top: 0%;
+  z-index: 999;
+  display: none;
+}
+/*导航*/
+#nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 2.25rem;
+  position: fixed;
+  background-image: url('../img/nav.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /*background: #F1F5F9;*/
+  z-index: 999999999999999999999999999999;
+  top: 0;
+}
+#nav>div{
+  margin-top: .4rem;
+}
+.nav1{
+  width: 4.0625rem;
+  height: 1.875rem;
+  background-image: url('../img/1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.nav2{
+  width: 4.0625rem;
+  height: 1.875rem;
+  background-image: url('../img/2-2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.nav3{
+  width: 4.0625rem;
+  height: 1.875rem;
+  background-image: url('../img/3-3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.nav4{
+  width: 4.0625rem;
+  height: 1.875rem;
+  background-image: url('../img/4-4.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+/*banner*/
+.banner{
+  margin-top:  2.25rem;
+}
+.banner img{
+  width: 100%;
+  display: block;
+}
+/*首页*/
+.index{
+  width: 100%;
+  height: 75.375rem;
+  background-image: url('../img/index.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: relative;
+}
+/*下一场*/
+.lastone{
+  width: 65%;
+  height: 1.2rem;
+  position: absolute;
+  top: 0.65%;
+  left: 5%;
+}
+.lastone>span{
+  color: #0F497D;
+  font-weight: bold;
+  font-size: 0.75rem;
+  position: absolute;
+  margin:auto;
+  top: 0;
+  bottom: 0;
+  left: 1%;
+  display: inline-block;
+}
+.lastone>p{
+  color: #0F497D;
+  font-weight: bold;
+  font-size: 0.75rem;
+  position: absolute;
+  margin:auto;
+  top: 0;
+  bottom: 0;
+  right: 15%;
+  display: inline-block;
+}
+.zblist{
+  width: 5.8125rem;
+  height: 1.9375rem;
+  position: absolute;
+  top: 0.3%;
+  left: 72%;
+  background-image: url(../img/zblist.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+}
+/*直播*/
+.video_1{
+  width: 90%;
+  height: 11.9rem;
+  position: absolute;
+  top: 3.95%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.d-show{
+  width: 98%;
+  height: 4.9rem;
+  position: absolute;
+  top: 3.95%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.d-show div{
+    position: absolute;
+}
+.inp{
+  width: 89%;
+  height: 3.5rem;
+  position: absolute;
+  top: 21%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.inp>input{
+  width: 68%;
+  height: 1.8rem;
+  background: none;
+  position: absolute;
+  top: 24%;
+  left: 5%;
+}
+.send{
+  width: 4.3125rem;
+  height: 2.5625rem;
+  background-image: url(../img/send.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 18%;
+  right: 2%;
+  margin: auto;
+}
+/*直播导航切换*/
+.zbnav{
+  width: 80%;
+  height: 2.2rem;
+  position: absolute;
+  top: 27%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.zb1{
+  width: 3.875rem;
+  height: 1.625rem;
+  background-image: url(../img/zb1.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.zb2{
+  width:6.8125rem;
+  height: 1.625rem;
+  background-image: url(../img/zb2-2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.zb3{
+  width: 3.875rem;
+  height: 1.625rem;
+  background-image: url(../img/zb3-3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+/*留资*/
+.form{
+  width: 88%;
+  height: 21.6rem;
+  position: absolute;
+  top: 45.3%;
+  left: 6%;
+}
+.inp1{
+  width: 62%;
+  height: 2rem;
+  position: absolute;
+  top: 3%;
+  left: 30%;
+  background: none;
+  border: none;
+}
+.inp2{
+  width: 62%;
+  height: 2rem;
+  position: absolute;
+  top: 17%;
+  left: 30%;
+  background: none;
+  border: none;
+}
+.inp3{
+  width: 23%;
+  height: 2rem;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background: none;
+  border: none;
+}
+.inp4{
+  width: 23%;
+  height: 2rem;
+  position: absolute;
+  top: 30%;
+  left: 70%;
+  background: none;
+  border: none;
+}
+.inp5{
+  width: 62%;
+  height: 2rem;
+  position: absolute;
+  top: 43%;
+  left: 30%;
+  background: none;
+  border: none;
+}
+.inp6{
+  width: 62%;
+  height: 2rem;
+  position: absolute;
+  top: 56.5%;
+  left: 30%;
+  background: none;
+  border: none;
+}
+.tj{
+  width: 6.34375rem;
+  height: 3.21875rem;
+  position: absolute;
+  top: 81.7%;
+  left: 33%;
+  background-image: url(../img/buycar.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+/*悬浮*/
+.f2{
+  width: 3.40625rem;
+  height: 3.1875rem;
+  background-image: url(../img/f2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  right: 0;
+  top: 10%;
+  z-index: 100;
+}
+
+/*转盘*/
+.box{
+  width: 21.125rem;
+  height: 23.90625rem;
+  position: fixed;
+  top: 34%;
+  left: 0;
+  right: 0;
+  margin:auto;
+  background-image: url('../img/box.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  z-index: 999;
+  display: none;
+}
+.box>.img01{
+  width: 80%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+.box>.drawBtn{
+  width: 16.3125rem;
+  height: 16.3125rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+}
+.box>.zi{
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+  z-index: 9999999999;
+}
+.close{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 2%;
+  right: 7%;
+}
+.yes-prize{
+  width: 16.90625rem;
+  height: 13.53125rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin:auto;
+  background-image: url('../img/100.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: none; 
+  z-index: 999;
+}
+.no-prize{
+  width: 16.90625rem;
+  height: 13.53125rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin:auto;
+  background-image: url('../img/no-prize.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  display: none;
+  z-index: 999;
+}
+/*..................*/
+
+
+/*车联网   实时数据*/
+.carnum{
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/carnum.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  display: none;
+}
+.cartime{
+  width: 12.8125rem;
+  height: 2.375rem;
+  background-image: url('../img/cartime.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  top: 8%;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+.border{
+  width: 22.5rem;
+  height: 26.875rem;
+  background-image: url('../img/border.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+.border>div{
+  width: 90%;
+  margin: 0 auto;
+  height: 10.9rem;
+  margin-top: 1.6rem;
+  background:#fff;
+}
+.border>div:nth-of-type(2){
+  margin-top: 1.7rem!important;
+}
+
+/*实时数据*/
+.shishi{
+  width: 22.5rem;
+  height: 26.875rem;
+  background-image: url('../img/border.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin:auto;
+  display: none;
+}
+.shishi>div{
+  width: 90%;
+  margin: 0 auto;
+  height: 10.9rem;
+  margin-top: 1.6rem;
+  background:#fff;
+  position: relative;
+}
+.shishi>div:nth-of-type(2){
+  margin-top: 1.7rem!important;
+}
+.shishi>div>img{
+  width: 100%;
+}
+.line{
+  width: 100%;
+  height: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.line>p{
+  width: 22%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.4375rem;
+  color:#000;
+}
+.line1{
+  top: 19%;
+}
+.line2{
+  top:45%;
+}
+.line3{
+  top: 70%;
+}
+.circle{
+  width: 100%;
+  height: 44%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 28%;
+}
+.circle>p{
+    width: 20%;
+    height: 22%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000;
+}
+.circle>p:nth-of-type(1){
+    position: absolute;
+    top: 32%;
+    left: 10%;
+}
+.circle>p:nth-of-type(2){
+position: absolute;
+    top: 41%;
+    left: 33%;
+}
+.circle>p:nth-of-type(3){
+position: absolute;
+    top: 42%;
+    left: 52%;}
+.circle>p:nth-of-type(4){
+    position: absolute;
+    top: 42%;
+    left: 70%;
+}
+
+
+
+
+
+
+
+#cartimenav{
+  width: 90%;
+  height: 2.5625rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 87%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url('../img/cartimenav.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+}
+.cartimenav1{
+  width: 3.875rem;
+  height: 1.625rem;
+  background-image: url('../img/s1-1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+}
+.cartimenav2{
+  width: 3.875rem;
+  height: 1.625rem;
+  background-image: url('../img/s2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+}
+#cartimenav>div{
+  margin-bottom: .2rem;
+}
+
+
+/*活动图集*/
+.activepic{
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/carnum.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  display: none;
+}
+.tzteam{
+  width: 11.5rem;
+  height: 2.34375rem;
+  background-image: url('../img/tzteam.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  top: 8%;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+/*司机团  轮播*/
+/*挑战司机团*/
+.Challenge{
+  width: 85%;
+  position: absolute!important;
+  top: 15.35%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Challenge img{
+  width: 100%;
+}
+.swiper-pagination{
+  top: 44%!important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.swiper-pagination>span{
+  width: 10px!important;
+  height: 10px!important;
+  display: inline-block;
+  border-radius: 100%;
+  opacity: .5;
+  margin: 1%;
+  background-image: url(../img/n.png);
+  background-size: 100% 100%!important;
+  background-repeat: no-repeat!important;
+}
+.swiper-pagination-bullet-active{
+  background-image: url(../img/y.png)!important;
+  background-size: 100% 100%!important;
+  background-repeat: no-repeat!important;
+}
+
+/*精美车图*/
+.piccar{
+  width: 10.0rem;
+  height: 2.375rem;
+  background-image: url(../img/piccar.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/*精美车图*/
+.picall1{
+  width: 85%;
+  position: absolute!important;
+  top: 54.35%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+.picall2{
+  width: 85%;
+  position: absolute!important;
+  top: 54.35%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+.picall3{
+  width: 85%;
+  position: absolute!important;
+  top: 54.35%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.picall4{
+  width: 85%;
+  position: absolute!important;
+  top: 54.35%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+.pic{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.pic img{
+  width: 100%;
+}
+.swiper-button-prev{
+  width: 5%!important;
+  height: 13%!important;
+  background-size: 100% 100%!important;
+  margin-top: -0.6875rem!important;
+  background-image: url(../img/prev.png)!important;
+  left: -7%!important;
+}
+.swiper-button-next{
+  width: 5%!important;
+  height: 13%!important;
+  background-size: 100% 100%!important;
+  margin-top: -0.6875rem!important;
+  background-image: url(../img/next.png)!important;
+  right: -7%!important;
+}
+
+
+
+/*精美车图导航*/
+.picnav{
+  width: 85%;
+  height: 2.5625rem;
+  position: absolute!important;
+  top:90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.picnav1{
+  width: 5.0rem;
+  height: 2.5625rem;
+  background-size: 100% 100%;
+  background-image: url('../img/a1-1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.picnav2{
+  width: 5.0rem;
+  height: 2.5625rem;
+  background-size: 100% 100%;
+  background-image: url('../img/a2-2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.picnav3{
+  width: 5.0rem;
+  height: 2.5625rem;
+  background-size: 100% 100%;
+  background-image: url('../img/a3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.picnav4{
+  width: 5.0rem;
+  height: 2.5625rem;
+  background-size: 100% 100%;
+  background-image: url('../img/a4-4.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+/*互动咨询*/
+.activecall{
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/carnum.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  position: absolute;
+  display: none;
+}
+.tuwen{
+  width: 10.0rem;
+  height: 2.375rem;
+  background-image: url(../img/tuwen.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 7%;
+  left: 0;
+  right: 0;
+  margin: auto; 
+}
+.list{
+  width: 100%;
+  height: 31.625rem;
+  position: absolute;
+  top: 14%;
+  left: 0;
+  right: 0;
+  margin:auto;
+  background-image: url(../img/list.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.news{
+  width: 87%;
+  height: 11.4rem;
+  position: absolute;
+  top: 56.5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: auto;
+}
+.newslist{
+  width: 100%;
+  height: 3.2rem;
+  margin: 0 auto;
+  margin-top: 1%;
+  display: block;
+  border-bottom: 1px dashed #000;
+}
+.title{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.titles{
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  color: #2B3439;
+  font-size: 14px;
+}
+.time{
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  color: #2B3439;
+  text-align: right;
+}
+.newslist p{
+  text-overflow: ellipsis;
+  font-size: 0.46875rem;
+  color: #2b3439;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  height: 2.2rem;
+  line-height: 2.2rem;
+}
+
+
+
+.gauge-data {
+margin: 0 auto;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 10%;
+}
+
+.clearfix:before, .clearfix:after {
+display: table;
+content: " "
+}
+.clearfix:after {
+clear: both
+}
+
+
+.gauge-data li {
+width: 40%;
+box-sizing: border-box;
+height: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+/*.gauge-data li:first-child{
+text-align: left;
+}*/
+.gauge-data li:nth-child(2){
+text-align: center;
+}
+/*.gauge-data li:last-child{
+width:240px;
+text-align: right;
+}*/
+
+.gauge-data li i {
+font-size: 0.75rem;
+font-weight: bold;
+/*margin-right: 20px;*/
+}
+
+.gauge-data li span {
+font-size: 0.4375rem;
+display: inline-block;
+}
+
+.gauge-data #mileages-unit,
+.gauge-data #fuel-unit,
+.gauge-data #temperature-unit {
+font-size: 0.375rem;
+}
+
+.footer-icon ul {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+padding-left: 1.40625rem;
+}
+
+.footer-icon li {
+display: inline-block;
+background: #F5F5F5;
+border-radius: 24px;
+width: 1.25rem;
+height: 1.25rem;
+line-height: 1.25rem;
+text-align: center;
+margin-right: 2.0625rem;
+margin-top: 8px;
+
+}
+
+
+
+
+/*GNSS澶╃嚎鏈帴鎴栬鍓柇.svg*/
+@font-face {font-family: 'car-state0';
+  src: url('./car-state0.eot'); /* IE9*/
+  src: url('./car-state0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state0.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state0.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state0.svg#car-state0') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state0{font-family:"car-state0";font-size:14px;font-style:normal;}
+
+/*鍏虫敞-sel.svg*/
+@font-face {font-family: 'car-state1';
+  src: url('./car-state1.eot'); /* IE9*/
+  src: url('./car-state1.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state1.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state1.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state1.svg#car-state1') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state1{font-family:"car-state1";font-size:14px;font-style:normal;}
+
+/*鍏虫敞.svg*/
+@font-face {font-family: 'car-state2';
+  src: url('./car-state2.eot'); /* IE9*/
+  src: url('./car-state2.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state2.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state2.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state2.svg#car-state2') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state2{font-family:"car-state2";font-size:14px;font-style:normal;}
+
+/*鍐峰嵈姘存俯.svg*/
+@font-face {font-family: 'car-state3';
+  src: url('./car-state3.eot'); /* IE9*/
+  src: url('./car-state3.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state3.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state3.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state3.svg#car-state3') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state3{font-family:"car-state3";font-size:14px;font-style:normal;}
+
+/*鍐峰嵈娑蹭綅.svg*/
+@font-face {font-family: 'car-state4';
+  src: url('./car-state4.eot'); /* IE9*/
+  src: url('./car-state4.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state4.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state4.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state4.svg#car-state4') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state4{font-family:"car-state4";font-size:14px;font-style:normal;}
+
+/*鍐峰嵈娑蹭綅浣�.svg*/
+@font-face {font-family: 'car-state5';
+  src: url('./car-state5.eot'); /* IE9*/
+  src: url('./car-state5.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state5.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state5.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state5.svg#car-state5') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state5{font-family:"car-state5";font-size:14px;font-style:normal;}
+
+/*鍐峰嵈娑叉恫浣�.svg*/
+@font-face {font-family: 'car-state6';
+  src: url('./car-state6.eot'); /* IE9*/
+  src: url('./car-state6.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state6.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state6.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state6.svg#car-state6') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state6{font-family:"car-state6";font-size:14px;font-style:normal;}
+
+/*鍐峰嵈娑叉俯搴�.svg*/
+@font-face {font-family: 'car-state7';
+  src: url('./car-state7.eot'); /* IE9*/
+  src: url('./car-state7.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state7.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state7.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state7.svg#car-state7') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state7{font-family:"car-state7";font-size:14px;font-style:normal;}
+
+/*鍒跺姩娑蹭綅浣�.svg*/
+@font-face {font-family: 'car-state8';
+  src: url('./car-state8.eot'); /* IE9*/
+  src: url('./car-state8.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state8.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state8.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state8.svg#car-state8') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state8{font-family:"car-state8";font-size:14px;font-style:normal;}
+
+/*鍓╀綑娌归噺.svg*/
+@font-face {font-family: 'car-state9';
+  src: url('./car-state9.eot'); /* IE9*/
+  src: url('./car-state9.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state9.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state9.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state9.svg#car-state9') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state9{font-family:"car-state9";font-size:14px;font-style:normal;}
+
+/*鍔犻€熻笍鏉夸俊鍙�.svg*/
+@font-face {font-family: 'car-state10';
+  src: url('./car-state10.eot'); /* IE9*/
+  src: url('./car-state10.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state10.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state10.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state10.svg#car-state10') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state10{font-family:"car-state10";font-size:14px;font-style:normal;}
+
+/*鍙戝姩鏈烘満娌瑰帇鍔�.svg*/
+@font-face {font-family: 'car-state11';
+  src: url('./car-state11.eot'); /* IE9*/
+  src: url('./car-state11.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state11.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state11.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state11.svg#car-state11') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state11{font-family:"car-state11";font-size:14px;font-style:normal;}
+
+/*鍙戝姩鏈鸿浆閫�.svg*/
+@font-face {font-family: 'car-state12';
+  src: url('./car-state12.eot'); /* IE9*/
+  src: url('./car-state12.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state12.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state12.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state12.svg#car-state12') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state12{font-family:"car-state12";font-size:14px;font-style:normal;}
+
+/*鍙戝姩鏈鸿繘姘斿帇鍔�.svg*/
+@font-face {font-family: 'car-state13';
+  src: url('./car-state13.eot'); /* IE9*/
+  src: url('./car-state13.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state13.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state13.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state13.svg#car-state13') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state13{font-family:"car-state13";font-size:14px;font-style:normal;}
+
+/*鍠锋补鍣ㄨ閲�.svg*/
+@font-face {font-family: 'car-state14';
+  src: url('./car-state14.eot'); /* IE9*/
+  src: url('./car-state14.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state14.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state14.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state14.svg#car-state14') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state14{font-family:"car-state14";font-size:14px;font-style:normal;}
+
+/*瀹氫綅鍥炬爣.svg*/
+@font-face {font-family: 'car-state15';
+  src: url('./car-state15.eot'); /* IE9*/
+  src: url('./car-state15.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state15.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state15.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state15.svg#car-state15') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state15{font-family:"car-state15";font-size:14px;font-style:normal;}
+
+/*灏跨礌娑蹭綅.svg*/
+@font-face {font-family: 'car-state16';
+  src: url('./car-state16.eot'); /* IE9*/
+  src: url('./car-state16.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state16.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state16.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state16.svg#car-state16') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state16{font-family:"car-state16";font-size:14px;font-style:normal;}
+
+/*鎵嬪埞鐘舵€�.svg*/
+@font-face {font-family: 'car-state17';
+  src: url('./car-state17.eot'); /* IE9*/
+  src: url('./car-state17.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state17.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state17.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state17.svg#car-state17') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state17{font-family:"car-state17";font-size:14px;font-style:normal;}
+
+/*鏀惰棌-sel.svg*/
+@font-face {font-family: 'car-state18';
+  src: url('./car-state18.eot'); /* IE9*/
+  src: url('./car-state18.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state18.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state18.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state18.svg#car-state18') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state18{font-family:"car-state18";font-size:14px;font-style:normal;}
+
+/*鏀惰棌.svg*/
+@font-face {font-family: 'car-state19';
+  src: url('./car-state19.eot'); /* IE9*/
+  src: url('./car-state19.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state19.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state19.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state19.svg#car-state19') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state19{font-family:"car-state19";font-size:14px;font-style:normal;}
+
+/*鏈烘补娑蹭綅.svg*/
+@font-face {font-family: 'car-state20';
+  src: url('./car-state20.eot'); /* IE9*/
+  src: url('./car-state20.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state20.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state20.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state20.svg#car-state20') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state20{font-family:"car-state20";font-size:14px;font-style:normal;}
+
+/*鏈烘补娓╁害.svg*/
+@font-face {font-family: 'car-state21';
+  src: url('./car-state21.eot'); /* IE9*/
+  src: url('./car-state21.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state21.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state21.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state21.svg#car-state21') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state21{font-family:"car-state21";font-size:14px;font-style:normal;}
+
+/*姘哀鎺掓斁.svg*/
+@font-face {font-family: 'car-state22';
+  src: url('./car-state22.eot'); /* IE9*/
+  src: url('./car-state22.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state22.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state22.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state22.svg#car-state22') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state22{font-family:"car-state22";font-size:14px;font-style:normal;}
+
+/*姘存俯杩囬珮.svg*/
+@font-face {font-family: 'car-state23';
+  src: url('./car-state23.eot'); /* IE9*/
+  src: url('./car-state23.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state23.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state23.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state23.svg#car-state23') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state23{font-family:"car-state23";font-size:14px;font-style:normal;}
+
+/*绌烘护鍫靛.svg*/
+@font-face {font-family: 'car-state24';
+  src: url('./car-state24.eot'); /* IE9*/
+  src: url('./car-state24.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state24.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state24.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state24.svg#car-state24') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state24{font-family:"car-state24";font-size:14px;font-style:normal;}
+
+/*绌鸿皟鐘舵€�.svg*/
+@font-face {font-family: 'car-state25';
+  src: url('./car-state25.eot'); /* IE9*/
+  src: url('./car-state25.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state25.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state25.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state25.svg#car-state25') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state25{font-family:"car-state25";font-size:14px;font-style:normal;}
+
+/*钃勭數姹犵數鍘�.svg*/
+@font-face {font-family: 'car-state26';
+  src: url('./car-state26.eot'); /* IE9*/
+  src: url('./car-state26.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state26.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state26.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state26.svg#car-state26') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state26{font-family:"car-state26";font-size:14px;font-style:normal;}
+
+/*杞﹁浇鐘舵€�.svg*/
+@font-face {font-family: 'car-state27';
+  src: url('./car-state27.eot'); /* IE9*/
+  src: url('./car-state27.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state27.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state27.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state27.svg#car-state27') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state27{font-family:"car-state27";font-size:14px;font-style:normal;}
+
+/*杞﹂棬鐘舵€乿.svg*/
+@font-face {font-family: 'car-state28';
+  src: url('./car-state28.eot'); /* IE9*/
+  src: url('./car-state28.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state28.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state28.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state28.svg#car-state28') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state28{font-family:"car-state28";font-size:14px;font-style:normal;}
+
+/*杞悜娑蹭綅浣�.svg*/
+@font-face {font-family: 'car-state29';
+  src: url('./car-state29.eot'); /* IE9*/
+  src: url('./car-state29.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state29.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state29.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state29.svg#car-state29') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state29{font-family:"car-state29";font-size:14px;font-style:normal;}
+
+/*閲岀▼.svg*/
+@font-face {font-family: 'car-state30';
+  src: url('./car-state30.eot'); /* IE9*/
+  src: url('./car-state30.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state30.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state30.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state30.svg#car-state30') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state30{font-family:"car-state30";font-size:14px;font-style:normal;}
+
+/*闂ㄩ攣鐘舵€�.svg*/
+@font-face {font-family: 'car-state31';
+  src: url('./car-state31.eot'); /* IE9*/
+  src: url('./car-state31.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./car-state31.woff') format('woff'), /* chrome銆乫irefox */
+  url('./car-state31.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+  url('./car-state31.svg#car-state31') format('svg'); /* iOS 4.1- */
+}
+
+.svg-font.car-state31{font-family:"car-state31";font-size:14px;font-style:normal;}

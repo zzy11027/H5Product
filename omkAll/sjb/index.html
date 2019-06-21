@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta name=format-detection content="telephone=no">
+  <meta http-equiv=X-UA-Compatible content="ie=edge">
+  <title>2018世界杯冠军之路</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+<link href=/mobile2/templates/sjb/css/world_cup_way.655150927e698c71eee660af4ccd0180.css rel=stylesheet></head>
+<body>
+  <div id=app></div>
+
+  <script>
+    var globalParams = {
+      shareTitle: '2018世界杯冠军之路，我预测是这样，不服来战！',
+      shareDesc: '2018世界杯冠军之路，我预测是这样，不服来战！'
+    }
+    function getHostName () {
+      var domain = {
+        '0.0.0.0': '//test-go-biz.dongqiudi.com',
+        'test1-topic.dongqiudi.com': '//test-go-biz.dongqiudi.com',
+        'beta-topic.dongqiudi.com': '//beta-go-biz.dongqiudi.com',
+        'topic.dongqiudi.com': '//go-biz.dongqiudi.com'
+      }
+      return domain[location.hostname]
+    }
+    var bridgeInit = false
+    var browers = {}
+    var ua = navigator.userAgent.toLowerCase()
+    browers.Android = ua.match(/android/)
+    browers.iOS = ua.match(/ipad|iphone|ios/)
+    browers.dqd = ua.match(/NewsApp\/([\d\.]+)/i)
+    browers.version = browers.dqd ? parseInt( browers.dqd[ 1 ].replace( eval( "/\\./ig" ), "" ) ) : null   
+    function connectWebViewJavascriptBridge(callback) {
+      if (window.WebViewJavascriptBridge) {
+        if (bridgeInit === false) {
+          WebViewJavascriptBridge.init(function (message, responseCallback) {})
+          bridgeInit = true
+        }
+        callback && callback(WebViewJavascriptBridge)
+      } else {
+        document.addEventListener('WebViewJavascriptBridgeReady', function () {
+          if (bridgeInit === false) {
+            WebViewJavascriptBridge.init(function (message, responseCallback) {})
+            bridgeInit = true
+          }
+          callback && callback(WebViewJavascriptBridge)
+        }, false)
+      }
+    }
+  </script>
+  <script type=text/javascript>
+    var mainData = {};
+    document.getElementsByTagName('html')[0].style.fontSize = (document.documentElement.getBoundingClientRect().width ||
+      window.screen.width) / 20 + 'px'
+  </script>
+  <script src=/mobile2/templates/sjb/js/jweixin-1.0.0.js></script>
+  <script type=text/javascript src=/mobile2/templates/sjb/js/vue.min.js></script>
+
+<script type=text/javascript src=/mobile2/templates/sjb/js/world_cup_way.4f4f92aef13f6eeb959d.js></script><script type=text/javascript src=/mobile2/templates/sjb/js/share.445b9c8b9713a83ef030.js></script></body>
+
+</html>

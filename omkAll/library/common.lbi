@@ -1,0 +1,23 @@
+<!--start:底部导航-->
+<div class="navWrapper boxShadow">
+    <div class="innerWrap">
+        <div class="footNav">
+            <a href="index.php"  target="_parent" name="home">
+                <img src="new0225/images/home_b.png"/>首页
+            </a>
+            <a href="mall.php?act=index" class="aOn" name="truck" target="_parent">
+                <img src="new0225/images/truck.png"/>商城
+            </a>
+            <a href="http://bbs.aumantruck.com" target="_parent" name="community">
+                <img src="new0225/images/community.png"/>社区
+            </a>
+            <a href="network.php?act=list&type=sales" target="_parent" name="server">
+                <img src="new0225/images/server.png"/>供应商
+            </a>
+            <a href="user.php?act=login&step=active" target="_parent" name="people">
+                <img src="new0225/images/people.png"/>我
+            </a>
+        </div>
+    </div>
+</div>
+<!--end:底部导航-->

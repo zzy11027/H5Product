@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="./css/index.css">
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '', // 分享标题
+                desc: '', // 分享描述
+                link: '', // 分享链接
+                imgUrl: '', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '', // 分享标题
+                desc: '', // 分享描述
+                link: '', // 分享链接
+                imgUrl: '', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+</head>
+<body>
+<input type="hidden" value="{$openid}" id="openid">
+<input type="hidden" value="{$token}" id="token">
+<input type="hidden" value="" id="isShare">
+<div class="fatherBack">
+  <img style="" mode="" src="./images/1.png" binderror="" bindload="" class="img1">
+  <img style="" mode="" src="./images/2.png" binderror="" bindload="" class="img2">
+  <img style="" mode="" src="./images/3.png" binderror="" bindload="" class="img3">
+  <img style="" mode="" src="./images/6.png" binderror="" bindload="" class="img6">
+  <img style="" mode="" src="./images/7.png" binderror="" bindload="" class="img7">
+  <img style="" mode="" src="./images/8.png" binderror="" bindload="" class="img8">
+  <img style="" mode="" src="./images/8.png" binderror="" bindload="" class="img9">
+  <img style="" mode="" src="./images/8.png" binderror="" bindload="" class="img10">
+  <img style="" mode="" src="./images/8.png" binderror="" bindload="" class="img11">
+  <img style="" mode="" src="./images/gz.png" binderror="" bindload="" class="img12">
+
+  <div class="title">
+    <img style="" mode="" src="./images/4.png" binderror="" bindload="" class="img4">
+    <img style="" mode="" src="./images/5.png" binderror="" bindload="" class="img5">
+  </div>
+  <div class="container1">
+      <img style="" mode="" src="./images/prize1.png" >
+      <img style="" mode="" src="./images/prize1.png" >
+      <img style="" mode="" src="./images/prize1.png" >
+      <img style="" mode="" src="./images/prize1.png" >
+      <img style="" mode="" src="./images/prize1.png" >
+      <img style="" mode="" src="./images/prize1.png" >
+  </div>
+  <div class="titles">
+    <img style="" mode="" src="./images/titles.png" binderror="" bindload="">
+  </div>
+  <div class="container2">
+    <img style="" mode="" src="./images/prize1.png" binderror="" bindload="">
+    <img style="" mode="" src="./images/prize1.png" binderror="" bindload="">
+    <img style="" mode="" src="./images/prize1.png" binderror="" bindload="">
+  </div>
+  <div class="mask" style="display: none;"></div>
+  <div bindsubmit="formSubmit" class="lz" style="display: none;">
+    <img style="" mode="" src="./images/lz.png" binderror="" bindload="" class="lz1">
+    <img style="" mode="" src="./images/write.png" binderror="" bindload="" class="lz2">
+    <div class='information'>
+      <div class='information-li flex'>
+        <label class="name">姓名:</label>
+        <input type='text' placeholder='请输入姓名' placeholder-class='placeholder' id="name" name="name" value=''>
+      </div>
+
+      <div class='information-li flex'>
+        <label class="phone">电话:</label>
+        <input type='number' placeholder-class='placeholder' placeholder='请输入联系电话' id="phone" name="phone" value=''>
+      </div>
+
+      <div class='information-li flex'>
+        <label class='prov'>省份:</label>
+		<select id="prov" name="prov" id="" style="width: 75%;">
+			<option value="0">000000</option>
+		</select>
+      </div>
+      <div class='information-li flex'>
+        <label class='city'>城市:</label>
+		<select name="city" id="city" style="width: 75%;">
+			<option value="0">111</option>
+		</select>
+      </div>
+
+      <div class='information-li flex'>
+        <label class='jxs'>经销商:</label>
+		<select name="jxs" id="jxs" style="width: 75%;">
+			<option value="0">1111</option>
+		</select>
+      </div>
+
+      <div class='information-li flex'>
+        <label class="cx">意向车型:</label>
+        <input id="cx" style="width: 65%" type='number' placeholder-class='placeholder' placeholder='请输入联系意向车型' name="cx" value=''>
+      </div>
+    </div>
+    <button class='but' >立即领取</button>
+  </div>
+
+  <div class="prize">
+	 <img src="./images/10tan.png" alt="">
+	 <div class="prize_left"></div>
+	 <div class="prize_right"></div>
+  </div>
+  <div bindsubmit="formSubmit" class="lz lzs" style="display: none;">
+    <img style="" mode="" src="./images/lz.png" binderror="" bindload="" class="lz1">
+    <img style="" mode="" src="./images/gzs.png" binderror="" bindload="" class="gzs">
+    <img style="" mode="" src="./images/gzcon.png" binderror="" bindload="" class="gzcon">
+    <img style="" mode="" src="./images/close.png" binderror="" bindload="" class="close">
+  </div>
+</div>
+<script src="./js/logic.js"></script>
+</body>
+</html>

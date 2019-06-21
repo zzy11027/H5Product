@@ -1,0 +1,13 @@
+body > footer{width: 100%;position: fixed;left:0;bottom:0; z-index: 6;background-color: #fff; border-top: 1px solid #e5e5e5;}
+body > footer a{display:block;height: 47px;padding-top: 57px;font-size: 24px;color: #999;float: left;width: 20%;text-align: center;position: relative;text-decoration: none;}
+body > footer .selected{color: #f86b4f;}
+body > footer .home:before{content: '';position: absolute;left: 50%;margin-left: -18px;top:18px;background: url(../images/home.png) no-repeat 0 0;width: 36px;height: 32px;}
+body > footer .home.selected:before{background: url(../images/home-selected.png) no-repeat 0 0;}
+body > footer .store:before{content: '';position: absolute;left: 50%;margin-left: -24px;top:18px;background: url(../images/store.png) no-repeat 0 0;width: 47px;height: 33px;}
+body > footer .store.selected:before{background: url(../images/store-selected.png) no-repeat 0 0;}
+body > footer .bbs:before{content: '';position: absolute;left: 50%;margin-left: -17px;top:18px;background: url(../images/bbs.png) no-repeat 0 0;width: 34px;height: 32px;}
+body > footer .bbs.selected:before{background: url(../images/bbs-selected.png) no-repeat 0 0;}
+body > footer .other:before{content: '';position: absolute;left: 50%;margin-left: -17px;top:18px;background: url(../images/fuwu.png) no-repeat 0 0;width: 33px;height: 40px;background-size: 100%}
+body > footer .other.selected:before{background: url(../images/other-selected.png) no-repeat 0 0;}
+body > footer .user:before{content: '';position: absolute;left: 50%;margin-left: -16px;top:18px;background: url(../images/user.png) no-repeat 0 0;width: 32px;height: 40px;}
+body > footer .user.selected:before{background: url(../images/user-selected.png) no-repeat 0 0;}

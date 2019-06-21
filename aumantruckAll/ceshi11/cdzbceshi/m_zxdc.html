@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <!--<meta name="viewport" content="width=640,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link href="/mobile/templates/cdzb/css/cd_sbkh_m.css" type="text/css" rel="stylesheet"/>
+    <link href="/mobile/templates/cdzb/css/cd_m.css" type="text/css" rel="stylesheet"/>
+    <script src="/mobile/templates/cdzb/js/jquery-3.2.1.js"></script>
+    <script src="js/region3.js" type="text/javascript"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <title>在线订购</title>
+     <script>
+        wx.config({
+            debug: false, // 开启调试模�?调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间�?
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机�?
+            signature: '{$arr.sha1}',// 必填，签名，见附�?
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附�?
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '【在线订购】福田戴姆勒杯-2017中国高效物流大赛成都麻辣上演 ', // 分享标题
+                desc: '西南物流降本增效迎来欧曼解决方案，如何践行到底？不知道你就落伍啦！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_cdzb.php?act=zxdc', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/cdzb/images/doge1.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '【在线订购】福田戴姆勒杯-2017中国高效物流大赛成都麻辣上演 ', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_cdzb.php?act=zxdc', // 分享链接
+               imgUrl: 'http://www.aumantruck.com/mobile/templates/cdzb/images/doge1.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body style="margin:0;">
+<ul class="navUl">
+    <!--<li style="width: 25%;"><a href="/mobile/spike_cdzb.php"  class="aOn">赛事直播</a></li>-->
+    <!--<li><a href="/mobile/spike_tco.php?index=2">介绍</a></li>-->
+    <!--<li><a href="/mobile/spike_tco.php?index=3">报名</a></li>-->
+    <!--<li style=""><a href="/mobile/spike_tco.php?index=4">论坛</a></li>-->
+    <!--<li style="width: 25%;"><a href="/mobile/spike_tco.php?index=5">卡车公开赛</a></li>-->
+    <!--<li><a href="/mobile/spike_tco.php?index=6">排名</a></li>-->
+    <li style="width: 33%;"><a href="/mobile/spike_tco.php?index=2">卡车公开赛</a></li>
+    <li style="width: 33%;"><a href="/mobile/spike_cdzb.php"  class="aOn">大赛直播</a></li>
+    <li style="width: 33%;"><a href="/mobile/spike_tco.php?index=6">冠军排行榜</a></li>
+</ul>
+
+<div class="zxdc">
+     <div class="m_zxdc_content">
+        <input type="text" id="zxdc_name" name='apply_field1_1'/>
+        <input type="text" id="zxdc_tel" name='mobile_phone' />
+     <select  id="selProvinces_1" onchange="region.changed(this, 2, 'selCities_1')" name='apply_field3_1'>
+     <option value="">省</option>
+    <!-- {foreach from=$city_list item=country} -->
+    <option value="{$country.region_id}" <!-- {if $country.region_id eq $fieldData.agency_province}selected{/if}-->{$country.region_name}</option>
+     <!-- {/foreach} -->
+    </select>
+    <select   id="selCities_1" onchange="getDistributors(1);" name="apply_field4_1">
+        <option value="">城市</option>
+        <!-- {foreach from=$fieldData.citys item=city} -->
+        <option value="{$city.region_id}" <!-- {if $city.region_id eq $fieldData.agency_city}selected{/if}-->>{$city.region_name}</option>
+        <!-- {/foreach} -->
+    </select>
+    <select  id="apply_field6_1" name="apply_field5_1">
+     <option value="">经销商</option>
+    <!-- {foreach from=$distributors item=distributor} -->
+    <option value="{$distributor.distributors_id}" <!--{if $fieldData[6] eq $distributor.distributors_id}selected{/if}-->>{$distributor.distributors_name}</option>
+    <!-- {foreachelse} -->
+    <!-- {/foreach} -->
+    </select>
+
+    <select id="num"  name="apply_field6_1">
+        <option value="">车型</option>
+        <option value="6363">欧曼EST</option>
+        <option value="6364">欧曼EST-A</option>
+         <option value="6365">欧曼GTL</option>
+        <option value="6366">欧曼ETX</option>
+    </select>
+    <select id="carNum" name="carNum">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+
+
+       <!--  <select id="zxdc_province">
+            <option>2</option>
+            <option>2</option>
+        </select>
+        <select id="zxdc_city">
+            <option>3</option>
+            <option>3</option>
+        </select>
+        <select id="zxdc_dealer">
+            <option>4</option>
+            <option>4</option>
+        </select>
+        <select id="zxdc_carType">
+            <option>1</option>
+            <option>1</option>
+        </select>
+        <select id="zxdc_carNum">
+            <option>5</option>
+            <option>5</option>
+        </select> -->
+
+         <a href="http://www.aumantruck.com/trucktypespecialtopic.php?cat_id=31" target="_blank"><div style="position: absolute;width: 65px;height: 25px;top: 750px;left: 65px;"></div></a>
+         <a href="http://www.aumantruck.com/trucktypespecialtopic.php?cat_id=41" target="_blank"><div style="position: absolute;width: 100px;height: 25px;top: 750px;left: 136px;"></div></a>
+         <a href="http://www.aumantruck.com/trucktypespecialtopic.php?cat_id=11" target="_blank"><div style="position: absolute;width: 69px;height: 25px;top: 750px;left: 225px;"></div></a>
+        <a href="http://www.aumantruck.com/trucktypespecialtopic.php?cat_id=21" target="_blank"><div style="position: absolute;width: 69px;height: 25px;top: 750px;left: 295px;"></div></a>
+
+        <a><div id="zxdc_btn" {if $user_id } onclick="yh_tj()" {else} onclick="denglu()"{/if}></div></a>
+    </div>
+</div>
+
+<a href="/mobile/spike_tco.php?index=3"><div id="wybm_icon"></div></a>
+<a href="?act=yysj"><div id="yysj_icon"></div></a>
+<a href="?act=zxdc"><div id="wymc_icon"></div></a>
+<a href="?act=gszh"><div id="gszh_icon"></div></a>
+
+<img id="box" onclick="boxbgClick()"/>
+<div id="box-bg" onclick="boxbgClick()"></div>
+
+<script>
+       function denglu() {
+        alert('请先登录');
+        window.location.href = 'checkLogin.php?act=login&step=active&huodong=cdzb';
+    }
+
+     function getDistributors(goods_id){
+        if(goods_id == 1){
+            var prov_obj = document.getElementById("selProvinces_1");
+            var prov = prov_obj.options[prov_obj.options.selectedIndex].value;
+            var city_obj = document.getElementById("selCities_1");
+            var city = city_obj.options[city_obj.options.selectedIndex].value;
+        }
+        
+
+        if(city){
+            $.ajax({
+                type: "GET",
+                url: "http://www.aumantruck.com/mobile/spike_cdzb.php?act=check_by_region&prov="+prov+"&city="+city+"&is_activity=1&goods_id="+goods_id,
+                dataType: 'json',
+                success: function (result) {
+                    if(result.error == 1){
+                        return false;
+                    }
+                    var content = result.content;
+                    var option_html = "";
+                    if(content.length>0){
+                        for(var i = 0; i < content.length; i++){
+                            option_html += "<option value='"+ content[i]['agency_id'] +"'>"+ content[i]['agency_name'] +"</option>";
+                        }
+                    }else{
+                        option_html += "<option value=''>这里提不到车，去隔壁市看看吧</option>";
+                    }
+                    if(goods_id == 1){
+                        $("#apply_field6_1").html(option_html);
+                    }
+                    if(goods_id == 2){
+                        $("#apply_field6_2").html(option_html);
+                    }
+                    if(goods_id == 3){
+                        $("#apply_field6_3").html(option_html);
+                    }
+                    if(goods_id == 4){
+                        $("#apply_field6_4").html(option_html);
+                    }
+                    if(goods_id == 5){
+                        $("#apply_field6_5").html(option_html);
+                    }
+
+                }
+            });
+        }
+
+    }
+
+    function yh_tj(){
+        var form = $("#form");
+        var order_name =  $("input[name='apply_field1_1']").val();
+        var mobile =  $("input[name='mobile_phone']").val();
+        var province =  $("select[name='apply_field3_1']").val();
+        var city =  $("select[name='apply_field4_1']").val();
+        var service_id =  $("select[name='apply_field5_1']").val();
+        var goods_id = $("select[name='apply_field6_1']").val();
+        var number = $("select[name='carNum']").val();
+
+        if (!$("input[name='apply_field1_1']").val()) {
+            alert('请输入姓名');
+            return false;
+        }
+        if (!$("input[name='mobile_phone']").val()) {
+            alert('请输入手机号');
+            return false;
+        }
+
+        var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+        if (!reg.test(mobile)) {
+            alert("请输入正确的手机号");
+            return false;
+        }
+
+        if($("select[name='apply_field3_1']").val() == ''){
+            alert("请选择省份");
+            return false;
+        }
+        if (!$("select[name='apply_field4_1']").val()) {
+            alert('请选择市');
+            return false;
+        }
+        if($("select[name='apply_field5_1']").val() == ''){
+            alert("请选择经销商");
+            return false;
+        }
+        if($("select[name='apply_field6_1']").val() == ''){
+            alert("请选择车型！");
+            return false;
+        }
+
+        if (!$("select[name='carNum']").val()) {
+            alert('请选择数量');
+            return false;
+        }
+
+      
+     window.location.href =  "spike_cdzb.php?act=done&act=done&goods_id="+goods_id+"&order_name="+order_name+"&mobile="+mobile+ "&province="+province+"&city="+city+"&service_id="+service_id+"&number="+number;
+
+
+    }
+
+
+
+
+
+
+
+
+
+    function showBigImg(obj) {
+
+        var _w = parseInt($(window).width());
+        var _h = parseInt($(window).height());
+
+        var img = new Image();
+        img.src = obj.src;
+        img.onload = function(){
+            // 打印
+            var realWidth = img.width;//真实的宽度
+            var realHeight = img.height;//真实的高度
+            $('#box').css({
+                "width":"100%",
+                "height":"auto",
+                "top":'100px',
+                'display':'block'
+            });
+            $('#box-bg').show();
+            $("#box").attr("src", obj.src);
+            $('#box').show();
+        };
+        no_scroll();
+    }
+
+    function boxbgClick() {
+        $('#box-bg').hide();
+        $('#box').hide();
+        yes_scroll();
+    }
+
+    function hideSelf(obj) {
+        yes_scroll();
+
+        var temp = obj;
+        temp.style.display = 'none';
+        boxbgClick();
+    }
+
+    function yes_scroll() {
+        $(document.body).css({
+            "overflow-x":"auto",
+            "overflow-y":"auto"
+        });
+    }
+
+    function no_scroll() {
+        //禁止滚动条
+        $(document.body).css({
+            "overflow-x":"hidden",
+            "overflow-y":"hidden"
+        });
+    }
+
+    function topbtnClick(obj) {
+        $('#tbtn1').removeClass('tOn');
+        $('#tbtn2').removeClass('tOn');
+        $('#'+obj.id).addClass('tOn');
+
+        if (obj.id == 'tbtn1'){
+            $('.content1').show();
+            $('.content2').hide();
+        }else{
+            $('.content1').hide();
+            $('.content2').show();
+        }
+
+    }
+
+    function subbtnClick(obj) {
+
+    }
+
+    function audio_play(obj) {
+        var temp = obj.id;
+        var index = temp.substr(temp.length-1,1);
+        var v = document.getElementById("audio"+index);
+
+        v.addEventListener("ended", function () {
+            $('#'+temp).css({
+                'background': 'url(images/audio_btn.png) center no-repeat',
+                'background-size':'100% 100%'
+            });
+        });
+
+        if (v.paused){
+            v.play();
+            $('#'+temp).css({
+                'background': 'url(images/sound.gif) center no-repeat',
+                'background-size':'100% 100%'
+            });
+        }else{
+            v.pause();
+            $('#'+temp).css({
+                'background': 'url(images/audio_btn.png) center no-repeat',
+                'background-size':'100% 100%'
+            });
+        }
+
+    }
+
+    function video_play(obj) {
+
+        var temp = obj.id;
+        var index = temp.substr(temp.length-1,1);
+        var v = document.getElementById("video"+index);
+
+        v.onplay = function () {
+            obj.style.display = 'none';
+        }
+        v.onpause = function() {
+            obj.style.display = 'block';
+        };
+        if (v.paused){
+            v.play();
+            obj.style.display = 'none';
+        }else{
+            v.pause();
+            obj.style.display = 'block';
+        }
+    }
+
+</script>
+</body>
+</html>

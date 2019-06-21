@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>真球迷就要秀出FAN ID</title>
+	<link rel="stylesheet" href="http://www.aumantruck.com/mobile2/templates/2018sz/css.css">
+	 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  	 <script>
+        wx.config({
+            debug: false, //开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '绿通之星 高效畅行 包包如雨助力超卡运输', // 分享标题
+                desc: '来挑战一下，你能抢到几个包？', // 分享描述
+                link: 'http://cz.douyar.cc/spike_sc.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/omkhd/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '绿通之星 高效畅行,红包如雨助力超卡运输', // 分享标题
+                link: 'http://cz.douyar.cc/spike_sc.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/omkhd/logo.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?75ab73a9c1b0c01b9f90135f9112a86e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+	<canvas id="can" style="width: 18.75rem;height: 18.75rem;margin:0 auto;display: none;">
+
+	</canvas>
+	
+	<div class="one">
+		<a class="a_1"></a>
+	</div>
+
+	<div id="imgBox">
+		<img src="" alt="" class="img_wrap";onerror="whenError(this)">
+
+	<form name="form1">  
+<!-- 		<select name="select_1" onChange="getCitys()" class="inp_1" id="cit" onChange="getCity()" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+			<option value="0">省份</option>
+			<option value="0">1</option>
+			<option value="1">2</option>
+			<option value="2">3</option>
+			<option value="3">4</option>
+
+		</select> -->
+
+		<!-- <input type="text" onChange="getCitys()" class="inp_1" id="cit" onChange="getCity()" placeholder="请输入省份" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;"> -->
+
+	</form>
+		<input type="text" class="inp_3">
+
+		<input id="upload"  class="upload1" name="upload" type="file"  accept="image/*" onchange="selectFileImage(this)"/>
+        <img src="/templates/2018sz/xj.png" alt="" class="xj">
+		<button onclick="test()" class="button_2">
+		
+		</button>
+
+
+    
+	</div>
+    <div id="errormsg">
+        长按保存图片,分享至朋友圈!
+    </div>
+    <!-- <img src="/templates/2018sz/bc.png" alt="" class="bc"> -->
+    <a href="http://cz.douyar.cc" class="ewm"></a>
+	<script src='http://www.aumantruck.com/mobile2/templates/2018sz/jquery.min.js'></script>
+	<script src='http://www.aumantruck.com/mobile2/templates/2018sz/exif.js'></script>
+	<script src='http://www.aumantruck.com/mobile2/templates/2018sz/build.js'></script>
+	<script>
+
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+		$('.a_1').click(function(){
+			$('.one').hide();
+			$('#imgBox').show();
+		})
+
+        function getCitys(){
+        	
+			var cit = $('#cit').val();
+			console.log(cit)
+			place = cit+'(China)';
+
+        }
+	</script>
+</body>
+
+</html>

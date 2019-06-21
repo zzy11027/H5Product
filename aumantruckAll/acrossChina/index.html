@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>欧曼超级重卡，纵贯中国不熄火！高效进化用数据说话</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+	<script src="./js/swiper.min.js"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/rotaryDraw.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9rsY5a1nKqBfToDbbqNIFcDeQFGHstvW"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '欧曼超级重卡，纵贯中国不熄火！高效进化用数据说话', // 分享标题
+                desc: '看挑战直播，抢网红重卡！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_across.php?act=index', // 分享链接
+                imgUrl: 'http://www.aumantruck.com./img/fenx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '欧曼超级重卡，纵贯中国不熄火！高效进化用数据说话', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_across.php?act=index', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile//templates/acrossChina/img/fenx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	<style>
+/*		#main div{
+			width: 100%!important;
+			height: 100%!important;
+		}
+		#main canvas{
+			width: 100%!important;
+			height: 100%!important;
+		}*/
+	</style>
+</head>
+<body>
+<div class="containerss1"></div>
+<input type="hidden" value="{$string}" id="danmu"/>
+<input type="hidden" value="{$username}" id="username"/>
+<input type="hidden" value="{$datas.wd}" id="wei"/>
+<input type="hidden" value="{$datas.jd}" id="jing"/>
+<input type="hidden" value="" id="weis"/>
+<input type="hidden" value="" id="jings"/>
+<!-- 导航 -->
+<div id="nav">
+	<div class="nav1"></div>
+	<div class="nav2"></div>
+	<div class="nav3"></div>
+	<div class="nav4"></div>
+</div>
+<!-- banner -->
+<div class="banner">
+	<img src="./img/banner.jpg" alt="">
+</div>
+<!-- 主页 -->
+<div class="index">
+	<!-- 悬浮 -->
+	<div class="f2"></div>
+	<!-- 直播时间   列表 -->
+	<div class="lastone">
+		<span>下一场直播时间：</span>
+		<p>2019-4-12日 11:00-12:00</p>
+	</div>
+	<div class="zblist"></div>
+	<!-- 直播 -->
+	<div id="video_1" class="video video_1">
+		<!--弹幕  -->
+	    <div class="d-show"></div>
+		<iframe src="//shangzhibo.tv/watch/5445251?player" style="width:100%; height: 100%; overflow:hidden;" scrolling="no" allowFullScreen>
+		</iframe>
+	</div>
+	<!-- 弹幕输入 -->
+	<div class="inp">
+		<input type="text" placeholder="输入你的弹幕" class="dm" id="reply-write">
+		<div class="send" onClick="sendreply()" id="reply-write"></div>
+	</div>
+	<!-- 直播导航    切换 -->
+	<div class="zbnav">
+		<div class="zb1"></div>
+		<a href="http://www.gifshow.com/s/F5smCiZ2"><div class="zb2"></div></a>
+		<!-- <div onclick="alert('敬请期待！');return;" class="zb3"></div> -->
+		<a href="http://www.aumantruck.com/spike_livebroadcast.php?act=index&zbid=64"><div class="zb3"></div></a>
+	</div>
+	<!-- 留资   form-->
+	<div class="form">
+	    <input type="text" id="xm" class="inp1" placeholder="请输入您的姓名">
+	    <input type="text" id="phone" class="inp2" placeholder="请输入您的电话">
+
+	    <select  id="selProvinces_1" onchange="getCitys1()" name='apply_field3_1' class="inp3">
+         <option value="">省</option>
+        <!-- {foreach from=$sheng item=country} -->
+        <option value="{$country.region_id}" <!-- {if $country.region_id eq $fieldData.agency_province}selected{/if}-->{$country.region_name}</option>
+         <!-- {/foreach} -->
+	    </select>
+	    <select   id="selCities_1" onchange="getjxs1(1);" name="apply_field4_1" class="inp4">
+	        <option value="">城市</option>
+	    </select>
+	    <select  id="apply_field6_1" name="apply_field5_1" class="inp5">
+	     <option value="">经销商</option>
+	    </select>
+
+		<select name="" id="" class="inp6">
+			<option value="0">牵引车欧曼EST</option>
+		</select>
+
+	    <div class="tj" onclick="tj()"></div>
+	</div>
+	<!-- 转盘 -->
+	<div class="box">
+		<div class="close"></div>
+		<img src="./img/img_01.png" class="img01" alt="">
+		<img src="./img/img_02.png" class="drawBtn">
+		<img src="./img/zi.png" class="zi" onclick="prize()">
+	</div>
+	<!-- 抽到优惠券 -->
+	<div class="yes-prize"></div>
+	<!-- 没有抽到 -->
+	<div class="no-prize"></div>
+
+	<div class="img" style="width: 8.53125rem;height: 9.875rem;position: absolute;bottom: 2%;left: 0;right: 0;margin:auto;z-index: 999;">
+		<img src="./img/ewm.png" alt="" style="width: 100%;">
+	</div>
+</div>
+
+<!-- 车联网实时数据 -->
+<div class="carnum">
+	<!-- 实时数据 -->
+	<div class="cartime"></div>
+	<!-- 实时数据框 -->
+	<div class="border" style="display: none;">
+		<div>
+			<div id="main" style="width: 100%;height: 90%;">
+
+			</div>
+			<ul class="gauge-data clearfix">
+				<li style="width: 42%;">
+					<i class="svg-font car-state30"></i><span style="font-size: 0.4rem;">总里程</span>
+					<span id="mileages" class="ljxc" style="font-size: 0.5rem;font-weight: bold;">{$analysis_res.lmileage}</span>
+					<span id="mileages-unit">km</span>
+				</li>
+				<li>
+					<i class="svg-font car-state9"></i><span style="font-size: 0.4rem;">剩余油量</span>
+					<span id="rest-fuel" class="syyl" style="font-size: 0.5rem;font-weight: bold;">{$analysis_res.syyl}</span>
+					<span id="fuel-unit">%</span>
+				</li>
+				<li>
+					<i class="svg-font car-state3"></i><span style="font-size: 0.4rem;">冷却液温度</span>
+					<span id="coolant-temperature"  class="lqywd" style="font-size: 0.5rem;font-weight: bold;"></span>
+					<span id="temperature-unit">℃</span>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div style="width: 100%;height: 100%;" id="allmap"></div>
+		</div>
+	</div>
+
+	<div class="shishi" style="display: block;">
+		<div>
+			<img src="./img/l.jpg" alt="">
+			<div class="line line1">
+				<p>{$analysis_res.mileage}</p>
+				<p>{$analysis_res.operate_day}</p>
+				<p>{$analysis_res.average}</p>
+				<p>{$analysis_res.operate_rate}</p>
+			</div>
+			<div class="line line2">
+				<p>{$analysis_res.travel}</p>
+				<p>{$analysis_res.idling}</p>
+				<p>{$analysis_res.tfc}</p>
+			</div>
+			<div class="line line3">
+				<p>{$analysis_res.idling_tfc}</p>
+				<p>{$analysis_res.travel_tfc}</p>
+				<p>{$analysis_res.com_hun_tfc}</p>
+				<p>{$analysis_res.travel_hun_tfc}</p>
+			</div>
+		</div>
+		<div>
+			<img src="./img/r.jpg" alt="">
+			<div class="circle">
+				<p>{$analysis_res.score}</p>
+				<p>{$analysis_res.security}</p>
+				<p>{$analysis_res.economic}</p>
+				<p>{$analysis_res.damage}</p>
+			</div>
+		</div>
+	</div>
+	<!-- 车联网实时数据  导航 -->
+	<div id="cartimenav">
+		<div class="cartimenav1"></div>
+		<div class="cartimenav2"></div>
+		<img src="./img/now.png" alt="" style="    position: absolute;right: 3%;width: 10%;">
+	</div>
+</div>
+
+<!-- 活动图集 -->
+<div class="activepic">
+	<!-- 挑战司机团 -->
+	<div class="tzteam"></div>
+	<!-- 司机团   轮播 -->
+	<div class="swiper-container Challenge" style="">
+	    <div class="swiper-wrapper swiper-wrapper1">
+	        <div class="swiper-slide swiper-slide1">
+	        	<a ><img src="./img/c1.jpg" alt="" class="scale-big"></a>
+	        </div>
+	        <div class="swiper-slide swiper-slide1">
+	        	<a ><img src="./img/c2.jpg" alt="" class="scale-big"></a>
+	        </div>
+	        <div class="swiper-slide swiper-slide1">
+	        	<a ><img src="./img/c3.jpg" alt="" class="scale-big"></a>
+	        </div>
+	    </div>
+	</div>
+    <div class="swiper-pagination" slot="pagination"></div>
+
+	<!-- 精美车图 -->
+	<div class="piccar"></div>
+		<!-- 精美车图 -->
+		<div class="picall1 picall">
+			<div class="swiper-container pic pic1" style="">
+			    <div class="swiper-wrapper swiper-wrapper2">
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/car1.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/car2.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/car3.jpg" alt="" ></a>
+			        </div>
+			    </div>
+			    <!-- <div class="swiper-pagination"></div> -->
+			</div>
+	        <div class="swiper-button-prev swiper-button-black"></div>
+	        <div class="swiper-button-next swiper-button-black"></div>
+		</div>
+
+
+		<!-- 精美车图 -->
+		<div class="picall2 picall">
+			<div class="swiper-container pic pic2" style="">
+			    <div class="swiper-wrapper swiper-wrapper2">
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/tiao1.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/tiao2.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/tiao3.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/tiao4.jpg" alt="" ></a>
+			        </div>
+			    </div>
+			    <!-- <div class="swiper-pagination"></div> -->
+			</div>
+	        <div class="swiper-button-prev swiper-button-black"></div>
+	        <div class="swiper-button-next swiper-button-black"></div>
+		</div>
+
+
+		<!-- 精美车图 -->
+		<div class="picall3 picall">
+			<div class="swiper-container pic pic3" style="">
+			    <div class="swiper-wrapper swiper-wrapper2">
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/k1.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/k2.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/k3.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/k4.jpg" alt="" ></a>
+			        </div>
+			    </div>
+			    <!-- <div class="swiper-pagination"></div> -->
+			</div>
+	        <div class="swiper-button-prev swiper-button-black"></div>
+	        <div class="swiper-button-next swiper-button-black"></div>
+		</div>
+
+
+		<!-- 精美车图 -->
+		<div class="picall4 picall">
+			<div class="swiper-container pic pic4" style="">
+			    <div class="swiper-wrapper swiper-wrapper2">
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/shou1.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/shou2.jpg" alt="" ></a>
+			        </div>
+			        <div class="swiper-slide swiper-slide2">
+			        	<a href="https://live.photoplus.cn/activity/live/pc/9771515/#/"><img src="./img/shou3.jpg" alt="" ></a>
+			        </div>
+			    </div>
+			    <!-- <div class="swiper-pagination"></div> -->
+			</div>
+	        <div class="swiper-button-prev swiper-button-black"></div>
+	        <div class="swiper-button-next swiper-button-black"></div>
+		</div>
+
+		<!-- 精美车图导航 -->
+		<div class="picnav">
+			<div class="picnav1"></div>
+			<div class="picnav2"></div>
+			<div class="picnav3"></div>
+			<div class="picnav4"></div>
+		</div>
+</div>
+
+<!-- 活动咨询 -->
+<div class="activecall">
+	<!-- 活动咨询 -->
+	<div class="tuwen"></div>
+	<!-- 图文列表 -->
+	<div class="list">
+		<div class="news">
+			<!-- {foreach from=$news item=vo} -->
+			<a href="{$vo.url}" class="newslist">
+				<div class="title">
+					<!-- <div class="titles">纵贯中国</div> -->
+					<div class="time">{$vo.time}</div>
+
+				</div>
+				<div class="titles">{$vo.title}</div>
+				
+			</a>
+			<!-- {/foreach} -->
+		</div>
+	</div>
+</div>
+<script src="./js/echarts-all.js"></script>
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+// window.onresize = myChart.resize; 
+// console.log(myChart.resize)
+var option = {
+    tooltip : {
+        formatter: "{a} <br/>{c} {b}"
+    },
+    toolbox: {
+        show : true,
+        // feature : {
+        //     mark : {show: true},
+        //     restore : {show: true},
+        //     saveAsImage : {show: true}
+        // }
+    },
+    series : [
+        {
+            name:'速度',
+            type:'gauge',
+            z: 3,
+            min:0,
+            max:220,
+            splitNumber:10,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 10,
+                    fontSize: 5,
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length :15,        // 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color: 'auto',
+                    fontSize: 5,
+                }
+            },
+            splitLine: {           // 分隔线
+                length :20,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color: 'auto',
+                    fontSize: 5,
+                }
+            },
+            title : {
+            	offsetCenter: [0, '-35%'],
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 20,
+                    fontStyle: 'italic'
+                }
+            },
+            detail : {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize : 20
+                }
+            },
+			axisLabel: {            // 坐标轴小标记
+                textStyle: {       // 属性lineStyle控制线条样式
+                    color: '#666',
+                    fontSize:7,   //改变仪表盘内刻度数字的大小
+                    shadowColor : '#000', //默认透明
+                }
+            },
+            data:[{value: 0, name: 'km/h'}]
+        },
+        {
+            name:'转速',
+            type:'gauge',
+            z: 3,
+            min:0,
+            max:4000,
+            radius:'60%',
+            splitNumber:5,
+            center : ['15%', '55%'],    // 默认全局居中
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 10
+                }
+            },
+			axisLabel: {            // 坐标轴小标记
+                textStyle: {       // 属性lineStyle控制线条样式
+                    color: '#666',
+                    fontSize:7,   //改变仪表盘内刻度数字的大小
+                    shadowColor : '#000', //默认透明
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length :15,        // 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color: 'auto'
+                }
+            },
+            splitLine: {           // 分隔线
+                length :20,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color: 'auto'
+                }
+            },
+            title : {
+            	offsetCenter: [0, '-35%'],
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 8,
+                    fontStyle: 'italic'
+                }
+            },
+            detail : {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize : 20
+                }
+            },
+            pointer : {
+			    length : '60%',
+			    width : 8,
+			    color : 'auto'
+            },
+            data:[{value: 0, name: 'r/min'}]
+        },
+        {
+            name:'瞬时油耗',
+            type:'gauge',
+            z: 3,
+            min:0,
+            max:120,
+            radius:'60%',
+            splitNumber:8,
+            center : ['85%', '55%'],    // 默认全局居中
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 10
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length :15,        // 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color: 'auto'
+                }
+            },
+            splitLine: {           // 分隔线
+                length :20,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color: 'auto'
+                }
+            },
+            title : {
+            	offsetCenter: [0, '-35%'],
+            	show : true,
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 8,
+                    fontStyle: 'italic'
+                }
+            },
+            detail : {
+            	show : true,
+			    backgroundColor: 'rgba(0,0,0,0)',
+			    borderWidth: 0,
+			    borderColor: '#ccc',
+			    width: 100,
+			    height: 40,
+			    offsetCenter: [0, '40%'],
+			    formatter: null,
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize : 20
+                }
+            },
+            pointer : {
+			    length : '60%',
+			    width : 8,
+			    color : 'auto'
+            },
+			axisLabel: {            // 坐标轴小标记
+                textStyle: {       // 属性lineStyle控制线条样式
+                    color: '#666',
+                    fontSize:7,   //改变仪表盘内刻度数字的大小
+                    shadowColor : '#000', //默认透明
+                }
+            },
+            data:[{value: 0, name: 'l/h'}]
+        },
+    ]
+}
+window.addEventListener("resize", () => { 
+    this.myChart.resize();  
+});
+myChart.setOption(option);
+
+
+
+//地图开始
+// 百度地图API功能
+var jing = $('#jing').val();
+var wei = $('#wei').val();
+var map = new BMap.Map("allmap");
+map.centerAndZoom(new BMap.Point(jing,wei),15);
+map.enableScrollWheelZoom(true);
+
+// 用经纬度设置地图中心点
+function theLocation(){
+	if(document.getElementById("jings").value != "" && document.getElementById("weis").value != ""){
+		map.clearOverlays(); 
+		var new_point = new BMap.Point(document.getElementById("jings").value,document.getElementById("weis").value);
+		var marker = new BMap.Marker(new_point);  // 创建标注
+		map.addOverlay(marker);              // 将标注添加到地图中
+		map.panTo(new_point);      
+	}
+}
+//轮询      实时数据接口
+oTimer = setInterval("queryHandle()",5000);
+$(function(){
+    $.ajax({
+        url: 'http://www.aumantruck.com/mobile/spike_across.php?act=data',
+        type: 'post',
+        //  async : true, //默认为true 异步
+	    dataType:'json',
+        error: function () {
+
+        },
+        success: function (data) {
+            console.log(typeof parseInt(data.zs));
+            if(data){
+                // alert('弹幕发送成功！');
+             	option.series[0].data[0].value = data.sd;
+             	option.series[1].data[0].value = data.zs;
+             	option.series[2].data[0].value = data.ssyh;
+                $('.ljxc').text();
+                // $('.syyl').text(data.syyl);
+                $('.lqywd').text(data.lqywd);
+                // myChart.setOption(option,true);
+            }
+        }
+    });
+});
+function queryHandle(){
+	$.ajax({
+	    type: 'POST',
+	    dataType:'json',
+	    url : 'http://www.aumantruck.com/mobile/spike_across.php?act=data',
+	    success: function(data){
+	    	console.log(data);
+            if(data){
+            	$('#jings').val(data.jd);
+            	$('#weis').val(data.wd);
+             	option.series[0].data[0].value = data.sd;
+             	option.series[1].data[0].value = data.zs;
+             	option.series[2].data[0].value = data.ssyh;
+                $('.ljxc').text();
+                // $('.syyl').text(data.syyl);
+                $('.lqywd').text(data.lqywd);
+            	theLocation();
+            	// myChart.setOption(option,true);
+            }
+	    }
+	});
+}
+</script>
+<script src="./js/build.js"></script>
+</body>
+</html>

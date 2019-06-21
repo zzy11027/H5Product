@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>福友竞猜赢真车，同享精彩世界杯</title>
+	<!-- <link rel="stylesheet" href="./css/index.css"> -->
+	<script src="templates/demo/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aaa0847204ad0e1a89a7c648509e5fee";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '福友竞猜赢真车，同享精彩世界杯 ', // 分享标题
+                desc: '福友竞猜世界杯，新车随你开回家，更有油卡、红包助力！', // 分享描述
+                link: 'http://jc.douyar.cc/sjb.php', // 分享链接
+                imgUrl: 'http://jc.douyar.cc/templates/demo/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '福友竞猜赢真车，同享精彩世界杯 ', // 分享标题
+                link: 'http://jc.douyarcc/sjb.php', // 分享链接
+                imgUrl: 'http://jc.douyar.cc/templates/demo/logo.jpg', // 分享图标
+                success: function () {
+                //    alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+               //     alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+
+</head>
+
+<style>
+	*{
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+	*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+	.bo{
+		position: relative;
+		width: 100%;
+		height: 41.6875rem;
+		background-image: url('templates/demo/img/all.jpg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+/*第一组*/
+	.one{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 9.5%;
+	}
+
+	.one>img:nth-child(1){
+		display: block;
+	    width: 1.3rem;
+	    height: 0.85rem;
+	    position: absolute;
+	    top: 2%;
+	    left: 33%;
+	}
+	.one>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+/*第二组*/
+
+	.two{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 24.6%;
+	}
+
+	.two>img:nth-child(1){
+		display: block;
+	    width: 1.3rem;
+	    height: 0.85rem;
+	    position: absolute;
+	    top: 2%;
+	    left: 33%;
+	}
+	.two>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+
+/*第三组*/
+
+	.three{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 39.8%;
+	}
+
+	.three>img:nth-child(1){
+		display: block;
+	    width: 1.3rem;
+	    height: 0.85rem;
+	    position: absolute;
+	    top: 2%;
+	    left: 33%;
+	}
+	.three>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+/*第四组*/
+
+	.four{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 54.9%;
+	}
+
+	.four>img:nth-child(1){
+		display: block;
+	    width: 1.3rem;
+	    height: 0.85rem;
+	    position: absolute;
+	    top: 2%;
+	    left: 33%;
+	}
+	.four>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+/*前四组八进四*/
+	.one_1{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 13.6%;
+		left: 19.4%;
+	}
+	.one_1>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_1>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+/*前四组八进四*/
+	.one_2{
+		width: 1.5rem;
+		height: 7.4rem;
+		position: absolute;
+		top: 43.8%;
+		left: 19.4%;
+	}
+	.one_2>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0.3%;
+		left: 0.7%;
+	}
+	.one_2>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 85.67%;
+		left: 0.7%;
+	}
+
+
+	/*前四组  四进二*/
+	.one_1_1{
+		width: 1.5rem;
+		height: 13.65rem;
+		position: absolute;
+		top: 20.95%;
+		left: 32.4%;
+	}
+	.one_1_1>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top:0%;
+		left: 0.7%;
+	}
+	.one_1_1>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 92.5%;
+		left: 0.7%;
+	}
+
+
+	/*第五组*/
+	.five{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 9.7%;
+		right: 0%;
+	}
+
+	.five>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.five>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+	/*第六组*/
+	.six{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 24.8%;
+		right: 0%;
+	}
+
+	.six>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.six>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+
+	/*第七组*/
+	.seven{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 39.9%;
+		right: 0%;
+	}
+
+	.seven>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.seven>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+
+	/*第八组*/
+	.eight{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 55.1%;
+		right: 0%;
+	}
+
+	.eight>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.eight>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+
+
+	/*后四组八进四*/
+	.one_3{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 13.6%;
+		left: 74.4%;
+	}
+	.one_3>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_3>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+
+	/*后四组八进四*/
+	.one_4{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 43.9%;
+		left: 74.4%;
+	}
+	.one_4>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_4>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+
+
+	/*后四组  四进二*/
+	.one_1_2{
+		width: 1.5rem;
+		height: 13.65rem;
+		position: absolute;
+		top: 20.95%;
+		left: 61.4%;
+	}
+	.one_1_2>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top:0%;
+		left: 0.7%;
+	}
+	.one_1_2>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 92.5%;
+		left: 0.7%;
+	}
+	/*最终二进一*/
+	.last{
+		width: 4.8rem;
+		height: 1.04rem;
+		position: absolute;
+		top: 35.75%;
+		left: 39.9%;
+	}
+	.last>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1.04rem;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+	}
+	.last>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1.04rem;
+		position: absolute;
+		top: 0%;
+		right: 0.5%;
+	}
+/*禁止点击*/
+	.last_1{
+		width: 4.8rem;
+		height: 1.04rem;
+		position: absolute;
+		top: 35.75%;
+		left: 39.9%;
+		z-index: 9999999;
+		display: none;
+	}
+
+	/*决赛*/
+
+	.jue{
+		display: block;
+		width: 2.65rem;
+		height: 1.75rem;
+		position: absolute;
+		top: 24.6%;
+		left: 44.4%;
+	}
+
+	/*完成*/
+	.over{
+		width: 6.25rem;
+		height: 2.8rem;
+		background-image: url(templates/demo/img/wc.png);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 70%;
+		left: 37%;
+		display: none;
+	}
+
+	/*合成图片*/
+	.img_last{
+		display: none;
+		width: 100%;
+		height: 41.6875rem;
+		position: absolute;
+		top: 0%;
+		z-index: 0;
+	}
+
+
+	/*////////////////////////////////////////////*/
+.kai{
+	width: 100%;
+	height: 41.6875rem;
+	background-image: url(templates/demo/images/kai.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	z-index: 99999;
+}
+.gui{
+    width: 5.8rem;
+    height: 2.7rem;
+	position: absolute;
+	top: 4.5%;
+	left: 0%;
+}
+.guize{
+	width: 100%;
+	height: 41.6875rem;
+	background-image: url('templates/demo/images/guize.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	z-index: 999999;
+	display: none;
+}
+.ggg{
+    width: 18.3rem;
+    height: 48.4rem;
+    display: block;
+    position: absolute;
+    top: 1%;
+    left: 0%;
+}
+.ggg_1{
+	width: 19rem;
+    height: 24.8rem;
+    display: block;
+    position: absolute;
+    top: 16%;
+    left: 9%;
+    overflow: auto;
+}
+.close{
+	width: 3.125rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 7%;
+	right: 1%;
+	z-index: 999999;
+}
+.chou_1{
+	width: 7.25rem;
+	height: 2.1rem;
+	position: absolute;
+	top: 82%;
+	left: 33%;
+	z-index: 999;
+	background-image: url('templates/demo/images/chou.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+.dian{
+	display: block;
+	width: 9.25rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 75.5%;
+	left: 31%;
+}
+
+.tan_1{
+	width: 100%;
+	height: 41.6875rem;
+	background-image:url('templates/demo/images/tan_1.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	display: none;
+	position: absolute;
+	top: 0%;
+}
+.g{
+	display: block;
+	width: 1.875rem;
+	height: 1.875rem;
+	position: absolute;
+	top: 15%;
+	right: 3%;
+}
+.tan_1>p{
+	width: 6.25rem;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 27.5%;
+	left: 23.5%;
+}
+.inp_1{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 44%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.inp_2{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 54.5%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.but{
+	width: 6.25rem;
+	height: 2.7rem;
+	position: absolute;
+	top: 62%;
+	left: 34%;
+}
+.tan_2{
+	width: 100%;
+	height: 41.6875rem;
+	background-image:url('templates/demo/images/tan_2.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	display: none;
+	position: absolute;
+	top: 0%;
+}
+.tan_2>p{
+	width: 6.25rem;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 27.5%;
+	left: 23.5%;
+}
+.inp_3{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 44%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.inp_4{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 54.5%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.but1{
+	width: 6.25rem;
+	height: 2.7rem;
+	position: absolute;
+	top: 62%;
+	left: 34%;
+}
+.tan_3{
+	width: 100%;
+	height: 41.6875rem;
+	background-image:url('templates/demo/images/tan_3.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	display: none;
+	position: absolute;
+	top: 0%;
+}
+.but2{
+	width: 12.25rem;
+	height: 2.7rem;
+	position: absolute;
+	top: 63.2%;
+	left: 19%;
+}
+</style>
+<body>
+
+
+	<div class="kai">
+
+    <div class="gui">
+
+
+    </div>
+
+
+    <div class="guize">
+    
+      <div class="close">
+
+      </div>
+      <div class="ggg_1">
+      	
+      	      <img src="templates/demo/images/gui.png" class="ggg">
+      </div>
+
+    </div>
+
+		<a href="/sjb.php?step=cc&id={$openid}"  class="dian">
+		
+		</a>
+	</div>
+
+
+
+
+
+	<img src="" alt="" class="img_last">
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+    // 规则
+    $('.gui').click(function(){
+
+      $('.guize').show();
+    })
+
+    $('.close').click(function(){
+
+      $('.guize').hide();
+    })
+	</script>
+</body>
+</html>

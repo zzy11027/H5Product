@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="/templates/ftzrs/css/index.css">
+	<script src="/templates/ftzrs/js/jquery.min.js"></script>
+	<script src='/templates/ftzrs/js/build.js'></script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?04b5774b423a1c9b09bb875a77522032";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+</head>
+<body>
+
+
+		<img src="/templates/ftzrs/img/indexs.jpg" class="index" alt="">
+		<div class="containerss" onclick="shows()"></div>
+
+			<div class="dian1 show" onclick="show()"></div>
+			<div class="dian2 show" onclick="show()"></div>
+			<div class="dian3 show" onclick="show()"></div>
+			<div class="dian4 show" onclick="show()"></div>
+			<div class="dian5 show" onclick="show()"></div>
+
+			<input type="hidden" id="token" value="token">
+			<input type="hidden" id="user_id" value="{$user_id}">
+
+
+			<div class="con" style="display: none">
+
+				<input type="text" class="inp8" placeholder="请输入您的姓名">
+				<input type="text" class="inp9" placeholder="请输入手机号">
+
+				<select name="" id="selects1" class="inp1" onchange="change1()">
+					<option value="0">省份</option>
+
+				</select>
+
+				<select name="" id="selects2" class="inp2" onchange="change2()">
+					<option value="0">城市</option>
+				</select>
+
+				<select name="" id="selects3" class="inp3" onchange="change3()">
+					<option value="0">品牌</option>
+				</select>
+
+
+				<select  id="selects4"  class="inp5" onchange="change4()" >
+
+		         	<option value="0">车系</option>
+		         
+			    </select>
+
+
+			    <select   id="selects5"  class="inp6">
+
+			        <option value="0">经销商</option>
+			   
+			    </select>
+
+				<div class="tj" onclick="tj()"></div>
+
+				<div class="close" onclick="closes()"></div>
+			</div>
+
+
+
+	<script>
+
+		// 限制input  输入内容
+		$('.inp4').bind('input propertychange', function() {
+
+       		if($('.inp4').val().length == 1){
+
+       			document.getElementById("inp_4").value=document.getElementById("inp_4").value.replace(/[^1-9]/g,'')
+       		}else{
+       			document.getElementById("inp_4").value=document.getElementById("inp_4").value.replace(/\D/g,'')
+       		}
+       		
+
+		});
+
+		function closes(){
+			$('.containerss').hide();
+			$('.con').hide();
+		}
+
+	</script>
+</body>
+</html>

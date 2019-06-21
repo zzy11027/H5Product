@@ -1,0 +1,205 @@
+
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="TENCNET" />
+    <meta name="author" content="Tencent-TGideas" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="/templates/omk/omk_car/css/css.css">
+    <script src="/templates/omk/omk_car/js/jquery.min.js"></script>
+    <script src="/templates/omk/omk_car/js/config.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+               title: '欧马可超级卡车快递之星，高效上阵，为定制而来。全新价值风暴，震撼来袭。', // 分享标题
+                desc: '见证实力的时刻来了！', // 分享描述
+                link: 'http://omk.douyar.cc/omk/omk_car.php?step=test', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/omk_car/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '欧马可超级卡车快递之星，高效上阵，为定制而来。全新价值风暴，震撼来袭。', // 分享标题
+                link: 'http://omk.douyar.cc/omk/omk_car.php?step=test', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/omk_car/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1717023bb2cb06b38b49225e684c3fb4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    <div id="but" class="first" onclick="Play(this)"></div>
+    <audio src="/templates/omk/omk_car/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+    你的浏览器不支持video元素
+    </audio>
+    <!-- 遮罩层 -->
+    <div class="containerss"></div>
+    <!-- 首页 -->
+    <div class="kai">
+        <!-- 开始按钮 -->
+        <div class="start animated pulse"></div>
+		<input type="hidden" id='openid' value="{$openid}">
+		<input type="hidden" id="token" value="{$token}">
+        <!-- 规则按钮 -->
+        <div class="rule">
+            
+        </div>
+
+        <!-- 规则详情 -->
+        <div class="rule_all">
+	        <div class="ani">
+	            <img src="/templates/omk/omk_car/img/rule.png" alt="" class="rule_details">
+	            <img src="/templates/omk/omk_car/img/rule1.png" alt="" class="rule_details">
+	        </div>
+            <div class="addani"></div>
+            <div class="addani1"></div>
+            <div class="close"></div>
+        </div>
+    </div>
+<div class="content">
+	<div class="page load">
+		<div class="logo"></div>
+	</div>
+	<div class="page guide" id="guide">
+		<ul class="guideList" id="begin">
+			<li>
+				<div class="intro">
+
+				</div>
+				<div class="guidebar">
+					<div class="guidebaPoint"></div>
+					<div class="tool" id="tools">
+						<span><img src="/templates/omk/omk_car/img/tools1.png?201407110132" type="1" tip="引擎改装成功！飚起来！"><div class="jia">加速引擎</div></span>
+						<span><img src="/templates/omk/omk_car/img/tools2.png?201407110132" type="0" tip="芯片改装成功！飚起来！" ><div class="li">里程芯片</div></span>
+						<span><img src="/templates/omk/omk_car/img/tools3.png?201407110132" type="3" tip="挂饰改装成功！飚起来！" ><div class="zhao">招财挂件</div></span>
+<!-- 						<span><img src="/templates/omk/omk_car/img/tools4.png?201407110132" type="0" tip="油箱改装成功！飚起来！" ><em>幸运油箱</em></span> -->
+					</div>
+				</div>
+			</li>
+			<li>
+
+				<span class="begin" id="begin">开始游戏</span>
+			</li>
+		</ul>
+	</div>
+
+		<div class="road">
+			<div class="road-arrow"></div>
+			<div class="road-inner" id="road" style="-webkit-transform: translateY(0px);">
+				<img src="/templates/omk/omk_car/img/road.jpg?201407110132" alt="">
+				<img src="/templates/omk/omk_car/img/road.jpg?201407110132" alt="">
+				<img src="/templates/omk/omk_car/img/road.jpg?201407110132" alt="">
+			</div>
+			<img src="/templates/omk/omk_car/img/road4.jpg?201407110132" alt="" class="y">
+		</div>
+
+		<div class="car" id="car">
+			<img src="/templates/omk/omk_car/img/car.png?201407110132" id="carFeature">
+			<div class="car-normal" id="carStatus"><div id="carText"></div></div>
+		</div>
+		<div class="oils" id="oils">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="miles" id="miless">
+			<strong>L<span id="milesPoint">1</psan></strong>
+			<em><b id="miles">0</b>km</em>
+		</div>
+		<div class="miless" id="milesss" style="display: none;">
+			<strong>L<span id="milesPoints">1</psan></strong>
+			<em><b id="miless">0</b>km</em>
+		</div>
+		<div class="hour" id="hours">
+			<span><b id="hour">0</b>km</span>
+		</div>
+		<div class="tools" id="tools">
+			<span><img src="/templates/omk/omk_car/img/tools1.png?201407110132" type="1" tip="引擎改装成功！飚起来！"><em>加速引擎</em></span>
+			<span><img src="/templates/omk/omk_car/img/tools2.png?201407110132" type="0" tip="芯片改装成功！飚起来！" ><em>里程芯片</em></span>
+			<span><img src="/templates/omk/omk_car/img/tools3.png?201407110132" type="3" tip="挂饰改装成功！飚起来！" ><em>招财挂件</em></span><!-- 
+			<span><img src="/templates/omk/omk_car/img/tools4.png?201407110132" type="0" tip="油箱改装成功！飚起来！" ><em>幸运油箱</em></span> -->
+		</div>
+
+	<div class="page share" id="sharePage">
+
+		<div class="askPropbar" id="askPropbar">
+			<div class="lz">
+				<input type="text" id="xm" class="inp1" placeholder="请输入您的姓名">
+	            <input type="text" id="phone" class="inp2" placeholder="请输入您的电话">
+	            <div class="tj" onclick="tj()"></div>
+	            <div class="clo"></div>
+	            <div class="km"></div>
+	            <div class="bfb"></div>
+            </div>
+		</div>
+	
+		<div class="yes">
+			<div class="clos"></div>
+			<a class="a1" href="http://omk.douyar.cc/omk/omk_car.php?step=test"></a>
+			<a class="a2" href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"></a>
+			<p>2</p>
+		</div>
+		<div class="no">
+			<div class="clos"></div>
+			<a class="a1" href="http://omk.douyar.cc/omk/omk_car.php?step=test"></a>
+			<a class="a2" href="http://weixingz.foton.com.cn/member/home/center?sourceSubChannel=0403"></a>
+		</div>
+	</div>
+	</div>
+<script src="/templates/omk/omk_car/js/prize.js"></script>
+<script>
+	//防止屏幕拖动
+	var video1 = document.getElementsByClassName('content')[0];
+	video1.addEventListener("touchmove",function(event){
+	    event.preventDefault();
+	});
+</script>
+</body>
+</html>

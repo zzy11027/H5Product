@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>购车狂欢季，豪礼送不停</title>
+	<link rel="stylesheet" href="/templates/omk/superCar/css/index.css">
+	<script src="/templates/omk/superCar/js/jquery.min.js"></script>
+	<script src="/templates/omk/superCar/js/rotaryDraw.js"></script>
+	<script src="/templates/omk/superCar/js/register_message.js"></script>
+	<script src="http://www.aumantruck.com/js/region2.js" type="text/javascript"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '购车狂欢季，豪礼送不停', // 分享标题
+                desc: '购车再抽奖，20万豪礼送不停', // 分享描述
+                link: 'http://omk.douyar.cc/omk/omk_xx.php', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/superCar/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '购车狂欢季，豪礼送不停', // 分享标题
+                link: 'http://omk.douyar.cc/omk/omk_xx.php', // 分享链接
+                imgUrl: 'http://omk.douyar.cc/templates/omk/superCar/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?40ec6ee52e8b369e8c69fd3d085a240c";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+</head>
+<body>
+	<input type="hidden"  id="openid" value="{$openid}">
+	<input type="hidden"  id="token" value="{$token}">
+	<!-- 遮罩层 -->
+	<div class="containerss"></div>
+	<!-- 开屏页 -->
+	<div class="index">
+		<div class="dian"></div>
+	</div>
+
+<!-- 第二页 -->
+
+	<div class="two" style="display: none;">
+		<div class="gouche">
+			<input type="text" class="inp1" placeholder="请输入您的姓名">
+			<input type="text" class="inp2" placeholder="请输入您的电话">
+		    <select  id="apply_field6_1" name="apply_field5_1" class="inp6">
+				<option value="">请选择车型</option>
+				<option value="">欧马可s1</option>
+				<option value="">欧马可s3</option>
+				<option value="">欧马可s5</option>
+			</select>
+			<input type="text" class="inp3" id="inp_4" placeholder="请输入车架号" maxlength="17" >
+			<input type="text" class="inp4" placeholder="请输入经销商">
+			<input type="text" class="inp5" placeholder="请输入销售代表">
+<!-- 			<select  id="apply_field6_1" name="apply_field5_1" class="inp3">
+				<option value="">请选择入经销商</option>
+				<option value="">北京</option>
+				<option value="">天津</option>
+				<option value="">中国</option>
+			</select> -->
+			<!-- <input type="text" class="inp4" placeholder="请输入车型"> -->
+<!-- 			<select name="select_1" class="inp3" id="input-1"  style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+				<option>请选择经销商</option>
+				<option value="115fc124-ae32-4277-ad24-d3ca30fc070b">欧曼EST-A</option>
+			</select> -->
+			<div class="tj1" onclick="tj1()"></div>
+		</div>
+
+		<div class="bjs" style="display: none;">
+			<div class="box">
+				<img src="/templates/omk/superCar/img/img_01.png" class="img01" alt="">
+				<img src="/templates/omk/superCar/img/img_02.png" class="drawBtn">
+				<img src="/templates/omk/superCar/img/zi.png" class="zi">
+			</div>
+
+			<!-- 中奖弹窗 -->
+			<div class="succs" style="display:none">
+				<!-- 中奖图片 -->
+				<img src="" alt="" class="img2">
+				<!-- 点击关闭 -->
+				<a href="http://omk.douyar.cc/omk/omk_xx.php" class="a1s"></a>
+				<!-- <div class="a2s"></div> -->
+			</div>
+		</div>	
+	</div>
+
+
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+		$('.dian').click(function(){
+			$('.index').hide();
+			$('.two').show();
+		})
+		// $('.a2s').click(function(){
+		// 	$('.img2').attr('src','');
+		// 	$('.containerss').hide();
+		// 	$('.succs').hide();
+		// })
+
+		// 限制input  输入内容
+		$('.inp3').bind('input propertychange', function() {
+
+       		if($('.inp3').val().length == 1){
+
+       			document.getElementById("inp_4").value=document.getElementById("inp_4").value.replace(/[\W]/g,'')
+       		}else{
+       			document.getElementById("inp_4").value=document.getElementById("inp_4").value.replace(/[\W]/g,'')
+       		}
+       		
+
+		});
+var id;		
+var phones;	
+var dataname;	
+var aa  = 1;
+var ass = 1;
+		function tj1(){	 
+
+			var token = $("#token").val();
+			var openid = $("#openid").val();
+			var inp1 = $(".inp1").val();
+			var inp2 = $(".inp2").val();
+			var inp3 = $(".inp3").val();
+			var inp4 = $(".inp4").val();
+			var inp5 = $(".inp5").val();
+			var inp6 = $(".inp6").find("option:selected").text();
+			if (inp1=="") {alert("请输入您的姓名");return false;}
+			if (inp2=="") {alert("请输入您的电话");return false;}
+			var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+	        if (!reg.test(inp2)) {
+	            alert("请输入正确的手机号");
+	            return false;
+	        }
+			if (inp3=="") {alert("请输入车架号");return false;}
+			if (inp3.length != 17) {alert("请输入17位的车架号");return false;}
+			if (inp4=="") {alert("请输入经销商");return false;}
+			if (inp5=="") {alert("请输入销售代表");return false;}
+			if (inp6=="" || inp6 == '请选择车型') {alert("请选择车型");return false;}
+			if(aa == 1){
+			$.ajax({
+	            type: 'POST',
+	            dataType:'json',
+	            url : 'http://omk.douyar.cc/omk/omk_xx.php?step=info',
+	            data: {
+	            	name:inp1,
+	            	phone:inp2,
+	            	cjh:inp3,
+	            	jxs:inp4,
+	            	xsdb:inp5,
+	            	cx:inp6,
+	            	openid:openid,
+				},
+				beforeSend: function(request) { 
+					request.setRequestHeader("Authorization", token); 
+				}, 
+	            success: function(data){
+	            	if(data == 1){
+	            		alert('提交成功！');
+	            		$('.gouche').hide();
+	            		$('.bjs').show();
+						// $('html,body').addClass('ovfHiden');
+						// $('html,body').animate({scrollTop:0},'10');
+						// $('.containerss').show();
+	            	}else{
+	            		alert('未知错误');
+	            		return;
+	            	}
+	            }
+	   		});
+			}
+			aa = 2;
+		}
+
+
+		// new一个转盘   对象
+ 		var newdraw =new turntableDraw('.drawBtn',{
+			share:5,
+			speed:"4s",
+			velocityCurve:"ease",
+			weeks:10,
+			callback:function(num,indes)
+			{
+				console.log(num)
+				//中奖了
+				if(num == 5){
+					// $('html,body').addClass('ovfHiden');
+					// $('html,body').animate({scrollTop:0},'10');
+					$('.containerss').show();	
+            		$('.succs').show();
+            		$('.img2').attr('src','/templates/omk/superCar/img/2.png');
+            		// $('.a1s').show();
+            		// $('.a2s').hide();
+				}else if(num == 2){
+					// $('html,body').addClass('ovfHiden');
+					// $('html,body').animate({scrollTop:0},'10');
+					$('.containerss').show();
+					$('.succs').show();
+            		$('.img2').attr('src','/templates/omk/superCar/img/1.png');
+            		// $('.a1s').show();
+            		// $('.a2s').hide();
+				}else if(num == 1){
+					// $('html,body').addClass('ovfHiden');
+					// $('html,body').animate({scrollTop:0},'10');
+					$('.containerss').show();
+					$('.succs').show();
+            		$('.img2').attr('src','/templates/omk/superCar/img/5.png');
+            		// $('.a1s').hide();
+            		// $('.a2s').show();
+				}else if(num == 3 && indes == 1){
+					// $('html,body').addClass('ovfHiden');
+					// $('html,body').animate({scrollTop:0},'10');
+					$('.containerss').show();
+					$('.succs').show();
+            		$('.img2').attr('src','/templates/omk/superCar/img/3.png');
+            		// $('.a1s').show();
+            		// $('.a2s').hide();
+				}else if(num == 3 && indes == 2){
+					// $('html,body').addClass('ovfHiden');
+					// $('html,body').animate({scrollTop:0},'10');
+					$('.containerss').show();
+					$('.succs').show();
+            		$('.img2').attr('src','/templates/omk/superCar/img/4.png');
+        			// $('.a1s').show();
+           //  		$('.a2s').hide();
+
+				}
+			},
+		});
+
+		$(".zi").click(function(event) {
+
+			var openid = $("#openid").val();
+			var inp3 = $(".inp3").val();
+			if(ass == 1){
+			$.ajax({
+	            type: 'POST',
+	            dataType:'json',
+	            url : 'http://omk.douyar.cc/omk/omk_xx.php?step=prize',
+	            data:{
+	            	openid:openid,
+	            	cjh:inp3,
+	            },
+				beforeSend: function(request) { 
+					request.setRequestHeader("Authorization", token); 
+				}, 
+	            success: function(data){
+					console.log(data);
+	    			switch(data){
+	    				//5000   元
+	    				case 1 ://3000奖
+		    				newdraw.goto(5);
+		    				break;
+		    			//1000   元
+	    				case 2 ://500奖
+		    				newdraw.goto(2);
+		    				break;
+		    			//1000   元
+	    				case 3 ://店面
+		    				newdraw.goto(1);
+		    				break;
+		    			//1088   元
+	    				case 6 ://未中奖
+		    				newdraw.goto(3,1);
+		    				break;
+	    				case 10 ://再来一次
+		    				// 没有抽奖次数之后   显示以下图片
+		    				// newdraw.goto(3,2);
+							$('.containerss').show();
+							$('.succs').show();
+							$('.img2').attr('src','/templates/omk/superCar/img/4.png');
+		    				break;
+		     //        		$('.succs').show();
+		     //        		$('.img2').attr('src','/mobile2/templates/omk/superCar/img/last.png');
+							// $('html,body').addClass('ovfHiden');
+							// $('html,body').animate({scrollTop:0},'10');
+							// $('.containerss').show();
+	    			}
+	            }
+	   		});
+	   		}
+        ass=2;
+        jump(3);
+			
+		});
+
+
+
+
+      function getDistributors1(goods_id){
+        if(goods_id == 1){
+            var prov_obj = document.getElementById("selProvinces_2");
+            var prov = prov_obj.options[prov_obj.options.selectedIndex].value;
+            var city_obj = document.getElementById("selCities_2");
+            var city = city_obj.options[city_obj.options.selectedIndex].value;
+        }
+
+        if(city){
+            $.ajax({
+                type: "GET",
+                url: "cjdz5.php?step=check_by_region&prov="+prov+"&city="+city+"&is_activity=1&goods_id="+goods_id,
+                dataType: 'json',
+                success: function (result) {
+                    if(result.error == 1){
+                        return false;
+                    }
+                    var content = result.content;
+                    var option_html = "";
+                    if(content.length>0){
+                        for(var i = 0; i < content.length; i++){
+                            option_html += "<option value='"+ content[i]['agency_id'] +"'>"+ content[i]['agency_name'] +"</option>";
+                        }
+                    }else{
+                        option_html += "<option value=''>这里提不到车，去隔壁市看看吧</option>";
+                    }
+                    if(goods_id == 1){
+                        $("#apply_field6_2").html(option_html);
+                    }
+
+                }
+            });
+        }
+
+    }
+		
+
+		//禁止点击多次
+		    function jump(count) { 
+		            window.setTimeout(function(){ 
+		                count--; 
+		                if(count > 0) { 
+		                    jump(count); 
+		                } else { 
+		                   ass=1; 
+		                } 
+		            }, 2000); 
+		        } 
+
+
+
+	</script>
+</body>
+</html>

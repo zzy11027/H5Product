@@ -1,0 +1,94 @@
+.index{
+	width: 23.4375rem;
+	height: 57.21875rem;
+	background-image: url(../img/1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.bj_1{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+	position: absolute;
+}
+.bj_2{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/3.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+	position: absolute;
+}
+.bj_3{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/4.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+	position: absolute;
+}
+.zan{
+	width: 23.4375rem;
+	height: 6.25rem;
+	position: absolute;
+	top: 78%;
+}
+.dian_1{
+	width: 5.5rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 70.5%;
+    left: 6%;
+}
+.dian_2{
+	width: 5.5rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 70.5%;
+    right: 39%;
+}
+/*拍照*/
+#upload{
+	display: block;
+    background: transparent;
+    width: 14.4375rem;
+    height: 11.5rem;
+    position: absolute;
+    top: 34%;
+    left: 25%;
+    border-radius: 1.25rem;
+    opacity:0;
+    border:none;
+}
+.img_wrap{
+	display: block;
+    width: 14rem;
+    height: 11rem;
+    position: absolute;
+    top: 31.5%;
+    left: 32.7%;
+    border-radius: 1.25rem;
+
+	border: none;
+}
+.but_1{
+	width: 6.125rem;
+    height: 2.125rem;
+    position: absolute;
+    top: 72%;
+    left: 68%;
+}
+/*领奖*/
+.lq{
+	width: 23.4375rem;
+	height: 41.6875rem;
+	background-image: url(../img/5.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: none;
+}

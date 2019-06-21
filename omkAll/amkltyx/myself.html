@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>绿途英雄</title>
+	<link rel="stylesheet" href="/templates/amkltyx/css/all.css">
+	<link rel="stylesheet" href="/templates/amkltyx/css/myself.css">
+	<script src="/templates/amkltyx/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx3a6efa88b590d910', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我是绿途英雄', // 分享标题
+                desc: '欧马可携手北京环交所邀您共同保卫首都蓝天', // 分享描述
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我是绿途英雄', // 分享标题
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="hidden" id="openid" value="{$openid}">
+<input type="hidden" id="token" value="{$token}">
+	<div class="my">
+		<!-- 上部分左侧 -->
+		<div class="my_top">
+			<img src="{$headimgurl}" alt="" class="img_1">
+			<div class="my_id">
+				<span>ID:</span>
+				<span>{$phone}</span>
+			</div>
+		</div>
+		
+		<!-- 上部分右侧 -->
+		<div class="my_top1">
+			
+			<img src="/templates/amkltyx/img/{$sign}" alt="" class="img_2" onclick="qiandao()">
+			
+			<!--可用积分  -->
+			<div class="ky">
+				<span>可用积分：</span><span id="zjf">{$kyjf}</span>
+				<span></span>
+			</div>
+
+			<a href="amkltyx.php?step=jf&openid={$openid}" class="img_3"></a>
+
+			<!-- 小字体 -->
+
+			<div class="jifen">
+				<p>累计获得积分：</p><span class="span_1">{$zjf}</span>
+				<p>已兑换积分：</p><span class="span_2">{$dhjf}</span>
+				{if $zjxy eq 'ddd'}
+				<p>目前您暂列绿途英雄榜第一名,请再接再厉</p>
+				{else}
+				<p>您与绿途英雄榜第一名差距：</p><span class="span_3">{$zjxy}</span>
+				{/if}
+				
+
+			</div>
+		</div>
+
+		{if $type eq 1}
+		<div class="bott1">
+			<!-- 写死了的 -->
+			<ul class="ul_1">
+				<li>绿色先锋榜</li>
+				<li>综合驾驶行为得分</li>
+			</ul>
+
+			<ul class="ul_2">
+				<li>操控达人榜</li>
+				<li>百公里加速次数</li>
+				<li>百公里急刹车次数</li>
+			</ul>
+
+			<ul class="ul_3">
+				<li>高效先锋榜</li>
+				<li>经济转速运营比例</li>
+				<li>昨日获得积分奖励</li>
+				<li>累计获得积分奖励</li>
+			</ul>
+
+
+
+			<div class="fen">
+				
+				<ul class="ul1">
+					<li>{$thatday.lsxf}</li>
+					<li>{$totalGrade}</li>
+					<li>{$lsxf}</li>
+					<li>{$thatday.lsxfdf}</li>
+				</ul>
+				<ul class="ul2">
+					<li>{$thatday.ckdrzd}</li>
+					<li>{$accelerate}</li>
+					<li>{$ckdrjs}</li>
+					<li>{$thatday.ckdrzddf}</li>
+				</ul>
+				<ul class="ul3">
+					<li>{$thatday.ckdrjs}</li>
+					<li>{$retard}</li>
+					<li>{$ckdrzd}</li>
+					<li>{$thatday.ckdrjsdf}</li>
+				</ul>
+				<ul class="ul4">
+					<li>{$thatday.gxxf}</li>
+					<li>{$economic}</li>
+					<li>{$gxxf}</li>
+					<li>{$thatday.gxxfdf}</li>
+				</ul>
+
+
+				<!-- 累计获得奖励 -->
+				<p class="jl_1" id="jl_111">{$thatdayjf}</p>
+				<p class="jl_2" id="jl_222">{$zjf}</p>
+			</div>	
+		</div>
+	{else}
+	<!-- 这是电动榜单    需要判断显示哪个 -->
+		<div class="bott2">
+
+			<ul class="ul_3">
+				<li>高效先锋榜</li>
+				<li>经济转速运营比例</li>
+				<li>昨日获得积分奖励</li>
+				<li>累计获得积分奖励</li>
+			</ul>
+
+
+
+			<div class="fen">
+				
+				<ul class="ul4">
+					<li>{$thatday.gxxf}</li>
+					<li>{$ddgxxf}</li>
+					<li>{$thatdayjf}</li>
+				</ul>
+
+
+				<!-- 累计获得奖励 -->
+				<p class="jl_1" id="jl_11">{$thatdayjf}</p>
+				<p class="jl_2" id="jl_22">{$zjf}</p>
+			</div>	
+
+
+	
+		</div>
+	{/if}
+	
+
+
+
+
+
+			<a href="amkltyx.php?step=jf&openid={$openid}" class="jfsc">
+
+				<div class="am">
+					<div>
+						<img src="/templates/amkltyx/img/pri1.png" alt="" class="tu">
+						<p>300积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri2.png" alt="" class="tu">
+						<p>100积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri3.png" alt="" class="tu">
+						<p>500积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri4.png" alt="" class="tu">
+						<p>1000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri5.png" alt="" class="tu">
+						<p>500积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri6.png" alt="" class="tu">
+						<p>500积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri7.png" alt="" class="tu">
+						<p>300积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri8.png" alt="" class="tu">
+						<p>2000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri9.png" alt="" class="tu">
+						<p>3000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri10.png" alt="" class="tu">
+						<p>5000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri11.png" alt="" class="tu">
+						<p>3000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri12.png" alt="" class="tu">
+						<p>5000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri13.png" alt="" class="tu">
+						<p>5000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri14.png" alt="" class="tu">
+						<p>1000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri15.png" alt="" class="tu">
+						<p>1000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri16.png" alt="" class="tu">
+						<p>2000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri17.png" alt="" class="tu">
+						<p>3000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri18.png" alt="" class="tu">
+						<p>3000积分</p>
+					</div>
+										<div>
+						<img src="/templates/amkltyx/img/pri19.png" alt="" class="tu">
+						<p>5000积分</p>
+					</div>
+				</div>	
+			</a>
+	</div>
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+		// 签到
+		function qiandao(){
+			var openid = $("#openid").val();
+			var token = $("#token").val();
+			$.ajax({
+	            type: "POST",
+	            url: "/amkltyx.php?step=sign",
+	            datType: "application/json",
+	            data:{
+	            	openid:openid
+				},
+				beforeSend: function(request) { 
+					request.setRequestHeader("Authorization", token); 
+				}, 
+	            success: function (res) {
+	            	if(res==1){
+	            		$('.img_2').attr('src','/templates/amkltyx/img/yqd.png');
+	            		var n = parseInt($('#zjf').text());
+	            		var f = parseInt($('.span_1').text());
+	            		var d = parseInt($('#jl_11').text());
+	            		var g = parseInt($('#jl_22').text());
+	            		var r = parseInt($('#jl_111').text());
+	            		var t = parseInt($('#jl_222').text());
+						n++;
+						f++;
+						d++;
+						g++;
+						r++;
+						t++;
+				        $('#zjf').text(n);
+				        $('.span_1').text(f);
+				        $('#jl_22').text(g);
+				        $('#jl_222').text(t);
+	            	}else{
+	            		alert('签过了，请明天再来吧！');
+	            	}
+	            }
+	        });
+		}
+	</script>
+</body>
+</html>

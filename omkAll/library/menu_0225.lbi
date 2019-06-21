@@ -1,0 +1,107 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../js/JQueryUtils.js" type="text/javascript"></script>
+<div class="liebiao" id="list_1" style="display:none;z-index: 19;">
+    <!-- start:列表内容区 -->
+    <div class="content">
+        <ul id="menu_panel" class="dalei nomar">
+            <li>
+                <dl class="huoche">
+                    <dt class="beijing" id="zaihuoche_text1" style="display: block" onclick="tab('zaihuoche_text1', 'zaihuoche_text2', 'zaihuoche_list')">载货车</dt>
+                    <dt class="red" id="zaihuoche_text2" style="display: none" onclick="tab('zaihuoche_text1', 'zaihuoche_text2', 'zaihuoche_list')">载货车</dt> 
+                    <dd class="zaiche" id="zaihuoche_list" style="display: none">
+                        <div class="triangle">
+                            <img src="images/red-triangle.png">
+                        </div>
+                        <ul class="zaihuo">
+                            {foreach from=$truck_list item=truck}           
+                            <li onclick="location.href='{$truck.content_text.href[1]}'">{$truck.content_name}</li>
+                            {/foreach}
+                        </ul>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="huoche"> 
+                    <dt class="beijing" id="qianyinche_text1" style="display: block" onclick="tab('qianyinche_text1', 'qianyinche_text2', 'qianyinche_list')">牵引车</dt>
+                    <dt class="red" id="qianyinche_text2" style="display: none" onclick="tab('qianyinche_text1', 'qianyinche_text2', 'qianyinche_list')">牵引车</dt> 
+                    <dd class="zaiche" id="qianyinche_list" style="display: none">
+                        <div class="triangle">
+                            <img src="images/red-triangle.png">
+                        </div>
+
+                        <ul class="zaihuo">
+                            {foreach from=$tractor_list item=tractor}
+                            <li onclick="location.href='{$tractor.content_text.href[1]}'">{$tractor.content_name}</li>
+                            {/foreach}
+                        </ul>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="huoche">
+                    <dt class="beijing" id="zixieche_text1" style="display: block" onclick="tab('zixieche_text1', 'zixieche_text2', 'zixieche_list')">自卸车</dt>
+                    <dt class="red" id="zixieche_text2" style="display: none" onclick="tab('zixieche_text1', 'zixieche_text2', 'zixieche_list')">自卸车</dt> 
+                    <dd class="zaiche" id="zixieche_list" style="display: none">
+                        <div class="triangle">
+                            <img src="images/red-triangle.png">
+                        </div>
+                        <ul class="zaihuo">
+                            {foreach from=$dumper_list item=dumper}
+                            <li onclick="location.href='{$dumper.content_text.href[1]}'">{$dumper.content_name}</li>
+                            {/foreach}
+                        </ul>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="huoche">
+                    <dt class="beijing" id="zhuanyongche_text1" style="display: block" onclick="tab('zhuanyongche_text1', 'zhuanyongche_text2', 'zhuanyongche_list')">专用车</dt>
+                    <dt class="red" id="zhuanyongche_text2" style="display: none" onclick="tab('zhuanyongche_text1', 'zhuanyongche_text2', 'zhuanyongche_list')">专用车</dt>
+                    <dd class="zaiche lpadd" id="zhuanyongche_list" style="display: none">
+                        <div class="triangle">
+                            <img src="images/red-triangle.png">
+                        </div>
+                        {foreach from=$special_car_list2 item=special2}
+                        <ul class="lzhuanyong clearfloat">
+                            <li class="title">
+								<span class="left"></span> 
+								<span class="center">{$special2.content_name}</span> 
+								<span class="right"></span>
+							</li>
+                            {$special2.html[1]}
+                        </ul>
+                        {/foreach}
+
+                    </dd>
+                </dl> 
+            </li>
+            <li>
+                <dl class="huoche" ><dt onclick="location.href='mall.php?act=index',$('#store').css('color','#d44148')" ><a href="mall.php?act=index" id="store">商城</a></dt></dl>
+            </li>
+            <li>
+                <dl class="huoche" onclick="location.href='http://bbs.aumantruck.com',$('#discuz').css('color','#d44148')"><dt><a href="http://bbs.aumantruck.com" id="discuz">社区</a></dt></dl>
+            </li>
+            <li>
+                <dl class="huoche" onclick="location.href='article_center.php',$('#news').css('color','#d44148')"><dt><a href="article_center.php" id="news">新闻中心</a></dt></dl>
+            </li>
+            <li>
+                <dl class="huoche">
+
+                    <dt class="beijing" id="fuwuzhichi_text1" style="display: block" onclick="tab('fuwuzhichi_text1', 'fuwuzhichi_text2', 'fuwuzhichi_list')">服务支持</dt>
+                    <dt class="red" id="fuwuzhichi_text2" style="display: none;" onclick="tab('fuwuzhichi_text1', 'fuwuzhichi_text2', 'fuwuzhichi_list')">服务支持</dt> 
+                    <dd class="zaiche" id="fuwuzhichi_list" style="display: none;">
+                        <div class="triangle">
+                            <img src="images/red-triangle.png">
+                        </div>
+                        <ul class="zaihuo">
+                            <li class="fl" onclick="location.href='network.php?act=list&type=services'">服务网络</li>
+                            <li class="fr" onclick="location.href='network.php?act=list&type=sales'">销售网络</li>
+                            <li class="fl" onclick="location.href='network.php?act=list&type=accessories'">配件网络</li>
+                            <li class="fr" onclick="location.href='company_profile.php'">公司简介</li>
+                        </ul>
+                    </dd>
+                </dl> 
+            </li>
+        </ul>  
+    </div>
+</div>

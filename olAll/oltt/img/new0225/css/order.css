@@ -1,0 +1,128 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.top {
+    width: 100%;
+    background-color: #000;
+    height: 88px;
+    overflow: hidden;
+}
+
+.searchDiv {
+    margin-top: 15px;
+}
+
+.title_1 {
+    position: relative;
+    font-family: "Microsoft YaHei UI";
+    font-size: 36px;
+    color: #fff;
+    display: block;
+    padding-top: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.reBackBtn {
+    width: 42px;
+    height: 38px;
+    background: url(../images/reback.png) no-repeat center;
+    position: absolute;
+    left: 0px;
+    top: 8px;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.homeBtn {
+    width: 35px;
+    height: 34px;
+    background: url(../images/home1.png) no-repeat center;
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
+
+.marginTop20 {
+    margin-top: 20px;
+}
+
+.oneRow {
+    overflow: hidden;
+    text-align: center;
+}
+
+.marginBottom20 {
+    margin-bottom: 20px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+li {
+    border: 2px solid #e9e8e9;
+    font-size: 20px;
+    padding: 5px;
+    background-color: white;
+}
+
+.order_li {
+    margin-left: 20px;
+    width: 600px;
+    height: 350px;
+}
+
+.left_span {
+    float: left;
+    color: red;
+}
+
+.right_span {
+    float: right;
+    color: red;
+}
+
+.img1_dingdan {
+
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.clear {
+    clear: both
+}
+.right_div{
+    margin-left: 20px;
+    float: left;
+    width: 280px;
+    text-align: left;
+}
+.center{
+    margin-top: 30px;
+}
+.right_button {
+    float: right;
+    margin-right: 50px;
+    background-color: red;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left_span1 {
+    float: left;
+    margin-top: 15px;
+}

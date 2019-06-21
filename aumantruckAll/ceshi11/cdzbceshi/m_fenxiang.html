@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <!--<meta name="viewport" content="width=640,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link href="css/cd_sbkh_m.css" type="text/css" rel="stylesheet"/>
+    <link href="css/cd_m.css" type="text/css" rel="stylesheet"/>
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>成都站直播M</title>
+    <style type="text/css">
+        .info_live{
+            border-bottom: 3px solid #000000;
+        }
+        .comment_box * {
+            box-sizing: border-box;
+            font-family: "微软雅黑";
+        }
+        .comment_box {
+            margin-top: 0;
+            font-size: 12px;
+            width: 100%;
+            overflow: hidden;
+            height: auto;
+            display: block;
+            margin-bottom: 50px;
+        }
+        .liveshow_title{
+            width: 100%;
+        }
+        .liveshow_title_mob {
+            height: 50px;
+            font-size: 25px;
+            text-indent: 0.2rem;
+            line-height: 50px;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+        .set_bg_color {
+            background: #000000;
+            color: #ffffff;
+        }
+        .comment_about {
+            clear: both;
+            border: 1px solid #d9d9d9;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .comment_textarea {
+            width:100%;
+            height: 8em;
+        }
+        .comment_textarea textarea {
+            font-size: 1.2em;
+            padding: 5px 10px;
+            line-height: 1.5em;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .my_sent_add_pic {
+            width: 100%;
+            height: auto;
+            margin-bottom: 7px;
+            height: 180px;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+        .my_sent_add_pic ul {
+            width: 100%;
+            float: left;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .my_sent_add_pic ul li {
+            width: 83px;
+            height: 83px;
+            margin-right: 0.2rem;
+            padding: 0.3rem 0.2rem;
+            margin-bottom: 0.1rem;
+            float: left;
+            border: 1px dashed #e6e6e6;
+            text-align: center;
+            position: relative;
+            background: #fff;
+        }
+        .my_sent_add_camera {
+            text-align: center;
+        }
+        .my_sent_add_number {
+            width: 100%;
+            color: #cdcdcd;
+            font-size: 14px;
+            text-align: center;
+        }
+        .upload_input_file {
+            width: 1.6rem;
+            height: 1.6rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .comment_submit {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            margin-left: 35%;
+            font-size: 0.9em;
+            margin-right: 1%;
+            display: block;
+            width: auto;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .comment_submit a {
+            padding: 0.8em 3.3em;
+            font-size: 18px;
+            border-radius: 3px;
+            background: #f39800;
+            display: inline-block;
+            text-align: center;
+            margin: 0 auto;
+            color: #fff;
+            vertical-align: middle;
+        }
+        .comment_form {
+            width: 100%;
+            padding: 0;
+            margin-top: 0;
+            background: #fff;
+            height: auto;
+            overflow: hidden;
+        }
+        .article_new {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            background: #fff;
+            padding: 0;
+            border: 1px solid #e2e2e4;
+        }
+
+        .comment_form {
+            padding: 1% 1%;
+            width: 100%;
+            background: #fff;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .comment_form * {
+            box-sizing: border-box;
+            font-family: "微软雅黑";
+        }
+
+        .comment_personal_img {
+            width: 48px;
+            float: left;
+        }
+
+        .comment_list {
+            width: 100%;
+            background: #f6f6f6;
+            overflow: hidden;
+            padding: 0.6rem;
+        }
+
+        .no_marginBottm {
+            margin-bottom: 0 !important;
+        }
+
+        .comment_personal_img a {
+            display: block;
+            width: 100%;
+            height: 48px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 2px solid #e7e7e7;
+        }
+
+        .comment_personal_img img {
+            display: block;
+            width: 100%;
+        }
+
+        .comment_info {
+            float: left;
+            margin-left: 5px;
+            cursor: pointer;
+            width: 490px;
+        }
+
+        .comment_header {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .comment_name_info {
+            width: 160px;
+            float: left;
+        }
+
+        .comment_name {
+            font-size: 20px;
+            line-height: 30px;
+            border-bottom: none;
+            background: none;
+            margin: 0;
+            padding-bottom: 0;
+        }
+
+        .comment_name a {
+            color: #1ba196;
+        }
+
+        .comment_time {
+            font-size: 15px;
+            color: #a5a5a5;
+            float: left;
+        }
+
+        .personal_btn_area {
+            float: right;
+            overflow: hidden;
+            border: 1px solid #d9d9d9;
+            font-size: 12px;
+            margin-top: 10px;
+            background: #fff;
+            border-width: 0px 1px;
+            display: block;
+        }
+
+        .personal_btn_area a {
+            display: block;
+            width: 80px;
+            text-align: center;
+            height: 24px;
+            line-height: 22px;
+            float: left;
+            color: #a6a6a6;
+            border: 1px solid #d9d9d9;
+            border-width: 1px 0;
+        }
+
+        .personal_btn_area > :first-child {
+            border-left-width: 0px;
+            width: 6em;
+        }
+
+        .personal_btn_area a {
+            display: block;
+            width: 80px;
+            text-align: center;
+            height: 24px;
+            line-height: 22px;
+            float: left;
+            color: #a6a6a6;
+            border: 1px solid #d9d9d9;
+            border-width: 1px 0;
+            border-left-width: 1px;
+        }
+
+        .praise_num img {
+            display: inline-block;
+            width: 15px;
+            vertical-align: middle;
+            margin-top: -3px;
+            margin-right: 3px;
+        }
+
+        .action_num {
+            position: absolute;
+            font-size: 1em;
+            width: 79px;
+            height: 22px;
+            text-align: center;
+            z-index: 6;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            margin-top: -22px;
+        }
+
+        .coment_text {
+            font-size: 20px;
+            line-height: 20px;
+            margin-top: 5px;
+        }
+
+        .comment_content {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .liveshow_img {
+            width: 80%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .liveshow_img li {
+            float: left;
+            width: 90px;
+            height: 90px;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .mob_replay {
+            display: block;
+            float: right;
+            color: #9d9d9d;
+            clear: both;
+            font-size: 19px;
+            line-height: 25px;
+        }
+        .live_ico {
+            width: 100%;
+            height: 41px;
+            font-size: 12px;
+            margin-top: 10px;
+            color: rgb(200, 200, 200);
+            font-family: "Microsoft YaHei", 微软雅黑, MicrosoftJhengHei, 华文细黑, STHeiti, MingLiu;
+            border-style: solid;
+            border-color: rgb(229, 229, 229);
+            border-image: initial;
+            border-width: 1px 0px;
+            padding: 10px 0px;
+            margin-bottom: 10px;
+            position: fixed;
+            bottom: 0px;
+            background: white;
+            margin: 0;
+        }
+        .live_ico a:first-child {
+            border-left: 1px solid #e5e5e5;
+        }
+        .share_live {
+            display: block;
+            float: right;
+            text-align: center;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .share_live span {
+            vertical-align: middle;
+            margin-left: 5px;
+            display: inline;
+            float: none;
+            color: #999;
+        }
+        .share_live {
+            display: block;
+            float: right;
+            text-align: center;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .line_mode .share_live img {
+            height: 0.3rem;
+            vertical-align: middle;
+            display: inline;
+            float: none;
+            margin-top: 0%;
+        }
+        .line_mode .share_live {
+            display: block;
+            float: right;
+            text-align: center;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .live_ico img{
+            vertical-align: middle;
+        }
+
+        .share_tips {
+            width: 100%;
+            position: fixed;
+            z-index: 999;
+            background: rgba(0,0,0,0.9);
+            padding-top: 6.5em;
+            text-align: center;
+            display: block;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .share_tips_tips.font_28.white {
+            font-size: 1.5em;
+        }
+
+        .share_tips_tips {
+            border-width: 2px;
+            display: inline-block;
+            position: relative;
+            margin: 0 auto;
+            text-align: left;
+            border: 4px dashed #fff;
+            border-radius: 15px;
+            padding: 1em 1.2em;
+        }
+
+        .white {
+            color: #fff;
+        }
+
+        .share_tips_tips .right_top {
+            top: 18px;
+            left: 132px;
+            width: 20px;
+        }
+        .share_tips_tips img {
+            position: absolute;
+            width: 80px;
+            top: -57px;
+            right: -69px;
+        }
+        .share_tips_btn.xie.white.font_28 {
+            font-size: 1.5em;
+        }
+        .share_tips_btn {
+            width: 25%;
+            margin: 0 auto;
+            text-align: center;
+            border: 4px dashed #fbce07;
+            border-radius: 15px;
+            position: relative;
+            padding: 0.5em 0.8em;
+            margin-top: 2em;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            -webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;
+            box-sizing: content-box;
+        }
+
+        .share_tips_btn {
+            width: 20%;
+            border-width: 2px;
+            border-radius: 5px;
+        }
+        .share_tips_btn img {
+            width: 50px;
+            bottom: -35px;
+            right: -50px;
+        }
+    </style>
+</head>
+<body style="margin:0;">
+<ul class="navUl">
+    <!--<li style="width: 25%;"><a href="mobile/spike_cdzb.php"  class="aOn">赛事直播</a></li>-->
+    <!--<li><a href="">介绍</a></li>-->
+    <!--<li><a href="">报名</a></li>-->
+    <!--<li style=""><a href="">论坛</a></li>-->
+    <!--<li style="width: 25%;"><a href="">卡车公开赛</a></li>-->
+    <!--<li><a href="">排名</a></li>-->
+    <li style="width: 33%;"><a href="/mobile/spike_tco.php?index=2">卡车公开赛</a></li>
+    <li style="width: 33%;"><a href="/mobile/spike_cdzb.php"  class="aOn">大赛直播</a></li>
+    <li style="width: 33%;"><a href="/mobile/spike_tco.php?index=6">冠军排行榜</a></li>
+</ul>
+<div class="cd_banner"></div>
+<div class="info_live">
+    <div>直播时间：<span>2017年11月25日 07:00 至 2017年11月26日 20:00</span></div>
+    <div>直播地点：<span>四川 成都</span></div>
+    <div>观看次数：<span>0</span>次</div>
+</div>
+
+
+<div class="content1">
+    <div class="live_news border_top">
+        <div class="live_list">
+            <div class="live_liset_info">
+
+                <div class="line_mode">
+                    <div class="live_time">
+                        <span>10月29日 19:58</span>
+                    </div>
+                    <div class="audio_btn" id="audio_play_btn1" onclick="audio_play(this)"></div>
+                    <audio id="audio1">
+                        <source src="video/cd.mp3" type="audio/mpeg">
+                        您的浏览器不支持 audio 元素。
+                    </audio>
+                    <div class="text">
+
+                        <span>山东临沂站的比赛结束喽，但精彩还未停止。接下来，2017中国高效物流卡车公开赛将到四川、广东、北京继续玩转高效物流，其中，北京站为决赛战。最终获得全国总决赛前10名的参赛选手获得“赴欧洲考察、交流、学习”机会，开启欧洲体验之旅，参加奔驰更高层级的预见性卡车驾驶培训服务。最后回顾一下这两天的精彩瞬间～ 祝每一位在路上的运输人都平安健康，开着欧曼“征战”四方！</span>								</div>
+                    <div class="video_box">
+                        <video id="video1" class="video-main abs" width="100%" height="100%" src="video/1.mp4" controls>
+
+                        </video>
+                        <div class="play_btn" id="video_play_btn1" onclick="video_play(this)"></div>
+                    </div>
+                    <div class="img_area">
+                        <div class="img_live" count="6">
+                            <a>
+                                <img src="images/temp.png" onclick="showBigImg(this)">
+                            </a>
+                        </div>
+                        <div class="img_live" count="6">
+                            <a>
+                                <img src="images/temp.png" onclick="showBigImg(this)">
+                            </a>
+                        </div>
+                        <div class="img_live no_margin_right" count="6">
+                            <a>
+                                <img src="images/doge.jpg" onclick="showBigImg(this)">
+                            </a>
+                        </div>
+                        <div class="img_live" count="6">
+                            <a>
+                                <img src="images/temp.png" onclick="showBigImg(this)">
+                            </a>
+                        </div>
+                        <div class="img_live" count="6">
+                            <a>
+                                <img src="images/temp.png" onclick="showBigImg(this)">
+                            </a>
+                        </div>
+                        <div class="img_live no_margin_right " count="6">
+                            <a>
+                                <img src="images/temp.png" onclick="showBigImg(this)">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="link_news">
+                        <a href="http://www.yunshuren.com/article-11694.html" target="_blank" class="img_link" style="height: 86px;">
+                            <img src="http://p.yunshuren.com/file/39/451/1509283486851.jpg!fx.pc.mid" img_url="http://p.yunshuren.com/file/39/451/1509283486851.jpg!fx.pc.mid" img_type=".mid" img_phone_type="" img_pad_type=".mid" class="img_width yun_img" rewrite_flag="1" scroll_flag="1">
+                        </a>
+                        <a href="http://www.yunshuren.com/article-11694.html" target="_blank">
+                            <div class="link_text show">
+                                欧曼EST超级卡车玩“心跳”  TCO运盈宝为山东市场带来降本增效方案
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="comment_box">
+                    <div class="liveshow_title set_bg_color liveshow_title_mob liveshow_title_bottom">全部评论</div>
+                    <div class="article_new">
+                        <div class="comment_form">
+                            <div class="comment_list no_marginBottm">
+                                <div class="comment_personal_img">
+                                    <a href="/user_comment-tnwpwgpoqonvrwpq.html" target="_self">
+                                        <img src="http://p.yunshuren.com/file/57/302/1477438230257.jpg" img_url="http://p.yunshuren.com/file/57/302/1477438230257.jpg" img_type="" img_phone_type="" img_pad_type="" class="img_width" alt="徐金平" scroll_flag="1">
+                                    </a>
+                                </div>
+                                <div class="comment_info">
+                                    <div class="comment_header">
+                                        <div class="comment_name_info">
+                                            <div class="comment_name"><a href="/user_comment-tnwpwgpoqonvrwpq.html" target="_self">徐金平</a></div>
+                                            <div class="comment_time">2017-10-29 19:58:55</div>
+                                        </div>
+                                        <div class="personal_btn_area">
+                                            <a href="javascript:;" class="praise_num item_vote" vote="0" vote_id="1828" target="_self">
+                                                <img src="images/praise_in.png">
+                                                <span class="">1</span>
+                                                <div class="action_num">+1</div>
+                                            </a>
+                                            <a href="comments_info-1828-52.html" class="article_comment_share_btn" target="_self">分享</a>
+                                        </div>
+                                    </div>
+                                    <div class="coment_text ">
+                                        <a href="comments_info-1828-52.html" class="comment_content" target="_self">
+                                            都是 大师级的人物
+                                        </a>
+                                        <ul class="liveshow_img clearfix">
+                                            <li class="liveshow_comment_pic">
+                                                <img src="http://www.yunshuren.com/file/29/490/1509278330637.jpg" img_url="http://p.yunshuren.com/file/29/490/1509278330637.jpg!thumb.min" class="" data-preview-src="http://p.yunshuren.com/file/29/490/1509278330637.jpg" data-preview-group="1" pic_scroll_flag="1" scroll_flag="1" style="height: 82.6667px; width: 62px; margin-top: -10.3333px; margin-left: 0px;">
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:;" class="mob_replay" building="0" comment_id="1828" onclick="mob_replay(this)">回复∨</a>
+                                    </div>
+                                </div>
+                                <div class="comment_about" id="comment_111" style="overflow: hidden;display:none">
+                                    <div class="comment_textarea"><textarea cols="" rows="" class="story"
+                                                                            placeholder="评论内容最少2字，最多200字"></textarea>
+                                    </div>
+                                    <div class="my_sent_add_pic clearfix my_sent_add_pic_list">
+                                        <ul class="on_the_way_pic_area clearfix">
+                                            <li>
+                                                <div class="my_sent_add_camera"><img
+                                                        src="images/camera_icon.png">
+                                                    <p class="my_sent_add_number">添加图片</p></div>
+                                                <input type="file" class="upload_input_file"
+                                                       id="upload_input_1828" multiple=""></li>
+                                        </ul>
+                                        <div class="comment_submit comment_submit_list btn_comment_add"
+                                             comment_id="1828"><a href="javascript:;">发表</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="live_ico">
+                    <a href="javascript:;" class="share_live" target="_self" onclick="showTip()"><img src="http://aumantruck.com/themes/default/cdzb/images/fenxiang_icon.png" class="liveshow_share_btn"><span class="liveshow_share_btn">分享</span></a>
+                    <a href="submit_comment-1919.html" class="share_live" target="_self"><img src="http://aumantruck.com/themes/default/cdzb/images/pinglun_icon.png"><span>发表评论</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="mobile/spike_tco.php?index=3"><div id="wybm_icon"></div></a>
+<a href="?act=yysj"><div id="yysj_icon"></div></a>
+<a href="?act=zxdc"><div id="wymc_icon"></div></a>
+<a href="?act=gszh"><div id="gszh_icon"></div></a>
+
+<img id="box" onclick="boxbgClick()"/>
+<div id="box-bg" onclick="boxbgClick()"></div>
+
+<div class="share_tips" style="display: none; height: 1800px;" onclick="hideSelf(this)">
+    <div class="share_tips_tips font_28 white">
+        <div class="white">在微信中点击右上角</div>
+        <div class="white">分享给微信好友或者朋友圈。</div>
+        <img src="images/air.png">
+    </div>
+    <div class="share_tips_btn xie white font_28">朕知道了<img src="images/hand.png"></div>
+</div>
+
+
+<script>
+
+    function showBigImg(obj) {
+
+        var _w = parseInt($(window).width());
+        var _h = parseInt($(window).height());
+
+        var img = new Image();
+        img.src = obj.src;
+        img.onload = function(){
+            // 打印
+            var realWidth = img.width;//真实的宽度
+            var realHeight = img.height;//真实的高度
+            $('#box').css({
+                "width":"100%",
+                "height":"auto",
+                "top":'100px',
+                'display':'block'
+            });
+            $('#box-bg').show();
+            $("#box").attr("src", obj.src);
+            $('#box').show();
+        };
+        no_scroll();
+    }
+
+    function boxbgClick() {
+        $('#box-bg').hide();
+        $('#box').hide();
+        yes_scroll();
+    }
+
+    function hideSelf(obj) {
+        yes_scroll();
+
+        var temp = obj;
+        temp.style.display = 'none';
+        boxbgClick();
+    }
+
+    function yes_scroll() {
+        $(document.body).css({
+            "overflow-x":"auto",
+            "overflow-y":"auto"
+        });
+    }
+
+    function no_scroll() {
+        //禁止滚动条
+        $(document.body).css({
+            "overflow-x":"hidden",
+            "overflow-y":"hidden"
+        });
+    }
+
+    function topbtnClick(obj) {
+        $('#tbtn1').removeClass('tOn');
+        $('#tbtn2').removeClass('tOn');
+        $('#'+obj.id).addClass('tOn');
+
+        if (obj.id == 'tbtn1'){
+            $('.content1').show();
+            $('.content2').hide();
+        }else{
+            $('.content1').hide();
+            $('.content2').show();
+        }
+
+    }
+
+    function subbtnClick(obj) {
+
+    }
+
+    function audio_play(obj) {
+        var temp = obj.id;
+        var index = temp.substr(temp.length-1,1);
+        var v = document.getElementById("audio"+index);
+
+        v.addEventListener("ended", function () {
+            $('#'+temp).css({
+                'background': 'url(images/audio_btn.png) center no-repeat',
+                'background-size':'100% 100%'
+            });
+        });
+
+        if (v.paused){
+            v.play();
+            $('#'+temp).css({
+                'background': 'url(images/sound.gif) center no-repeat',
+                'background-size':'100% 100%'
+            });
+        }else{
+            v.pause();
+            $('#'+temp).css({
+                'background': 'url(images/audio_btn.png) center no-repeat',
+                'background-size':'100% 100%'
+            });
+        }
+
+    }
+
+    function video_play(obj) {
+
+        var temp = obj.id;
+        var index = temp.substr(temp.length-1,1);
+        var v = document.getElementById("video"+index);
+
+        v.onplay = function () {
+            obj.style.display = 'none';
+        }
+        v.onpause = function() {
+            obj.style.display = 'block';
+        };
+        if (v.paused){
+            v.play();
+            obj.style.display = 'none';
+        }else{
+            v.pause();
+            obj.style.display = 'block';
+        }
+    }
+
+    function mob_replay(obj) {
+        var comment111 = document.getElementById('comment_111');
+        if (comment111.style.display == 'none'){
+            comment111.style.display = 'block';
+            obj.innerHTML = '回复∧';
+        }else {
+            comment111.style.display = 'none';
+            obj.innerHTML = '回复∨';
+        }
+    }
+
+    function showTip() {
+        $('.share_tips').show();
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+.jf{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/jf.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+/*身体*/
+.bj{
+	width: 100%;
+	/*height: 20.15625rem;*/
+	background-image: url('../img/jf_bj.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 38%;
+}
+.dang{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	color: #3DAAA5;
+	font-size: 14px;
+	top: 33%;
+	left: 4%;
+}
+.ul_img {
+    width: 10.2rem;
+    height: 3.7rem;
+    margin-top: 0.4rem;
+    margin-left: 0.3rem;
+}
+.bj>ul{
+    background-image: url(../img/kuang.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 0 auto;
+    height: 4.5625rem;
+    margin-top: .7rem;
+    position: relative;
+}
+.bj>.uull{
+    width: 90%;
+    margin: 0 auto;
+    height: 4.5625rem;
+    margin-top: .7rem;
+    position: relative;
+}
+
+.bj>ul>.ul_jf{
+	width: 5rem;
+    height: 2rem;
+    position: absolute;
+    top: 28%;
+    left: 68%;
+    font-size: 16px;
+    color: #3DAAA5;
+    font-weight: bold; 
+}
+.cz{
+    width: 5.71875rem;
+    height: 1.59375rem;
+    position: absolute;
+    top: 60%;
+    left: 64%;
+    background-image: url(../img/cz.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.jia{
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	opacity: 0;
+}
+.shu{
+	width: 2rem;
+	height: 1rem;
+	font-size: 12px;
+	color: #F39E31;
+	position: absolute;
+	top: 9%;
+	left: 46%;
+}
+.jian{
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top:0%;
+	right:0%;
+	opacity: 0;
+}
+/*底部*/
+.di{
+	width: 100%;
+	height: 4.5625rem;
+	background-image: url('../img/di.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: fixed;
+	bottom: 0%;
+}
+.img_1{
+	width: 10.5rem;
+	height: 4.0625rem;
+	position: absolute;
+	top: 6%;
+	left: 0%;
+}
+.yj{
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    left: 16%;
+    width: 6rem;
+}
+/*.ge{
+    width: 2rem;
+    height: 1rem;
+    position: absolute;
+    top: 56%;
+    left: 21%;
+}
+.he{
+    width: 2rem;
+    height: 1rem;
+    position: absolute;
+    top: 23%;
+    left: 21%;
+}*/
+.img_2{
+	width: 9.625rem;
+	height: 4.09375rem;
+	position: absolute;
+	top: 6%;
+	left: 56%;
+	background-image: url('../img/ms.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>元宵佳节猜灯谜，奥铃好礼送不停</title>
+	<link rel="stylesheet" href="/templates/ol/olyxj/css/index.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script src="/templates/ol/olyxj/js/jquery.min.js"></script>
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '元宵佳节猜灯谜，奥铃好礼送不停', // 分享标题
+                desc: '奥铃邀你一起点亮元宵灯笼', // 分享描述
+                link: 'http://al.douyar.cc/ol/ol_yx.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olyxj/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '元宵佳节猜灯谜，奥铃好礼送不停', // 分享标题
+                desc: '奥铃邀你一起点亮元宵灯笼', // 分享描述
+                link: 'http://al.douyar.cc/ol/ol_yx.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olyxj/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+<body>
+<audio src="/templates/ol/olyxj/img/1.mp3" id="music1" class="audio"    preload="auto" >
+    你的浏览器不支持video元素
+</audio>
+<div id="but" onclick="Play(this)"></div>
+<input type="hidden" value="{$openid}" id="openid">
+<input type="hidden" value="{$token}" id="token">
+<input type="hidden" value="{$id}" id="ids">
+<div class="container"></div>
+<!-- 开屏页 -->
+	<div class="index">
+		<img src="/templates/ol/olyxj/img/dlong.png" alt="" class="dlong">
+		<img src="/templates/ol/olyxj/img/city.png" alt="" class="city">
+		<img src="/templates/ol/olyxj/img/road.png" alt="" class="road">
+		<img src="/templates/ol/olyxj/img/start.png" alt="" class="start" onclick="start()">
+		<img src="/templates/ol/olyxj/img/rule.png" alt="" class="rule" onclick="rule()">
+		<div class="gz">
+			<div class="close"></div>
+			<div class="start" onclick="start()"></div>
+		</div>
+	</div>
+
+<!--选择灯笼  -->
+	<div class="choice">
+		<img src="/templates/ol/olyxj/img/left1.png" alt="" class="left1">
+		<img src="/templates/ol/olyxj/img/left2.png" alt="" class="left2">
+		<img src="/templates/ol/olyxj/img/right.png" alt="" class="right">
+
+		<img src="/templates/ol/olyxj/img/d0.png" alt="" class="d1">
+		<img src="/templates/ol/olyxj/img/d1.png" alt="" class="d2">
+		<img src="/templates/ol/olyxj/img/d2.png" alt="" class="d3">
+		<img src="/templates/ol/olyxj/img/d4.png" alt="" class="d4">
+		<img src="/templates/ol/olyxj/img/d3.png" alt="" class="d5">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light1 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light2 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light3 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light5 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light4 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/choice_road.png" alt="" class="choice_road">
+	</div>
+	
+<!-- 第一题 -->
+
+	<div class="one page">
+		<img src="" alt="" class="ti">
+		<input type="radio" name="x" value="a" class="inp inp_1">
+		<input type="radio" name="x" value="b" class="inp inp_2">
+		<input type="radio" name="x" value="c" class="inp inp_3">
+		<input type="radio" name="x" value="c" class="inp inp_4">
+		
+		<div class="one_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+		<img src="/templates/ol/olyxj/img/answer_road.png" alt="" class="answer_road">
+		<img src="/templates/ol/olyxj/img/continue.png" alt="" class="continue" onclick="next1()">
+	</div>
+
+
+	<!-- 第二题 -->
+
+	<div class="two page">
+		<div class="title2"></div>
+		<img src="" alt="" class="ti">
+		<input type="radio" name="z" value="a" class="inp inp_1">
+		<input type="radio" name="z" value="b" class="inp inp_2">
+		<input type="radio" name="z" value="c" class="inp inp_3">
+		<input type="radio" name="z" value="c" class="inp inp_4">
+		
+		<div class="two_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+		<img src="/templates/ol/olyxj/img/answer_road.png" alt="" class="answer_road">
+		<img src="/templates/ol/olyxj/img/continue.png" alt="" class="continue" onclick="next2()">
+	</div>
+
+	<!-- 第三题 -->
+
+	<div class="three page">
+		<div class="title3"></div>
+		<img src="" alt="" class="ti">
+		<input type="radio" name="y" value="a" class="inp inp_1">
+		<input type="radio" name="y" value="b" class="inp inp_2">
+		<input type="radio" name="y" value="c" class="inp inp_3">
+		<input type="radio" name="y" value="c" class="inp inp_4">
+		<div class="three_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+		<img src="/templates/ol/olyxj/img/answer_road.png" alt="" class="answer_road">
+		<img src="/templates/ol/olyxj/img/continue.png" alt="" class="continue" onclick="next3()">
+	</div>
+
+
+	<!-- 第四题 -->
+	<div class="four page">
+		<div class="title4"></div>
+		<img src="" alt="" class="ti">
+		<input type="radio" name="m" value="a" class="inp inp_1">
+		<input type="radio" name="m" value="b" class="inp inp_2">
+		<input type="radio" name="m" value="c" class="inp inp_3">
+		<input type="radio" name="m" value="c" class="inp inp_4">
+		<div class="four_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+		<img src="/templates/ol/olyxj/img/answer_road.png" alt="" class="answer_road">
+		<img src="/templates/ol/olyxj/img/continue.png" alt="" class="continue" onclick="next4()">
+	</div>
+
+	<!-- 第五题 -->
+	<div class="five page">
+		<div class="title5"></div>
+		<img src="" alt="" class="ti">
+		<input type="radio" name="n" value="a" class="inp inp_1">
+		<input type="radio" name="n" value="b" class="inp inp_2">
+		<input type="radio" name="n" value="c" class="inp inp_3">
+		<input type="radio" name="n" value="c" class="inp inp_4">
+		<div class="five_dui">
+			<div class="one_dui_1"></div>
+			<div class="one_dui_2"></div>
+			<div class="one_dui_3"></div>
+			<div class="one_dui_4"></div>
+		</div>
+		<img src="/templates/ol/olyxj/img/answer_road.png" alt="" class="answer_road">
+		<img src="/templates/ol/olyxj/img/look.png" alt="" class="continue" onclick="next5()">
+	</div>
+
+	<!-- 答案 -->
+	<div class="end">
+		<img src="" alt="" class="endimg" onclick="prize()">
+
+		<img src="/templates/ol/olyxj/img/left1.png" alt="" class="left1">
+		<img src="/templates/ol/olyxj/img/left2.png" alt="" class="left2">
+		<img src="/templates/ol/olyxj/img/right.png" alt="" class="right">
+
+		<img src="/templates/ol/olyxj/img/d0.png" alt="" class="d1">
+		<img src="/templates/ol/olyxj/img/d1.png" alt="" class="d2">
+		<img src="/templates/ol/olyxj/img/d2.png" alt="" class="d3">
+		<img src="/templates/ol/olyxj/img/d4.png" alt="" class="d5">
+		<img src="/templates/ol/olyxj/img/d3.png" alt="" class="d4">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light1 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light2 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light3 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light4 dl" isattr = "isis">
+		<img src="/templates/ol/olyxj/img/light.png" alt="" class="light5 dl" isattr = "isis">
+
+		<img src="/templates/ol/olyxj/img/choice_road.png" alt="" class="choice_road">
+
+		<!-- 中奖页 -->
+		<div class="prize">
+			<p>10</p>
+			<div class="lq" onclick="lq()"></div>
+			<a href=""><div class="close"></div></a>
+		</div>
+
+		<!-- 中奖页 -->
+		<div class="noprize">
+			<a href=""><div class="close"></div></a>
+			<a href=""><div class="again"></div></a>
+		</div>
+
+		<div class="lz">
+			<input type="text" placeholder="请输入您的姓名" class="inp1" id="names">
+			<input type="text" placeholder="请输入您的电话" class="inp2" id="password">
+			<div class="tj" onclick="tj()"></div>
+			<a href=""><div class="close"></div></a>
+		</div>
+	</div>
+
+
+	<script src='/templates/ol/olyxj/js/cont.js'></script>
+	<script>
+$("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+// 移动端默认初始化时暂停播放，改为初始化页面时播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+
+        var audio = document.getElementsByClassName('audio')[0];
+            audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+
+            audio.play();
+
+        }, false);
+
+    }
+
+    audioAutoPlay();
+});
+// 音频播放
+function Play(e) {
+    var audio = document.getElementsByClassName('audio')[0];
+
+    console.log(audio.paused);
+
+    if(audio.paused){
+
+	   audio.play();
+
+        console.log('播放')
+        $("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+
+    }else{
+		$("#but").css("-webkit-animation","");
+	   audio.pause();
+
+        console.log('暂停')
+
+    }
+}
+// 适配华为键盘影响布局的问题
+var h = window.innerHeight;
+var myInput = document.getElementById('names');
+var myInputs = document.getElementById('password');
+myInput.addEventListener('focus',handler,false);
+myInputs.addEventListener('focus',handlers,false);
+function handler(){
+	$('body').height(h);
+}
+
+function handlers(){
+    $('body').height(h);
+}
+	</script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:auto;
+	position: relative;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+.kai{
+	width: 100%;
+	height:46.875rem;
+	position: absolute;
+	background-image: url('../img/kai.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.gui_1{
+    width: 6.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+.gui{
+	width: 100%;
+	height: 83%;
+	position: absolute;
+	top: 0%;
+	background-image: url('../img/gui.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: none;
+}
+.close{
+	width: 3.125rem;
+	height: 3.125rem;
+	position: absolute;
+	right: 4%;
+	top: 13%;
+}
+.start{
+    width: 9.375rem;
+    height: 5.6875rem;
+    position: absolute;
+    bottom: 28%;
+    left: 29%;
+    /*background: red;*/
+}
+
+
+/*游戏页*/
+.gif{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/gif.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0%;
+    display: none;
+    z-index: 9999;
+}
+.gif_1{
+    width: 16%;
+    height: 11%;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    z-index: 99999999999999999999999999;
+}
+.content{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/game.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: none;
+}
+.ling{
+    width: 4.25rem;
+    height: 2.1875rem;
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+.time{
+    width: 4.25rem;
+    height: 2.1875rem;
+    position: absolute;
+    top: 25%;
+    right: 0%;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+.wu{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+}
+.wu>img{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    z-index: 1;
+}
+#div1{
+    top: 35%;
+    left: 9%;
+}
+#div2{
+    top: 35%;
+    left: 26%;
+}
+#div3{
+    top: 35%;
+    left: 43%;
+}
+#div4{
+    top: 35%;
+    left:61%;
+}
+#div5{
+    top: 35%;
+    left: 79%;
+}
+#div6{
+    top: 40%;
+    left: 8%;
+}
+#div7{
+    top: 40%;
+    left: 26%;
+}
+#div8{
+    top: 40%;
+    left: 43%;
+}
+#div9{
+    top: 40%;
+    left: 62%;
+}
+#div10{
+    top: 40%;
+    left: 80%;
+}
+#div11{
+    top: 47%;
+    left: 9%;
+}
+#div12{
+    top: 47%;
+    left: 26%;
+}
+#div13{
+    top: 47%;
+    left: 43%;
+}
+#div14{
+    top: 47%;
+    left: 61%;
+}
+#div15{
+    top: 47%;
+    left: 79%;
+}
+
+.div_1{
+    width: 5rem;
+    height: 6rem;
+    position: absolute;
+    top: 67%;
+    left: 0%;
+}
+.div_2{
+    width: 6.5rem;
+    height: 5rem;
+    position: absolute;
+    top: 68%;
+    left: 21%;
+}
+.div_3{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 82%;
+    left: 0%;
+}
+.div_4{
+    width: 6.5rem;
+    height: 5.5rem;
+    position: absolute;
+    top: 79%;
+    left: 22%;
+}
+#errormsg_1{
+    width: 4.5rem;
+    height: 4.5rem;
+    position: absolute;
+    top: 74%;
+    left: 14%;
+    background-image: url('../img/x.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+
+/*挑战成功*/
+.over{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	background-image: url('../img/over.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: none;
+}
+.all{
+    width: 80%;
+    height: 53%;
+    position: absolute;
+    top: 21%;
+    left: 10%;
+}
+.jf{
+    width: 4.25rem;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top:24%;
+    right: 11%;
+    color: #FF6300;
+}
+.ph{
+    width: 1.25rem;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 31%;
+    right: 44%;
+    color: #000; 
+}
+.jiang{
+    width: 1.25rem;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    top: 56%;
+    right: 46.5%;
+    color: #000;
+}
+.chou{
+    width: 6.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 80.5%;
+    left: 17.5%;
+}
+/*分享*/
+.fen{
+    width:4.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 81.5%;
+    right: 17.5%;
+}
+.fenx{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fx.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+/*挑战失败*/
+.no{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/no.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: none;
+}
+.no_1{
+    display: block;
+    width: 22%;
+    height: 5%;
+    position: absolute;
+    top: 62%;
+    left: 39%;
+}
+.jf-1{
+    width: 4.25rem;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 39%;
+    right: 24%;
+    color: #21B6FE;
+}
+
+
+/*奖品*/
+
+.price{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url('../img/price.jpg');
+	display: none;
+}
+.price>.p_1{
+    width: 52%;
+    height: 2.1875rem;
+    position: absolute;
+    top: 50.2%;
+    left: 23%;
+    text-align: center;
+    line-height: 2.1875rem;
+    color: #FF6300;
+    font-size: 21px;
+    font-weight: bold;
+    display: none;
+}
+/*.price>.p_2{
+    width: 33%;
+    height: 2.1875rem;
+    position: absolute;
+    top: 36.2%;
+    left: 53%;
+    text-align: left;
+    line-height: 2.1875rem;
+    color: #FF6300;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}*/
+.inp_1{
+    width: 12.5rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 53%;
+    left: 23%;
+    border: none;
+    outline: none;
+    background: none;
+    line-height: 1.875rem;
+    font-size: 12px;
+}
+.inp_2{
+    width: 12.5rem;
+    height: 1.875rem;
+    position: absolute;
+    top: 68%;
+    left: 23%;
+    border: none;
+    outline: none;
+    background: none;
+    line-height: 1.875rem;
+    font-size: 12px;
+}
+.tj{
+ 	width: 6.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 62%;
+    left: 36%;
+}
+/*失败*/
+.lost{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url('../img/fade.jpg');
+	display: none;
+}
+
+/*音频*/
+
+/*音频开始*/
+audio{
+    opacity: 0;
+}
+#but{
+    position: absolute;
+    top: 8%;
+    right: 2%;
+    z-index: 1;
+    background-image: url('../img/mus.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    animation: rotating 1.2s linear infinite;
+}
+@keyframes rotating{
+    0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(0.5turn);
+}
+100% {
+    transform: rotate(1turn);
+}
+}

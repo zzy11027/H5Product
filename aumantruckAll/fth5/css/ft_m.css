@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.warp {
+    width: 100%;
+    background: url(../img/ctc.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    height: 53.125rem;
+}
+
+.in {
+    background: url(../img/in.png) no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 31%;
+    right: 0;
+    margin: auto;
+    width: 18rem;
+    height: 23.4375rem;
+}
+
+.in1 {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 12%;
+    height: 1.8125rem;
+    left: 19%;
+    outline: none;
+}
+
+.in2 {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 25%;
+    height: 1.8125rem;
+    left: 19%;
+    outline: none;
+}
+
+.inp3 {
+    position: absolute;
+    top: 39%;
+    height: 1.8125rem;
+    left: 19%;
+    outline: none;
+    width: 11.7813rem;
+    border: none;
+    background: none;
+}
+
+#selProvinces_1 {
+    position: absolute;
+    top: 51%;
+    height: 1.8125rem;
+    left: 19%;
+    outline: none;
+    width: 4.7813rem;
+    border: none;
+    background: none;
+}
+
+#selCities_1 {
+    position: absolute;
+    top: 51%;
+    height: 1.8125rem;
+    left: 73%;
+    outline: none;
+    width: 4.7813rem;
+    border: none;
+    background: none;
+}
+
+#apply_field6_1 {
+    position: absolute;
+    top: 64%;
+    left: 19%;
+    height: 1.8125rem;
+    border: none;
+    background: none;
+    outline: none;
+}
+.in3{
+    position: absolute;
+    top: 76%;
+    left: 19%;
+    height: 1.8125rem;
+    border: none;
+    background: none;
+    outline: none;
+}
+.yz{
+    width: 2.9063rem;
+    height: 1.7625rem;
+    position: absolute;
+    top: 77%;
+    left: 82%;
+    border: 1px solid;
+    text-align: center;
+    line-height: 1.8625rem;
+}
+.btn{
+    width: 5.3rem;
+    height: 1.7625rem;
+    position: absolute;
+    top: 90%;
+    left: 38%;
+    text-align: center;
+    line-height: 1.7625rem;
+}

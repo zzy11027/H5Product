@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, initial-scale=1, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <title>奥铃会员赢豪礼 幸运大礼接接接</title>
+    <link rel="stylesheet" href="templates/olhd/css/index.css"/>
+    <script type="text/javascript" src="templates/olhd/js/jquery.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+               title: '奥铃会员赢豪礼 幸运大礼接接接', // 分享标题
+                desc: '开奥铃赢话费 最高赢取88元话费大奖', // 分享描述
+                link: 'http://al.douyar.cc/olhd.php?step=start', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/olhd/img/fxs.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    window.location.href="http://al.douyar.cc/olhd.php?step=start"
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '奥铃会员赢豪礼 幸运大礼接接接', // 分享标题
+                link: 'http://al.douyar.cc/olhd.php?step=start', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/olhd/img/fxs.jpg', // 分享图标
+                success: function () {
+                    window.location.href="http://al.douyar.cc/olhd.php?step=start"
+                    
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b553c4ab92674a037cc5ac1af1f8ff0b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+
+    <div id='suju' kiy='1'></div>
+
+    <div class="timeshell">
+            <span>时间</span>
+            <span>分数</span>
+        <span id="time1">15秒</span>
+        <span id="czsl" >0个</span>
+    </div>
+
+    <div id='beijin' kiy='1'></div>
+
+    <div id="mian" class="mian">
+
+    </div>
+
+    <div class="bott">
+
+        <div id="person" class="car2" i='0' fens='0'>
+
+        </div>
+        <div id="boom"></div>
+
+    </div>
+
+
+    <div id="zj_box">
+        <p>1</p>
+        <p></p>
+        <div class="lq" onclick="lq()"></div>
+    </div>
+
+
+    <div class="no">
+        <div class="fx" onclick="fx()"></div>
+        <a href="http://al.douyar.cc/olhd.php?step=start"><div class="mm"></div></a>
+    </div>
+    
+    <div class="no1">
+        <a href="" class="fx"></a>
+
+    </div>
+
+    <div class="fxing">
+        <div class="colse" onclick="colse()"></div>
+    </div>
+    <div class="con"></div>
+<input type="hidden" value="{$id}" class="id">
+<audio src="templates/olhd/2.mp3" id="music1" class="media-audio" autoplay preload loop="loop">
+</audio> 
+<script type="text/javascript" src="templates/olhd/js/index.js"></script>
+</body>
+</html>
+<!-- <script src="templates/olhd/js/fastclick.min.js"></script> -->
+<script type="text/javascript">
+
+function audioAutoPlay(id){  
+    var audio = document.getElementById(id),  
+        play = function(){  
+            audio.play();  
+            document.removeEventListener("touchstart",play, false);  
+        };  
+    audio.play();  
+    document.addEventListener("WeixinJSBridgeReady", function () {  
+        play();  
+    }, false);  
+    document.addEventListener('YixinJSBridgeReady', function() {  
+        play();  
+    }, false);  
+    document.addEventListener("touchstart",play, false);  
+}  
+
+audioAutoPlay('music1'); 
+
+function lq(){
+    alert('领取成功！');
+    window.location.href = 'http://al.douyar.cc/olhd.php?step=start';
+}
+function fx(){
+    $('.fxing').show();
+}
+function colse(){
+    $('.fxing').hide();
+}
+
+// function GetQueryString(name)
+// {
+//      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+//      var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+//      if(r!=null)return  unescape(r[2]); return null;
+// }
+// var test = window.location.href;
+// console.log(test);
+// var id = GetQueryString('id');
+// console.log(id)
+
+</script>

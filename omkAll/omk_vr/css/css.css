@@ -1,0 +1,167 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+
+.index_bg{
+    width: 100%;
+    height: 1080px;
+    background-image: url("../img/indxe_bg.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 1080px;
+}
+#tijiao1{
+    position: absolute;
+    z-index: 10;
+    width: 350px;
+    height: 50px;
+    top: 960px;
+    left: 50%;
+    margin-left: -175px;
+    border: 0px;
+    background-color: transparent;
+}
+.tansuo_img{
+    position: absolute;
+    z-index: 1;
+    top: 900px;
+    width: 320px;
+    left: 50%;
+    margin-left: -150px;
+}
+.all{
+    width: 100%;
+    height: 1008px;
+    background-image: url("../img/back_img.jpg");
+    background-repeat:no-repeat;
+    margin: 0px;
+    padding: 0px;
+}
+.question{
+    position: absolute;
+    z-index: 10;
+    width: 550px;
+    left: 50%;
+    top: 100px;
+    margin-left: -275px;
+}
+.all{
+    width: 100%;
+    height: 1150px;
+    background-image: url("../img/back_img.jpg");
+    background-repeat:no-repeat;
+}
+#tijiao{
+    position: absolute;
+    z-index: 10;
+    width: 170px;
+    height: 50px;
+    top: 1060px;
+    left: 50%;
+    margin-left: -175px;
+    border: 0px;
+    font-size: 30px;
+    background-color: #68c0f2;
+    color: #fff;
+    border-radius: 10px;
+    background-color: transparent;
+}
+#tijiao2{
+    position: absolute;
+    z-index: 10;
+    width: 170px;
+    height: 50px;
+    top: 1060px;
+    left: 50%;
+    border: 0px;
+    font-size: 30px;
+    background-color: #68c0f2;
+    color: #fff;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.tijiao{
+    position: absolute;
+    z-index: 1;
+}
+.question input{
+    width: 15px;
+    height: 15px;
+    vertical-align: bottom;
+
+}
+.question1 {
+    margin-top: 10px;
+    color: #FFFFFF;
+    display:inline;
+}
+#img_bg{
+    display: none;
+    position: absolute;
+    z-index: 20;
+}
+#img_button{
+    display: none;
+    position: absolute;
+    z-index: 40;
+}
+#img_button2{
+    position: absolute;
+    z-index: 25;
+    top: 100px;
+}
+
+.img_bg{
+    position: absolute;
+    z-index: 20;
+    top: 100px;
+}
+#zhongjiang{
+    display: none;
+    position:relative;
+}
+#zjxx{
+    top: 200px;
+    z-index: 30;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    left: 50%;
+    margin-left: -150px;
+    color: red;
+    font-size: 40px;
+}
+.sr{
+    width: 300px;
+    height: 50px;
+}
+.zz{
+    position: absolute;
+    width: 500px;
+    top: 450px;
+    z-index: 30;
+    text-align: center;
+    left: 50%;
+    margin-left: -250px;
+}
+.zz2{
+    position: absolute;
+    width: 500px;
+    top: 550px;
+    z-index: 30;
+    text-align: center;
+    left: 50%;
+    margin-left: -250px;
+}
+#sc1{
+    position: absolute;
+    width: 360px;
+    height: 80px;
+    top: 640px;
+    z-index: 30;
+    left: 50%;
+    margin-left: -180px;
+    border: 0px;
+    background-color: transparent;
+}

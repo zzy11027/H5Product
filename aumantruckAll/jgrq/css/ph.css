@@ -1,0 +1,200 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+body{
+	position: relative;
+	width: 100%;
+	height: 65.625rem;
+	background-image: url(../img/ph.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.a_1{
+    display: block;
+    width: 7.5rem;
+    height: 3rem;
+    position: absolute;
+    top: 47.5%;
+    left: 34%;
+}
+.return{
+	width: 3.125rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 31%;
+    right: 1%;
+    display: block;
+}
+.ph{
+    width: 14.75rem;
+    height: 17.8rem;
+    position: absolute;
+    top: 62.8%;
+    left: 19%;
+    overflow: auto;
+    overflow-y:scroll;
+}
+.ph>.ul_1>li{
+	font-size: 16px;
+}
+.ph>ul{
+	width:14.75rem;
+	height: 2.125rem;
+	display: flex;
+	justify-content: space-around;
+	margin-top: .3rem;
+}
+.ph>ul>li{
+	width: 4.25rem;
+	height: 2.125rem;
+	line-height: 2.125rem;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+.ph_1{
+ 	width: 14.75rem;
+    height: 10rem;
+    position: absolute;
+    top: 73.3%;
+    left: 19%;
+    overflow: auto;
+    overflow-y:scroll;
+}
+.ph_1>ul{
+	width:14.75rem;
+	height: 2.125rem;
+	display: flex;
+	justify-content: space-around;
+	margin-top: .3rem;
+}
+.ph_1>.ul_2>li{
+	font-size: 16px;
+}
+.ph_1>ul>li{
+	width: 4.25rem;
+	height: 2.125rem;
+	line-height: 2.125rem;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+
+/*规则隐藏层*/
+.guize{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/guize.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 31%;
+    display: none;
+    z-index: 10;
+}
+.gz_1{
+    width: 100%;
+    height: 65.625rem;
+    background-image: url('../img/hei_1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0.0rem;
+    display: none; 
+    z-index: 1;
+}
+.guize_nei{
+    width: 17.3rem;
+    height: 22.5rem;
+    position: absolute;
+    top: 40%;
+    left: 13%;
+    overflow: auto;
+    overflow-y:scroll;
+}
+.guize_nei>img{
+    width:17rem;
+    height: 44.1875rem;
+    display: block;
+    position: absolute;
+    left: 1%;
+    top: 1%;
+}
+/*关闭规则*/
+.close_gz{
+    width: 3.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 29%;
+    right: 4%;
+}
+
+.a{
+	width: 15.75rem;
+    height: 3.75rem;
+    position: absolute;
+    top: 93%;
+    left: 16%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.a>a{
+	display: block;
+	width: 7.25rem;
+	height: 3.75rem;
+}
+
+.help{
+    width: 18.5rem;
+    height: 2.1875rem;
+    position: absolute;
+    top: 36%;
+    left: 12%;
+    text-align: center;
+    line-height: 2.1875rem;
+    font-size: 13px;
+    color: #fff;
+}
+
+.help_1{
+    width: 16.5rem;
+    height: 4rem;
+    position: absolute;
+    top: 38.5%;
+    left: 15.5%;
+    text-align: center;
+    line-height: 2.1875rem;
+    font-size: 13px;
+    color: #fff;
+    overflow: auto;
+    overflow-y:scroll;
+}
+.help_1>ul{
+    width: 16.5rem;
+    height: 1.8rem;
+    text-align: center;
+    line-height: 2.1875rem;
+    font-size: 13px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.help_1>ul>li{
+    width: 5.5rem;
+    height: 1.8rem;
+    text-align: center;
+    line-height: 2.1875rem;
+    font-size: 13px;
+    color: #fff;
+}
+.help_1>.ul_1>li{
+    width: 5.5rem;
+    height: 1.8rem;
+    text-align: center;
+    line-height: 2.1875rem;
+    font-size: 16px;
+    color: #fff;
+}

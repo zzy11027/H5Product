@@ -1,0 +1,42 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:auto;
+	position: relative;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+
+.container-fluid {
+  padding: 20px;
+  }
+.box {
+  margin-bottom: 20px;
+  float: left;
+  width: 220px;
+  }
+  .box img {
+  max-width: 100%
+}
+#masonry{
+  width: 88%
+}
+#img_3{
+    display: none;
+    width:23.4375rem;
+    height:23.4375rem;
+    /*position: absolute;*/
+    /*top: 64%;*/
+    /*left: 10%;*/
+}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>你是我的领军榜样</title>
+    <link rel="stylesheet" href="/templates/ol/olzp/css/index.css">
+	<script src="/templates/ol/olzp/js/jquery.min.js"></script>
+	<script src="/templates/ol/olzp/js/rotaryDraw.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '你是我的领军榜样', // 分享标题
+                desc: '物流人辛苦啦，为物流人打call', // 分享描述
+                link: 'http://al.douyar.cc/ol/express.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olzp/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '你是我的领军榜样', // 分享标题
+                desc: '物流人辛苦啦，为物流人打call', // 分享描述
+                link: 'http://al.douyar.cc/ol/express.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olzp/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</head>
+<body>	
+	<input type="hidden" id="token" value="{$token}">
+	<input type="hidden" id="openid" value="{$openid}">
+    <!-- 遮罩层 -->
+    <div class="containerss"></div>
+    <!-- 首页 -->
+    <div class="kai">
+        <div class="start"></div>
+    </div>
+	<!-- 转盘 -->
+	<div class="bj">
+        <a href="" class="x"></a>
+		<div class="box">
+			<img src="/templates/ol/olzp/img/img_01.png" class="img01" alt="">
+			<img src="/templates/ol/olzp/img/img_02.png" class="drawBtn">
+			<img src="/templates/ol/olzp/img/zi.png" class="zi">
+		</div>
+	</div>
+
+	<!-- 留资 -->
+	<div class="lz">
+        <a href="" class="x"></a>
+        <p class="pp">XXX</p>
+		<input type="text" class="name"  id="xm">
+		<input type="text" class="phone"  id="phone">
+		<input type="text" class="yzm inp6s"  id="yzm" placeholder="" value="请输入验证码" onfocus="if(value=='请输入验证码') {value=''}" onblur="if (value=='') {value='请输入验证码'}">
+		<div id="getYzm"  onclick="send_capicha_regist()">获取验证码</div>
+        <div class="tj" onclick="tj()"></div>
+	</div>
+
+	<div class="noprize">
+        <a href="" class="x"></a>
+		<a href="" class="a1"></a>
+		<a class="a2"></a>
+	</div>
+	<div class="fxing"></div>
+	<script src="/templates/ol/olzp/js/build.js"></script>
+	<script src="/templates/ol/olzp/js/register_message.js"></script>
+	<script type="text/javascript"> 
+	</script>
+</body>
+</html>

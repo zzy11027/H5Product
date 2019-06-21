@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<title></title>
+<link rel="stylesheet" href="/templates/ol/olh5s/css/index.css">
+<script src="/templates/ol/olh5s/js/jquery.min.js"></script>
+<script src="/templates/ol/olh5s/js/1.js"></script>
+<script src="/templates/ol/olh5s/js/index.js"></script>
+<script src="/templates/ol/olh5s/js/layer.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '车牌大比拼，等你来PK', // 分享标题
+                desc: '最强车牌，等你来战', // 分享描述
+                link: 'http://al.douyar.cc/ol/bay.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olh5s/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '车牌大比拼，等你来PK', // 分享标题
+                desc: '最强车牌，等你来战', // 分享描述
+                link: 'http://al.douyar.cc/ol/bay.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olh5s/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    </script>
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+</head>
+
+<body>
+	<div id="but" class="first" onclick="Play(this)"></div>
+    <audio src="/templates/ol/olh5s/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+    你的浏览器不支持video元素
+    </audio>
+<!-- 开屏页 -->
+	<div class="index">
+
+		<!-- 开始 -->
+		<div class="start_1">
+
+
+		</div>
+
+	</div>
+
+<!-- 第二页 -->
+
+	<div class="two">
+
+		<div class="two_top">
+
+			<div class="two_top_1"></div>
+			<div class="two_top_2"></div>
+
+		</div>
+
+		<!-- 我是车主 -->
+		<div class="contai_1">
+<!-- 			<div class="car_input">
+				<ul class="clearfix ul_input">
+				<li class="inp_1 input_pro"><span></span></li>
+				<li class="inp_2 input_pp input_zim"><span></span></li>
+				<li class="inp_3 input_pp"><span></span></li>
+				<li class="inp_4 input_pp"><span></span></li>
+				<li class="inp_5 input_pp"><span></span></li>
+				<li class="inp_6 input_pp"><span></span></li>
+				<li class="inp_7 input_pp"><span></span></li>
+				</ul>
+			</div>
+			
+
+			<div id="jp_pro"></div> -->
+			<input type="text" class="inp_1" >
+			<input type="text" class="inp_2" >
+			<select name="" id="cx" class="inp_3">
+				<option value="0">奥铃 CTS</option>
+				<option value="1">奥铃TS</option>
+				<option value="2">奥铃新捷运</option>
+			</select>
+			<div class="tj_1" onclick="draw()">
+
+			</div>
+			
+			<!-- <div class="dian" ></div> -->
+		</div>
+
+	</div>
+	
+
+	<!-- loading -->
+
+	<div class="spinner">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+		<p id="i">
+			正在生成，请稍后……
+		</p>
+	</div>
+	
+
+	<!-- 分享弹出层 -->
+	
+	<div class="zhezhao"></div>
+
+	<div class="tan1">
+
+		<div class="clo"></div>
+		<div class="clo2"></div>
+	</div>
+	<div class="tan2">
+
+		<div class="clo"></div>
+		<div class="clo2"></div>
+	</div>
+
+
+	<div class="xz">
+		<img src="" alt="" id="screenShotImg">
+		<!-- <p>长按图片保存</p> -->
+	</div>
+
+</body>
+
+<!--自定义分享-->
+	<script src="/templates/ol/olh5s/js/controller.js"></script>
+	<script type="text/javascript">
+
+
+
+</script>
+
+</html>

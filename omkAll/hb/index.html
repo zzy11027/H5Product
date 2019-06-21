@@ -1,0 +1,264 @@
+	<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<link rel="stylesheet" href="templates/hb/css/animate1.css">
+	<link rel="stylesheet" href="templates/hb/css/index.css">
+	<link rel="stylesheet" href="templates/hb/css/pace/templates/pace-theme-center-simple.css">
+	<script src="templates/hb/js/jquery.min.js"></script>
+	<script src="templates/hb/js/pace.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '环保上“饮”研究社丨2018蛋壳home趴节一起畅饮', // 分享标题
+                desc: '10月31日~11月7日,瓶实力畅饮免费"肥宅快乐水"', // 分享描述
+                link: 'http://hb.douyar.cc/hb.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/hb/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '环保上“饮”研究社丨2018蛋壳home趴节一起畅饮', // 分享标题
+                link: 'http://hb.douyar.cc/hb.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/hb/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4b870eb722b1349435e2da9c865cdcf3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	<script>
+
+		/*loading插件配置*/
+		paceOptions = {
+		    elements: true,
+		    // restartOnRequestAfter: false
+		}
+		Pace.on('hide',function(){
+		    $('.loading').fadeOut(500);
+		});
+
+	</script>
+	
+</head>
+<style>
+audio{
+	opacity: 0;
+}
+#but{
+	position: absolute;
+	top: 2%;
+	left: 3%;
+	z-index: 9999999999999999999999999999;
+	background-image: url('templates/hb/img/mus.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 2rem;
+	height: 2rem;
+        border-radius: 50%;
+        animation: rotating 1.2s linear infinite;
+}
+@keyframes rotating{
+    0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(0.5turn);
+}
+100% {
+    transform: rotate(1turn);
+}
+}
+
+
+</style>
+<body>
+
+	<div id="but" onclick="Play(this)"></div>
+	<audio src="templates/hb/img/1.mp3" id="music" class="audio" autoplay="autoplay"  loop="loop" preload="auto" >
+	你的浏览器不支持video元素
+	</audio>
+    <!-- loading -->
+
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+        <p id="i">
+            正在提交，请稍后……
+        </p>
+    </div>
+
+<!-- 
+	<canvas id="can" style="width: 18.75rem;height: 18.75rem;margin:0 auto;display: none;">
+
+	</canvas> -->
+	
+	<!--  开始-->
+
+	<div class="loading" style="width: 100%;height: 100%;position:absolute;z-index: 999;background-image: url('templates/hb/img/loading.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+		
+		<div class="gif"></div>
+
+
+
+	</div>
+	<input type="hidden" id="token"  value="{$token}">
+	<input type="hidden" id="ip"  value="{$ip}">
+	<!-- 第一页 -->
+	<div class="one">
+
+		<!-- 开始按钮 -->
+		<div class="animated dib pulse"></div>
+
+	</div>
+
+
+	<!-- 第二页 -->
+	<div class="two">
+
+		<!-- 上一页 -->
+		<div class="pre"></div>
+
+		<!-- 继续 -->
+		<div class="jx"></div>
+	</div>
+
+	<!-- 第三页 -->
+	<div class="three">
+
+		<div id="save_img">
+			
+			<img src="" alt="" class="base_img" style="display: none;">
+
+		</div>
+		
+		<div class="uprev"></div>
+		<div class="upnext"></div>
+		<div class="uplo animated pulse"></div>
+		<input id="upload"  class="upload1" name="upload" type="file"  accept="image/*" onchange="selectFileImage(this)"/>
+		
+		<div class="load animated pulse">
+
+		</div>
+
+	</div>
+
+	<!-- 第四页 -->
+	<div class="four">
+
+
+		<div class="yi">
+
+			<div class="yi_clo yi_clo1"></div>
+		</div>
+		<div class="er">
+
+			<div class="yi_clo yi_clo2"></div>
+		</div>
+
+		<div class="uprev1"></div>
+		<div class="upnext1"></div>
+
+
+		<div class="egg">
+
+			<input type="text" class="inp1">
+			<input type="text" class="inp2">
+			<input type="text" class="inp3">
+			
+			<div class="tj1"></div>
+			<div class="tj2"></div>
+		</div>
+
+	</div>
+
+
+	<!-- 第五页 -->
+	<div class="five">
+		
+
+		<div class="uprev2"></div>
+		<div class="upnext2"></div>
+
+		<img src="templates/hb/img/erweima.png" alt="" class="ewms">
+		<div class="ewm"></div>
+
+		<div class="fx"></div>
+		<a href="http://hb.douyar.cc/" class="fxs"></a>
+
+		<div class="fx_img">
+			
+			<div class="close"></div>
+		</div>
+	</div>
+
+    <script src="templates/hb/js/lrz.all.bundle.js"></script>
+	<script src='templates/hb/js/exif.js'></script>
+	<script src='templates/hb/js/build.js'></script>
+	<script>
+
+		function Play(e) {
+			var audio = document.getElementsByClassName('audio')[0];
+		    console.log(audio.paused);
+			if(audio.paused){
+				audio.play();
+		console.log('播放')
+			}else{
+				audio.pause();
+		console.log('暂停')
+			}
+		}
+
+
+
+		// 		//--创建页面监听，等待微信端页面加载完毕 触发音频播放
+		document.addEventListener('DOMContentLoaded', function () {
+		    function audioAutoPlay() {
+		        var audio = document.getElementsByClassName('audio')[0];
+		            audio.play();
+		        document.addEventListener("WeixinJSBridgeReady", function () {
+		            audio.play();
+		        }, false);
+		    }
+		    audioAutoPlay();
+		});
+	</script>
+</body>
+</html>

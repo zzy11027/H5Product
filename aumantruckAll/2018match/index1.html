@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>大赛战报</title>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<link rel="stylesheet" href="/mobile/templates/2018match/css/css.css">
+	<link rel="stylesheet" href="/mobile/templates/2018match/css/swiper-4.2.2.min.css">
+	<script src="/mobile/templates/2018match/js/jquery.min.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我是选手{$getUser.name}，我在中国高效物流卡车公开赛秀实力，速来围观！', // 分享标题
+                desc: '为我点赞，为{$getUser.jc}增效益，为高效物流代言！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/match.php?id={$getUser.id}', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/2018match/img/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我是选手{$getUser.name}，我在中国高效物流卡车公开赛秀实力，速来围观！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/match.php?id={$getUser.id}', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/2018match/img/logo.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?067c788267413a055f2920990041d15e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+	
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+		<input type="hidden" id="openid" value="{$openid}">
+		<input type="hidden" id="userid" value="{$getUser.id}">
+	        <div class="swiper-slide sli_1">
+				
+				<img src="/mobile/templates/2018match/img/1/{$getUser.imgname}" alt="" class="img_1">
+
+				<p class="p_1">{$getUser.name}</p>
+
+				<p class="p_2">{$getUser.company}</p>
+
+				<p class="p_3">{$getUser.like}</p>
+
+				<!-- 风云榜 -->
+
+				<div class="fyb">
+					<!--{foreach from=$listUser item=goods name=goods }-->	
+					<div class="div_1">
+						<img src="/mobile/templates/2018match/img/1/{$goods.imgname}" alt="" class="img_2">
+						<p class="p_4">{$goods.name}</p>
+						<p class="p_5">{$goods.like}赞</p>
+					</div>
+					<!--{/foreach}-->
+				</div>
+				<a href="#" style="display: block;width: 10%;height: 9.375rem;position: absolute;bottom:4%;right: 5%;"></a>
+				<!-- 点赞成功  -->
+				<div class="i_1">
+
+					<div class="pri_1">
+
+					</div>
+					<img src="/mobile/templates/2018match/img/pri_1.png" alt="">
+
+					<div class="wai">
+
+						<div class="close"></div>
+
+						<input type="text" class="inp_1" placeholder="" id="name" value="请输入您的姓名" onfocus="if(value=='请输入您的姓名') {value=''}" onblur="if (value=='') {value='请输入您的姓名'}">
+
+
+						<input type="text" class="inp_2" placeholder="" id="tel" value="请输入您的电话" onfocus="if(value=='请输入您的电话') {value=''}" onblur="if (value=='') {value='请输入您的电话'}">
+
+						<div class="tj" onclick="tj()">
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<!--您获得了……  -->
+				<div class="i_2">
+
+					<div class="pri_2">
+
+					</div>
+					<img src="/mobile/templates/2018match/img/pri_2.png" alt="">
+
+					<div class="wai">
+
+						<div class="close"></div>
+
+						<p class="money"></p>
+
+
+						<div class="close_1"></div>
+			
+					</div>
+
+				</div>
+
+
+				<!-- 很遗憾 -->
+				<div class="i_3">
+
+					<div class="pri_3">
+
+					</div>
+					<img src="/mobile/templates/2018match/img/pri_3.png" alt="">
+
+					<div class="wai">
+
+						<div class="close"></div>
+
+						<div class="close_1"></div>
+			
+					</div>
+				</div>
+
+
+	        </div>
+
+
+
+
+            <div class="swiper-slide sli_2">
+
+				<img src="/mobile/templates/2018match/img/1/{$getUser.imgname}" alt="" class="img_4">
+				<p class="p_6">{$getUser.name}</p>
+				<p class="p_7">{$getUser.company}</p>
+				<p class="p_8">{$getUser.expend}L/100km</p>
+				{if $getUser.lasting neq ""}
+				<img src="/mobile/templates/2018match/img/ys.png" alt="" class="img111"> 
+				<p class="p_9">{$getUser.lasting}</p>
+				{/if}
+				{if $getUser.expend_pm neq ""}
+				<img src="/mobile/templates/2018match/img/{$getUser.expend_pm}.png" alt="" class="img-1">
+				{/if}
+				{if $getUser.lasting_pm neq ""}
+				<img src="/mobile/templates/2018match/img/{$getUser.lasting_pm}.png" alt="" class="img-2">
+				{/if}
+
+				<!-- <img src="/mobile/templates/2018match/img/2.png" alt="" class="img-2">
+				<img src="/mobile/templates/2018match/img/3.png" alt="" class="img-3"> -->
+            </div>
+
+
+
+	        <div class="swiper-slide sli_3">
+				
+				<div class="all">
+
+					<img src="/mobile/templates/2018match/img/index_1.jpg" alt="">
+					<img src="/mobile/templates/2018match/img/index_2.jpg" alt="">
+					<img src="/mobile/templates/2018match/img/index_3.jpg" alt="">
+					<img src="/mobile/templates/2018match/img/index_4.jpg" alt="">
+					<img src="/mobile/templates/2018match/img/index_5.jpg" alt="">
+					
+					<a href="http://www.aumantruck.com/spike_contest.php?act=wxp"></a>
+
+				</div>
+									
+					<!-- 隐藏的大图片 -->
+					<img src="" alt="" class="img_3">
+
+	        </div>
+
+
+
+	    </div>
+	</div>
+
+	<script src="/mobile/templates/2018match/js/swiper-4.2.2.min.js"></script>
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+		var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    // effect : 'slide',
+		     parallax : true,
+  		})   
+
+
+
+		var a=1;
+		$('.p_3').click(function(){
+			if(a==1){
+			var str = $('.p_3').text();
+			var openid = $("#openid").val();
+			var userid = $("#userid").val();
+			$.ajax({
+	            type: 'POST',
+	            dataType:'json',
+	            url : '/mobile/match.php?step=dz',
+	            data: {openid:openid,userid:userid},
+	            success: function(data){
+	                if(data==1){
+	                	str++;
+	                	$('.p_3').text(str);
+	                	$('.i_1').show();
+	                	return;
+	                }else{
+	                	alert('已经点过了，明天再来！');
+	                	return;
+	                }
+	            }
+	    	});
+	    	a=2;
+			jump(3);
+			}
+		})
+	
+		function jump(count) { 
+            window.setTimeout(function(){ 
+                count--; 
+                if(count > 0) { 
+                    jump(count); 
+                } else { 
+                   a=1; 
+                } 
+            }, 2000); 
+        } 
+
+        function tj() {
+        	var openid = $("#openid").val();
+        	var name = $("#name").val();
+			var tel = $("#tel").val();
+			if (name!='' && name=='请输入您的姓名') {
+				alert("请输入您的姓名");
+				return false;
+			}
+			if (tel!='' && tel=='请输入您的电话') {
+				alert("请输入您的电话");
+				return false;
+			}
+			var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+	        if (!reg.test(tel)) {
+	            alert("电话输入有误，请重新输入!");
+	            return false;
+	        }
+
+	        $.ajax({
+	            type: 'POST',
+	            dataType:'json',
+	            url : '/mobile/match.php?step=prize',
+	            data: {openid:openid,name:name,tel:tel},
+	            success: function(data){
+	                if(data==1){
+	                	
+	                	$('.i_2').show();
+	                	$('.money').text("100元话费");
+	                	return;
+	                }else if(data==2){
+	                	$('.i_2').show();
+	                	$('.money').text("18元话费");
+	                	return;
+
+	                }else if(data==3){
+	                	$('.i_2').show();
+	                	$('.money').text("8元话费");
+	                	return;
+	                }else if(data==4){
+	                	$('.i_2').show();
+	                	$('.money').text("5元话费");
+	                	return;
+	                }else if(data==5){
+	                	$('.i_2').show();
+	                	$('.money').text("2元话费");
+	                	return;
+	                }else{
+	                	alert('谢谢参与！');
+	                	location.reload();
+	                }
+	            }
+	    	});
+        }
+
+
+
+
+		// 点击图片放大
+		$('.all>img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+
+				$('.img_3').fadeIn(100);
+
+				$('.img_3').attr('src',src);
+			})
+		})
+
+		$('.img_3').click(function(){
+
+			$('.img_3').fadeOut(100);
+		})
+
+		var tex = $('.p_9').text();
+
+		// if(tex == '4.1.2'){
+
+		// 	$('.img-1').show();
+
+		// }
+		// 
+		// 
+		// 
+		// 
+		$('.close').click(function(){
+
+			$('.i_1').hide();
+			$('.i_2').hide();
+			$('.i_3').hide();
+			$('.inp_1').hide();
+			$('.inp_2').hide();
+			$('.tj').hide();
+		})
+
+		$('.close_1').click(function(){
+
+			$('.i_2').hide();
+			$('.i_1').hide();
+			$('.i_3').hide();
+			$('.money').hide();
+		})
+	</script>
+</body>
+</html>

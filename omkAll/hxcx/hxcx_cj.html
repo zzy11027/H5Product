@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>看个北京车展走坏两双鞋是一种怎样的体验？</title>
+	<link rel="stylesheet" href="templates/hxcx/css/reset.css">
+	<link rel="stylesheet" href="templates/hxcx/css/index.css">
+	<script src="templates/hxcx/js/jquery-1.8.3.min.js"></script>
+	<script src="templates/hxcx/js/cj.js"></script>
+	
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d7256b7aa83b670e158190e2129c729";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	<script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '看个北京车展走坏两双鞋是一种怎样的体验？', // 分享标题
+                desc: '有没有一种更优雅的方式看北京车展？', // 分享描述
+                link: 'http://cz.douyar.cc', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/hxcx/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '看个北京车展走坏两双鞋是一种怎样的体验？！', // 分享标题
+                link: 'http://cz.douyar.cc', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/hxcx/img/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+	<div class="jiao"><img src="templates/hxcx/img/jiao.png" alt=""></div>
+	<div class="ind"></div>
+
+	<video src="templates/hxcx/img/1.mp4" id="video_1" _type="video"
+       	webkit-playsinline="true" webkit-playsinline playsinline x5-playsinline x5-video-player-fullscreen="true"  class="video_1" preload="preload" playsinline="true" x5-video-player-type="h5">
+    该浏览器不支持video属性
+	</video>
+	<input type="hidden" id="openid" value="{$openid}" />
+	<button class="but_1" style="display: none;">拿近看看</button>
+
+
+	<div class="cli">
+		<div id="bigDiv">
+
+			<div class="car">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
+			<div class="main" style="display: none;">
+				<div class="main_1"></div>
+				<div class="main_2"></div>
+				<div class="main_3"></div>
+			</div>
+
+			<div id="start" onclick="test()"></div>
+			<div class="sm"></div>
+
+		</div>		
+	</div>
+
+
+	<div class="gz">
+		<img src="templates/hxcx/img/gz.png" alt="">
+	</div>	
+
+
+	<div class="lq" style="display: none;">
+	
+		<div class="lq_1">
+			<p id="zjs">xxx</p>
+
+			<div class="fl">
+			
+			<p id="zjs" class="pp">XXX</p>
+			</div>
+		</div>
+
+		<input type="text" placeholder="姓名" id="name" class="inp_1">
+
+
+		<input type="text" placeholder="电话" id="tel" class="inp_2">
+
+		<button class="but"  onclick="tijiao()"></button>
+	</div>
+
+
+	<!-- 88元出行劵！！！！！！！！！！！！！！！！！！！ -->
+
+	<div class="lq_lq" style="display: none;">
+	
+		<div class="lq_lq_1">
+			<p>88</p>
+
+			<div class="lq_fl">
+				<p id="zjs" class="pp">XXX</p>
+			</div>
+		</div>
+
+		<button class="but_lq"><a href="http://wx.baicm.com.cn/q/h?s=10012&p=10"></a></button>
+	</div>
+
+	<!-- 88元出行劵！！！！！！！！！！！！！！！！！！！！！！！！！！！ -->
+		<div class="tc">
+			<img src="templates/hxcx/img/tc.png" alt="">
+			<div class="tc_1"><a href=""></a></div>
+			<div class="tc_2"><a href=""></a></div>
+		</div>
+	<script type="text/javascript">
+
+		//通过比例计算不同设备的根元素的字体大小
+
+		//1.定义参照设备的宽度
+		var w = 375;
+
+		//2.定义参照设备的默认根元素的字体大小
+		var f = 16;
+
+		//3.获取打开该文件的设备的视图宽度
+		var c = document.documentElement.clientWidth;
+		console.log(c)
+		//4.进行不同设备根元素字体大小的计算
+		var nf = c * f / w;
+		console.log(nf)
+
+		//5.设置打开该文件的设备的根元素的字体大小即可
+		document.documentElement.style.fontSize = nf + 'px';
+		var video1 = document.getElementById('video_1');
+		video1.addEventListener("touchmove",function(event){
+        	event.preventDefault();
+        });
+
+
+
+
+		//首屏点击事件
+		var h = document.getElementsByClassName('jiao')[0];
+		h.onclick=function(){
+			// video1.style.display = 'inline-block';
+			$('.ind').remove();
+			$('.jiao').remove();
+			$('.video_1').show();
+			$('.video_1').trigger('play');
+			var pause = true;
+			if(pause){
+				setTimeout(function(){
+					$('.video_1').trigger('pause');
+					$('.video_1').remove();
+					$('.cli').show();
+				},34000);
+			}
+		};
+
+		// video1.addEventListener("ended",function(){
+
+  //       	// window.location.href = "templates/hxcx/video.html";
+
+  //       	$("video")[0].setAttribute("style","display:none");
+  //       	// $("body").css("background","url(templates/hxcx/img/2.jpg)");
+  //       	$('.cli').fadeIn();
+  //   	});
+
+		// $('.but_1').click(function(){
+		// 	$('.but_1').hide();
+  //       	$("video")[0].setAttribute("style","display:none");
+		// 	$('#bigDiv').show();
+		// 	$('.cli').remove();
+		// })
+
+		// $('video').click(function(){
+
+		// 	window.location.href = "templates/hxcx/video.html";
+
+		// })
+		
+		$('.sm').click(function(){
+			$('.gz').fadeIn();
+		})
+		$('.gz').click(function(){
+			$('.gz').fadeOut();
+			$('.cli').show();
+		})
+
+		// $('.but').click(function(){
+		// 	$('.tc').fadeIn();
+		// })
+
+		$('.tc').click(function(){
+			$('.tc').fadeOut();
+			$('.cli').show();
+		})
+
+	</script>
+</body>
+</html>

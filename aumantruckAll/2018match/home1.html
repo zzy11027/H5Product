@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>大赛战报</title>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<link rel="stylesheet" href="/mobile/templates/2018match/css/css_1.css">
+	<script src="./js/jquery.min.js"></script>
+	<script>
+     
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '点赞有福利，为喜爱的赛手打call！速来围观！', // 分享标题
+                desc: '2018中国高效物流卡车公开赛，一睹风采！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/match.php?step=home', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/2018match/img/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '点赞有福利，为喜爱的赛手打call！速来围观！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/match.php?step=home', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/2018match/img/logo.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?067c788267413a055f2920990041d15e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+	
+
+	        <div class="swiper-slide sli_1">
+
+
+				<form  name="form1" class="all">  
+					<select name="select_1" class="inp_1" id="input-12" onChange="getCity()" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+						<option>选择行业</option>
+						<option value="0">危化品行业</option>
+						<option value="1">冷链行业</option>
+
+					</select>
+					<select class="inp_2" name="city" onclick="pan()" onChange="getCitys()" id="cit" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+						<option >选择地点</option>
+
+					</select>
+
+					
+					<select class="p" name="citys"  id="cits" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+                         <option>请选择选手</option>
+                       
+                        <option value="0"></option>
+                        
+                    </select>
+
+
+
+					
+
+				</form>
+
+
+<a href="javascript:void(0);" class="a_1" onclick="method()"></a>
+				<!-- 风云榜 -->
+
+				<div class="fyb">
+					<!--{foreach from=$listUser item=goods name=goods }-->	
+					<div class="div_1">
+						<a href="/mobile/match.php?id={$goods.id}"><img src="/mobile/templates/2018match/img/1/{$goods.imgname}" alt="" class="img_2"></a>
+						<p class="p_4">{$goods.name}</p>
+						<p class="p_5">{$goods.like}赞</p>
+					</div>
+					<!--{/foreach}-->
+				</div>
+				<a href="#" style="display: block;width: 10%;height: 9.375rem;position: absolute;bottom:4%;right: 5%;"></a>
+
+				
+	        </div>
+
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+
+     
+        var city=[  
+            ["郑州站"],  
+            ["广东站"],  
+        ];
+
+		 function getCity(){  
+            var sltCountry=document.getElementsByTagName('select')[0]; 
+            var sltCity=document.form1.city; 
+            var country=city[sltCountry.selectedIndex-1];
+            sltCity.length=1;
+            //通过for循环，将城市中的值填充到城市下拉框中  
+            for(var i=0;i<country.length;i++){  
+                sltCity[i]=new Option(country[i],country[i]);  
+            }  
+
+            var hy = $(".inp_1 option:selected").val();
+            $.ajax({
+                type: 'POST',
+                dataType:'json',
+                url : '/mobile/match.php?step=pd',
+                data: {hy:hy},
+                success: function(data){
+                    
+                    var quname_html = "";
+
+                    for(var i = 0; i < data.length; i++){
+                        quname_html += "<option value='"+ data[i].id +"'>"+ data[i].name+'             '+data[i].jc +"</option>";
+                    }
+                    console.log(data[1]);
+                    $("#cits").html(quname_html);
+                }
+
+            });
+
+
+
+
+           
+        } 
+
+
+        function method(){
+
+            var xs = $(".p option:selected").val();
+            // var one = $(".inp_1").val();
+            var myselect=document.getElementById("input-12");
+            var index=myselect.selectedIndex ;
+            var mmm = myselect.options[index].value
+
+            console.log(mmm)
+
+            if(mmm == '0'){
+                window.location.href = 'http://www.aumantruck.com/mobile/match.php?id='+xs;
+
+            }else if(mmm = '1'){
+                window.location.href = 'http://www.aumantruck.com/mobile/match1.php?id='+xs;
+            }
+
+            
+
+
+
+
+            
+        }
+
+
+
+        function pan(){
+
+            var sel = $("#cit option:selected").val();
+// console.log(sel)
+            if(sel == '选择地点'){
+
+                alert('请选择行业！');
+            }
+        }
+		
+	</script>
+</body>
+</html>

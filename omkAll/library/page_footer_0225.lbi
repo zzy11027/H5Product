@@ -1,0 +1,105 @@
+﻿<!--start:主菜单-->
+<div class="mainMenu">
+    <!--start:全部车型头部-->
+    <div class="top marginBottom">
+        <div class="innerWrap">
+            <div class="searchDiv">
+					<span class="title_1">
+						<input type="button" onClick="hideSelf()" class="reBackBtn"/>
+						全部车型
+					</span>
+            </div>
+        </div>
+    </div>
+    <!--end:全部车型头部-->
+    <!--start:牵引车-->
+    {foreach from=$goods_list item=goods}
+    <div class="module">
+        <p class="title">
+            <img src="new0225/images/line.png"/>
+            {$goods.cat_name}
+            <img src="new0225/images/line.png"/>
+        </p>
+    </div>
+
+    <div class="module borderBottom marginBottom">
+        <div class="innerWrap">
+            {if $goods.cat_name=="专用车"}
+            <ul class="truck3column marginTop20 marginBottom">
+                {foreach from=$goods.content item=tractor}
+                {foreach from=$tractor.content item=tractors}
+                <li name="truck{$dumper.num}">
+                    <a href="manual_more.php?subcate_id={$tractors.subcate_id}">
+                        <img src="/admin/images/chexing/{$tractors.m}"/>
+                        <span> {$tractors.cat_name}</span>
+                    </a>
+                </li>
+                {/foreach}
+                {/foreach}
+            </ul>
+            {else}
+            <ul class="truck2column">
+                {foreach from=$goods.content item=tractor}
+                <li name="truck{$truck.num}">
+                    {if $tractor.m}
+                        <a href="manual_more.php?serial_id={$tractor.serial_id}&subcate_id={$goods.subcate_id}">
+                        <img src="/admin/images/chexing/{$tractor.m}" />
+                        <span> {$tractor.cat_name}</span>
+                        </a>
+                    {else}
+                        <a href="">
+                        <img src="" />
+                        <span> {$tractor.cat_name}</span>
+                        </a>
+                    {/if}
+                </li>
+                {/foreach}
+            </ul>
+            {/if}
+        </div>
+    </div>
+    {/foreach}
+    <!--end:牵引车-->
+</div>
+<!--end:主菜单-->
+
+<!--start:底部导航-->
+<div class="navWrapper boxShadow">
+        <div class="innerWrap">
+                <div class="footNav">
+                        <a href="index.php" {if $menu_type eq 'index'}class="aOn"{/if} target="_parent" name="home">
+                                {if $menu_type eq 'index'}<img src="new0225/images/home_b.png"/>首页
+                                {else}
+								<img src="new0225/images/home.png"/>首页{/if}
+								
+                        </a>
+                        <a href="mall.php?act=index" {if $menu_type eq 'mall'}class="aOn"{/if} name="truck" target="_parent">
+                               {if $menu_type eq 'mall'}<img src="new0225/images/truck_b.png"/>商城{else}
+							   <img src="new0225/images/truck.png"/>商城
+                               {/if}
+                        </a>
+                        <a href="http://bbs.aumantruck.com" {if $menu_type eq 'community'}class="aOn"{/if} target="_parent" name="community">
+                                {if $menu_type eq 'community'}<img src="new0225/images/community.png"/>社区{else}
+                                <img src="new0225/images/community.png"/>社区{/if}
+                        </a>
+                        <a href="service.php" {if $menu_type eq 'service'}class="aOn"{/if} target="_parent" name="server">
+                               {if $menu_type eq 'service'}<img src="new0225/images/server_b.png"/>服务{else}
+							   <img src="new0225/images/server.png"/>服务{/if}
+                        </a>
+
+                        <a href="user.php?act=membercenter"  {if $menu_type eq 'user'}class="aOn"{/if} id="login1">
+                                <!--<a href="checkLogin.php?act=login" target="_parent" name="people">-->
+                                {if $menu_type eq 'user'}
+                                        <img src="new0225/images/people_b.png"/>我
+                                {else}
+                                        <img src="new0225/images/people.png"/>我
+                                {/if}
+								
+                        </a>
+
+                </div>
+        </div>
+</div>
+<script src="https://zr.foton.com.cn/bjzrfoton/stat.php" type="text/javascript" charset="utf-8"></script>
+
+<!--end:底部导航-->

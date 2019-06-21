@@ -1,0 +1,75 @@
+.ind{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/ind.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+.a_1{
+	width: 7.21875rem;
+	height: 3.1875rem;
+	background-image: url('../img/bang.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+    top: 88%;
+    left: 2%;
+}
+.a_2{
+	width: 8.1875rem;
+	height:3.78125rem;
+/*	background-image: url('../img/can.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;*/
+	position: absolute;
+    top: 87%;
+    left: 33%;
+}
+.a_3{
+	width: 7.53125rem;
+	height:3.5625rem;
+	background-image: url('../img/gui.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 88%;
+    left: 67%;
+}
+.gz{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/gz.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	overflow: auto;
+	display: none;
+}
+.gze{
+	width: 95%;
+    margin-left: .8rem;
+    margin-top: .2rem;
+}
+.a_4{
+	width: 100%;
+	height: 3.75rem;
+	position: absolute;
+	top: 68%;
+	left: 0%;
+}
+.que{
+	width:3rem;
+	height: 3rem;
+    position: absolute;
+    top: 9%;
+    left: 83%;
+}
+.nei{
+	width: 84%;
+	height: 29.5rem;
+	position: absolute;
+	top: 16%;
+	left:8%;
+	overflow: auto;
+}

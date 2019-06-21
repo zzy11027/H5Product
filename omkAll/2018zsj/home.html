@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link href="templates/2018zsj/css/zhishu.css" type="text/css" rel="stylesheet"/>
+    <script src="templates/2018zsj/js/jquery-3.2.1.js"></script>
+    <title>{$title}</title>
+    <script type="text/javascript" src="templates/omkhdesc/js/jquery.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+   <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '{$title}', // 分享标题
+                desc: '发表低碳宣言有包包领哦~', // 分享描述
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '{$title}', // 分享标题
+                link: 'http://zsj.douyar.cc/2018zs.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/2018zsj/images/logo.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b325494c3481e60fe85d78719c427ac3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+<body style="margin: 0 auto">
+<div class="home_bg">
+    <a href="2018zs.php?step=choujiang&openid={$openid}"><div class="start"></div></a>
+    <div class="gz" onclick="hdgz()"></div>
+</div>
+
+<div id="hdgz_box">
+    <div class="close" onclick="hdgz_close()"></div>
+    <a href="2018zs.php?step=choujiang&openid={$openid}"><div class="start" style="bottom: 155px;"></div></a>
+</div>
+
+<div id="box-bg" onclick="boxbgClick()"></div>
+<audio src="templates/2018zsj/js/1.mp3" id="music1" class="media-audio" autoplay preload loop="loop">
+
+<script>
+function audioAutoPlay(id){  
+    var audio = document.getElementById(id),  
+        play = function(){  
+            audio.play();  
+            document.removeEventListener("touchstart",play, false);  
+        };  
+    audio.play();  
+    document.addEventListener("WeixinJSBridgeReady", function () {  
+        play();  
+    }, false);  
+    document.addEventListener('YixinJSBridgeReady', function() {  
+        play();  
+    }, false);  
+    document.addEventListener("touchstart",play, false);  
+}  
+
+audioAutoPlay('music1');
+    function hdgz() {
+        $('#box-bg').show();
+        $('#hdgz_box').show();
+    }
+
+    function hdgz_close() {
+        $('#box-bg').hide();
+        $('#hdgz_box').hide();
+    }
+
+    function boxbgClick() {
+        $('#box-bg').hide();
+        yes_scroll();
+    }
+
+
+
+    function yes_scroll() {
+        $(document.body).css({
+            "overflow-x":"auto",
+            "overflow-y":"auto"
+        });
+    }
+
+    function no_scroll() {
+        //禁止滚动条
+        $(document.body).css({
+            "overflow-x":"hidden",
+            "overflow-y":"hidden"
+        });
+    }
+
+
+
+</script>
+</body>
+</html>

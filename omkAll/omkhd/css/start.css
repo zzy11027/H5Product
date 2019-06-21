@@ -1,0 +1,20 @@
+body{
+	margin: 0;
+	padding: 0;
+	  -moz-user-select: none; 
+-webkit-user-select: none; 
+-ms-user-select: none; 
+-khtml-user-select: none; 
+user-select: none; 	
+}
+.mian{
+	max-width: 680px;
+	width: 100%;
+	background: url(../img/home.jpg);
+}
+.anniu{
+	position:absolute;
+	z-index: 5;
+	width: 100%;
+	text-align: center;
+}

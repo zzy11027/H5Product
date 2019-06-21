@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <script src="templates/kachequan/js/jquery.js"></script>
+    <title>砸蛋有惊喜</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx022c4382d11eed0a', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '砸蛋有惊喜', // 分享标题
+                desc: '砸蛋有惊喜活动火热进行中,期待您的参与！', // 分享描述
+                link: 'http://huodong.chaojikache.com/kachequan.php', // 分享链接
+                imgUrl: 'http://huodong.chaojikache.com/templates/kachequan/images/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '砸蛋有惊喜', // 分享标题
+                link: 'http://huodong.chaojikache.com/kachequan.php', // 分享链接
+                imgUrl: 'http://huodong.chaojikache.com/templates/kachequan/images/fx.jpg', // 分享图标
+                success: function () {
+                //    alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+               //     alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?278f942a36dd99e73299038eccfc5a61";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+        #bg{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/bg.jpg") no-repeat top;
+        }
+        #gif_bg{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/gif_bg.jpg") no-repeat top;
+            display: none;
+        }
+        #zj_bg{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/zj.jpg") no-repeat top;
+            display: none;
+        }
+        #zj_bg2{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/zj2.jpg") no-repeat top;
+            display: none;
+        }
+        #no_j_bg{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/no_j_bg.jpg") no-repeat top;
+            display: none;
+        }
+        #no_j_bg2{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/no_j_bg2.jpg") no-repeat top;
+            display: none;
+        }
+        .hdgz{
+            position: absolute;
+            width: 350px;
+            height: 120px;
+            left: 20px;
+            top: 1096px;
+            z-index: 10;
+        }
+        #first{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/first.jpg") no-repeat center;
+            z-index: 1;
+        }
+        .start{
+            position: absolute;
+            width: 350px;
+            height: 120px;
+            right: 20px;
+            top: 1096px;
+            z-index: 10;
+        }
+        #gif{
+            height: 1334px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background: url("templates/kachequan/images/gif.gif") no-repeat center;
+            z-index: 1;
+            display: none;
+        }
+        #j_num{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            /*background: red;*/
+            top: 532px;
+            left: 50%;
+            margin-left: -62px;
+            text-align: center;
+            color: #F5E46D;
+            font-size: 35px;
+            line-height: 100px;
+            font-weight: bolder;
+        }
+        #j_num2{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            /*background: red;*/
+            top: 532px;
+            left: 50%;
+            margin-left: -62px;
+            text-align: center;
+            color: #F5E46D;
+            font-size: 35px;
+            line-height: 100px;
+            font-weight: bolder;
+        }
+        #lingqu{
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            margin-left: -100px;
+            top: 763px;
+            height: 57px;
+        }
+        #zzyc{
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            margin-left: -100px;
+            top: 763px;
+            height: 57px;
+        }
+        #box-bg{
+            position: fixed;
+            background-color: black;
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+            top: 0px;
+            display: none;
+            left:0;
+        }
+        #hdgz-box{
+            position: absolute;
+            width: 537px;
+            height: 729px;
+            background: url("templates/kachequan/images/hdgz.jpg") no-repeat center;
+            left: 50%;
+            margin-left: -268px;
+            top: 100px;
+            z-index: 16;
+            display: none;
+        }
+        .close{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: 0px;
+            top: 61px;
+        }
+        #tijiao_box{
+            position: absolute;
+            width: 537px;
+            height: 808px;
+            background: url("templates/kachequan/images/tijiao_box.png") no-repeat center;
+            left: 50%;
+            margin-left: -268px;
+            top: 100px;
+            z-index: 16;
+            display: none;
+        }
+        #zzyc_box{
+            position: absolute;
+            width: 537px;
+            height: 808px;
+            background: url("templates/kachequan/images/zzyc_box.png") no-repeat center;
+            left: 50%;
+            margin-left: -268px;
+            top: 100px;
+            z-index: 16;
+            display: none;
+        }
+        input{
+            font-size: 30px;
+        }
+        .name{
+    position: absolute;
+    width: 285px;
+    height: 31px;
+    border: none;
+    top: 325px;
+    left: 179px;
+    background: none;
+        }
+        .tel{
+    position: absolute;
+    width: 285px;
+    height: 31px;
+    border: none;
+    top: 378px;
+    left: 179px;
+    background: none;
+        }
+        .car{
+    position: absolute;
+    width: 251px;
+    height: 31px;
+    border: none;
+    top: 429px;
+    left: 182px;
+    font-size: 30px;
+    background: none;
+    font-size: 16px;
+        }
+                .names{
+    position: absolute;
+    width: 285px;
+    height: 31px;
+    border: none;
+    top: 325px;
+    left: 179px;
+    background: none;
+        }
+        .tels{
+position: absolute;
+    width: 285px;
+    height: 31px;
+    border: none;
+    top: 378px;
+    left: 179px;
+    background: none;
+        }
+        .cars{
+    position: absolute;
+    width: 272px;
+    height: 31px;
+    border: none;
+    top: 430px;
+    left: 181px;
+    font-size: 30px;
+    background: none;
+    font-size: 16px;
+        }
+        .sfs{
+    position: absolute;
+    width: 251px;
+    height: 31px;
+    border: none;
+    top: 481px;
+    left: 182px;
+    font-size: 30px;
+    background: none;
+    font-size: 16px;
+        }
+        .css{
+    position: absolute;
+    width: 251px;
+    height: 31px;
+    border: none;
+    top: 535px;
+    left: 182px;
+    font-size: 30px;
+    background: none;
+    font-size: 16px;
+        }
+        .dzs{
+    position: absolute;
+    width: 285px;
+    height: 47px;
+    border: none;
+    top: 588px;
+    left: 179px;
+    background: none;
+        }
+        .box_btn{
+            position: absolute;
+            width: 250px;
+            height: 84px;
+            border: none;
+            top: 672px;
+            left: 50%;
+            margin-left: -114px;
+        }
+        .sf{
+    position: absolute;
+    width: 251px;
+    height: 31px;
+    border: none;
+    top: 481px;
+    left: 182px;
+    font-size: 30px;
+    background: none;
+    font-size: 16px;
+        }
+        .cs{
+    position: absolute;
+    width: 251px;
+    height: 31px;
+    border: none;
+    top: 535px;
+    left: 182px;
+    font-size: 30px;
+    background: none;
+    font-size: 16px;
+        }
+        .dz{
+    position: absolute;
+    width: 285px;
+    height: 47px;
+    border: none;
+    top: 588px;
+    left: 179px;
+    background: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--初始图-->
+<div id="bg">
+    <div id="first"></div>
+    <div id="gif"></div>
+    <div id="zj_bg">
+        <div id="j_num"></div>
+        <!--领取-->
+        <div id="lingqu" onclick="lingqu()"></div>
+    </div>
+    <div id="zj_bg2">
+        <div id="j_num2"></div>
+    </div>
+    <div id="no_j_bg">
+        <!--再砸一次-->
+        <div id="zzyc" onclick="zzyc()"></div>
+    </div>
+
+    <div id="no_j_bg2"></div>
+</div>
+
+<!--活动规则-->
+<div class="hdgz" onclick="hdgz()"></div>
+<!--开始-->
+<div class="start" onclick="start(this)"></div>
+<!--活动规则弹窗-->
+<div id="hdgz-box">
+    <div class="close" onclick="allclose()"></div>
+</div>
+
+<!--提交弹窗-->
+<div id="tijiao_box">
+    <div class="close" onclick="allclose()"></div>
+    <input class="names" id="field_1"/>
+    <input class="tels" id="field_2"/>
+    <select class="cars" id="field_3">
+        <option value="100">请选择</option>
+        <option>欧马可超级卡车S1</option>
+        <option>欧马可超级卡车S3</option>
+        <option>欧马可超级卡车S5</option>
+        <option>欧马可1系</option>
+        <option>欧马可3系</option>
+        <option>欧马可5系</option>
+    </select>
+    <input type="text" class="sfs" id="field_4">
+    <input type="text" class="css" id="field_5">
+    <input type="text" class="dzs"  id="field_6">
+    <div class="box_btn" onclick="tijiao_btn()"></div>
+</div>
+
+<!--再砸一次-->
+<div id="zzyc_box">
+    <div class="close" onclick="allclose()"></div>
+    <input class="name" id="zfield_1"/>
+    <input class="tel" id="zfield_2"/>
+    <select class="car" id="zfield_3">
+        <option value="100">请选择</option>
+        <option>欧马可超级卡车S1</option>
+        <option>欧马可超级卡车S3</option>
+        <option>欧马可超级卡车S5</option>
+        <option>欧马可1系</option>
+        <option>欧马可3系</option>
+        <option>欧马可5系</option>
+    </select>
+    <input type="text" class="sf" id="zfield_4">
+    <input type="text" class="cs" id="zfield_5">
+    <input type="text" class="dz"  id="zfield_6">
+    <div class="box_btn" onclick="zzyc_btn()"></div>
+</div>
+
+<div id="box-bg"></div>
+
+<script>
+    FLAG = 0;
+    function start(obj) {
+        if (FLAG == 1){
+            return;
+         }
+    	 $.ajax({
+            url: 'kachequan.php?step=panduan',
+            type: 'post',
+            // data: 'msgtxt=' + msgtxt,
+            //  async : true, //默认为true 异步
+            error: function () {
+
+            },
+            success: function (rec) {
+                var temp = 0;
+                if (rec == 13) {
+                    alert('抽奖活动将于10月23日 12:00开始');
+                }
+                if (rec == 12) {
+                    alert('抽奖已结束');
+                } else if (rec == 20) {
+                	
+                    $('#first').hide();
+                    $('#gif').show();
+                    setTimeout(function(){
+                        $('#gif').hide();
+            //            未中奖
+                       $('#no_j_bg').show();
+
+                        FLAG = 1;
+                    }, 1000);
+
+
+
+                }
+                else if (rec == 21) {
+                    
+                    $('#first').hide();
+                    $('#gif').show();
+                    setTimeout(function(){
+                      $('#gif').hide();
+            //            未中奖
+                       $('#no_j_bg2').show();
+
+                        FLAG = 1;
+                    }, 1000);
+                }
+           
+
+
+
+
+                else if (rec == 6) {
+                    alert('您已经抽过奖了！');
+                }else if (rec == 7) {
+                    alert('您已经抽过奖了！');
+                }else if (rec == 1) {
+
+                    if (FLAG == 1){
+                        return;
+                    }
+                    $('#first').hide();
+                    $('#gif').show();
+                    setTimeout(function(){
+                        $('#gif').hide();
+            //            若中奖
+                        $('#zj_bg').show();//中奖
+                        $('#j_num').html('1');
+
+                        FLAG = 1;
+                    }, 1000);
+                }else if (rec == 11) {
+
+                    if (FLAG == 1){
+                        return;
+                    }
+                    $('#first').hide();
+                    $('#gif').show();
+                    setTimeout(function(){
+                        $('#gif').hide();
+            //            若中奖
+                        $('#zj_bg2').show();//中奖
+                        $('#j_num2').html('1');
+
+                        FLAG = 1;
+                    }, 1000);
+                }
+
+
+
+
+            }
+        });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    function hdgz() {
+        $('#box-bg').show();
+        $('#hdgz-box').show();
+    }
+
+    function lingqu() {
+        $('#box-bg').show();
+        $('#tijiao_box').show();
+    }
+
+    function zzyc() {
+        $('#box-bg').show();
+        $('#zzyc_box').show();
+    }
+
+    function tijiao_btn() {
+        var name=document.getElementById("field_1").value;
+        var phone=document.getElementById("field_2").value;
+        var car=document.getElementById("field_3").value;
+        var sheng=document.getElementById("field_4").value;
+        var shi=document.getElementById("field_5").value;
+        var dizhi=document.getElementById("field_6").value;
+
+        var tel = /^1[3|4|5|7|8][0-9][0-9]{8}$/;
+        var telFlag = tel.test(phone);
+        if (name.length == 0) {
+            alert("姓名不能为空");
+            return false;
+        } else if (!telFlag) {
+            alert("输入正确的手机格式");
+            return false;
+        }else if (car==100) {
+            alert("请选择意向车型");
+            return false;
+        }else if (sheng== 100) {
+            alert("请选择省份");
+            return false;
+        }else if (shi== 100) {
+            alert("请选择城市");
+            return false;
+        }else if (dizhi.length== 0) {
+            alert("请输入地址");
+            return false;
+        }
+
+    	$.ajax({
+                type: "GET",
+                url: "kachequan.php?step=baocun&name=" + name + "&phone=" + phone +"&car=" + car+"&sheng=" + sheng+"&shi=" + shi+"&dizhi=" + dizhi+"&type=" + 0,
+                dataType: 'json',
+                success: function (rec) {
+                    if (rec.result == 1) {
+                        alert('提交成功');
+                      var url=location.href;
+                        location.href='http://huodong.chaojikache.com/kachequan.php?curl='+encodeURIComponent(url);                       
+                    } else {
+                        alert('提交失败');
+                    }
+                }
+            });
+
+        allclose();
+    }
+
+    function zzyc_btn() {
+        var name=document.getElementById("zfield_1").value;
+        var phone=document.getElementById("zfield_2").value;
+        var car=document.getElementById("zfield_3").value;
+        var sheng=document.getElementById("zfield_4").value;
+        var shi=document.getElementById("zfield_5").value;
+        var dizhi=document.getElementById("zfield_6").value;
+
+        var tel = /^1[3|4|5|7|8][0-9][0-9]{8}$/;
+        var telFlag = tel.test(phone);
+        if (name.length == 0) {
+            alert("姓名不能为空");
+            return false;
+        } else if (!telFlag) {
+            alert("输入正确的手机格式");
+            return false;
+        }else if (car==100) {
+            alert("请选择意向车型");
+            return false;
+        }else if (sheng== 100) {
+            alert("请选择省份");
+            return false;
+        }else if (shi== 100) {
+            alert("请选择城市");
+            return false;
+        }else if (dizhi.length== 0) {
+            alert("请输入地址");
+            return false;
+        }
+
+
+    		$.ajax({
+                type: "GET",
+                url: "kachequan.php?step=baocun&name=" + name + "&phone=" + phone +"&car=" + car +"&sheng=" + sheng +"&shi=" + shi+"&dizhi=" + dizhi+ "&type=" + 1,
+                dataType: 'json',
+                success: function (rec) {
+                    if (rec.result == 1) {
+                        alert('提交成功');
+                         var url=location.href;
+                        location.href='http://huodong.chaojikache.com/kachequan.php?curl='+encodeURIComponent(url);
+                    } else {
+                        alert('提交失败');
+                    }
+                }
+            });
+
+        allclose();
+    }
+
+    function allclose() {
+        $('#box-bg').hide();
+        $('#hdgz-box').hide();
+        $('#tijiao_box').hide();
+        $('#zzyc_box').hide();
+    }
+</script>
+</body>
+</html>

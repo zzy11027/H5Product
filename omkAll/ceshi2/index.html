@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>厉害了我的国</title>
+    <script src="templates/ceshi2/js/flexible.js"></script>
+    <link rel="stylesheet" href="templates/ceshi2/css/index.css"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '厉害了我的国', // 分享标题
+                desc: '为祖国点赞', // 分享描述
+                link: 'http://cz.douyar.cc/spike_hxcx.php?step=ceshi2', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/lihai/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '厉害了我的国', // 分享标题
+                link: 'http://cz.douyar.cc/spike_hxcx.php?step=ceshi2', // 分享链接
+                imgUrl: 'http://cz.douyar.cc/templates/liha/img/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <!--音乐 Start-->
+   <!--  <aside id="music" class="music-pulse">
+        <audio id="audio" src="music.mp3" type="audio/mpeg"></audio>
+    </aside> -->
+    <!--音乐 End-->
+    <!--加载效果 Start-->
+    <div class="ui-loading-wrap" id="loading">
+        <i class="ui-loading"></i>
+        <p>加载中...</p>
+    </div>
+    <!--加载效果 End-->
+    <!--第一屏 Start-->
+    <section class="section" id="first" style="display:none;position: absolute;top: 20%;left: 20%">
+        <!-- <img src="img/blank.gif" data-src="templates/ceshi2/img/slogan.png" class="slogan"/>
+        <img src="img/blank.gif" data-src="templates/ceshi2/img/father.png" class=" father-img"/> -->
+
+        <button type="button" id="btnGenerate" class="btn-large-x" data-track="生成父亲节海报">
+            <input id="upload" name="upload" type="file" accept="image/*" onfocus="this.blur()"/>
+            上传图片
+        </button>
+    </section>
+    <!--第一屏 End-->
+    <!--第二屏 Start-->
+    <section class="section section-top" style="display:none" id="second">
+        <h6 class="h6">拖拽进行照片编辑</h6>
+        <div class="frame" id="frame">
+            <img src="templates/ceshi2/img/blank.gif" data-src="templates/ceshi2/img/word.png" class="word" id="word"/>
+            <img src="templates/ceshi2/img/blank.gif" id="frameImg" class="frame-img"/>
+        </div>
+        <div class="ui-justify" style="position: absolute;top: 73%;z-index: 10000;left: 10%">
+            <button type="button" id="btnConfirm" class="btn-middle" data-track="确认">确认</button>
+            <button type="button" id="btnRotate" class="btn-middle">旋转</button>
+            <button type="button" id="btnCancel" class="btn-middle" data-track="取消">取消</button>
+        </div>
+    </section>
+    <!--第二屏 End-->
+    <!--第三屏 Start-->
+    <section class="section section-top2" style="display: none" id="third">
+        <div class="frame">
+            <img src="templates/ceshi2/img/blank.gif" class="db-img" id="compose"/>
+        </div>
+        <div class="ui-justify" style="position: absolute;top: 73%;z-index: 10000;left: 10%">
+            <button type="button" id="btnShare" class="btn-large" data-track="抽奖">
+                <h1>提交</h1>
+
+            </button>
+            <button type="button" id="btnBack" class="btn-large">
+                <h2>重新上传照片</h2>
+            </button>
+        </div>
+    </section>
+    <!--第三屏 End-->
+    <!--底部花纹 Start-->
+  <!--   <footer class="footer">
+    </footer> -->
+    <!--底部花纹 End-->
+    <!--弹出框 Start-->
+    <aside class="dialog" style="display: none" id="dialog">
+        <p>长按海报即可将图片保存至手机</p>
+        <button type="button" class="btn-large-x">我知道了</button>
+    </aside>
+    <!--弹出框 End-->
+    <script src="templates/ceshi2/build/js/touch.js"></script>
+<!--     <script src="templates/ceshi2/build/js/hidpi-canvas.js"></script> -->
+    <script src="templates/ceshi2/build/js/index.bundle.js"></script>
+</body>
+</html>

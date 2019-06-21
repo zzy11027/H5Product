@@ -1,0 +1,35 @@
+* {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{
+	width: 23.4375rem;
+	height:37.875rem;
+	background-image: url(../img/index.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.ind{
+	width: 23.4375rem;
+    height: 18.5rem;
+    position: relative;
+    top: 24%;
+}
+.ind>a:nth-child(1){
+	display: block;
+	width: 23.4375rem;
+	height: 5.625rem;
+	position: absolute;
+	top: 2%;
+}
+.ind>a:nth-child(2){
+	display: block;
+	width: 23.4375rem;
+	height: 5.625rem;
+	position: absolute;
+	top: 35%;
+}
+.ind>a:nth-child(3){
+	display: block;
+	width: 23.4375rem;
+	height: 5.625rem;
+	position: absolute;
+	top: 69%;
+}

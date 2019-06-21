@@ -1,0 +1,61 @@
+/*==start:首页-列表==*/
+.liebiao{position:absolute;left:0;width:100%;height:100%;background:rgb(255,255,255);}
+.content{width:100%;/*	background:rgba(255,255,255,0.92);*/height:100%;/*	margin-top:46px;*/}
+.dalei{/*	margin-top:44px;*/}
+.dalei.nomar{margin-top:0;}
+.dalei li{padding-top:17px;}
+.huoche{margin:0 10px;padding-bottom:4px;}
+.huoche dt{width:100%;border-bottom:1px solid #cccccc;text-align:left;color:#333333;font-size:17px;padding-bottom:4px;font-weight:normal;}
+.huoche dt a{text-decoration:none;color:#333333;}
+.huoche dt:hover{	/*color:#d44148;*/}
+.huoche dt.beijing{background-image:url(../images/triangle.png);background-repeat:no-repeat;background-position-x:right;background-position-y:bottom;background-size:25px 25px;}
+
+/*==end:首页-列表==*/
+
+/*==start:首页-列表-展开==*/
+.huoche dt.red{color:#d0141d;border-bottom:1px solid #d0141d;	/*background-image: url(../images/redsanjiao.png);*/background-repeat:no-repeat;background-position-x:right;background-position-y:top;}
+.huoche .zaiche{position:relative;background:rgba(214,211,211,0.4);width:100%;color:#333333;font-size:18px;}
+.huoche .zaiche .triangle{position:absolute;width:10px;height:10px;top:0;right:0;}
+.huoche .zaiche .triangle img{width:100%;display:block;}
+.huoche .zaiche .zaihuo{overflow:hidden;margin:0 auto;width:82%;padding-bottom:10px;}
+.huoche .zaiche .zaihuo li{float:left;border:1px solid #333333;font-size:16px;line-height:30px;/*    padding:2px 16px;*/margin-top:12px;margin-left:10px;margin-right:10px;height:30px;padding:0;width:36%;text-align:center;color:#333333;}
+.huoche .zaiche .zaihuo li:hover{color:#ffffff;background:#d0141d;border:1px solid #d0141d;}
+.huoche .zaiche.lpadd{padding-top:14px;}
+.huoche .zaiche .lzhuanyong{height:auto;margin:0 auto;width:85%;/*	border-top:1px solid #cbcbcb;*/padding-top:18px;position:relative;/*	height:46px;*//*	overflow: visible;*/
+margin-top:14px;padding-bottom:10px;}
+.huoche .zaiche .lzhuanyong li.title{position:absolute;padding:2px 4px;top:-11px;left:0;border:none;font-size:16px;line-height:16px;color:#999999;/*    background:#f0f0f0;*//*	background:rgba(228,228,228,1);*/
+height:20px;text-align:center;overflow:hidden;width:100%;}
+.huoche .zaiche .lzhuanyong li.title .left{float:left;height:1px;background:#cbcbcb;width:40%;display:inline-block;margin-top:8px;}
+.huoche .zaiche .lzhuanyong li.title .right{float:right;height:1px;background:#cbcbcb;width:40%;display:inline-block;margin-top:8px;}
+.huoche .zaiche .lzhuanyong li.title .center{float:left;width:20%;text-align:center;display:inline-block;font-size:13px;}
+.huoche .zaiche .lzhuanyong li.title:hover{color:#999999;background:#f0f0f0;}
+.huoche .zaiche .lzhuanyong li{box-sizing:border-box;float:left;padding:0 12px;border:1px solid #333333;font-size:18px;line-height:32px;height:32px;text-align:center;margin:4px 6px;min-width:23%;}
+.huoche .zaiche .lzhuanyong li:hover{background:#d0141d;color:#ffffff;border:1px solid #d0141d;}
+.huoche .zaiche .lzhuanyong li:first-child{margin:0px;}
+
+/*.huoche .zaiche .lzhuanyong li:nth-child(3){*/
+
+/*	margin-left:4px;*/
+
+/*	*/
+
+/*}*/
+.huoche .zaiche .lzhuanyong.youguan{height:90px;}
+
+/*==end:首页-列表-展开==*/
+
+/*==start:推荐==*/
+.relative{position:relative;}
+.recommand{position:absolute;top:0;right:0px;width:20px;}
+.recommand img{width:100%;}
+
+/*==end:推荐==*/
+
+/*李月：2015-11-03*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+
+/*李月：2015-11-23*/
+@media (max-width:320px){
+	.huoche .zaiche .lzhuanyong li{padding:0 6px;}
+}

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>绿途英雄</title>
+	<link rel="stylesheet" href="/templates/amkltyx/css/all.css">
+	<link rel="stylesheet" href="/templates/amkltyx/css/jf.css">
+	<script src="/templates/amkltyx/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx3a6efa88b590d910', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '我是绿途英雄', // 分享标题
+                desc: '欧马可携手北京环交所邀您共同保卫首都蓝天', // 分享描述
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '我是绿途英雄', // 分享标题
+                link: 'http://amkltyx.douyar.cc', // 分享链接
+                imgUrl: 'http://amkltyx.douyar.cc/templates/amkltyx/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="hidden" id="openid" value="{$openid}">
+<input type="hidden" id="token" value="{$token}">
+	<div class="jf">
+		<div class="dang">		
+			<span>您当前共有：</span>
+			<span class="jfjf">{$kyjf}</span>
+			<span>积分</span>
+		</div>
+
+		<div class="bj">
+
+			<!-- 商品1 传参（中间数量节点，单价，第几个商品）--> 
+			<!--{foreach from=$prize item=goods name=goods  }-->	 
+			<ul>
+				<img src="/templates/amkltyx/img/jfdh/{$goods.imgsrc}" alt="" class="ul_img" width="200px" height="75px">
+				<span class="ul_jf"><span id="jf{$smarty.foreach.goods.iteration}">{$goods.num}</span>积分</span>
+				<div class="cz">
+					<input type="button" class="jia" name="minus" value="-" onclick="jian($(this).next()[0],{$goods.num},{$smarty.foreach.goods.iteration})">
+					<span class="shu shu{$smarty.foreach.goods.iteration}">0</span>
+					<input type="button" class="jian" name="plus" value="+" onclick="jia($(this).prev()[0],{$goods.num},{$smarty.foreach.goods.iteration})">
+				</div>
+			</ul>
+			<!--{/foreach}-->
+			<div class="uull"></div>
+		</div>
+
+	</div>
+
+	<div class="di">
+		
+		<img src="/templates/amkltyx/img/jiaru.png" alt="" class="img_1">
+		<div class="yj">
+
+			<span>已选中</span>
+			<span class="he">0</span>
+			<span>个商品合计</span>
+			<span class="ge">0</span>
+			<span>积分</span>
+		</div>
+		
+		
+		<a class="img_2" onclick="dui()"></a>
+	</div>
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+		// 购物车的加减操作
+		// 总共积分
+		var price = 0.00;
+
+		// 单价
+		var price1 = 0;
+		var price2 = 0;
+		var price3 = 0;
+		var price4 = 0;
+		var price5 = 0;
+		var price6 = 0;
+		var price7 = 0;
+		var price8 = 0;
+		var price9 = 0;
+		var price10 = 0;
+		var price11 = 0;
+		var price12 = 0;
+		var price13 = 0;
+		var price14 = 0;
+		var price15 = 0;
+		var price16 = 0;
+		var price17 = 0;
+		var price18 = 0;
+		var price19 = 0;
+	
+		// 减
+		function jian(dom,pri,index) {
+		    var i = $(dom).text() - 1;
+
+		    if (i <= 0) {
+		        i = 0;
+		    }
+		   	$(dom).text(i);
+
+		    var pri1 = parseInt($('.shu1').text()),
+		    	pri2 = parseInt($('.shu2').text())
+		    	pri3 = parseInt($('.shu3').text())
+		    	pri4 = parseInt($('.shu4').text())
+		    	pri5 = parseInt($('.shu5').text())
+		    	pri6 = parseInt($('.shu6').text())
+		    	pri7 = parseInt($('.shu7').text())
+		    	pri8 = parseInt($('.shu8').text())
+		    	pri9 = parseInt($('.shu9').text())
+		    	pri10 = parseInt($('.shu10').text())
+		    	pri11 = parseInt($('.shu11').text())
+		    	pri12 = parseInt($('.shu12').text())
+		    	pri13 = parseInt($('.shu13').text())
+		    	pri14 = parseInt($('.shu14').text())
+		    	pri15 = parseInt($('.shu15').text())
+		    	pri16 = parseInt($('.shu16').text())
+		    	pri17 = parseInt($('.shu17').text())
+		    	pri18 = parseInt($('.shu18').text())
+		    	pri19 = parseInt($('.shu19').text());
+		    
+		    var he = pri1+pri2+pri3+pri4+pri5+pri6+pri7+pri8+pri9+pri10+pri11+pri12+pri13+pri14+pri15+pri16+pri17+pri18+pri19;
+		    // 计算总数
+		    $('.he').text(he)
+		    // 计算总价
+		    if(index == 1){
+		    	 price1 = pri * i;
+		    	 console.log(typeof(price1))
+		    }else if(index == 2){
+		    	 price2 = pri * i;
+		    }else if(index == 3){
+		    	 price3 = pri * i;
+		    }else if(index == 4){
+		    	 price4 = pri * i;
+		    }else if(index == 5){
+		    	 price5 = pri * i;
+		    }else if(index == 6){
+		    	 price6 = pri * i;
+		    }else if(index == 7){
+		    	 price7 = pri * i;
+		    }else if(index == 8){
+		    	 price8 = pri * i;
+		    }else if(index == 9){
+		    	 price9 = pri * i;
+		    }else if(index == 10){
+		    	 price10 = pri * i;
+		    }else if(index == 11){
+		    	 price11 = pri * i;
+		    }else if(index == 12){
+		    	 price12 = pri * i;
+		    }else if(index == 13){
+		    	 price13 = pri * i;
+		    }else if(index == 14){
+		    	 price14 = pri * i;
+		    }else if(index == 15){
+		    	 price15 = pri * i;
+		    }else if(index == 16){
+		    	 price16 = pri * i;
+		    }else if(index == 17){
+		    	 price17 = pri * i;
+		    }else if(index == 18){
+		    	 price18 = pri * i;
+		    }else if(index == 19){
+		    	 price19 = pri * i;
+		    }
+
+		    var ge = price1+price2+price3+price4+price5+price6+price7+price8+price9+price10+price11+price12+price13+price14+price15+price16+price17+price18+price19;
+		    		    console.log(price1,price2,price3,price4,price5,price6,price7,price8,price9,price10,price11,price12,price13,price14,price15,price16,price17,price18,price19)
+		    // 计算总价
+		    $('.ge').text(ge)
+
+		}
+		// 加
+		function jia(dom,pri,index) {
+			//点击获取的商品积分价格
+			var djjf = parseInt($('#jf'+index).text());
+		    // 已选择的总价
+			var pris = parseInt($('.ge').text());
+			// 一共拥有的积分
+			var alls = parseInt($('.jfjf').text());
+		
+			if(djjf > alls){
+				alert('积分不够,再去攒攒拉！');
+				return false;
+			}
+
+			if(alls-pris < pri){
+				// console.log(alls-pris)
+				alert('没有更多积分了！');
+				return false;
+			}
+		    var i = $(dom).text(); 
+		    i++;
+		    $(dom).text(i);
+		    var pri1 = parseInt($('.shu1').text()),
+		    	pri2 = parseInt($('.shu2').text())
+		    	pri3 = parseInt($('.shu3').text())
+		    	pri4 = parseInt($('.shu4').text())
+		    	pri5 = parseInt($('.shu5').text())
+		    	pri6 = parseInt($('.shu6').text())
+		    	pri7 = parseInt($('.shu7').text())
+		    	pri8 = parseInt($('.shu8').text())
+		    	pri9 = parseInt($('.shu9').text())
+		    	pri10 = parseInt($('.shu10').text())
+		    	pri11 = parseInt($('.shu11').text())
+		    	pri12 = parseInt($('.shu12').text())
+		    	pri13 = parseInt($('.shu13').text())
+		    	pri14 = parseInt($('.shu14').text())
+		    	pri15 = parseInt($('.shu15').text())
+		    	pri16 = parseInt($('.shu16').text())
+		    	pri17 = parseInt($('.shu17').text())
+		    	pri18 = parseInt($('.shu18').text())
+		    	pri19 = parseInt($('.shu19').text());
+		   		var he = pri1+pri2+pri3+pri4+pri5+pri6+pri7+pri8+pri9+pri10+pri11+pri12+pri13+pri14+pri15+pri16+pri17+pri18+pri19;
+
+		  
+		    // return;
+		    $('.he').text(he);
+		    // 计算总价
+		    if(index == 1){
+		    	 price1 = pri * i;
+		    }else if(index == 2){
+		    	 price2 = pri * i;
+		    }else if(index == 3){
+		    	 price3 = pri * i;
+		    }else if(index == 4){
+		    	 price4 = pri * i;
+		    }else if(index == 5){
+		    	 price5 = pri * i;
+		    }else if(index == 6){
+		    	 price6 = pri * i;
+		    }else if(index == 7){
+		    	 price7 = pri * i;
+		    }else if(index == 8){
+		    	 price8 = pri * i;
+		    }else if(index == 9){
+		    	 price9 = pri * i;
+		    }else if(index == 10){
+		    	 price10 = pri * i;
+		    }else if(index == 11){
+		    	 price11 = pri * i;
+		    }else if(index == 12){
+		    	 price12 = pri * i;
+		    }else if(index == 13){
+		    	 price13 = pri * i;
+		    }else if(index == 14){
+		    	 price14 = pri * i;
+		    }else if(index == 15){
+		    	 price15 = pri * i;
+		    }else if(index == 16){
+		    	 price16 = pri * i;
+		    }else if(index == 17){
+		    	 price17 = pri * i;
+		    }else if(index == 18){
+		    	 price18 = pri * i;
+		    }else if(index == 19){
+		    	 price19 = pri * i;
+		    }else if(index == 20){
+		    	 price20 = pri * i;
+		    }
+
+		    var ge = price1+price2+price3+price4+price5+price6+price7+price8+price9+price10+price11+price12+price13+price14+price15+price16+price17+price18+price19;
+		    		   // console.log(typeof(ge))
+		    // 计算总数
+		    $('.ge').text(ge)
+		}
+
+
+
+
+		// 兑换   
+		function dui(){
+			var openid = $("#openid").val();
+			var token = $("#token").val();
+			// 已选择的总价
+			var pri = parseInt($('.ge').text());
+			// 一共拥有的积分
+			var all = parseInt($('.jfjf').text());
+			// 各个商品的数量
+			var shu1 = parseInt($('.shu1').text());
+			var shu2 = parseInt($('.shu2').text());
+			var shu3 = parseInt($('.shu3').text());
+			var shu4 = parseInt($('.shu4').text());
+			var shu5 = parseInt($('.shu5').text());
+			var shu6 = parseInt($('.shu6').text());
+			var shu7 = parseInt($('.shu7').text());
+			var shu8 = parseInt($('.shu8').text());
+			var shu9 = parseInt($('.shu9').text());
+			var shu10 = parseInt($('.shu10').text());
+			var shu11 = parseInt($('.shu11').text());
+			var shu12 = parseInt($('.shu12').text());
+			var shu13 = parseInt($('.shu13').text());
+			var shu14 = parseInt($('.shu14').text());
+			var shu15 = parseInt($('.shu15').text());
+			var shu16 = parseInt($('.shu16').text());
+			var shu17 = parseInt($('.shu17').text());
+			var shu18 = parseInt($('.shu18').text());
+			var shu19 = parseInt($('.shu19').text());
+
+			if(pri == 0){
+				alert('请选择兑换物品!');
+				return false;
+			}
+
+			if(pri>all){
+				alert('所选总价超出已有积分，请重新选择商品！');
+				return false;
+			}
+			$.ajax({
+	            type: "POST",
+	           	url: "/amkltyx.php?step=shopping",
+	            datType: "application/json",
+	            data:{
+	            	openid:openid,
+	            	pri:pri,
+	            	shu1:shu1,
+	            	shu2:shu2,
+	            	shu3:shu3,
+	            	shu4:shu4,
+	            	shu5:shu5,
+	            	shu6:shu6,
+	            	shu7:shu7,
+	            	shu8:shu8,
+	            	shu9:shu9,
+	            	shu10:shu10,
+	            	shu11:shu11,
+	            	shu12:shu12,
+	            	shu13:shu13,
+	            	shu14:shu14,
+	            	shu15:shu15,
+	            	shu16:shu16,
+	            	shu17:shu17,
+	            	shu18:shu18,
+	            	shu19:shu19
+				},
+				beforeSend: function(request) { 
+					request.setRequestHeader("Authorization", token); 
+				}, 
+	            success: function (res) {
+	            	if(res){
+	            		window.location.href="/amkltyx.php?step=shou&openid="+openid;
+	            	}
+	            }
+	        });
+		}
+	</script>
+	
+</body>
+</html>

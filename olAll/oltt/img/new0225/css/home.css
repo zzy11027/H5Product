@@ -1,0 +1,82 @@
+div,dl,dt,dd,span,p,input{font:30px "Microsoft YaHei",Arial;} 
+body{background: rgb(245, 245, 245)}
+a{text-decoration: none}
+
+@font-face {
+  font-family: '欧曼改版';
+  src: 
+  url('//at.alicdn.com/t/font_1458264901_6396534.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1458264901_6396534.ttf') format('truetype')
+}
+                    
+
+/*head*/
+.top_nav{height: 88px;}
+.caidan{margin-top: 25px}
+.caidan li{margin: 10px 0; height: 2px}
+.rentou{width: 88px}
+.huoche dt{font-size: 28px;padding-bottom: 8px}
+.huoche .zaiche .zaihuo li,.huoche .zaiche .lzhuanyong li.title{font-size: 24px;border:1px solid #666; color: #666;height: 30px;}
+.huoche .zaiche .triangle{width: 20px;height: 20px;}
+.shouhou{width: 240px;height: 70px;line-height: 70px;font-size: 24px;margin-top: 70px;text-align: center;}
+.shouhou h1{background: rgba(245, 245, 245, 1);font-size: 24px;}
+.banben{font-size: 24px;}
+.dibu_text{font-size: 20px;margin-bottom: 130px;}
+.huoche .zaiche .lzhuanyong li.title{font-size: 22px;border:none;}
+.huoche .zaiche .lzhuanyong li.title .center,.huoche .zaiche .zaihuo li{font-size: 24px}
+.huoche .zaiche .lzhuanyong li{height: 60px;line-height: 60px;font-size: 24px;min-width: 150px;}
+.huoche .zaiche .lzhuanyong li:nth-of-type(3),.huoche .zaiche .lzhuanyong li:nth-of-type(6){margin:4px 84px;}
+.huoche .zaiche .zaihuo li{height: 60px;line-height: 60px;border:1px solid #666; margin-right: 70px}
+.logoleft{width: 70px;}
+/*.content{margin-top: 60px;}*/
+.dalei li{padding-top: 20px}
+.dalei li{padding-top:22px;padding-bottom:8px}
+
+.huoche .zaiche .lzhuanyong{width: 90%;}
+.huoche .zaiche .lzhuanyong li.title .right,.huoche .zaiche .lzhuanyong li.title .left{margin-top: 16px;}
+.huoche .zaiche .lzhuanyong li{border:1px solid #666; color: #666}
+.huoche .zaiche .zaihuo{padding:8px 0 20px 0;}
+
+/*main*/
+.add-class dt,.zhuanyongtitle {width: 110px;height: 56px;color:rgba(153, 153, 153, 1);font-size: 30px;padding: 10px 0 0 20px;}
+.add-class dt span,.zhuanyongtitle span ,.last-add{display: inline-block;width: 110px;height: 30px;border-left:10px solid rgba(229, 229, 229, 1);margin-top: 14px;text-align: right;line-height: 30px}
+.zhuanyongtitle span {width: 170px}
+.zhuanyong{border: 0;margin-bottom: 30px}
+.add-class dd{width: 344px;height: 300px;margin-left: 20px;background: #fff;border:none;}
+.add-class dd .htitle{font-size: 30px;height: 46px;background: #fff;color: rgba(51, 51, 51, 1);line-height: 20px}
+.add-class dd img{width: 344px;height: 228px;background-size: 100%;}
+.specialslides,.specialslides li{width: 100%; height: 200px;overflow: hidden;}
+#select_truck li .lunbo{width: 224px; height: 214px;margin-left: 20px;background: #fff}
+#select_truck .lunbo dd{height: 50px;font-size: 24px;margin-top: 10px;line-height: 36px;border:0;}
+#select_truck li .lunbo dt{width: 224px; height: 150px;}
+#select_truck li .lunbo img{width: 224px; height: 150px;background-size: 100%}
+
+/*lunbo*/
+.over-main{position: relative;width: 100%;height: 400px;overflow: hidden;}
+.select-truck{float: left;width: 1000%;}
+.select-truck li{float: left;}
+.select-truck li img{background-size: 100%;width: 100%;height: 400px;}
+.over-main .tabs{position: absolute;bottom:10px;left:0;width: 100%;height: 15px; font-size: 0; text-align: center;}
+.over-main .tabs > i{display: inline-block;vertical-align: top;width: 12px;height: 12px;border-radius: 6px;margin:0 5px;background:#ccc;}
+.over-main .tabs .selected{background:#fff;}
+
+.chetupian{position: relative;width: 100%;height: 250px;border:none;}
+.chetupian .tabs{position: absolute;bottom:10px;left:0;width: 100%;height: 15px; font-size: 0; text-align: center;}
+.chetupian .tabs > i{display: inline-block;vertical-align: top;width: 12px;height: 12px;border-radius: 6px;margin:0 5px;background:#f5f5f5;border:1px solid #999;}
+.chetupian .tabs .selected{background:#ccc;}
+.container{float: left;width: 1000%;}
+.container li{float: left;}
+
+/*nav*/
+nav{height: 160px;width: 100%;background: #fff;}
+nav .nav-list{width: 100%;height: 160px;}
+nav .nav-list li{float: left;width: 25%;height: 160px;}
+.nav-list li a{display: block;width: 100%;height: 160px;text-align: center;font-size: 28px;line-height: 15px;color: #666;}
+.nav-list li a:before{content: '\e602';font-family: "欧曼改版";color: #fff;display: block;width: 70px;height: 70px;line-height: 70px;border-radius: 24px; background-color: rgb( 248, 107, 79 );margin: 23px auto;}
+.nav-list li:nth-of-type(2) a:before{content: "\e604";background-color: #579af4}
+.nav-list li:nth-of-type(3) a:before{content: "\e609";background-color: #ffcc19}
+.nav-list li:nth-of-type(4) a:before{content: "\e60b";background-color: #8ee84c}
+
+.stel{display: block;width: 240px;height: 70px;font-size: 30px;text-indent:initial;color: #333;line-height: 70px;}
+
+

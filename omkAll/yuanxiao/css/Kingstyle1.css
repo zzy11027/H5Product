@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: 100% ;
+}
+body a {
+    transition: 0.8s all;
+    -webkit-transition: 0.8s all;
+    -o-transition: 0.8s all;
+    -moz-transition: 0.8s all;
+    -ms-transition: 0.8s all;
+}
+li {
+    list-style: none;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+.fl {
+    float: left
+}
+.mb-20 {
+    margin-bottom: 20px
+}
+.uicss-cn {
+    overflow-y: scroll;
+    scrollbar-face-color: #888;/*滚动长条*/
+    scrollbar-shadow-color: #888;/*滚动长条  边框*/
+    scrollbar-highlight-color: #000;/*xxxxxxxxxxx*/
+    scrollbar-track-color: #ccc;/*背景图*/
+    scrollbar-arrow-color: #ccc;/*箭头*/
+    overflow: -moz-scrollbars-button(#000) !important;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    line-height: 1;
+    width: 100%;
+}
+/*IE用的滑轮*/ 
+
+.uicss-cn::-webkit-scrollbar {
+width:10px;
+height:100%;
+}
+.uicss-cn::-webkit-scrollbar-button {
+background-color:none
+}/*上下按钮*/
+.uicss-cn::-webkit-scrollbar-track {
+background:#ccc
+}/*背景颜色*/
+.uicss-cn::-webkit-scrollbar-thumb {
+background:#888;
+}/*滑动按钮*/
+.uicss-cn::-webkit-scrollbar-corner {
+background:#82AFFF;
+}/*上下的中点交接处*/
+.uicss-cn::-webkit-scrollbar-resizer {
+background:#FF0BEE;
+}
+/*谷歌苹果用的滑轮*/
+/* ↑ 初始化______________________________________________________________________________________*/
+.carTit-1 {
+}
+.carTit-1 > .clear {
+    height: 358px;
+}
+.order {
+}
+.order ul {
+    padding: 0;
+}
+.order ul li {
+}
+.order ul li input, .order ul li select {
+    background: rgba(0, 0, 0, 0);
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    margin: 5px 0px;
+}
+.order ul li span {
+    padding: 10px 15px;
+}
+.order-text {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.order-text p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 0
+}
+.prize {
+}
+.prize h3 {
+    background: url(../img/redbg-1.png) no-repeat;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px;
+    text-indent: 35px;
+}
+.prize p {
+    font-size: 12px;
+    white-space: pre;
+    line-height: 1.2;
+}
+.pad-1 {
+    float: left;
+    padding: 0px 20px;
+    color: #333;
+}
+.confirm {
+    background: url(../img/redbg-2.png) no-repeat;
+    padding: 10px 25px;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+    background-size: 100% 100%;
+    color: #fff;
+    border: 0;
+}
+
+
+
+.carTit-2 {
+}
+
+.strategy img {
+    width: 100%;
+}
+.strategy , .strategy-1, .strategy-2 {
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.strategy-1 > .col-xs-7,.strategy-2 > .col-xs-7 {
+    padding: 0
+}
+.strategy-1 p:nth-of-type(1),.strategy-2 p:nth-of-type(1){
+    border-top: 1px solid #BF1A17;
+    padding-top: 8px;
+    margin-bottom: 3px;
+}
+.strategy-1 p,.strategy-2 p{
+    font-size: 12px;
+	    white-space: pre;
+}
+.strategy-1 > .col-xs-5 > h4 {
+    background: url(../img/redbg-3.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 5px;
+    text-indent: 47px;
+    color: #fff;
+}
+.strategy-2 > .col-xs-5 > h4 {
+    background: url(../img/redbg-4.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 5px;
+    text-indent: 55px;
+    color: #fff;
+    margin-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+.carTit-3 {
+}
+.carimg, .star{text-align: center;margin-bottom: 30px;}
+.carimg > p >img {text-align: center;width: 100%;}
+.carimg button,.star button{background: url(../img/redbg-5.png) no-repeat;border: 0;padding: 8px 25px;background-size: 100% 100%;color: #fff;margin-top: 20px;margin-bottom: 20px;outline: none;}
+.carimg > button.active, .star > button.active{background: url(../img/redbg-1.png) no-repeat;border: 0;padding: 8px 25px;background-size: 100% 100%;color: #fff;margin-top: 20px;margin-bottom: 20px;outline: none;}
+.carimg_5{background: url(../img/carbg.png) no-repeat;background-size: 100% 100%;}
+.carimg_5 ul {
+    padding: 0;
+    background: url(../img/carbg.png) no-repeat;
+    float: left;
+    background-size: 100% auto;
+}
+.carimg_5 ul li{
+    float: left;
+    border: 3px solid #BF1B18;
+	display: none
+}
+.carimg_5 ul li:first-child{
+    float: left;
+	display: block;
+}
+
+.carimg_5 > ul > li > img{
+width: 100%;
+}
+
+
+
+
+
+.cartex{}
+.cartex > .col-xs-6 img{
+    width: 100%;
+        padding-top: 30%;
+}
+.cartex > .col-xs-6 h5{
+    text-align: left;
+}
+.cartex > .col-xs-6 p{
+    text-align: left;
+}
+.cartex > .col-xs-6 button{
+    padding: 5px 20px;
+    background: #BF1B18;
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.vide video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+
+}
+.mm{
+    display: none;
+}
+.scroll p{    overflow: hidden;
+    max-height: 400px;
+    overflow-y: scroll;}
+#banner1,#banner2,#banner3,#banner4{ border: 3px solid #BF1B18; }
+@media screen and (min-width:1200px) {
+/* ↓ 下面的是四个响应宽度______________________________________________________________________________________*/
+
+
+/* ↓ 上面的是四个响应宽度______________________________________________________________________________________*/
+}
+
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+/* ↓ 下面的是四个响应宽度______________________________________________________________________________________*/
+
+
+/* ↓ 上面的是四个响应宽度______________________________________________________________________________________*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+/* ↓ 下面的是四个响应宽度______________________________________________________________________________________*/
+
+
+/* ↓ 上面的是四个响应宽度______________________________________________________________________________________*/
+}
+
+@media only screen and (min-width: 245px) and (max-width: 767px) {
+/* ↓ 下面的是四个响应宽度______________________________________________________________________________________*/
+
+/* ↓ 上面的是四个响应宽度______________________________________________________________________________________*/
+}

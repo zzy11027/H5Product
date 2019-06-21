@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>0首付购车赢在新年，欧曼百万豪礼送不停</title>
+	<link rel="stylesheet" href="/mobile/templates/newYearbuyCar/css/index.css">
+	<script src="/mobile/templates/newYearbuyCar/js/jquery.min.js"></script>
+	<script src="/mobile/templates/newYearbuyCar/js/rotaryDraw.js"></script>
+	<script src="/mobile/templates/newYearbuyCar/js/register_message.js"></script>
+	<script src="/mobile/js/region2.js" type="text/javascript"></script>
+	<!-- <script src="/mobile/js/region3.js" type="text/javascript"></script> -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<!-- <link href="new0225/css/css.css" rel="stylesheet"/> -->
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '0首付购车赢在新年，欧曼百万豪礼送不停', // 分享标题
+                desc: '迎新春，欧曼超级重卡，给你惊喜！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/om_zdp.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/newYearbuyCar/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '0首付购车赢在新年，欧曼百万豪礼送不停', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/om_zdp.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/newYearbuyCar/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+    {include file="/library/page_header_new.lbi"}
+<!--start:header-->
+        <!-- #BeginLibraryItem "/library/page_header_new.lbi" -->
+        <!-- #EndLibraryItem -->
+<!--end:header-->
+    <!-- 预加载 -->
+    <div class="loading">
+        <div class="xl-progress-wp">
+            <div class="xl-progress">
+                <i class="xl-progress__inner" style="width:0%;"></i>
+            </div>
+            <div class="xl-progress__txt">0%</div>
+        </div>
+        <!-- <img src="/mobile/templates/bigMovies/img/comein.png" alt="" class="img3ss"> -->
+    </div>
+
+	<!-- 遮罩层 -->
+	<div class="containerss"></div>
+	<!-- 开屏页 -->
+	<div class="index">
+		<div class="but1"></div>
+		<div class="but2"></div>
+		<a href='http://www.aumantruck.com/mobile/templates/newYearbuyCar/video.php' class="but3s"></a>
+	</div>
+<!-- 第二页 -->
+	<div class="two" style="display: none;">
+		<!--返回  -->
+		<div class="return"></div>
+		<!-- 转盘 -->
+		<div class="box">
+			<img src="/mobile/templates/newYearbuyCar/img/img_01.png" class="img01" alt="">
+			<img src="/mobile/templates/newYearbuyCar/img/img_02.png" class="drawBtn">
+			<img src="/mobile/templates/newYearbuyCar/img/zi.png" class="zi">
+		</div>
+		<!-- 购车背景 -->
+		<div class="form1">
+			<input type="text" class="inp1" placeholder="请输入您的姓名">
+			<input type="text" class="inp2" placeholder="请输入您的电话">
+
+			<select name="select_1" class="inp3" id="input-1"  style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+				<option>请选择车型</option>
+				<option value="欧曼EST">欧曼EST-A</option>
+				<option value="欧曼EST">欧曼EST</option>
+				<option value="欧曼GTL">欧曼GTL</option>
+				<option value="欧曼TX">欧曼ETX</option>
+			</select>
+
+		    <select  id="selProvinces_1" onchange="region.changed(this, 2, 'selCities_1')" name='apply_field3_1' class="inp4">
+				<option value="">请选择省份</option>
+				<!-- {foreach from=$city_list item=country} -->
+				<option value="{$country.region_id}" <!-- {if $country.region_id eq $fieldData.agency_province}selected{/if}-->{$country.region_name}</option>
+				<!-- {/foreach} -->
+		    </select>
+
+		    <select   id="selCities_1" onchange="getDistributors(1);" name="apply_field4_1" class="inp5">
+		        <option value="">请选择城市</option>
+		        <!-- {foreach from=$fieldData.citys item=city} -->
+		        <option value="{$city.region_id}" <!-- {if $city.region_id eq $fieldData.agency_city}selected{/if}-->>{$city.region_name}</option>
+		        <!-- {/foreach} -->
+		    </select>
+
+		    <select  id="apply_field6_1" name="apply_field5_1" class="inp6">
+				<option value="">请选择经销商</option>
+				<!-- {foreach from=$distributors item=distributor} -->
+				<option value="{$distributor.distributors_id}" <!--{if $fieldData[6] eq $distributor.distributors_id}selected{/if}-->>{$distributor.distributors_name}</option>
+				<!-- {foreachelse} -->
+				<!-- {/foreach} -->
+		    </select>
+			 <!-- style="margin: 0 auto;margin-top: 21rem;" -->
+	        <div data-width="300" style="margin: 0 auto;margin-top: 21rem;" class="l-captcha" data-site-key="86448773e1d3c5312a088c088c7b24db" data-callback="getResponse" ></div>
+			<div class="tj1" onclick="tj1()"></div>
+			<div class="close"></div>
+		</div>
+	</div>
+<!-- 第三页 -->
+	<div class="three" style="display: none;">
+		<!--返回  -->
+		<div class="return"></div>
+		<!-- 购车背景 -->
+		<div class="form2">
+			<input type="text" class="inp1s" placeholder="请输入您的姓名">
+			<input type="text" class="inp2s" placeholder="请输入您的电话">
+
+		    <select  id="selProvinces_2" onchange="region.changed(this, 2, 'selCities_2')" name='apply_field3_1' class="inp3s">
+				<option value="">请选择省份</option>
+				<!-- {foreach from=$city_list item=country} -->
+				<option value="{$country.region_id}" <!-- {if $country.region_id eq $fieldData.agency_province}selected{/if}-->{$country.region_name}</option>
+				<!-- {/foreach} -->
+		    </select>
+
+		    <select   id="selCities_2" onchange="getDistributors1(1);" name="apply_field4_1" class="inp4s">
+		        <option value="">请选择城市</option>
+		        <!-- {foreach from=$fieldData.citys item=city} -->
+		        <option value="{$city.region_id}" <!-- {if $city.region_id eq $fieldData.agency_city}selected{/if}-->>{$city.region_name}</option>
+		        <!-- {/foreach} -->
+		    </select>
+
+		    <select  id="apply_field6_2" name="apply_field5_1" class="inp5s">
+				<option value="">请选择经销商</option>
+				<!-- {foreach from=$distributors item=distributor} -->
+				<option value="{$distributor.distributors_id}" <!--{if $fieldData[6] eq $distributor.distributors_id}selected{/if}-->>{$distributor.distributors_name}</option>
+				<!-- {foreachelse} -->
+				<!-- {/foreach} -->
+		    </select>
+			
+	        <input type="text" class="yzm inp6s"  id="yzm" placeholder="" value="请输入验证码" onfocus="if(value=='请输入验证码') {value=''}" onblur="if (value=='') {value='请输入验证码'}">
+	        <div id="getYzm" style="background:#8fc400;border-radius: 4px; color: #fff;" onclick="send_capicha_regist()">获取验证码</div>
+			<div class="tj2" onclick="tj2()"></div>
+		</div>
+	</div>
+<!-- 第四页 -->
+	<div class="four" style="display: none;">
+		<!--返回  -->
+		<div class="return"></div>
+		<video src="" id="video_1" _type="video"
+	       	webkit-playsinline="true" webkit-playsinline playsinline x5-playsinline x5-video-player-fullscreen="true" controls="controls"  class="video_1" preload="preload" playsinline="true" x5-video-player-type="h5">
+	    该浏览器不支持video属性
+		</video>
+
+		<video src="" id="video_1" _type="video"
+	       	webkit-playsinline="true" webkit-playsinline playsinline x5-playsinline x5-video-player-fullscreen="true" controls="controls"  class="video_2" preload="preload" playsinline="true" x5-video-player-type="h5">
+	    该浏览器不支持video属性
+		</video>
+		<div class="but4"></div>
+
+		<div class="form3">
+			<input type="text" class="inp1a" placeholder="请输入您的姓名">
+			<input type="text" class="inp2a" placeholder="请输入您的电话">
+
+			 <!-- style="margin: 0 auto;margin-top: 21rem;" -->
+	        <div data-width="300" style="margin:0 auto;margin-top: 11rem;" class="l-captcha" data-site-key="86448773e1d3c5312a088c088c7b24db" data-callback="getResponsea" ></div>
+			<div class="tj3" onclick="tj3()"></div>
+			<div class="close"></div>
+		</div>
+	</div>
+	<!-- 中奖弹窗 -->
+	<div class="succs" style="display:none">
+		<!-- 确认按钮 -->
+		<a href=""><div class="confirms"></div></a>
+		<span></span>
+	</div>
+	<script src="//captcha.luosimao.com/static/js/api.js"></script>
+	<script src="/mobile/templates/newYearbuyCar/js/index.js"></script>
+	<script src="/mobile/templates/newYearbuyCar/js/preload.js"></script>
+	<script type="text/javascript">
+//预加载
+var no = false;//判断是否加载完成
+var img = [
+    '/mobile/templates/newYearbuyCar/img/again.png',
+    '/mobile/templates/newYearbuyCar/img/confirm.png',
+    '/mobile/templates/newYearbuyCar/img/fail.png',
+    '/mobile/templates/newYearbuyCar/img/form1.png',
+    '/mobile/templates/newYearbuyCar/img/form2.png',
+    '/mobile/templates/newYearbuyCar/img/form3.png',
+    '/mobile/templates/newYearbuyCar/img/four.jpg',
+    '/mobile/templates/newYearbuyCar/img/img_01.png',
+    '/mobile/templates/newYearbuyCar/img/img_02.png',
+    '/mobile/templates/newYearbuyCar/img/index.jpg',
+    '/mobile/templates/newYearbuyCar/img/price.png',
+    '/mobile/templates/newYearbuyCar/img/jhm.png',
+    '/mobile/templates/newYearbuyCar/img/return.png',
+    '/mobile/templates/newYearbuyCar/img/three.jpg',
+    '/mobile/templates/newYearbuyCar/img/tj.png',
+    '/mobile/templates/newYearbuyCar/img/two.jpg',
+    '/mobile/templates/newYearbuyCar/img/zi.png',
+    // '/mobile/templates/newYearbuyCar/img/1.mp4',
+];
+var index = 0,
+    len = img.length,
+    progressInner = $(".xl-progress__inner"),
+    progressTxt = $('.xl-progress__txt');
+//图片预加载
+$.preload(img, {
+    minTimer: 3000,
+    //每加载完一张执行的方法
+    each: function (count) {
+        var percent = Math.round((count+1) / len * 100) + '%';
+        progressInner.css("width",percent);
+        progressTxt.html(percent);
+    },
+    // 加载完所有的图片执行的方法
+    end: function () {
+        console.log('预加载完成');
+        no = true;
+        $('.loading').hide();
+    }
+});
+	</script>
+</body>
+</html>

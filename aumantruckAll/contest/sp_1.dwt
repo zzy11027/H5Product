@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>降本增效，我是冠军</title>
+
+    <link href="new0225/css/css.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/mobile/templates/contest/css/sp.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="/mobile/templates/contest/js/jquery.min.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: 'SuperFleet超级车队驾驶员联赛火热进行中！', // 分享标题
+                desc: 'SuperFleet超级车队驾驶员联赛火热开幕，奖金等你拿！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_contest.php?act=spa', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: 'SuperFleet超级车队驾驶员联赛火热进行中！', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_contest.php?act=spa', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+	   <input type="hidden" id="token" value="{$token}">
+        <input type="hidden" id="qd" value="{$qd}">  
+		<div class="banner">
+	        <a >
+	                    
+	        </a>
+    	</div>
+
+
+        <div class="containerss"></div>
+        <div class="containersss"></div>
+		<div class="container">
+
+			<ul class="ul_1">
+				<li class=""><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=ln"></a></li>
+				<!-- <li class=""><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=wxp"></a></li> -->
+				<li><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=llsh"></a></li>
+				<li><a href="javascript:alert('敬请期待')"></a></li>
+				<li><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=spa"></a></li>
+<!-- 				<li><a href="javascript:alert('敬请期待')"></a></li> -->
+				<!-- <li><a href="/mobile/spike_jc.php"></a></li> -->
+			</ul>
+
+
+
+			<!-- 抽奖 -->
+            <div class="cj">
+                <div class="chou" onclick="chou()">
+                    
+                    
+                </div>
+                <input type="text" placeholder="请输入授权使用电话" id="phone" value="">     
+            </div>
+			<img src="/mobile/templates/contest/img/zhong1.png" alt="" class="zhong_1">
+			<!-- 未中奖 -->
+			<img src="/themes/default/contest/img/wei.png" alt="" class="chou2">
+			
+			<!-- 中奖 -->
+			<img src="/themes/default/contest/img/zhong.png" alt="" class="chou1">
+
+			<!-- 产看成绩 -->
+            <div class="look">
+
+
+                <input type="text" class="inp_1"  placeholder="请输入参赛电话">
+            
+                    
+                <div class="find" onclick="find()"></div>
+
+            </div>
+
+
+		  <!-- 保存图片的div -->
+            <div class="imim"></div>
+
+
+            <!-- 分类 -->
+            <ul class="ul_2">
+				<li><a href="http://www.aumantruck.com/spike_contest.php?act=spa"></a></li>
+				<li><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=spa2"></a></li>
+				<li><a href="http://www.aumantruck.com/mobile/spike_contest.php?act=spa3"></a></li>
+				<li onclick="on_1()"></li>
+				<li onclick="on_2()"></li>
+				<li onclick="on_3()"></li>
+<!-- 				<li onclick="on_4()"></li>
+				<li onclick="on_5()"></li>
+				<li onclick="on_6()"></li>
+ -->            </ul>
+
+
+                <!-- 点击按钮图片 -->
+                <img src="/themes/default/contest/img/ddd.png" alt="" class="ddd">
+
+<div class="allss" style="display:none">
+			<div class="p1" style="display:none">
+				
+				<div class="p1_1" style="display:none">
+					
+                    <!-- 牵引车EST/ESTA的第一个榜-->
+                    <div class="ph_1">
+                        {foreach from=$qyc_est item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 牵引车EST/ESTA的第二个榜 -->
+                    <div class="ph_2">
+                        {foreach from=$cql_qyc_est item=p key=k}
+                        <ul>
+
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 牵引车EST/ESTA的第三个榜 -->
+					<div class="ph_3">
+						{foreach from=$dz item=p key=k}
+						<ul>
+                            <li>{$p.cph}</li>
+							<li>{$p.cx}</li>
+							<li>{$p.dz}</li>
+						</ul>
+						{/foreach}
+					</div>
+
+				</div>
+				<div class="p1_2" style="display:none">
+
+                    <!-- 牵引车欧曼GTL的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$qyc_gtl item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 牵引车欧曼GTL的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_qyc_gtl item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 牵引车欧曼GTL的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+                                <li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+
+				</div>
+				<div class="p1_3" style="display:none">
+					
+                    <!-- 牵引车欧曼ETX的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$qyc_etx item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 牵引车欧曼ETX的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_qyc_etx item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 牵引车欧曼ETX的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+
+				</div>
+			</div>
+			<div class="p2" style="display:none">
+				<div class="p2_1" style="display:none">
+					
+                    <!-- 载货车欧曼EST/ESTA的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$zhc_est item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 载货车欧曼EST/ESTA的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_zhc_est item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 载货车欧曼EST/ESTA的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+				</div>
+				<div class="p2_2" style="display:none">
+					
+                    <!-- 载货车欧曼GTL的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$zhc_gtl item=p key=k}
+                        <ul>
+                           <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 载货车欧曼GTL的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_zhc_gtl item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 载货车欧曼GTL的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+
+				</div>
+				<div class="p2_3" style="display:none">
+					
+                    <!-- 载货车欧曼ETX的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$zhc_etx item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 载货车欧曼ETX的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_zhc_etx item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 载货车欧曼ETX的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+
+				</div>
+
+			</div>
+			<div class="p3" style="display:none">
+				<div class="p3_1" style="display:none">
+					
+                    <!-- 自卸车欧曼EST/ESTA的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$zxc_est item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                            </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 自卸车欧曼EST/ESTA的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_zxc_est item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 自卸车欧曼EST/ESTA的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+				</div>
+				<div class="p3_2" style="display:none">
+					
+                    <!-- 自卸车欧曼GTL的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$zxc_gtl item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 自卸车欧曼GTL的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_zxc_gtl item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 自卸车欧曼GTL的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+
+				</div>
+				<div class="p3_3" style="display:none">
+					
+                    <!-- 自卸车欧曼ETX的第一个榜 -->
+                    <div class="ph_1">
+                        {foreach from=$zxc_etx item=p key=k}
+                        <ul>
+                            <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.pjbglyh}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+                    </div>
+
+					 <!-- 自卸车欧曼ETX的第二个榜 -->
+                    <div class="ph_2">
+                        
+                        {foreach from=$cql_zxc_etx item=p key=k}
+                        <ul>
+                             <li>{$p.vin}</li>
+                            <li>{$p.cx}</li>
+                            <li>{$p.fpxclc}</li>
+                            <li>{$p.pjrunTimeInSeconds}</li>
+                            <li>{$p.pjavgVelocity}</li>
+                            <li>{$p.zxslc}</li>
+                            <li>{$p.hy}</li>
+                        </ul>
+                        {/foreach}
+
+                    </div>
+
+					<!-- 自卸车欧曼ETX的第三个榜 -->
+					<div class="ph_3">
+							{foreach from=$dz item=p key=k}
+							<ul>
+								<li>{$p.cph}</li>
+                                <li>{$p.cx}</li>
+                                <li>{$p.dz}</li>
+							</ul>
+							{/foreach}
+					</div>
+
+
+				</div>
+
+			</div>
+</div>
+
+
+
+<!-- 不分类.............不分类.........不分类 -->
+
+<div class="alls">
+                    <!-- 第一个显示 -->
+                    <div class="yi">
+                        <!-- 榜1 -->
+                        <div class="ph_1">
+                           <!-- 第一行 -->
+                            <ul>
+                                <li>HR009151</li>
+                                <li>欧曼EST</li>
+                                <li>19</li>
+                                <li>5</li>
+                                <li>32</li>
+                                <li>20.43</li>
+                                <li>普货</li>
+                            </ul>
+                            
+                           <!-- 第二行 -->
+                            <ul>
+                                <li>LRDS6PEB8JR011406</li>
+                                <li>欧曼EST</li>
+                                <li>160</li>
+                                <li>4</li>
+                                <li>49</li>
+                                <li>21.94</li>
+                                <li>港口</li>
+                            </ul>
+
+                            <!-- 第三行 -->
+                            <ul>
+                                <li>LRDS6PEBXHT029001</li>
+                                <li>GTL</li>
+                                <li>219</li>
+                                <li>8</li>
+                                <li>48</li>
+                                <li>22.93</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第四行 -->
+                            <ul>
+                                <li>HR007363</li>
+                                <li>欧曼EST</li>
+                                <li>115</li>
+                                <li>4</li>
+                                <li>27</li>
+                                <li>23.89</li>
+                                <li>普货</li>
+                            </ul>
+                            <!-- 第五行 -->
+                            <ul>
+                                <li>LRDS6PEB6HR009793</li>
+                                <li>GTL</li>
+                                <li>280</li>
+                                <li>18</li>
+                                <li>39</li>
+                                <li>24.2</li>
+                                <li>危化品</li>
+                            </ul>
+                            <!-- 第六行 -->
+                            <ul>
+                                <li>JT017809</li>
+                                <li>欧曼EST</li>
+                                <li>422</li>
+                                <li>14</li>
+                                <li>38</li>
+                                <li>24.22</li>
+                                <li>煤炭</li>
+                            </ul>
+                            <!-- 第七行 -->
+                            <ul>
+                                <li>LRDS7PEB6JT500872</li>
+                                <li>欧曼EST</li>
+                                <li>213</li>
+                                <li>9</li>
+                                <li>24</li>
+                                <li>25.23</li>
+                                <li>干线运输</li>
+                            </ul>
+                            <!-- 第八行 -->
+                            <ul>
+                                <li>LRDS6PEB7JT008001</li>
+                                <li>EST</li>
+                                <li>137</li>
+                                <li>11</li>
+                                <li>50</li>
+                                <li>25.46</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第九行 -->
+                            <ul>
+                                <li>LRDS6PEB2JT001182</li>
+                                <li>欧曼GTL</li>
+                                <li>234</li>
+                                <li>14</li>
+                                <li>35</li>
+                                <li>25.65</li>
+                                <li>普货</li>
+                            </ul>
+                            <!-- 第十行 -->
+                            <ul>
+                                <li>LRDS6PEBXHR021106</li>
+                                <li>欧曼EST</li>
+                                <li>223</li>
+                                <li>12</li>
+                                <li>42</li>
+                                <li>25.65</li>
+                                <li>普货</li>
+                            </ul>
+                        </div>
+
+                        <!-- 榜2 -->
+                        <div class="ph_2">
+                            
+                           <!-- 第一行 -->
+                            <ul>
+                                <li>LRDS6PEB6JT009611</li>
+                                <li>EST</li>
+                                <li>245</li>
+                                <li>54</li>
+                                <li>48</li>
+                                <li>15911</li>
+                                <li>普货运输</li>
+                            </ul>
+                            
+                           <!-- 第二行 -->
+                            <ul>
+                                <li>LRDS6PEB0JT004890</li>
+                                <li>EST</li>
+                                <li>245</li>
+                                <li>21</li>
+                                <li>45</li>
+                                <li>15541</li>
+                                <li>普货运输</li>
+                            </ul>
+
+                            <!-- 第三行 -->
+                            <ul>
+                                <li>LRDS6PEB7JR010750</li>
+                                <li>EST</li>
+                                <li>219</li>
+                                <li>18</li>
+                                <li>38</li>
+                                <li>15431</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第四行 -->
+                            <ul>
+                                <li>LRDS6PEB5JR007233</li>
+                                <li>EST</li>
+                                <li>415</li>
+                                <li>34</li>
+                                <li>35</li>
+                                <li>15134</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第五行 -->
+                            <ul>
+                                <li>LRDS6PEB5HR013057</li>
+                                <li>欧曼EST</li>
+                                <li>180</li>
+                                <li>28</li>
+                                <li>32</li>
+                                <li>14942</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第六行 -->
+                            <ul>
+                                <li>LRDS6PEB6JR008021</li>
+                                <li>EST</li>
+                                <li>222</li>
+                                <li>34</li>
+                                <li>31</li>
+                                <li>14812</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第七行 -->
+                            <ul>
+                                <li>LRDS6PEB8HT019213</li>
+                                <li>欧曼EST</li>
+                                <li>313</li>
+                                <li>19</li>
+                                <li>29</li>
+                                <li>14162</li>
+                                <li>快运</li>
+                            </ul>
+                            <!-- 第八行 -->
+                            <ul>
+                                <li>LRDS6PEB4HL011433</li>
+                                <li>欧曼ETX</li>
+                                <li>437</li>
+                                <li>11</li>
+                                <li>50</li>
+                                <li>13653</li>
+                                <li>煤炭</li>
+                            </ul>
+                            <!-- 第九行 -->
+                            <ul>
+                                <li>LRDS6PEB7HR011925</li>
+                                <li>EST</li>
+                                <li>234</li>
+                                <li>124</li>
+                                <li>35</li>
+                                <li>13159</li>
+                                <li>普货</li>
+                            </ul>
+                            <!-- 第十行 -->
+                            <ul>
+                                <li>LRDS6PEB1HT027136</li>
+                                <li>EST</li>
+                                <li>223</li>
+                                <li>122</li>
+                                <li>34</li>
+                                <li>12778</li>
+                                <li>普货运输</li>
+                            </ul>
+
+                        </div>
+
+                        
+                    </div>
+                     
+
+                    <!-- 第二个显示 -->
+                    <div class="er" style="display:none">
+                        <!-- 榜1 -->
+                        <div class="ph_1">
+                            <!-- 第一行 -->
+                            <ul>
+                                <li>LRDV6PEC6JR004606</li>
+                                <li>GTL</li>
+                                <li>214</li>
+                                <li>56</li>
+                                <li>22</li>
+                                <li>17.14</li>
+                                <li>快递快运</li>
+                            </ul>
+                            
+                           <!-- 第二行 -->
+                            <ul>
+                                <li>LRDV7PEC5HR018388</li>
+                                <li>欧曼EST</li>
+                                <li>260</li>
+                                <li>42</li>
+                                <li>28</li>
+                                <li>20.2</li>
+                                <li>绿通</li>
+                            </ul>
+
+                            <!-- 第三行 -->
+                            <ul>
+                                <li>LRDV6PDC4JH604547</li>
+                                <li>欧曼ETX</li>
+                                <li>219</li>
+                                <li>18</li>
+                                <li>25</li>
+                                <li>20.38</li>
+                                <li>普货</li>
+                            </ul>
+                            <!-- 第四行 -->
+                            <ul>
+                                <li>LRDV6PEC5JT009198</li>
+                                <li>EST</li>
+                                <li>515</li>
+                                <li>141</li>
+                                <li>43</li>
+                                <li>20.46</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第五行 -->
+                            <ul>
+                                <li>LRDV6PEC2JT004539</li>
+                                <li>EST</li>
+                                <li>280</li>
+                                <li>128</li>
+                                <li>42</li>
+                                <li>21.6</li>
+                                <li>高附加值</li>
+                            </ul>
+                            <!-- 第六行 -->
+                            <ul>
+                                <li>LRDV6PEC3JT008938</li>
+                                <li>EST</li>
+                                <li>422</li>
+                                <li>124</li>
+                                <li>35</li>
+                                <li>22.16</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第七行 -->
+                            <ul>
+                                <li>LRDV6PDC8JL609795</li>
+                                <li>欧曼ETX</li>
+                                <li>213</li>
+                                <li>22</li>
+                                <li>34</li>
+                                <li>22.67</li>
+                                <li>快递</li>
+                            </ul>
+                            <!-- 第八行 -->
+                            <ul>
+                                <li>JT019936</li>
+                                <li>欧曼EST</li>
+                                <li>137</li>
+                                <li>111</li>
+                                <li>33</li>
+                                <li>22.89</li>
+                                <li>冷链</li>
+                            </ul>
+                            <!-- 第九行 -->
+                            <ul>
+                                <li>LRDV6PEC2HR027536</li>
+                                <li>欧曼EST</li>
+                                <li>234</li>
+                                <li>14</li>
+                                <li>32</li>
+                                <li>22.98</li>
+                                <li>快递</li>
+                            </ul>
+                            <!-- 第十行 -->
+                            <ul>
+                                <li>LRDV7PEC6HT016748</li>
+                                <li>欧曼EST</li>
+                                <li>223</li>
+                                <li>123</li>
+                                <li>31</li>
+                                <li>23.52</li>
+                                <li>冷链</li>
+                            </ul>
+                        </div>
+
+                        <!-- 榜2 -->
+                        <div class="ph_2">
+                            
+                            <!-- 第一行 -->
+                            <ul>
+                                <li>LRDV6PEC6JR004606</li>
+                                <li>GTL</li>
+                                <li>114</li>
+                                <li>26</li>
+                                <li>29</li>
+                                <li>13677</li>
+                                <li>快递快运</li>
+                            </ul>
+                            
+                           <!-- 第二行 -->
+                            <ul>
+                                <li>LRDV7PEC5JR003279</li>
+                                <li>EST</li>
+                                <li>330</li>
+                                <li>42</li>
+                                <li>28</li>
+                                <li>8172</li>
+                                <li>普货运输</li>
+                            </ul>
+
+                            <!-- 第三行 -->
+                            <ul>
+                                <li>LRDV7PEC1JR007328</li>
+                                <li>欧曼EST</li>
+                                <li>219</li>
+                                <li>18</li>
+                                <li>41</li>
+                                <li>7799</li>
+                                <li>冷链</li>
+                            </ul>
+                            <!-- 第四行 -->
+                            <ul>
+                                <li>LRDV6PEC2JT004539</li>
+                                <li>EST</li>
+                                <li>215</li>
+                                <li>141</li>
+                                <li>38</li>
+                                <li>7177</li>
+                                <li>高附加值</li>
+                            </ul>
+                            <!-- 第五行 -->
+                            <ul>
+                                <li>LRDV6PEC5JT009198</li>
+                                <li>EST</li>
+                                <li>180</li>
+                                <li>36</li>
+                                <li>20</li>
+                                <li>6644</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第六行 -->
+                            <ul>
+                                <li>LRDV6PEC3JT008938</li>
+                                <li>EST</li>
+                                <li>452</li>
+                                <li>124</li>
+                                <li>31</li>
+                                <li>5640</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第七行 -->
+                            <ul>
+                                <li>LRDV6PEC5JR008873</li>
+                                <li>GTL</li>
+                                <li>312</li>
+                                <li>22</li>
+                                <li>50</li>
+                                <li>5608</li>
+                                <li>快递快运</li>
+                            </ul>
+                            <!-- 第八行 -->
+                            <ul>
+                                <li>LRDV7PEC0JT007808</li>
+                                <li>GTL</li>
+                                <li>137</li>
+                                <li>111</li>
+                                <li>42</li>
+                                <li>5086</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第九行 -->
+                            <ul>
+                                <li>LRDV6PEC3JR005485</li>
+                                <li>GTL</li>
+                                <li>234</li>
+                                <li>14</li>
+                                <li>34</li>
+                                <li>4656</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第十行 -->
+                            <ul>
+                                <li>LRDV7PEC1HR024480</li>
+                                <li>欧曼EST</li>
+                                <li>223</li>
+                                <li>123</li>
+                                <li>21</li>
+                                <li>4140</li>
+                                <li>绿通</li>
+                            </ul>
+
+                        </div>
+
+                        
+                    </div>
+
+
+
+                    <!-- 第三个显示 -->
+                    <div class="san" style="display:none">
+                        <!-- 榜1 -->
+                        <div class="ph_1">
+                            <!-- 第一行 -->
+                            <ul>
+                                <li>JL602600</li>
+                                <li>欧曼ETX</li>
+                                <li>114</li>
+                                <li>26</li>
+                                <li>22</li>
+                                <li>42.83</li>
+                                <li>重载运输</li>
+                            </ul>
+                            
+                           <!-- 第二行 -->
+                            <ul>
+                                <li>LRDV6PEC8HT020898</li>
+                                <li>GTL</li>
+                                <li>530</li>
+                                <li>33</li>
+                                <li>25</li>
+                                <li>43.16</li>
+                                <li>普货运输</li>
+                            </ul>
+
+                            <!-- 第三行 -->
+                            <ul>
+                                <li>LRDV6PEC3HL009596</li>
+                                <li>欧曼ETX</li>
+                                <li>219</li>
+                                <li>24</li>
+                                <li>36</li>
+                                <li>48.68/li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第四行 -->
+                            <ul>
+                                <li>JT502177</li>
+                                <li>欧曼GTL</li>
+                                <li>415</li>
+                                <li>243</li>
+                                <li>35</li>
+                                <li>51.30</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第五行 -->
+                            <ul>
+                                <li>HT029795</li>
+                                <li>欧曼GTL</li>
+                                <li>280</li>
+                                <li>128</li>
+                                <li>50</li>
+                                <li>55.25</li>
+                                <li>工程自卸</li>
+                            </ul>
+                            <!-- 第六行 -->
+                            <ul>
+                                <li>HL011818</li>
+                                <li>欧曼ETX</li>
+                                <li>462</li>
+                                <li>124</li>
+                                <li>22</li>
+                                <li>56.00</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第七行 -->
+                            <ul>
+                                <li>LRDV7PEC2HL007433</li>
+                                <li>欧曼ETX</li>
+                                <li>412</li>
+                                <li>22</li>
+                                <li>42</li>
+                                <li>58.98</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第八行 -->
+                            <ul>
+                                <li>LRDV6PEC5HT028392</li>
+                                <li>欧曼GTL</li>
+                                <li>237</li>
+                                <li>111</li>
+                                <li>45</li>
+                                <li>60.86</li>
+                                <li>工程自卸</li>
+                            </ul>
+                            <!-- 第九行 -->
+                            <ul>
+                                <li>JH609282</li>
+                                <li>欧曼ETX</li>
+                                <li>334</li>
+                                <li>14</li>
+                                <li>34</li>
+                                <li>61.51</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第十行 -->
+                            <ul>
+                                <li>LRDV7PEC5HL013260</li>
+                                <li>欧曼ETX</li>
+                                <li>423</li>
+                                <li>123</li>
+                                <li>33</li>
+                                <li>67.20</li>
+                                <li>重载运输</li>
+                            </ul>
+                        </div>
+
+                        <!-- 榜2 -->
+                        <div class="ph_2">
+                            
+                            <!-- 第一行 -->
+                            <ul>
+                                <li>LRDV7PEC5HL013260</li>
+                                <li>欧曼ETX</li>
+                                <li>314</li>
+                                <li>36</li>
+                                <li>42</li>
+                                <li>9307</li>
+                                <li>重载运输</li>
+                            </ul>
+                            
+                           <!-- 第二行 -->
+                            <ul>
+                                <li>HT029795</li>
+                                <li>欧曼GTL</li>
+                                <li>564</li>
+                                <li>43</li>
+                                <li>30</li>
+                                <li>7087</li>
+                                <li>工程自卸</li>
+                            </ul>
+
+                            <!-- 第三行 -->
+                            <ul>
+                                <li>LRDV6PEC4HL003953</li>
+                                <li>ETX</li>
+                                <li>319</li>
+                                <li>24</li>
+                                <li>22</li>
+                                <li>3711</li>
+                                <li>渣土运输</li>
+                            </ul>
+                            <!-- 第四行 -->
+                            <ul>
+                                <li>LRDV6PEC8HT020898</li>
+                                <li>GTL</li>
+                                <li>415</li>
+                                <li>243</li>
+                                <li>42</li>
+                                <li>2268</li>
+                                <li>普货运输</li>
+                            </ul>
+                            <!-- 第五行 -->
+                            <ul>
+                                <li>JL602600</li>
+                                <li>欧曼ETX</li>
+                                <li>180</li>
+                                <li>128</li>
+                                <li>42</li>
+                                <li>1832</li>
+                                <li>重载运输</li>
+                            </ul>
+                            <!-- 第六行 -->
+                            <ul>
+                                <li>JH609282</li>
+                                <li>欧曼ETX</li>
+                                <li>262</li>
+                                <li>124</li>
+                                <li>30</li>
+                                <li>1715</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第七行 -->
+                            <ul>
+                                <li>HH504196</li>
+                                <li>欧曼ETX</li>
+                                <li>312</li>
+                                <li>22</li>
+                                <li>25</li>
+                                <li>1223</li>
+                                <li>工程自卸</li>
+                            </ul>
+                            <!-- 第八行 -->
+                            <ul>
+                                <li>LRDV7PEC2HL007433</li>
+                                <li>欧曼ETX</li>
+                                <li>537</li>
+                                <li>111</li>
+                                <li>35</li>
+                                <li>635</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第九行 -->
+                            <ul>
+                                <li>JT502177</li>
+                                <li>欧曼GTL</li>
+                                <li>134</li>
+                                <li>14</li>
+                                <li>42</li>
+                                <li>259</li>
+                                <li>城建渣土</li>
+                            </ul>
+                            <!-- 第十行 -->
+                            <ul>
+                                <li>HL011818</li>
+                                <li>欧曼ETX</li>
+                                <li>223</li>
+                                <li>123</li>
+                                <li>25</li>
+                                <li>149</li>
+                                <li>城建渣土</li>
+                            </ul>
+
+                        </div>
+
+                       
+                    </div>
+</div>
+<!-- ................................ -->
+
+
+
+
+<!-- 榜3 -->
+                        <div class="ph_3">
+                                {foreach from=$dz item=p key=k}
+                                <ul>
+                                    <li>{$p.cph}</li>
+                                    <li>{$p.cx}</li>
+                                    <li>{$p.dz}</li>
+                                </ul>
+                                {/foreach}
+                        </div>
+
+
+
+            <!-- loading -->
+
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+                <p id="i">
+                    正在提交，请稍后……
+                </p>
+            </div>
+
+            <!-- 弹窗 -->
+            <div class="tan">
+                <div class="close">
+                </div>
+                
+                
+                <!-- <div class="bao"></div> -->
+
+<!--                 <div class="le" onclick="le()"></div>
+
+
+                <div class="ri" onclick="ri()"></div> -->
+
+                <div class="bao"></div>
+                <div class="contai">
+                    <div class="con_1"></div>
+                    <div class="con_2"></div>
+                    <div class="con_3"></div>
+                    <div class="con_4"></div>
+                    <div class="con_5"></div>
+                    <div class="con_6"></div>
+                    <div class="con_7"></div>
+                    <div class="con_8"></div>
+
+
+                </div>
+
+                <div class="shu"></div>
+                <div class="shu_1"></div>
+
+                <!-- 点击分享 -->
+                <div class="fxing"></div>
+                
+
+                <!-- 点击分享 出勤-->
+                <div class="fxing1"></div>
+                <!-- <img src="/themes/default/contest/img/a.jpg" alt="" class="img_3" > -->
+
+            </div>
+
+			<!-- 弹窗2 -->
+			<div class="tan2">
+				<div class="tan2_1">
+					
+
+					<img src="/mobile/templates/contest/img/tan2s.png" alt="" class="tan_imgs">
+				</div>
+				
+				<div class="yue">
+					
+				</div>
+
+			</div>
+
+
+			<!-- 弹窗3 -->
+			<div class="tan3">
+				<div class="tan3_1"></div>
+				<div class="tan3_2"></div>
+				
+			</div>
+
+			<!-- 悬浮提示 -->
+<!-- 			<a href="https://www.fotonmall.com/static/zr/activity/20180920/index.html"><div class="xf"></div></a> -->
+
+            <div class="fen">
+                
+                <div class="guan"></div>
+            </div>
+
+
+			<!-- 报名 -->
+			<div class="baom">
+					
+				<input type="text" placeholder="请输入姓名" class="cph1">
+
+
+				<input type="text" placeholder="请输入电话" class="cph2" onblur="ts()">
+
+				<input type="text" maxlength="7" placeholder="请输入车牌号" class="cph3">
+
+				<input type="text" placeholder="请输入车架号" class="cph4">
+
+				<select name="" id="" class="cph5">
+					
+					<option value="">请选择行业</option>
+					<option value="">冷链</option>
+					<option value="">快递</option>
+					<option value="">快运</option>
+					<option value="">危化品</option>
+					<option value="">煤炭</option>
+					<option value="">港口</option>
+					<option value="">轿运</option>
+					<option value="">普货</option>
+					<option value="">绿通</option>
+					<option value="">重载运输</option>
+					<option value="">城建渣土</option>
+					<option value="">矿用工程</option>
+					<option value="">公路运输重载</option>
+					<option value="">工程自卸</option>
+					<option value="">散装物料</option>
+					<option value="">搅拌</option>
+					<option value="">环卫</option>
+					<option value="">干线运输</option>
+
+				</select>
+
+				<select name="" id="" class="cph6">
+					
+					<option value="">请选择功能</option>
+					<option value="">牵引车</option>
+					<option value="">载货车</option>
+					<option value="">自卸车</option>
+
+				</select>
+
+				<select name="" id="" class="cph7">
+					
+					<option value="">请选择车型</option>
+					<option value="">欧曼EST</option>
+					<option value="">欧曼ETX</option>
+					<option value="">欧曼GTL</option>
+
+				</select>
+
+				<input type="text" placeholder="请输入企业名称" class="cph8">
+
+				<input type="text" placeholder="例：2005-8" class="cph9">
+
+				<input type="text" placeholder="例：北京-上海" class="cph10">
+
+				<input type="text" placeholder="例：35吨" class="cph11">
+
+				<input type="checkbox" name="x" value="男" class="cph12" checked="checked">
+
+				<div class="tijiao" onclick="tijiao()"></div>
+
+				<!-- 保密协议 -->
+				<div class="baomi">
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+        <!-- 脚部顶起来 -->
+        <div class="ding"></div>
+
+
+
+
+        <div class="navWrapper boxShadow" >
+        <div class="innerWrap">
+        <div class="footNav">
+        <a href="index.php" target="_parent" name="home"><img src="new0225/images/home.png">首页</a>
+        <a href="mall.php?act=index" name="truck" target="_parent"><img src="new0225/images/truck.png">商城</a>
+        <a href="http://bbs.aumantruck.com" target="_parent" name="community"><img src="new0225/images/community.png">社区                        </a>
+        <a href="service.php" target="_parent" name="server"><img src="new0225/images/server.png">服务</a>
+
+        <a href="user.php?act=membercenter" id="login1"> <img src="new0225/images/people.png">我</a>
+
+        </div>
+        </div>
+        </div>
+
+
+
+<script>
+
+    	$('html,body').addClass('ovfHiden');
+    	$('.containersss').addClass('ovfHiden');
+		// $("body").on("touchmove",function(e){
+		// 	e.preventDefault();
+		// });
+		// $(".containersss").on("touchmove",function(e){
+		// 	e.preventDefault();
+		// });
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+        // 全局链接
+        var lian = '';
+
+        var lia = '';
+        // 全局存放链接数组
+        var shuz = [];
+
+        var bl;
+
+        var bm;
+        // 定时器
+        var t;
+    function find(){
+
+		var inp_1 = $('.inp_1').val();
+        var token = $('#token').val();
+    	if (inp_1=='') {
+    		alert("请输入您的参赛电话!");
+    		return false;
+    	}
+
+        var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+
+        if (!reg.test(inp_1)) {
+            alert("请输入正确的手机号!");
+            return false;
+        }
+
+        $.ajax({
+
+            type: 'POST',
+            dataType:'json',
+            url: "/mobile/spike_contest.php?act=spacxsj",
+            data:{cph:inp_1},
+            beforeSend: function(request) { 
+                request.setRequestHeader("Authorization", token); 
+            },
+            success: function (res) {
+               if(res==123){
+                    alert('请授权');
+                    return;
+                }
+               
+                    $('.tan').show();
+                    $('.containerss').show();
+                    // // alert('车牌查询')
+                    $('.contai').find('.con_1').text(res.cph);
+                    $('.contai').find('.con_2').text(res.qymc);
+                    $('.contai').find('.con_3').text(res.bglyh);
+                    $('.contai').find('.con_4').text(res.xslc);
+                    $('.contai').find('.con_5').text(res.hy);
+                    $('.contai').find('.con_6').text(res.cx);
+                    $('.contai').find('.con_7').text(res.cxlx);
+                    $('.contai').find('.con_8').text(res.pjzz);
+                    $('.shu').text(res.yh+'%');
+                    $('.shu_1').text(res.cq+'%');
+                    // //点击分享出现二维码
+                    var id_1 = res.phone;
+                    var id_1_1 = res.yh;
+                    var id_1_2 = res.cq;
+                    //这个是全局的一个变量
+                    bl = res.yh;
+
+                    bm = res.cq;
+
+                    lian = 'http://www.aumantruck.com/mobile/spike_contest.php?act=spaxq&id='+id_1+'&fs='+id_1_1;
+                    lia = 'http://www.aumantruck.com/mobile/spike_contest.php?act=spaxq&id='+id_1+'&cq='+id_1_2;
+                    return false;
+               
+            }
+
+        });
+       
+    }
+ 
+
+
+
+
+    // 点击关闭
+    $('.close').click(function(){
+        $('.tan').hide();
+        $('.containerss').hide();
+        $('.bao').children().remove();
+        // $('.img_'+(m-1)).css('display','none');
+    })
+
+    // 点击分享
+    $('.fxing').click(function(){
+console.log(lian);
+// console.log(shuz);
+
+        $('.fen').show();
+        $('html,body').addClass('ovfHiden');
+        $('html,body').animate({scrollTop:0},'10');
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: 'Ta在SuperFleet超级车队驾驶员联赛打败了全国'+bl+'%的卡车司机！', // 分享标题
+                desc: 'Ta正在参与SuperFleet超级车队驾驶员联赛，快来为Ta加油,赢人气之星奖励！', // 分享描述
+                link: lian, // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: 'Ta在SuperFleet超级车队驾驶员联赛打败了全国'+bl+'%的卡车司机！', // 分享标题
+                link: lian, // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    })
+
+
+
+
+
+        // 点击分享
+    $('.fxing1').click(function(){
+console.log(lia);
+// console.log(shuz);
+
+        $('.fen').show();
+        $('html,body').addClass('ovfHiden');
+        $('html,body').animate({scrollTop:0},'10');
+
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: 'Ta在SuperFleet超级车队驾驶员联赛打败了全国'+bm+'%的卡车司机！', // 分享标题
+                desc: 'Ta正在参与SuperFleet超级车队驾驶员联赛，快来为Ta加油,赢人气之星奖励！', // 分享描述
+                link: lia, // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: 'Ta在SuperFleet超级车队驾驶员联赛打败了全国'+bm+'%的卡车司机！', // 分享标题
+                link: lia, // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/img/spfx.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+
+    })
+
+    $('.guan').click(function(){
+        $('.fen').hide();
+        $('html,body').removeClass('ovfHiden');
+    })
+
+
+    //抽奖
+	function chou(){
+
+         var token = $('#token').val();
+         var phone = $('#phone').val();
+
+         if(phone == ''){
+            alert('请输入授权使用电话');
+            return;
+         }
+         var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+
+        if (!reg.test(phone)) {
+            alert("请输入正确的手机号!");
+            return false;
+        }
+         $.ajax({
+
+            type: 'POST',
+            dataType:'json',
+            url: "/mobile/spike_contest.php?act=spacx",
+            data:{phone:phone},
+            beforeSend: function(request) { 
+                request.setRequestHeader("Authorization", token); 
+            },
+            success: function (res) {
+                if(res==22){
+                    alert('请授权');
+                    $("html,body").animate({scrollTop:1800}, 500);
+                    return;
+                }
+                if(res==33){
+                    alert('请授权');
+                    $("html,body").animate({scrollTop:1800}, 500);
+                    return;
+                }
+                if(res==44){
+                    alert('未中奖！再试试手气~');
+                    // $("html,body").animate({scrollTop:1800}, 500);
+                    return;
+                }
+                if(res==55){
+                    $('.chou2').show();
+                    return;
+                }
+                if(res == 1){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/1s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 2){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/2s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 3){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/3s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 4){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/4s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 5){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/5s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 6){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/6s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 7){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/7s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 8){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/8s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 9){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/9s.png');
+                    $('.zhong_1').css('display','block');
+                }
+                if(res == 10){
+                    $('.chou1').css('display','block');
+                    $('.zhong_1').attr('src','/mobile/templates/contest/img/10s.png');
+                    $('.zhong_1').css('display','block');
+                }
+            }
+        })
+
+	}
+
+	// 牵引车
+	function on_1(){
+        //不分类将隐藏所有分类的div,并且显示所有不分类的div
+        // $('.allss').hide();
+        // $('.alls').show();
+        //以下是不分类显示
+        $('.yi').show();
+        $('.er').hide();
+        $('.san').hide();
+
+        //以下是分类显示
+		// $('.p1').show();
+		// $('.p2').hide();
+		// $('.p3').hide();
+
+		$('.ul_2').find('li').eq(3).css('background-image','url(/mobile/templates/contest/img/an_4s.png)');
+		$('.ul_2').find('li').eq(4).css('background-image','url(/mobile/templates/contest/img/an_5.png)');
+		$('.ul_2').find('li').eq(5).css('background-image','url(/mobile/templates/contest/img/an_6.png)');
+        // $('.ul_2').find('li').eq(6).css('background-image','url(/mobile/templates/contest/img/an_7.png)');
+        // $('.ul_2').find('li').eq(7).css('background-image','url(/mobile/templates/contest/img/an_8.png)');
+        // $('.ul_2').find('li').eq(8).css('background-image','url(/mobile/templates/contest/img/an_9.png)');
+	}
+
+	// 载货车
+	function on_2(){
+        //不分类将隐藏所有分类的div,并且显示所有不分类的div
+        // $('.allss').hide();
+        // $('.alls').show();
+        //以下是不分类显示
+        $('.yi').hide();
+        $('.er').show();
+        $('.san').hide();
+
+        //以下是分类显示
+		// $('.p2').show();
+		// $('.p1').hide();
+		// $('.p3').hide();
+		$('.ul_2').find('li').eq(3).css('background-image','url(/mobile/templates/contest/img/an_4.png)');
+		$('.ul_2').find('li').eq(4).css('background-image','url(/mobile/templates/contest/img/an_5s.png)');
+		$('.ul_2').find('li').eq(5).css('background-image','url(/mobile/templates/contest/img/an_6.png)');
+        // $('.ul_2').find('li').eq(6).css('background-image','url(/mobile/templates/contest/img/an_7.png)');
+        // $('.ul_2').find('li').eq(7).css('background-image','url(/mobile/templates/contest/img/an_8.png)');
+        // $('.ul_2').find('li').eq(8).css('background-image','url(/mobile/templates/contest/img/an_9.png)');
+	}
+	// 自卸车
+	function on_3(){
+        //不分类将隐藏所有分类的div,并且显示所有不分类的div
+        // $('.allss').hide();
+        // $('.alls').show();
+        //以下是不分类显示
+        $('.yi').hide();
+        $('.er').hide();
+        $('.san').show();
+
+        //以下是分类显示
+		// $('.p2').hide();
+		// $('.p1').hide();
+		// $('.p3').show();
+		$('.ul_2').find('li').eq(3).css('background-image','url(/mobile/templates/contest/img/an_4.png)');
+		$('.ul_2').find('li').eq(4).css('background-image','url(/mobile/templates/contest/img/an_5.png)');
+		$('.ul_2').find('li').eq(5).css('background-image','url(/mobile/templates/contest/img/an_6s.png)');
+        // $('.ul_2').find('li').eq(6).css('background-image','url(/mobile/templates/contest/img/an_7.png)');
+        // $('.ul_2').find('li').eq(7).css('background-image','url(/mobile/templates/contest/img/an_8.png)');
+        // $('.ul_2').find('li').eq(8).css('background-image','url(/mobile/templates/contest/img/an_9.png)');
+	}
+
+	function on_4(){
+        //点击车型分类将会隐藏不分类的部分,并显示分类的所有div
+        $('.alls').hide();
+        $('.allss').show();
+
+		$('.p1_1').show();
+		$('.p1_1').siblings().hide(); 
+		$('.p2_1').show();
+		$('.p2_1').siblings().hide(); 
+		$('.p3_1').show();
+		$('.p3_1').siblings().hide(); 
+		$('.ul_2').find('li').eq(6).css('background-image','url(/themes/default/contest/img/an_7s.png)');
+		$('.ul_2').find('li').eq(7).css('background-image','url(/themes/default/contest/img/an_8.png)');
+		$('.ul_2').find('li').eq(8).css('background-image','url(/themes/default/contest/img/an_9.png)');
+	}
+
+	function on_5(){
+        //点击车型分类将会隐藏不分类的部分,并显示分类的所有div
+        $('.alls').hide();
+        $('.allss').show();
+
+		$('.p1_2').show();
+		$('.p1_2').siblings().hide(); 
+		$('.p2_2').show();
+		$('.p2_2').siblings().hide(); 
+		$('.p3_2').show();
+		$('.p3_2').siblings().hide();
+		$('.ul_2').find('li').eq(6).css('background-image','url(/themes/default/contest/img/an_7.png)');
+		$('.ul_2').find('li').eq(7).css('background-image','url(/themes/default/contest/img/an_8s.png)');
+		$('.ul_2').find('li').eq(8).css('background-image','url(/themes/default/contest/img/an_9.png)');
+	}
+
+	function on_6(){
+        //点击车型分类将会隐藏不分类的部分,并显示分类的所有div
+        $('.alls').hide();
+        $('.allss').show();
+
+		$('.p1_3').show();
+		$('.p1_3').siblings().hide(); 
+		$('.p2_3').show();
+		$('.p2_3').siblings().hide(); 
+		$('.p3_3').show();
+		$('.p3_3').siblings().hide();
+		$('.ul_2').find('li').eq(6).css('background-image','url(/themes/default/contest/img/an_7.png)');
+		$('.ul_2').find('li').eq(7).css('background-image','url(/themes/default/contest/img/an_8.png)');
+		$('.ul_2').find('li').eq(8).css('background-image','url(/themes/default/contest/img/an_9s.png)');
+	}
+
+
+
+    var aa  = 1;
+	// 提交
+	function tijiao(){
+
+        if(aa == 1){
+        var qd = $('#qd').val();
+        var token = $('#token').val();
+		var inp_1 = $('.cph1').val();
+    	var inp_2 = $('.cph2').val();
+    	var inp_3 = $('.cph3').val();
+    	var inp_4 = $('.cph4').val();
+    	var inp_5 = $(".cph5 option:selected").text();
+    	var inp_6 = $(".cph6 option:selected").text();
+    	var inp_7 = $(".cph7 option:selected").text();
+    	var inp_8 = $(".cph8").val();
+		var inp_9 = $(".cph9").val();
+		var inp_10 = $(".cph10").val();
+		var inp_11 = $(".cph11").val();
+
+
+    	console.log(inp_8,inp_9,inp_10,inp_11);
+
+    	if (inp_1 == '') {
+    		alert("请输入姓名");
+    		return false;
+    	}
+
+    	if (inp_2 == '') {
+    		alert("请输入电话");
+    		return false;
+    	}
+
+        var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+
+        if (!reg.test(inp_2)) {
+            alert("请输入正确的手机号!");
+            return false;
+        }
+
+    	if (inp_3 == '') {
+    		alert("请输入车牌号");
+    		return false;
+    	}
+
+    	if (inp_4 == '') {
+    		alert("请输入车架号");
+    		return false;
+    	}
+
+    	if (inp_5 == '请选择行业') {
+    		alert("请选择行业");
+    		return false;
+    	}
+
+    	if (inp_6 == '请选择功能') {
+    		alert("请选择功能");
+    		return false;
+    	}
+
+    	if (inp_7 == '请选择车型') {
+    		alert("请选择车型");
+    		return false;
+    	}
+
+
+		// 默认选中input 单选
+
+
+		if(!$('.cph12').attr("checked")){
+			
+			alert('请同意保密协议！')
+            return false;
+		}
+
+        $('.spinner').show();
+    	console.log(inp_1,inp_2,inp_3,inp_4,inp_5,inp_6,inp_7)
+
+    	$.ajax({
+
+			type: 'POST',
+
+			dataType:'json',
+
+			url: "/mobile/spike_contest.php?act=spainsert",
+
+			data:{cph1:inp_1,cph2:inp_2,cph3:inp_3,cph4:inp_4,cph5:inp_5,cph6:inp_6,cph7:inp_7,cph8:inp_8,cph9:inp_9,cph10:inp_10,cph11:inp_11,qd:qd},
+            beforeSend: function(request) { 
+                request.setRequestHeader("Authorization", token); 
+            }, 
+			success: function (res) {
+
+                $('.spinner').hide();
+                if(res['type']==1){
+                    $('.spinner').hide();
+                    alert('授权成功，去抽奖!刷新后可查看榜单。注：百公里油耗及出勤数据均为累积数据，若报名当日没有运营数据可能为0');
+                    $("html,body").animate({scrollTop:0}, 500);
+                    stopCount();
+                    // $("#phone").val(res['phone']);
+                    return;
+                }
+                if(res['type']==2){
+                    $('.spinner').hide();
+                    alert('车架号不正确');
+                    return;
+                }
+                if(res['type']==3){
+                    $('.spinner').hide();
+                    alert('授权成功，去抽奖!刷新后可查看榜单。注：百公里油耗及出勤数据均为累积数据，若报名当日没有运营数据可能为0');
+                    $("html,body").animate({scrollTop:0}, 500);
+                    stopCount();
+                    // $("#phone").val(res['phone']);
+                    
+                    return;
+                }
+                if(res['type']==4){
+                    $('.spinner').hide();
+                    alert('车架号已存在，每个车架号只能报名一次!');
+                    return;
+                }
+			},
+
+        })
+
+        }
+        aa=2;
+        jump(3);
+	}
+
+
+	$('.baomi').click(function(){
+		$('.containerss').show();
+		$('.tan2').show();
+        $('html,body').addClass('ovfHiden');
+        $('.containerss').addClass('ovfHiden');
+	})
+	$('.baomis').click(function(){
+		$('.containerss').show();
+		$('.tan2').show();
+	})
+
+	$('.yue').click(function(){
+		$('.containerss').hide();
+		$('.tan2').hide();
+        $('html,body').removeClass('ovfHiden');
+        $('.containerss').removeClass('ovfHiden');
+	})
+
+
+	// 点击报名 滚动
+	$(".tan3_2").click(function() {
+		$('html,body').removeClass('ovfHiden');
+		$('.containersss').removeClass('ovfHiden');
+		$("html,body").animate({scrollTop:1800}, 500);
+		$('.tan3').hide();
+		$('.containersss').hide();
+        tishi();
+	}); 
+	// 点击关闭
+	$(".tan3_1").click(function() {
+		$('html,body').removeClass('ovfHiden');
+		$('.containersss').removeClass('ovfHiden');
+		// $("html,body").animate({scrollTop:1800}, 500);
+		$('.tan3').hide();
+		$('.containersss').hide();
+		tishi();
+	}); 
+
+// 关闭提示报名后，30s后重新出来
+	function tishi(){
+
+		t=setTimeout(function(){
+
+			$('.tan3').show();
+			$('.containersss').show();
+
+		},120000);
+
+	}
+
+
+	// 报名清除定时器
+	function stopCount(){
+		clearTimeout(t)
+	}
+
+
+    //禁止点击多次
+    function jump(count) { 
+            window.setTimeout(function(){ 
+                count--; 
+                if(count > 0) { 
+                    jump(count); 
+                } else { 
+                   aa=1; 
+                } 
+            }, 2000); 
+        } 
+	function ts(){
+		alert('请输入福田e家注册电话号码，已确保奖励发放!');
+	}
+</script>
+</body>
+</html>

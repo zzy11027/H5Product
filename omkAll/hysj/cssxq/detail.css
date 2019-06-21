@@ -1,0 +1,27 @@
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .detail{
+  border: 1px solid #bfbfbf;
+}
+.detail .title{
+  text-align: center;
+  font-size: 24px;
+  color:#040404;
+  padding: 20px;
+}
+.time{
+  text-align: center;
+  font-size: 18px;
+  color: #383838;
+  border-bottom: 1px solid #bfbfbf;
+  padding: 15px;
+}
+.time span{
+  margin: 0 5px;
+}
+.con{
+  min-height: 400px;
+  padding: 20px;
+}

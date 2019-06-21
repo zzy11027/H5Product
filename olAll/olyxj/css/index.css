@@ -1,0 +1,855 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+/*-webkit-appearance: none;*/
+border-radius: 0;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000;
+    font-weight: bold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   font-weight: bold;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   font-weight: bold;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #000;
+   font-weight: bold;
+}
+/*音频开始*/
+audio{
+    opacity: 0;
+}
+#but{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 99999999999999;
+    background-image: url('../img/mus.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    /*animation: rotating 1.2s linear infinite;*/
+}
+@keyframes rotating{
+    0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(0.5turn);
+}
+100% {
+    transform: rotate(1turn);
+}
+}
+body{
+	width: 100%;
+	height:100%;
+	position: absolute;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+/*开屏页*/
+.index{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/kai.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+.dlong{
+    width: 100%;
+}
+.road{
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+.city{
+    width: 100%;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    z-index: 0;
+}
+.start{
+    width: 10.34375rem;
+    height: 5.71875rem;
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+}
+.rule{
+    width: 4.0625rem;
+    height: 1.03125rem;
+    position: absolute;
+    top: 93%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+}
+.gz{
+    width:18.0625rem;
+    height: 31.15625rem;
+    background-image: url('../img/gz.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 11;
+    top:13%;
+    left: 0%;
+    right: 0%;
+    margin:auto;
+    display: none;
+}
+.gz>.close{
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.gz>.start{
+    width: 13rem;
+    height: 4rem;
+    position: absolute;
+    top: 84%;
+    right: 0%;
+}
+/*选择灯笼*/
+.choice{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/choice.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    display: none;
+}
+.choice_road{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+}
+.left1{
+    width: 60%;
+    position: absolute;
+    top: 7%;
+}
+.left2{
+    width: 60%;
+    position: absolute;
+    top: 46%;
+}
+.right{
+    width: 40%;
+    position: absolute;
+    top: 25%;
+    right: 0%;
+}
+.d1{
+    width: 14%;
+    position: absolute;
+    top: 20%;
+    left: 13%;
+    z-index: 2;
+}
+.d2{
+    width: 13%;
+    position: absolute;
+    top: 17%;
+    left: 40%;
+    z-index: 2;
+}
+.d3{
+    width: 15%;
+    position: absolute;
+    top: 35%;
+    right: 17%;
+    z-index: 2;
+}
+.d4{
+    width: 14%;
+    position: absolute;
+    top: 61%;
+    left: 13%;
+    z-index: 2;
+}
+.d5{
+    width: 14%;
+    position: absolute;
+    top: 52%;
+    left: 41%;
+    z-index: 2;
+}
+.light1{
+    width: 37%;
+    position: absolute;
+    top: 18%;
+    left: 2%;
+    opacity: 0;
+    z-index: 3;
+}
+.light2{
+    width: 35%;
+    position: absolute;
+    top: 15%;
+    left: 28%;
+    opacity: 0;
+    z-index: 3;
+}
+.light3{
+    width: 34%;
+    position: absolute;
+    top: 33%;
+    left: 58%;
+    opacity: 0;
+    z-index: 3;
+}
+.light4{
+    width: 34%;
+    position: absolute;
+    top: 60%;
+    left: 2%;
+    opacity: 0;
+    z-index: 3;
+}
+.light5{
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 28%;
+    opacity: 0;
+    z-index: 3;
+}
+/*第一题*/
+.page{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/answer.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+}
+.answer_road{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.ti{
+    width: 93%;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    z-index: 1;
+}
+.one{
+    display: none;
+}
+.continue{
+    width: 28%;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.one>.inp{
+    width: 2.5rem;
+    height: 7.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0; 
+}
+.one>.inp_1{
+    position: absolute;
+    top: 63.7%;
+    left: 10%;
+}
+.one>.inp_2{   
+    position: absolute;
+    top: 64.5%;
+    left: 33%;
+}
+.one>.inp_3{   
+    position: absolute;
+    top: 63.5%;
+    left: 56%;
+}
+.one>.inp_4{   
+    position: absolute;
+    top: 63.5%;
+    left: 78%;
+}
+/*模拟对勾*/
+.one>.one_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 11%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one>.one_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 34%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one>.one_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 57%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.one>.one_dui>.one_dui_4{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 80%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+/*第二题*/
+.two{
+	display: none;
+}
+.two>.inp{
+    width: 2.5rem;
+    height: 7.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0; 
+}
+.two>.inp_1{
+    position: absolute;
+    top: 63.7%;
+    left: 10%;
+}
+.two>.inp_2{   
+    position: absolute;
+    top: 64.5%;
+    left: 33%;
+}
+.two>.inp_3{   
+    position: absolute;
+    top: 63.5%;
+    left: 56%;
+}
+.two>.inp_4{   
+    position: absolute;
+    top: 63.5%;
+    left: 78%;
+}
+/*模拟对勾*/
+.two>.two_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 11%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.two>.two_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 34%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.two>.two_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 57%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.two>.two_dui>.one_dui_4{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 80%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+/*第三题*/
+.three{
+    display: none;
+}
+.three>.inp{
+    width: 2.5rem;
+    height: 7.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0; 
+}
+.three>.inp_1{
+    position: absolute;
+    top: 63.7%;
+    left: 10%;
+}
+.three>.inp_2{   
+    position: absolute;
+    top: 64.5%;
+    left: 33%;
+}
+.three>.inp_3{   
+    position: absolute;
+    top: 63.5%;
+    left: 56%;
+}
+.three>.inp_4{   
+    position: absolute;
+    top: 63.5%;
+    left: 78%;
+}
+/*模拟对勾*/
+.three>.three_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 11%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.three>.three_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 34%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.three>.three_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 57%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.three>.three_dui>.one_dui_4{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 80%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+/*第四题*/
+.four{
+    display: none;
+}
+.four>.inp{
+    width: 2.5rem;
+    height: 7.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0; 
+}
+.four>.inp_1{
+    position: absolute;
+    top: 63.7%;
+    left: 10%;
+}
+.four>.inp_2{   
+    position: absolute;
+    top: 64.5%;
+    left: 33%;
+}
+.four>.inp_3{   
+    position: absolute;
+    top: 63.5%;
+    left: 56%;
+}
+.four>.inp_4{   
+    position: absolute;
+    top: 63.5%;
+    left: 78%;
+}
+/*模拟对勾*/
+.four>.four_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 11%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.four>.four_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 34%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.four>.four_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 57%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.four>.four_dui>.one_dui_4{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 80%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+
+/*第五题*/
+.five{
+    display: none;
+}
+.five>.inp{
+    width: 2.5rem;
+    height: 7.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0; 
+}
+.five>.inp_1{
+    position: absolute;
+    top: 63.7%;
+    left: 10%;
+}
+.five>.inp_2{   
+    position: absolute;
+    top: 64.5%;
+    left: 33%;
+}
+.five>.inp_3{   
+    position: absolute;
+    top: 63.5%;
+    left: 56%;
+}
+.five>.inp_4{   
+    position: absolute;
+    top: 63.5%;
+    left: 78%;
+}
+/*模拟对勾*/
+.five>.five_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 11%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.five>.five_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 34%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.five>.five_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 57%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.five>.five_dui>.one_dui_4{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 81%;
+    left: 80%;
+    z-index: 2;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+/*结果*/
+.end{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/choice.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    display: none;
+}
+.endimg{
+    width: 91%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+}
+
+
+
+/*中奖页*/
+.prize{
+    width: 18.0625rem;
+    height: 31.59375rem; 
+    background-image: url(../img/prize.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: 15%;
+    z-index: 999;
+    display: none;
+}
+.prize>p{
+    width: 4rem;
+    height: 2rem;
+    position: absolute;
+    top: 44%;
+    left: 27%;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.prize>.lq{
+    width: 10rem;
+    height: 4rem;
+    position: absolute;
+    top: 85%;
+    left: 22%;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.lz{
+    width: 18.0625rem;
+    height: 31.59375rem; 
+    background-image: url(../img/lz.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 999;
+    top: 15%;
+    display: none;
+}
+.tj{
+    width: 12rem;
+    height: 4.2rem;
+    position: absolute;
+    top: 84.4%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.inp1{
+    width: 12rem;
+    height: 2.2rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    top: 39%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: none;
+}
+.inp2{
+    width: 12rem;
+    height: 2.2rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    top: 49.4%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: none;
+}
+.close{
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: 999;
+}
+
+/*中奖页*/
+.noprize{
+    width: 18.0625rem;
+    height: 31.59375rem; 
+    background-image: url(../img/noprize.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: 15%;
+    z-index: 999;
+    display: none;
+}
+.again{
+    width: 10rem;
+    height: 4rem;
+    position: absolute;
+    top: 84%;
+    right: 23%;
+    z-index: 999;
+}

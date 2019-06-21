@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>汽车下乡选奥铃，惠民补贴千万家</title>
+	<link rel="stylesheet" href="/templates/ol/olFiveRites/css/index.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script src="/templates/ol/olFiveRites/js/jquery.min.js"></script>
+	<script src="/templates/ol/olFiveRites/js/select.js"></script>
+	<script>
+	    wx.config({
+	        debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+	        appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+	        timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+	        nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+	        signature: '{$arr.sha1}',// 必填，签名，见附
+	        jsApiList: [
+	            "onMenuShareTimeline",
+	            "onMenuShareAppMessage"
+	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+	    });
+	    wx.ready(function () {
+	        wx.onMenuShareAppMessage({
+	            title: '汽车下乡选奥铃，惠民补贴千万家', // 分享标题
+	            desc: '奥铃下乡送福利 巅峰钜惠享不停', // 分享描述
+	            link: 'http://al.douyar.cc/ol/ol_country.php', // 分享链接
+	            imgUrl: 'http://al.douyar.cc/templates/ol/olFiveRites/img/fenx.jpg', // 分享图标
+	            type: '', // 分享类型,music、video或link，不填默认为link
+	            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+	            success: function () {
+
+	            },
+	            cancel: function () {
+	                //alert("取消成功");
+	                // 用户取消分享后执行的回调函数
+	            }
+	        });
+	        wx.onMenuShareTimeline({
+	            title: '汽车下乡选奥铃，惠民补贴千万家', // 分享标题
+	            desc: '奥铃下乡送福利 巅峰钜惠享不停', // 分享描述
+	            link: 'http://al.douyar.cc/ol/ol_country.php', // 分享链接
+	            imgUrl: 'http://al.douyar.cc/templates/ol/olFiveRites/img/fenx.jpg', // 分享图标
+	            success: function () {
+
+	            },
+	            cancel: function () {
+	              //  alert("取消成功");
+	                // 用户取消分享后执行的回调函数
+	            }
+	        });
+	    })
+	</script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+<audio src="/templates/ol/olFiveRites/img/1.mp3" id="music1" class="audio"    preload="auto" >
+你的浏览器不支持video元素
+</audio>
+<div id="but" onclick="Play(this)"></div>
+<input type="hidden" value="{$openid}" id="openid">
+<input type="hidden" value="{$token}" id="token">
+<input type="hidden" value="{$id}" id="id">
+<div class="success" onclick="tj5s()"></div>
+<div class="zz"></div>
+<!-- 开屏页 -->
+<div class="index">
+	<div class="come">
+	</div>
+</div>
+<!-- 目录页 -->
+<div class="Catalog">
+	<div class="Repurchase" onclick="Repurchases()"></div>
+	<div class="buycar" onclick="buycars()"></div>
+	<div class="lucky" onclick="luckys()"></div>
+	<div class="jshop" onclick="jshops()"></div>
+	<div class="care" onclick="cares()"></div>
+</div>
+
+<!-- 换购礼 -->
+<div class="bj1">
+	<img src="/templates/ol/olFiveRites/img/Coupon.png" alt="" class="Coupon">
+	<div class="lz1">
+		<input type="text" class="name" placeholder="请输入您的姓名">
+		<input type="text" class="phone" placeholder="请输入您的电话">
+        <select name="province" id="province" class="province" onchange="getCitys()">
+        	<option value="100">请选择省份</option>
+	        <script type="text/javascript"> 
+	            for(var i=0;i<provinceArr.length;i++)    
+	            {
+	                document.write("<option value='"+i+"'>"+provinceArr[i]+"</option>");
+	                
+	            }
+	        </script>
+        </select>
+        <select name="city" id="city" class="city">
+			<option value="0">请选择城市</option>
+        </select>
+	</div>
+	<span class="returnss"></span>
+	<div class="tj1" onclick="tj1()"></div>
+	<img src="/templates/ol/olFiveRites/img/bottom.png" alt="" class="bottom"> 
+</div>
+
+<!-- 购车礼 -->
+<div class="bj2">
+	<div class="car1" onclick="car1s('奥铃CTS')"></div>
+	<div class="car2" onclick="car2s('奥铃TS')"></div>
+	<div class="car3" onclick="car3s('奥铃捷运')"></div>
+	<span class="returnsss"></span>
+	<img src="/templates/ol/olFiveRites/img/bottom.png" alt="" class="bottom">
+	<div class="bj2s">
+		<span class="returns"></span>
+		<img src="/templates/ol/olFiveRites/img/Coupon.png" alt="" class="Coupon">
+		<div class="lz1">
+			<input type="text" class="names" placeholder="请输入您的姓名">
+			<input type="text" class="phones" placeholder="请输入您的电话">
+	        <select name="provinces" id="provinces" class="provinces" onchange="getCity()">
+	        	<option value="100">请选择省份</option>
+		        <script type="text/javascript"> 
+		            for(var i=0;i<provinceArr.length;i++)    
+		            {
+		                document.write("<option value='"+i+"'>"+provinceArr[i]+"</option>");
+		                
+		            }
+		        </script>
+	        </select>
+	        <select name="citys" id="citys" class="citys">
+				<option value="0">请选择城市</option>
+	        </select>
+		</div>
+		<div class="tj1" onclick="tj2()"></div>
+	</div> 
+</div>
+
+<!-- 幸运礼 -->
+<div class="bj3">
+	<div class="egg1">
+	</div>
+	<div class="egg2">
+	</div>
+	<div class="egg3">
+	</div>
+	<div class="egg4">
+	</div>
+	<div class="egg5">
+	</div>
+	<div class="egg6">
+	</div>
+	<div>
+		<img src="/templates/ol/olFiveRites/img/egg.png" alt="" class="egg egg1s" onclick="egg(1)">
+		<img src="/templates/ol/olFiveRites/img/egg.png" alt="" class="egg egg2s" onclick="egg(2)">
+		<img src="/templates/ol/olFiveRites/img/egg.png" alt="" class="egg egg3s" onclick="egg(3)">
+		<img src="/templates/ol/olFiveRites/img/egg.png" alt="" class="egg egg4s" onclick="egg(4)">
+		<img src="/templates/ol/olFiveRites/img/egg.png" alt="" class="egg egg5s" onclick="egg(5)">
+		<img src="/templates/ol/olFiveRites/img/egg.png" alt="" class="egg egg6s" onclick="egg(6)">
+	</div>
+
+	<img src="/templates/ol/olFiveRites/img/Hammer.png" alt="" class="Hammer Hammer1s">
+	<img src="/templates/ol/olFiveRites/img/Hammer.png" alt="" class="Hammer Hammer2s">
+	<img src="/templates/ol/olFiveRites/img/Hammer.png" alt="" class="Hammer Hammer3s">
+	<img src="/templates/ol/olFiveRites/img/Hammer.png" alt="" class="Hammer Hammer4s">
+	<img src="/templates/ol/olFiveRites/img/Hammer.png" alt="" class="Hammer Hammer5s">
+	<img src="/templates/ol/olFiveRites/img/Hammer.png" alt="" class="Hammer Hammer6s">
+	<img src="/templates/ol/olFiveRites/img/bottom.png" alt="" class="bottom">
+
+	<div class="yes">
+		<p>xxxxxx</p>
+		<input type="text" class="name1" placeholder="请输入您的姓名">
+		<input type="text" class="phone1" placeholder="请输入您的电话">
+		<input type="text" class="shdz" placeholder="请输入您的收货地址">
+		<input type="text" class="vin" placeholder="请输入您的新购车vin码">
+		<select name="cx" id="cx" class="cx">
+			<option value="">请选择您前一辆车车型</option>
+			<option value="奥铃">奥铃</option>
+			<option value="欧马可">欧马可</option>
+			<option value="江淮">江淮</option>
+			<option value="江铃">江铃</option>
+			<option value="解放">解放</option>
+			<option value="东风">东风</option>
+			<option value="重汽">重汽</option>
+			<option value="其他">其他</option>
+			<option value="无">无</option>
+		</select>
+		<div class="upload1">点击上传购车发票<input id="upload"  class="" name="file" type="file"  accept="image/*" / ></div>
+		<div class="tj3" onclick="tj3()"></div>
+	</div>
+
+	<div class="yes-1">
+		<p>xxxxxx</p>
+		<input type="text" class="name2" placeholder="请输入您的姓名">
+		<input type="text" class="phone2" placeholder="请输入您的电话">
+		<input type="text" class="vin2" placeholder="请输入您的vin码">
+		<select name="cx" id="cx" class="cx2">
+			<option value="">请选择您前一辆车车型</option>
+			<option value="奥铃">奥铃</option>
+			<option value="欧马可">欧马可</option>
+			<option value="江淮">江淮</option>
+			<option value="江铃">江铃</option>
+			<option value="解放">解放</option>
+			<option value="东风">东风</option>
+			<option value="重汽">重汽</option>
+			<option value="其他">其他</option>
+			<option value="无">无</option>
+		</select>
+		<div class="upload2">点击上传购车发票<input id="upload2"  class="" name="file" type="file"  accept="image/*" / ></div>
+		<div class="tj3-1" onclick="tj3s()"></div>
+	</div>
+
+
+	<div class="no" onclick="tj5s()"></div>
+	<div class="yijing" onclick="tj5s()"></div>
+</div>
+
+<!-- 荐购礼 跳转外链 -->
+
+<!-- 会员礼 -->
+<div class="bj5">
+	<img src="/templates/ol/olFiveRites/img/zi.png" alt="" class="zi">
+	<img src="/templates/ol/olFiveRites/img/ka.png" alt="" class="ka">
+	<div class="tj4" onclick="tj4()"></div>
+	<div class="tj5" onclick="tj5s()"></div>
+	<div class="lq" onclick="tj5s()"></div>
+</div>
+<script src='/templates/ol/olFiveRites/js/cont.js'></script>
+<script src='/templates/ol/olFiveRites/js/lrz.all.bundle.js'></script>
+<script>
+$("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+// 移动端默认初始化时暂停播放，改为初始化页面时播放
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+
+        var audio = document.getElementsByClassName('audio')[0];
+            audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+
+            audio.play();
+
+        }, false);
+
+    }
+
+    audioAutoPlay();
+});
+
+
+// 音频播放
+function Play(e) {
+    var audio = document.getElementsByClassName('audio')[0];
+
+    console.log(audio.paused);
+
+    if(audio.paused){
+
+	   audio.play();
+
+        console.log('播放')
+        $("#but").css("-webkit-animation","rotating 1.5s 0s linear infinite");
+
+    }else{
+		$("#but").css("-webkit-animation","");
+	   audio.pause();
+
+        console.log('暂停')
+
+    }
+}
+</script>
+</body>
+</html>

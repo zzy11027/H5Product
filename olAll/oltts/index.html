@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>奥铃热销海报生成器</title>
+	<link rel="stylesheet" href="/templates/ol/oltts/css/index.css">
+	<script src="/templates/ol/oltts/js/jquery.min.js"></script>
+    <script src="/templates/ol/oltts/js/alloy_paper.js"></script>
+    <script src="/templates/ol/oltts/js/alloy_finger.js"></script>
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?b2afb48f2f20f0b584d5a33849cd0ec1";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+</head>
+<body>
+<div class="container"></div>
+	<!-- 上传页 -->
+	<div class="sevens">
+		<div class="lz">
+			<div>
+				<span>经销商:</span>
+				<input type="text" class="jxs" maxlength="12" placeholder="限12字以内">
+			</div>
+			<!-- <div>
+				<span>销售热线:</span>
+				<input type="text" class="xsrx" maxlength="15" placeholder="店铺电话">
+			</div> -->
+			<div>
+				<span>姓名:</span>
+				<input type="text" class="name" maxlength="3" placeholder="购车用户姓名">
+			</div>
+			<div>
+				<span>采购数量:</span>
+				<input type="text"  class="count">
+			</div>
+			<div>
+				<span>上传图片:</span>
+				<input id="uploadss"  class="upload1" name="file" type="file"  accept="image/*" />
+			</div>
+        	<div class="tj">提交</div>
+		</div>
+	</div>
+	<!-- 操作页面 -->
+    <div class="Synthesis">
+        <canvas id="c2" width="750" height="1334"></canvas>
+        <p class="p1"></p>
+        <p class="p2"></p>
+        <p class="p3"></p>
+        <div class="chuan" onclick="Synthesis()"></div>
+    </div>
+    <!-- 生成页面 -->
+    <div class="xz">
+        <img src="" alt="" id="screenShotImg">
+        <div class="draw"></div>
+		<img src="/templates/ol/oltt/img/logo4.png" alt="" class="logo4">
+    </div>
+    <!-- 老虎机 -->
+    <div class="tiger">
+		<div class="main" >
+			<div class="gun1">
+				<div class="alls">
+					<div class="main_1"></div>
+					<div class="main_2"></div>
+					<div class="main_3"></div>
+				</div>
+			</div>
+			<div class="gun2"></div>
+		</div>
+		<div id="start" onclick="prize()"></div>
+		<img src="/templates/ol/oltt/img/logo3.png" alt="" class="logo3">
+    </div>
+	<!-- 分享指示图 -->
+	<img src="/templates/ol/oltt/img/fenxiang.png" alt="" class="fenxiang">
+
+	<!-- 中奖页 -->
+	<div class="prize">
+		<p>10</p>
+		<input type="text" placeholder="请输入您的姓名" class="inp1" id="names">
+		<input type="text" placeholder="请输入您的电话" class="inp2" id="password">
+		<div class="mg" onclick="tj()"></div>
+	</div>
+
+	<!-- 未奖页 -->
+	<div class="no-prize"></div>
+	<script src='/templates/ol/oltts/js/cont.js'></script>
+	<script src='/templates/ol/oltts/js/lrz.all.bundle.js'></script>
+	<script>
+// 适配华为键盘影响布局的问题
+var h = window.innerHeight;
+var myInput = document.getElementById('names');
+var myInputs = document.getElementById('password');
+myInput.addEventListener('focus',handler,false);
+myInputs.addEventListener('focus',handlers,false);
+function handler(){
+	$('body').height(h);
+}
+
+function handlers(){
+    $('body').height(h);
+}
+
+
+
+	</script>
+</body>
+</html>

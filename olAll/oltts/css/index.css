@@ -1,0 +1,1153 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+/*-webkit-appearance: none;*/
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:100%;
+	position: absolute;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #AF0029;
+    font-weight: bold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #AF0029;
+   font-weight: bold;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #AF0029;
+   font-weight: bold;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #AF0029;
+   font-weight: bold;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    position: absolute;
+    z-index: 99999;
+}
+.zz{
+    width: 100%;
+    height: 41.6875rem;
+    background:rgba(0,0,0,0.75);
+    position:  absolute;
+    z-index: 1001;
+    display: none;  
+}
+.logo1{
+    width: 6.21875rem;
+    height: 1.90625rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.logo2{
+    width: 5.59375rem;
+    height: 0.59375rem;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+}
+.logo3{
+    width: 15.625rem;
+    height: 0.84375rem;
+    position: absolute;
+    bottom: 6%;
+    right: 0;
+    left: 0;
+    margin:auto;
+}
+.logo4{
+    width: 10.96875rem;
+    height: 0.71875rem;
+    position: absolute;
+    bottom: 2%;
+    right: 0;
+    left: 0;
+    margin:auto;
+}
+/*开屏页*/
+.index{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/kai.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	z-index: 1;
+}
+.start{
+    width: 7.9375rem;
+    height: 2.78125rem;
+    position: absolute;
+    top: 75%;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-image: url(../img/start.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.title{
+    width: 15.5625rem;
+    height: 6.78125rem;
+    position: absolute;
+    top: 13%;
+    left: 0%;
+    right: 0%;
+    margin:auto;
+    background-image: url(../img/title.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.xq{
+    width: 5.375rem;
+    height: 1.0rem;
+    position: absolute;
+    top: 32%;
+    left: 0%;
+    right: 0%;
+    margin:auto;
+    background-image: url(../img/xq.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+}
+.xqs{
+    width: 17.5625rem;
+    height: 17.28125rem;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    margin:auto;
+    background-image: url(../img/xqs.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    z-index: 999999999;
+}
+.xqs div{
+    width: 90%;
+    height: 10rem;
+    position: absolute;
+    top: 7%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    overflow: auto;
+}
+.xqs button{
+    width: 90%;
+    height: 2rem;
+    display: block;
+    position: absolute;
+    bottom: 12%;
+    left: 0;
+    right: 0;
+    margin:auto;
+    opacity: 0;
+}
+.xqs div img{
+    width: 90%;
+    margin:0 auto;
+}
+/*第一题*/
+.one{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/bj.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	display: none;
+}
+.bj1{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.inp{
+    width: 15.5rem;
+    height: 1.5rem;
+    line-height: 2.9rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    z-index: 10;
+    opacity: 0;  
+}
+.inp_1{
+    position: absolute;
+    top: 63%;
+    left: 15%;
+}
+.inp_2{   
+    position: absolute;
+    top: 70%;
+    left: 15%;
+}
+.inp_3{   
+    position: absolute;
+    top: 77%;
+    left: 15%;
+}
+
+/*模拟对勾*/
+.one_dui_1{
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 63%;
+    left: 7%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+ .one_dui_2{
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 70%;
+    left: 7%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+ .one_dui_3{
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 77%;
+    left: 7%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+.next{
+    width: 7.58125rem;
+    height: 2.25rem;
+    position: absolute;
+    top: 87%;
+    left: 32%;
+    z-index: 2;
+    /*background-image: url(../img/last.png);*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第二题*/
+.two{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/bj.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	display: none;
+}
+.bj2{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*模拟对勾*/
+.two>.two_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 67%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.two>.two_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 74%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.two>.two_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 83%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+/*第三题*/
+.three{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj3{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t3.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/*模拟对勾*/
+.three>.three_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 71%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.three>.three_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 79%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.three>.three_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 86%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.next_2{
+    width: 3.28125rem;
+    height: 1.25rem;
+    position: absolute;
+    top: 90%;
+    left: 43%;
+    z-index: 2;
+    /*background-image: url(../img/last.png);*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第四题*/
+.four{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj4{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t4.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/*模拟对勾*/
+.four>.four_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 70%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.four>.four_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 76%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.four>.four_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 82%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+
+
+/*第五题*/
+.five{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj5{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t5.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*模拟对勾*/
+.five>.five_dui>.one_dui_1{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 70%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.five>.five_dui>.one_dui_2{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 77%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.five>.five_dui>.one_dui_3{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 82%;
+    left: 4%;
+    background-image: url(../img/dui.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+
+/*第六题*/
+.six{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj6{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t6.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第七题*/
+.seven{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj7{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t7.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第八题*/
+.eight{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj8{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t8.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第九题*/
+.nine{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+.bj9{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t9.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第十题*/
+.ten{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+.bj10{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-image: url(../img/t10.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*第六题*/
+.sevens{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bj.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+.bj7s{
+    width: 20.9375rem;
+    height: 28.46875rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 12%;
+    background-image: url(../img/bj7.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.titles{
+    width: 18.75rem;
+    height: 8.6875rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+    top: 20%;
+}
+.texts{
+    width: 18.75rem;
+    height: 7.625rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+    top: 53%;
+}
+.pai{
+    width: 6.3125rem;
+    height: 2.75rem;
+    position: absolute;
+    top: 81%;
+    left: 17%;
+    background-image: url(../img/pai.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*#upload{
+    width: 6.3125rem;
+    height: 2.75rem;
+    position: absolute;
+    top: 81%;
+    left: 17%;
+    z-index: 999;
+    opacity: 0;
+}*/
+.upload{
+    width: 7.9375rem;
+    height: 2.78125rem;
+    position: absolute;
+    top: 81%;
+    right: 0;
+    left: 0;
+    margin:auto;
+    background-image: url(../img/upload.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.tishi{
+    width: 15.96875rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 92%;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+/*图片合成...........................................................................*/
+.xz{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/xz.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+/*.xz #screenShotImg{
+    width: 80%;
+    margin:0 auto;
+}*/
+.inps{
+    width: 14.1rem;
+    height: 6rem;
+    padding: 1.4rem 2rem 1.4rem 1.4rem;
+    position: absolute;
+    top: 14%;
+    left: 12%;
+    font-size: .75rem;
+    font-weight: bold;
+    color: #AF0029;
+    z-index: 9999;
+    background: none;
+    border: none;
+    outline: none;
+    line-height: 2rem;
+}
+/*保存的图片*/
+#screenShotImg{
+    width: 100%;
+    position: absolute;
+    /*top: 7%;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    z-index: 10;
+    display: none;
+}
+.draw{
+    width: 7.9375rem;
+    height: 2.78125rem;
+    background-image: url(../img/draw.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 5%;
+    z-index: 9999;
+}
+.eights{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bjlast.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;
+}
+#screenShotImgss{
+    width: 80%;
+    position: absolute;
+    top: 8%;
+    left: 0%;
+    right: 0%;
+    margin:auto;
+    z-index: 10;
+    display: none;
+}
+.fen{
+    width: 7.9375rem;
+    height: 2.78125rem;
+    background-image: url('../img/fen.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    z-index: 999;
+}
+.chou{
+    width: 7.9375rem;
+    height: 2.78125rem;
+    background-image: url('../img/chou.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    z-index: 999;
+}
+.fenxiang{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+}
+/*中奖页*/
+.prize{
+    width: 17.5625rem;
+    height: 17.28125rem;
+    background-image: url('../img/prize.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 9999;
+}
+.prize>p{
+    width: 5rem;
+    height: 2rem;
+    position: absolute;
+    top: 26%;
+    left: 32%;
+    text-align: center;
+    line-height: 2rem;
+    color: #AF0029;
+    font-size: 23px;
+    font-weight: bold;
+    z-index: 9999;
+}    
+.mg{
+    width: 21.96875rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 12%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+}
+.inp1{
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    top: 43%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: none;
+}
+.inp2{
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    top: 58%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: none;
+}
+.no-prize{
+    width: 17.5625rem;
+    height: 17.28125rem;
+    background-image: url('../img/no-prize.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 9999;
+}
+
+
+
+
+
+
+/*后续更改*/
+.Synthesis{
+    width: 100%;
+    height:100%;
+    background-image: url(../img/poster.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: none;
+}
+.Synthesis>.sel4{
+    width: 6.3125rem;
+    height: 2.75rem;
+    line-height: 2.65625rem;
+    text-align: center;
+    background-image: url(../img/again.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 76%;
+    left: 8%;
+    color: #000;
+    font-weight: bold;
+}
+.Synthesis>.sel5{
+    width: 6.3125rem;
+    height: 2.75rem;
+    line-height: 2.65625rem;
+    text-align: center;
+    background-image: url(../img/jixu.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 76%;
+    right: 30%;
+    color: #000;
+    font-weight: bold;
+}
+/*#upload{
+    position: absolute;
+    top: 67%;
+    left: 0;
+    right: 0;
+    width: 9.8rem;
+    height: 2.5rem;
+     opacity: 0; 
+    z-index: 99999;
+    margin: auto;
+}*/
+#c2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.tiger{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    background-image: url(../img/tiger.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.main{
+    width: 20.3125rem;
+    height: 19.4375rem;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    margin:auto;
+    background-image: url(../img/mains.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.gun1{
+    width: 15.0625rem;
+    height: 9.125rem;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-image: url(../img/gun1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 10;
+    overflow: hidden;
+}
+.gun2{
+    width: 15.0625rem;
+    height: 9.125rem;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-image: url(../img/gun2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 10;
+    overflow: hidden;
+}
+.alls{
+    width: 15.0625rem;
+    height: 5.5rem;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    overflow: hidden;
+}
+.main_1{
+    width: 3.5rem;
+    height: 35.0rem;
+    position: absolute;
+    left: 13%;
+    background-image: url(../img/main.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.main_2{
+    width: 3.5rem;
+    height: 35.0rem;
+    position: absolute;
+    left: 38%;
+    background-image: url(../img/main.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.main_3{
+    width: 3.5rem;
+    height: 35.0rem;
+    position: absolute;
+    left: 62%;
+    background-image: url(../img/main.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#start{
+    width: 12.3125rem;
+    height: 3.3rem;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 61%;
+    right: 0;
+}
+
+@-webkit-keyframes start {
+    0%,30% {opacity: 0;-webkit-transform: translate(0,10px);transform:scale(0.5);}
+    60% {opacity: 1;-webkit-transform: translate(0,0);}
+    100% {opacity: 0;-webkit-transform: translate(0,-8px);transform:scale(1.0);}
+}
+
+
+.lz{
+    width: 90%;
+    height: 25rem;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 99999999999999;
+    background: #fff;
+    border-radius: 10%;
+}
+.lz div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+.lz span{
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    text-align: right;
+    width: 30%;
+}
+.lz input{
+    width: 57%;
+    height: 2rem;
+    border: 1px solid #000;
+    outline: none;
+    margin-right: 1rem;
+}
+.lz select{
+    width: 57%;
+    height: 2rem;
+    border: 1px solid #000;
+    outline: none;
+    margin-right: 1rem;
+}
+.tj{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    display: block!important;
+    line-height: 4rem;
+    width: 50%;
+    border-radius: 20px;
+    background: #809089;
+    margin:0 auto;
+}
+.p1{
+    width: 100%;
+    height: 3.3rem;
+    position: absolute;
+    top: 14.5%;
+    right: 0;
+    left: 0;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.p2{
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    top: 17.5%;
+    left: 27%;
+    font-weight: bold;
+    color: #990000;
+    font-size: 15px;
+    display: none;
+}
+.p3{
+    width: 4.8rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 70.6%;
+    left: 22%;
+    font-weight: bold;
+    color: #fff;
+    font-size: 23px;
+    text-align: center;
+}
+.chuan{
+    width: 8.75rem;
+    height: 2.75rem;
+    background-image: url(../img/test.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    margin:auto;
+}

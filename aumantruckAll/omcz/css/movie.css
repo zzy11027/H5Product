@@ -1,0 +1,38 @@
+* {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{
+	width: 23.4375rem;
+	height:auto;
+/*	background-image: url(../img/supercar.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;*/
+}
+
+.swiper-container{
+	width: 23.4375rem;
+	height: 37.6875rem;
+}
+.sli_1{
+	width: 23.4375rem;
+	height:37.6875rem;
+	background-image: url(../img/movie.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.rut{
+    width: 6.125rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 4%;
+}
+.rut>a{
+	display: block;
+	width: 6.125rem;
+	height: 2.875rem;
+}
+.sli_2{
+	width: 23.4375rem;
+	height:37.6875rem;
+	background-image: url(../img/ewm.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>&nbsp&nbsp&nbsp&nbsp&nbsp卡车圈头条</title>
+  <link rel="stylesheet" href="templates/hysj/xcss/css.css">
+  <link rel="stylesheet" href="templates/hysj/xcss/jquery-ui.min.css">
+  <link rel="stylesheet" href="templates/hysj/xcss/index.css">
+  <script src="templates/hysj/xjs/jquery-1.10.2.min.js"></script>
+  <script src="templates/hysj/xjs/jquery-ui.min.js"></script>
+  <script src="templates/hysj/xjs/viewport.js"></script>
+  <script src="templates/hysj/xjs/my.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+         <script>
+        wx.config({
+            debug: false, //开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '上汽红岩叫板“谁扛撞 ”  引发热议', // 分享标题
+                desc: '红岩约“撞”掀起重卡撕逼大战？各方反应不一，该如何收场？', // 分享描述
+                link: 'http://kcq.kachetop.com', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/hysj/images/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '上汽红岩叫板“谁扛撞 ”  引发热议', // 分享标题
+                link: 'http://kcq.kachetop.com', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/hysj/images/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+  <script type="text/javascript">
+    $(function() {
+        $(window).resize(function() {
+            $('.wrapper').css('min-height', ($(window).height()));
+        }).resize();
+    });
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3ef7c02f46afc39946d7bb8e58f4a538";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- <script>
+    var textarea = document.getElementsByTagName('textarea')[0];
+    for (var i = 0; i < textarea.length; i++) {
+        textarea[i].oninput = function() {//注意，这里要用oninput,不要用onkeyup,否则iOS系统不支持
+            this.value = this.value.substring(0, 10);
+        }
+    }
+    </script> -->
+</head>
+<body style="width:100%;">
+  <div class="wrapper">
+  <img src="templates/hysj/ximages/bg_m2.png" alt="">
+
+  <!-- 事件开始 -->
+  <div class="shijian">
+    <p>3月22日，上汽依维柯红岩有限公司总经理楼建平公开邀请重卡整车企业就产品安全做一场公开对撞比赛。你认为会有人应战吗？上汽红岩在这之前，已经公开发起过两次邀请，并无人响应。楼建平热血战书已下，你认为哪家重卡品牌会应战？</p>
+  
+  </div>
+  <!-- 事件结束 -->
+
+  <!-- pk开始 -->
+  <div class="pk_1">
+    <p class="ok">投票人数：<span class="num1">{$hui.num}</span></p>
+    <p class="no">投票人数：<span class="num2">{$buhui.num}</span></p>
+    <div class="left"></div>
+    <div class="right"></div>
+    <a href="javascript:void(0)" class="btn1"></a>    
+    <a href="javascript:void(0)" class="btn2"></a>    
+  </div>
+  <!-- pk结束 -->
+
+  <div class="yz yz_0">
+    <ul>
+      <li>
+        <img src="templates/hysj/ximages/yiqi.png" alt="" class="img_left" >
+        <div class="num3" style="display:none">{$id3.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r1"><br>
+        <div class="img_center c1"></div>
+      <!--   <div style="    margin: 0px 34px;
+    margin-left: 20px;float: left;">12312</div> -->
+      </li>
+
+      <li>
+        <img src="templates/hysj/ximages/dongfeng.png" alt="" class="img_left" >
+        <div class="num4" style="display:none">{$id4.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r2">
+        <div class="img_center c2"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/zhongguo.png" alt="" class="img_left" >
+        <div class="num5" style="display:none">{$id5.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r3">
+        <div class="img_center c3"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/shanqi.png" alt="" class="img_left" >
+        <div class="num6" style="display:none">{$id6.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r4">
+        <div class="img_center c4"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/futian.png" alt="" class="img_left" >
+        <div class="num7" style="display:none">{$id7.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r5">
+        <div class="img_center c5"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/jianghuai.png" alt="" class="img_left" >
+        <div class="num8" style="display:none">{$id8.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r6">
+        <div class="img_center c6"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/dongfengliuqi.png" alt="" class="img_left" >
+        <div class="num9" style="display:none">{$id9.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r7">
+        <div class="img_center c7"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/dayun.png" alt="" class="img_left" >
+        <div class="num10" style="display:none">{$id10.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r8">
+        <div class="img_center c8"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/beiben.png" alt="" class="img_left" >
+        <div class="num11" style="display:none">{$id11.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r9">
+        <div class="img_center c9"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/jiangling.png" alt="" class="img_left" >
+        <div class="num12" style="display:none">{$id12.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r10">
+        <div class="img_center c10"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/lianhe.png" alt="" class="img_left" >
+        <div class="num13" style="display:none">{$id13.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r11">
+        <div class="img_center c11"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/sichuan.png" alt="" class="img_left" >
+        <div class="num14" style="display:none">{$id14.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r12">
+        <div class="img_center c12"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/hualing.png" alt="" class="img_left" >
+        <div class="num15" style="display:none">{$id15.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r13">
+        <div class="img_center c13"></div> 
+      </li>
+      <li>
+        <img src="templates/hysj/ximages/shangqi.png" alt="" class="img_left" >
+        <div class="num16" style="display:none">{$id29.num}</div>
+        <img src="templates/hysj/ximages/tp.png" alt="" class="img_right  r14">
+        <div class="img_center c14"></div> 
+      </li>
+    </ul>
+   </div>
+  
+   <!-- 事件跟踪开始 -->
+   <div class="gz">
+    <ul>
+
+
+     {foreach from=$qy item=list name=listone}
+    <li><a href="/hysj.php?step=m_xq&id={$list.id}" target="_blank" >
+      <img src="{$list.img}"   width="72px" height="72px" alt="">
+      <div class="msg">
+        <p class="con-top">{$list.openid}</p>
+        <span>浏览:{$list.num}</span><span>时间:{$list.adddate}</span>
+        <p class="con-bottom">{$list.phone}</p>
+      </div></a>
+    </li>
+    {/foreach}
+      </ul>
+    </div>
+    <!-- 事件跟踪结束 -->
+
+    <input type="text" id="ly" class="kf" >
+    <input type="hidden" id="ip" value="{$ip}">
+     <div class="tj_btn" onclick="tijiao()">提交</div>
+
+    <div class="qzgd">
+      <ul>
+          {foreach from=$pl item=list name=listone}
+        <li>
+          <img src="templates/hysj/mimages/tx.png" alt="">
+          <div>
+            <p class="title">
+                {$list.ly}
+              </p>
+          </div>
+        </li>
+          {/foreach}
+      </ul>
+    </div>
+  </div>  
+    <script>
+function tijiao(){
+  var ip = $("#ip").val();
+  var ly = $("#ly").val();
+  if(ly==""){
+    alert('请填写留言');
+    return;
+  }
+    $.ajax({
+        type: "POST",
+        url: "/hysj.php?step=ly",
+        data: {"ip":ip,"ly":ly},
+        dataType: 'json',
+        success: function (data) {
+            if(data==1){
+                alert("留言发表成功");
+                location.reload();
+                return;
+            }else if(data==2){
+               alert("您已经发表过留言了");
+               return;
+            }
+        
+        }
+    });
+}
+</script>
+</body>
+</html>

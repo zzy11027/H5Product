@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>高效物流卡车公开赛发赛手证了！</title>
+	<link rel="stylesheet" href="templates/2018live/css.css">
+
+     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	  <script>
+         
+           
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '其实今天没出车，我去参加卡车公开赛了！', // 分享标题
+                desc: '有了ta，我也是中国高效物流卡车公开赛的参赛选手了！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/2018racing.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/2018live/fx.png', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '其实今天没出车，我去参加卡车公开赛了', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/2018racing.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/2018live/fx.png', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?032d17283327d18ba7c2a48e9847cae9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+	<canvas id="can" style="width: 18.75rem;height: 18.75rem;margin:0 auto;display: none;">
+
+	</canvas>
+	
+	<div class="one">
+		<a class="a_1"></a>
+	</div>
+
+	<div id="imgBox">
+		<img src="" alt="" class="img_wrap";onerror="whenError(this)" onclick="return false">
+
+	<form name="form1">  
+		<select name="select_1" class="inp_1" id="input-12" onChange="getCity()" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+			<option value="0">行业</option>
+			<option value="0">快递快运</option>
+			<option value="1">危化品</option>
+			<option value="2">冷链</option>
+			<option value="3">轿运</option>
+
+		</select>
+		<select class="inp_2" name="city" onChange="getCitys()" id="cit" style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
+			<option value="0">地点</option>
+
+		</select>
+	</form>
+		<input type="text" class="inp_3" name="name" id="username" placeholder="请输入姓名">
+
+		<input id="upload"  class="upload1" name="upload" type="file"  accept="image/*" onchange="selectFileImage(this)"/>
+		<button onclick="test()" class="button_2">
+		
+		</button>
+
+	</div>
+
+
+
+
+    <div class="a_2">长按照片保存</div>
+	<!-- <a href="http://www.aumantruck.com/ceshi3/xzs.html" class="a_2">返回首页</a> -->
+	<script src='templates/2018live/jquery.min.js'></script>
+	<script src='templates/2018live/exif.js'></script>
+	<script src='templates/2018live/build.js'></script>
+	<script>
+
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+		$('.a_1').click(function(){
+			$('.one').hide();
+			$('#imgBox').show();
+		})
+
+
+		var city=[  
+            ["四川省","广东省","上海市","河南省","湖南省","陕西省","辽宁省","福建省","山东省","湖北省","北京市","重庆市",'宁夏回族自治区'],  
+            ["四川省","广东省","上海市","河南省","湖南省","陕西省","辽宁省","福建省","山东省","湖北省","北京市","重庆市",'宁夏回族自治区'],  
+            ["四川省","广东省","上海市","河南省","湖南省","陕西省","辽宁省","福建省","山东省","湖北省","北京市","重庆市",'宁夏回族自治区'],   
+            ["四川省","广东省","上海市","河南省","湖南省","陕西省","辽宁省","福建省","山东省","湖北省","北京市","重庆市",'宁夏回族自治区'] 
+        ];
+
+		 function getCity(){  
+            var sltCountry=document.getElementsByTagName('select')[0]; 
+            var sltCity=document.form1.city; 
+            var country=city[sltCountry.selectedIndex-1];
+            sltCity.length=1;
+            //通过for循环，将城市中的值填充到城市下拉框中  
+            for(var i=0;i<country.length;i++){  
+                sltCity[i+1]=new Option(country[i],country[i]);  
+            }  
+
+           
+        } 
+
+        function getCitys(){
+        	
+			var cit = $('#cit option:selected').text();
+			console.log(cit)
+            if(cit == '四川省'){
+              place = '四川站';  
+            }else if(cit == '广东省'){
+                place = '广东站';
+            }else if(cit == '上海市'){
+                place = '上海站';
+            }else if(cit == '河南省'){
+                place = '河南站';
+            }else if(cit == '湖南省'){
+                place = '湖南站';
+            }else if(cit == '陕西省'){
+                place = '陕西站';
+            }else if(cit == '辽宁省'){
+                place = '辽宁站';
+            }else if(cit == '福建省'){
+                place = '福建站';
+            }else if(cit == '山东省'){
+                place = '山东站';
+            }else if(cit == '湖北省'){
+                place = '湖北站';
+            }else if(cit == '北京市'){
+                place = '北京站';
+            }else if(cit == '重庆市'){
+                place = '重庆站';
+            }
+            else if(cit == '宁夏回族自治区'){
+                place = '宁夏站';
+            }
+			
+
+        }
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>模拟车展</title>
+	<link rel="stylesheet" href="/mobile2/templates/hxcx/css/reset.css">
+	<link rel="stylesheet" href="/mobile2/templates/hxcx/css/index.css">
+	<script src="/mobile2/templates/hxcx/js/jquery-1.8.3.min.js"></script>
+	<script src="/mobile2/templates/hxcx/js/cj.js"></script>
+</head>
+<body>
+<!-- 	<div class="cli" onclick="fun()">
+
+	</div>
+
+	<video src="./img/1.mp4" id="video_1" _type="video"
+       	webkit-playsinline="true" class="video" playsinline="true" x5-video-player-type="h5">
+    该浏览器不支持video属性
+	</video> -->
+
+	<button class="but_1" style="display: none;">拿近看看</button>
+
+	<div id="bigDiv">
+
+		<img id="first"  src="" alt="" /><img class="first" src="/mobile2/templates/hxcx/img/car.png" alt="" />
+		<img id="second"  src="" alt="" /><img class="first" src="/mobile2/templates/hxcx/img/car.png" alt="" />
+		<img id="third"  src="" alt="" /><img class="first" src="/mobile2/templates/hxcx/img/car.png" alt="" />
+		<div id="start"></div>
+		<div class="sm"></div>
+
+	</div>
+
+	<div class="gz">
+
+	</div>	
+
+
+	<div class="lq">
+
+
+	</div>
+	<script type="text/javascript">
+
+		//通过比例计算不同设备的根元素的字体大小
+
+		//1.定义参照设备的宽度
+		var w = 375;
+
+		//2.定义参照设备的默认根元素的字体大小
+		var f = 16;
+
+		//3.获取打开该文件的设备的视图宽度
+		var c = document.documentElement.clientWidth;
+		console.log(c)
+		//4.进行不同设备根元素字体大小的计算
+		var nf = c * f / w;
+		console.log(nf)
+
+		//5.设置打开该文件的设备的根元素的字体大小即可
+		document.documentElement.style.fontSize = nf + 'px';
+
+		// function fun(){
+  //       	$("video")[0].setAttribute("style","display:block");
+  //       	$("video").trigger("play"); 
+		// }
+
+
+		// var video1 = document.getElementById('video_1');
+
+		// video1.addEventListener("ended",function(){
+
+  //       	// window.location.href = "./video.html";
+
+  //       	// $("video")[0].setAttribute("style","display:none");
+  //       	// $("body").css("background","url(./img/2.jpg)");
+  //       	$('.cli').removeAttr('onclick')
+  //       	$('.but_1').fadeIn();
+  //   	});
+
+		// $('.but_1').click(function(){
+		// 	$('.but_1').hide();
+  //       	$("video")[0].setAttribute("style","display:none");
+		// 	$('#bigDiv').show();
+		// 	$('.cli').remove();
+		// })
+
+		// $('video').click(function(){
+
+		// 	window.location.href = "./video.html";
+
+		// })
+		
+		$('.sm').click(function(){
+			$('.gz').fadeIn();
+		})
+		$('.gz').click(function(){
+			$('.gz').fadeOut();
+		})
+	</script>
+</body>
+</html>

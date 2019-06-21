@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<title></title>
+<link rel="stylesheet" href="/templates/ol/ollz/index.css">
+<script src="/templates/ol/ollz/jquery.min.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wx1f4f34aec78c00d0', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '车牌大比拼，等你来PK', // 分享标题
+                desc: '最强车牌，等你来战', // 分享描述
+                link: 'http://al.douyar.cc/ol/bay.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olh5s/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '车牌大比拼，等你来PK', // 分享标题
+                desc: '最强车牌，等你来战', // 分享描述
+                link: 'http://al.douyar.cc/ol/bay.php', // 分享链接
+                imgUrl: 'http://omkds.douyar.cc/templates/ol/olh5s/img/fx.jpg', // 分享图标
+                success: function () {
+
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?1f2abff3459a014d9d922e70363a73b5";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+	<div style="position: relative;">
+        <input type="hidden" id="openid" value="{$openid}">
+		<img src="/templates/ol/ollz/1.png" alt="" class="one_img">
+		<img src="/templates/ol/ollz/ewm.png" alt="" class="two_img">
+		<input type="text" class="name">
+		<input type="text" class="phone">
+		<div class="tj" onclick="tj()"></div>
+	</div>
+</body>
+<script>
+var aa = 1;
+var w = 375;
+var f = 16;
+var c = document.documentElement.clientWidth;
+var nf = c * f / w;
+document.documentElement.style.fontSize = nf + 'px';
+
+
+function tj(){
+	var name =  $('.name').val();
+    var phone =  $('.phone').val();
+    var openid = $("#openid").val();
+
+    if(name == ''){
+        alert("请输入您的姓名!");
+        return false;
+    }
+    if(phone == ''){
+        alert("请输入您的电话!");
+        return false;
+    }
+    var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+    if (!reg.test(phone)) {
+        alert("请输入正确的手机号!");
+        return false;
+    }
+    $.ajax({
+        type: 'POST',
+        dataType:'json',
+        url : '/ol/ol_lz.php?step=info',
+        data: {
+            name:name,
+            phone:phone,
+            openid:openid
+        },
+        success: function(data){
+			alert('留资成功');
+            location.reload();
+        }
+    });	
+}
+</script>
+
+</html>

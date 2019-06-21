@@ -1,0 +1,324 @@
+body{
+    margin: 0;
+}
+.bg{
+    width: 100%;
+    height: 2812px;
+    background: url("../images/m.jpg") no-repeat center;
+    background-size: 100% 100%;
+    margin-bottom:90px;
+    position: absolute;
+    top: 0;
+}
+
+#rule_btn{
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    right: 0px;
+    top: 300px;
+}
+
+#rule{
+        position: fixed;
+    display: none;
+    z-index: 99999990;
+    background: url(../images/rule.png) no-repeat center;
+    width: 399px;
+    height: 675px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -200px;
+    top: 100px;
+}
+
+#gg_btn{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    top: 750px;
+}
+
+#ds_btn{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    top: 1183px;
+}
+
+#enter{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 2613px;
+    right: 73px;
+}
+
+#box-bg{
+    position: fixed;
+    background-color: black;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 99999989;
+    top: 0px;
+    display: none;
+    left:0;
+}
+
+
+
+#td_box{
+    position: fixed;
+    display: none; 
+    z-index: 99999990;
+    background: url(../images/td_box.png) no-repeat center;
+    width: 388px;
+    height: 640px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -194px;
+    top: 100px;
+}
+
+#td_yes{
+        position: fixed;
+    display: none;
+    z-index: 99999990;
+    background: url(../images/td_yes.png) no-repeat center;
+    width: 388px;
+    height: 517px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -194px;
+    top: 100px;
+}
+
+#td_no{
+    position: fixed;
+    display: none;
+    z-index: 99999990;
+    background: url(../images/td_no.png) no-repeat center;
+    width: 388px;
+    height: 517px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -194px;
+    top: 100px;
+}
+
+#td_no2{
+    position: fixed;
+    display: none;
+    z-index: 99999990;
+    background: url(../images/td_no2.png) no-repeat center;
+    width: 388px;
+    height: 517px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -194px;
+    top: 100px;
+}
+
+.close{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    right: 0px;
+}
+
+.close_btn{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    bottom: 24px;
+    left: 50%;
+    margin-left: -115px;
+}
+
+.quzhifu{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -115px;
+}
+
+#cnum{
+    position: absolute;
+    width: 85px;
+    height: 40px;
+    left: 106px;
+    top: 216px;
+    background: transparent;
+    color: #FFFB38;
+    text-align: center;
+    line-height: 40px;
+    font-size: 35px;
+}
+
+#td_name{
+    position: absolute;
+    width: 241px;
+    height: 44px;
+    top: 316px;
+    left: 97px;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+}
+#td_tel{
+    position: absolute;
+    width: 241px;
+    height: 44px;
+    top: 366px;
+    left: 97px;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+}
+#td_car{
+    position: absolute;
+    width: 241px;
+    height: 44px;
+    top: 420px;
+    left: 97px;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+}
+#tdxy{
+        position: absolute;
+    min-width: 241px;
+    min-height: 83px;
+    max-width: 241px;
+    max-height: 83px;
+    top: 473px;
+    left: 97px;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+}
+#td_tijiao{
+    position: absolute;
+    top: 566px;
+    width: 200px;
+    height: 60px;
+    left: 50%;
+    margin-left: -110px;
+}
+#wg_box{
+        position: fixed;
+    display: none;
+    z-index: 99999990;
+    background: url(../images/wg_box.png) no-repeat center;
+    width: 392px;
+    height: 675px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -196px;
+    top: 50px;
+}
+
+#wg_no{
+        position: fixed;
+    display: none;
+    z-index: 99999990;
+    background: url(../images/wg_no.png) no-repeat center;
+    width: 392px;
+    height: 516px;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -196px;
+    top: 100px;
+}
+
+#wg_name{
+    position: absolute;
+    width: 240px;
+    height: 45px;
+    top: 304px;
+    left: 107px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+#wg_tel{
+    position: absolute;
+    width: 240px;
+    height: 45px;
+    top: 358px;
+    left: 107px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+#selProvinces_1{
+        position: absolute;
+    width: 110px;
+    height: 45px;
+    top: 411px;
+    left: 106px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+#selCities_1{
+        position: absolute;
+    width: 115px;
+    height: 45px;
+    top: 411px;
+    left: 243px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+#apply_field6_1{
+        position: absolute;
+    width: 251px;
+    height: 45px;
+    top: 463px;
+    left: 106px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+#num{
+        position: absolute;
+    width: 110px;
+    height: 45px;
+    top: 515px;
+    left: 106px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+
+#carNum{
+        position: absolute;
+    width: 80px;
+    height: 45px;
+    top: 515px;
+    left: 273px;
+    border: none;
+    /*border-radius: 5px;*/
+    font-size: 26px;
+}
+
+#wg_tijiao{
+        position: absolute;
+    top: 607px;
+    width: 200px;
+    height: 50px;
+    left: 50%;
+    margin-left: -109px;
+}
+
+.index_body {
+    overflow-y: hidden;/*为了兼容普通PC的浏览器*/
+    height: 100%;
+    position: fixed;  
+}

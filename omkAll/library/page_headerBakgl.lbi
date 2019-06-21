@@ -1,0 +1,12 @@
+<!--登录注册部分头部公用文件-->
+<div class="top_nav">
+    <div class="logoleft">
+        <a onclick='history.go(-1)'><img src="http://test.igreatway.net/mobile/images/leftarrow.png"></a>
+    </div>
+    <div class="logo wenZi">
+        <div class="center">{$title}</div>
+    </div>
+    <div class="rentou">
+        <a href='./index.php'><img src="http://test.igreatway.net/mobile/images/home.png"></a>
+    </div>
+</div>

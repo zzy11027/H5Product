@@ -1,0 +1,365 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+body{margin:0;position:absolute;height:100%;max-width:720px;width:100%;font-family:Helvetica, Microsoft Yahei, sans-serif;}
+.main{display:none;position:relative;width:100%;height:100%;overflow: hidden;}
+img{width:100%;}
+section{position:absolute;width:100%;height:100%;font-size:0;}
+section div{position:absolute;}
+a{font-size: 7vw;color: #fff;text-decoration: none;position: absolute;}
+.p1{background: url(../img/kai.png)top center no-repeat;background-size: 100% 100%;}
+
+
+
+
+.p1-btn-start{
+    opacity: 0;
+    -webkit-animation: fadeIn 1s .5s forwards,pulse .5s infinite;
+    width: 8.6875rem;
+    height: 7.0rem;
+    position: absolute;
+    top: 76%;
+    left: 31%;
+}
+/*规则按钮*/
+.gui{
+    opacity: 0;
+    -webkit-animation: fadeIn .5s 1.5s forwards,pulse .5s infinite;
+    width: 7.65625rem;
+    height: 2.21875rem;
+    background-image: url(../img/gui.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 7%;
+    left: 64%;
+}
+/*规则弹窗*/
+.gz{
+    width: 100%;
+    height: 41.6875rem;
+    background-image: url('../img/gz.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
+    z-index: 10;
+    display: none;
+}
+/*关闭按钮*/
+.close{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 16%;
+    right: 3%;
+}
+/*分数和时间*/
+/*时间*/
+.time{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 18.5%;
+    right: 4%;
+    color: #fff;
+}
+/*分数和时间*/
+.fen{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 19%;
+    left: 6%;
+    color: #fff;
+}
+.p1s{
+    line-height: 1rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 17px;
+    position: absolute;
+    width: 1.9rem;
+    text-align: center;
+}
+.p2s{
+    line-height: 1rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 17px;
+    position: absolute;
+    width: 1.9rem;
+    text-align: center;
+}
+.p1-role{display:none;width:100%;height:100%;background:url(../img/p1-role-bg.jpg) top left no-repeat;background-size:cover;-webkit-animation:bounceIn .5s forwards;}
+.p1-role-box{top:28%;left:10%;width:80%;}
+.p1-role-close{top:-4%;right:-5%;width:15%;}
+
+.p2{display:none;background:url(../img/paodao.png) top center no-repeat;background-size:cover;}
+.p2-go{top:0;left:0;z-index:6;width:100%;height:100%;background:url() rgba(0,0,0,0.5) bottom center no-repeat;background-size:50%;}
+.p2-top{z-index:5;}
+.p2-left{display:none;left:0;z-index:1;width:20%;height:100%;}
+.p2-right{display:none;right:0;z-index:1;width:20%;height:100%;}
+.item{left:20%;width:60%;opacity:0;}
+.item1{-webkit-animation:fadeIn 0.5s forwards,down 5s linear infinite;}
+.item2{-webkit-animation:fadeIn 0.5s 1.5s forwards,down 5s 1.5s linear infinite;}
+.item3{-webkit-animation:fadeIn 0.5s 3s forwards,down 5s 3s linear infinite;}
+@-webkit-keyframes down{0%{top:0;}100%{top:100%;}}
+.p2-center{z-index:2;width:100%;height:100%;background:url() center repeat-y;background-size:contain;}
+.btn-left{    
+	bottom: 8%;
+	left: -28%;
+	z-index: 5;
+	width: 25%;
+}
+.btn-right{    
+	right: -26%;
+	bottom: 7%;
+	z-index: 5;
+	width: 25%;
+}
+.p2-score{top:18%;width:17%;color:#F3F200;text-align:center;font-weight:700;font-size:8vw;-webkit-text-stroke: #3e2217 1px;}
+.p2-car{top:85%;left:44%;width:2.75rem;height:7.1875rem;background-image:url('../img/p2-car.png');background-size: 100% 100%;background-repeat: no-repeat;height: 5rem}
+.baohu{top:80%;left:0;display:none;width:22%;}
+.obj{top:0%;width:20%;}
+.p2-over{display: none;width:100%;height: 100%; background: rgba(0, 0, 0, 0.7);z-index: 9;overflow: auto;}
+.p2-resbox{width:80%;left:10%;top: 7%; opacity:0;-webkit-animation: bounceIn 1s forwards;}
+.p2-res-score{top: 31%;width:50%;left:25%;color: #f40c0c;text-align:center;font-weight:700;font-size: 12vw;-webkit-text-stroke: #3e2217 1px;}
+.p2-txt{position: absolute;font-size:4vw;width: 43%;top: 67.8%;left: 17%;height: 5%;background: none;border: none;outline: none;}
+.p2-btn-submit{width: 23%;height: 7%;left: 63%;top: 67%;}
+.p2-btn-replay{width: 20%;height: 13%;left: 21%;top: 80%;}
+.p2-btn-rank{width: 20%;height: 13%;left: 59%;top: 80%;}
+
+/*第三页*/
+.p3{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: none;
+}
+
+/*成功运送*/
+.form{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/form.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+.g{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 23%;
+    right: 3%; 
+}
+/*运送失败分数*/
+.form>.lost-fen{
+    width: 9.5rem;
+    height: 3.5rem;
+    line-height: 4.5rem;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 30%;
+}
+.form>.lost-cy{
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    position: absolute;
+    top: 53%;
+    left: 49%;
+}
+
+/*抽奖按钮*/
+.cj{
+    width: 6.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 72%;
+    left: 16%;
+}
+/*再来一次*/
+.cj1{
+    display: block;
+    width: 6.25rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 72%;
+    left: 55%;
+}
+/*奖项*/
+.pri_1{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/pri_1.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+/*姓名电话*/
+.inp_1{
+    width: 10rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 57.5%;
+    left: 41%;
+    background: none;
+    outline: none;
+    border: none;
+}
+.inp_2{
+    width: 10rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 62.3%;
+    left: 41%;
+    background: none;
+    outline: none;
+    border: none;
+}
+.inp_3{
+    width: 10rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 67%;
+    left: 41%;
+    background: none;
+    outline: none;
+    border: none;
+}
+/*点击分享*/
+.dian{
+    width: 7.5rem;
+    height: 2.125rem;
+    position: absolute;
+    top: 73%;
+    left: 33%;
+}
+.guanbi1{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 23%;
+    right: 3%;
+}
+.pri_2{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/pri_2.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+.pri_3{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/pri_3.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+.pri_4{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/pri_4.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+.dians{
+    width: 7.5rem;
+    height: 2.125rem;
+    position: absolute;
+    top: 73%;
+    left: 33%;
+}
+.guanbi1s{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 23%;
+    right: 3%;
+}
+.pri_5{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/success.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.guanbi2{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 23%;
+    right: 3%;
+}
+.guanbi3{
+    width: 7.5rem;
+    height: 2.125rem;
+    position: absolute;
+    top: 73%;
+    left: 33%;
+}
+.p4{
+background: url(../img/p4.png)top center no-repeat;background-size: 100% 100%;display: none;
+}
+
+/*恭喜获得*/
+.gx{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/gx.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.gx>.lost-fen{
+    width: 9.5rem;
+    height: 3.5rem;
+    line-height: 4.5rem;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    position: absolute;
+    top: 43%;
+    left: 30%;
+}
+.gx>.lost-cy{
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    position: absolute;
+    top: 51%;
+    left: 49%;
+}
+/*分享弹窗*/
+.fenxiang{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fenxiang.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.guan_fx{
+    width: 11rem;
+    height: 5rem;
+    position: absolute;
+    top: 52%;
+    left: 28%;
+}

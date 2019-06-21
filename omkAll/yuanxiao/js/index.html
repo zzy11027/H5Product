@@ -1,0 +1,716 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="关键词, 排名, 推广, SEO优化">
+<meta name="description" content="介绍相关信息，最新内容和动态！尽情期待.....">
+<title>奇瑞四月促销 预约试驾赢取大奖</title>
+<link rel="shortcut icon" href="http://mxlogo.com/favicon.ico">
+<link rel="stylesheet" href="templates/yuanxiao/css/bootstrap.css">
+<link rel="stylesheet" href="templates/test/css/Kingstyle.css">
+<link rel="stylesheet" href="templates/yuanxiao/css/font-awesome.min.css">
+<script src="templates/yuanxiao/js/jquery-3.2.1.js"></script> 
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+         <script>
+        wx.config({
+            debug: false, //开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，
+            appId: 'wx20f3f0b302417dcd', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '奇瑞四月促销 预约试驾赢取大奖', // 分享标题
+                desc: '', // 分享描述
+                link: 'http://kcq.kachetop.com/hysj.php?step=qr', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/yuanxiao/img/fx.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                   // alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '奇瑞四月促销 预约试驾赢取大奖', // 分享标题
+                link: 'http://kcq.kachetop.com/hysj.php?step=qr', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile2/templates/yuanxiao/img/fx.jpg', // 分享图标
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                   // alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+
+<body class="uicss-cn">
+<div class="carTit-1" id="vm_app"> 
+  <!--分割线______________________________-->
+  <div class="clear"></div>
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8"><img src="templates/yuanxiao/img/tit-1.png" class="img-responsive" alt=""></div>
+  <div class="col-xs-2"></div>
+  <!--分割线______________________________-->
+  <div class="col-xs-12">
+    <p class="pad-1">成功提交预约试驾信息，即有机会获得一次抽奖机会。获奖名单会在活动结束后统一公布，奖品以实物为准，自活动结束之日起2个月内已邮寄方式统一发放。</p>
+  </div>
+  <!--分割线______________________________-->
+  <div class="col-xs-12">
+    <div class="col-xs-6 prize">
+      <h3>奖品设置：</h3>
+      <p>一等奖:1名 ( MacBook 12”  )</p>
+      <p>二等奖:2名 ( OPPO R15手机）</p>
+      <p>三等奖:6名 ( 500元京东卡）</p>
+    </div>
+    <div class="col-xs-6"> <img src="templates/yuanxiao/img/prize.png" alt="" class="img-responsive" style="padding: 0"> </div>
+  </div>
+  <!--分割线______________________________-->
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8"><img src="templates/yuanxiao/img/tit-2.png" class="img-responsive" alt=""></div>
+  <div class="col-xs-2"></div>
+  <div class="col-lg-12 order">
+    <ul>
+      <li> <span class="col-xs-4">*意向车型</span>
+        <select class="form-control-static col-xs-8" id="frons" name="account" v-model="input.car">
+           <option value="rh5x">瑞虎5x</option>
+          <option value="rh7">瑞虎7</option>
+        </select>
+      </li>
+      <li> <span class="col-xs-4 " >*姓名</span>
+        <input type="text" class="col-xs-8" id="name">
+      </li>
+      <li> <span class="col-xs-4 " >*手机</span>
+        <input type="text" class="col-xs-8" id="phone">
+      </li>
+      <li> <span class="col-xs-4 " >*省份</span>
+        <select class="form-control-static col-xs-8" id="shengf" name="account" v-model="input.prov">
+          <option v-for="p in provArr" :value="p">{{ p }}</option>
+        </select>
+      </li>
+      <li> <span class="col-xs-4 " >*城市</span>
+        <select class="form-control-static col-xs-8" id="chengs" name="account" v-model="input.city">
+          <option v-for="p in cityArr" :value="p">{{ p }}</option>
+        </select>
+      </li>
+      <li> <span class="col-xs-4 " >*经销商</span>
+        <select class="form-control-static col-xs-8" id="jinxs" name="account" v-model="input.shop">
+          <option v-for="p in shopArr" :value="p">{{ p }}</option>
+        </select>
+      </li>
+    </ul>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+      <input type="submit" value="确认提交" class="confirm" id="aa">
+    </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-12 order-text">
+      <p>您的个人资料有可能会提交至奇瑞厂商授权经销商或一点资讯客服，与您进一步沟通试驾、购车等事宜。</p>
+      <p>＊最终解释权归奇瑞所有＊</p>
+    </div>
+  </div>
+</div>
+<!--分割线______________________________-->
+<div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/tit-3.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="strategy">
+  <div class="strategy-1">
+    <div class="col-xs-7"><img src="templates/yuanxiao/img/strategy1.png" alt=""></div>
+    <div class="col-xs-5">
+      <h4>瑞虎5x</h4>
+      <p>3年保养不花钱，</p>
+      <p>5年车载流量免费用</p>
+    </div>
+  </div>
+  <div class="strategy-2">
+    <div class="col-xs-5">
+      <h4>瑞虎7</h4>
+      <p>五星安全，</p>
+      <p>全系最高尊享10000元钜惠</p>
+    </div>
+    <div class="col-xs-7"><img src="templates/yuanxiao/img/strategy2.png" alt=""></div>
+  </div>
+</div>
+<!--分割线______________________________-->
+<div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/tit-4.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-12 carimg">
+  <button type="button" class="active">瑞虎5x</button>
+  <button type="button">瑞虎7</button>
+  <div class="col-xs-12 carimg_5">
+    <ul>
+      <div id="banner1" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item"> <img src="templates/yuanxiao/img/5x/0.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/5x/1.png" alt="..."> </div>
+          <div class="item active"> <img src="templates/yuanxiao/img/5x/2.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/5x/3.png" alt="..."> </div>
+        </div>
+        <a class="left carousel-control" href="#banner1" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner1" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+    <ul style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/7/0.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/1.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/2.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/3.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/4.jpg" alt="..."> </div>
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/title123/1.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-12 carimg">
+  <button class="butt_1" type="button" class="active">瑞虎5x</button>
+  <button class="butt_2" type="button">瑞虎7</button>
+  <div class="col-xs-12 carimg_5">
+
+    <ul class="one">
+      <div id="banner1" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc2.png" alt="..."> </div>
+          <div class="item active"> <img src="templates/yuanxiao/img/rh5x/lc/lc3.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc4.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc5.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc6.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc7.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc8.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lc/lc9.jpg" alt="..."> </div>
+        </div>
+        <a class="left carousel-control" href="#banner1" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner1" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+    <ul class="two" style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/rh5x/lx/lx1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lx/lx2.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lx/lx3.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lx/lx4.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lx/lx5.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lx/lx6.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lx/lx7.png" alt="..."> </div>
+
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+
+    <ul class="three" style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/rh5x/lh/lh1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lh/lh2.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lh/lh3.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lh/lh4.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh5x/lh/lh5.png" alt="..."> </div>
+
+
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+
+    <ul class="four" style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/rh7ld/ck/ck1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/ck/ck2.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/ck/ck3.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/ck/ck4.png" alt="..."> </div>
+
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+
+    <ul class="five" style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/rh7ld/kj/kj1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/kj/kj2.png" alt="..."> </div>
+
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+
+    <ul class="six" style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/rh7ld/ns/ns1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/ns/ns2.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/ns/ns3.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/ns/ns4.png" alt="..."> </div>
+
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+
+    <ul class="seven" style="display: none">
+      <div id="banner2" class="carousel slide" data-ride="carousel"> 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/rh7ld/wg/wg1.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/wg/wg2.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/wg/wg3.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/wg/wg4.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/wg/wg5.png" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/rh7ld/wg/wg6.png" alt="..."> </div>
+
+
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#banner2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    </ul>
+
+  </div>
+</div>
+<div class="col-xs-12 titt">
+
+  <div class="biao" style="display: block;">
+    <li><img class="a" src="templates/yuanxiao/img/rh123/1.png" alt=""></li>
+    <li><img class="s" src="templates/yuanxiao/img/rh123/4.png" alt=""></li>
+    <li><img class="d" src="templates/yuanxiao/img/rh123/5.png" alt=""></li>
+  </div>
+  <div class="biao_1" style="display: none;">
+    <li><img class="q" src="templates/yuanxiao/img/rh456/2.png" alt=""></li>
+    <li><img class="w" src="templates/yuanxiao/img/rh456/4.png" alt=""></li>
+    <li><img class="e" src="templates/yuanxiao/img/rh456/5.png" alt=""></li>
+    <li><img class="r" src="templates/yuanxiao/img/rh456/7.png" alt=""></li>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--分割线______________________________-->
+<!-- <div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/tit-5.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-12 star">
+  <button type="button" ：class="{active： lightPicCurr == 'r5x'"} @click="setlightPicCurr('r5x')">瑞虎5x</button>
+  <button type="button" ：class="{active： lightPicCurr == 'r7'"} @click="setlightPicCurr('r7')">瑞虎7</button>
+  <div class="col-xs-12 carimg_5 imgck">
+    <ul>
+      <div>
+	     <div id="banner3" class="carousel slide" data-ride="carousel"> 
+    
+        <div class="carousel-inner" role="listbox">
+          <div class="item" v-for="pic in lightPicList.picList[lightPicBtnIdx]"> <img :src="pic" alt="..."> </div>
+
+        </div>
+        <a class="left carousel-control" href="#banner3" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner3" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+	  </div>
+	  <button type="button" v-for="(btn, idx) in lightPicList.btnList" @click="lightPicBtnIdx = idx"></button> -->
+<!--
+	  <button type="button"></button>
+	  <button type="button"></button>
+	  <button type="button"></button>
+-->
+<!--     </ul>
+    <ul style="display: none">
+      <div id="banner4" class="carousel slide" data-ride="carousel"> 
+       
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"> <img src="templates/yuanxiao/img/7/0.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/1.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/2.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/3.jpg" alt="..."> </div>
+          <div class="item"> <img src="templates/yuanxiao/img/7/4.jpg" alt="..."> </div>
+        </div>
+    
+        <a class="left carousel-control" href="#banner4" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#banner4" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+	    <button type="button">外观</button>
+	    <button type="button">内饰</button>
+	    <button type="button">操控</button>
+      <button type="button">科技</button>
+    </ul>
+  </div>
+</div>
+ -->
+<!--分割线______________________________-->
+<div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/tit-6.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-12 carimg viderow">
+  <button type="button" class="active">瑞虎5x</button>
+  <button type="button">瑞虎7</button>
+  
+  <div class="col-xs-12 carimg_5 vide">
+    <ul>
+      
+      <li><img src="templates/yuanxiao/img/vide1.jpg" alt="" class="im">
+         
+          <video src="templates/yuanxiao/vide/5x.mp4" controls=""></video>
+          
+      </li>
+ 
+    </ul>
+    <ul style="display: none">
+    
+      <li><img src="templates/yuanxiao/img/7/3.jpg" alt="">
+        
+        <video src="templates/yuanxiao/vide/7.mp4"  controls=""></video>
+        
+      </li>
+       
+    </ul>
+</div>
+</div>
+<!--分割线______________________________-->
+<div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/tit-7.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-12 carimg">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+	  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+	  <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+    </ol>
+    
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/2.png" alt=""></div>
+          <div class="col-xs-6">
+            <h5>不止是安全 不凡实力让瑞虎7成为懂车之选</h5>
+            <p>奇瑞作为中国汽车的领军品牌，凭借着优异的品质及“用户至上”...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=1bf70936-cb62-4a0a-90b1-665821add58f
+				">READ MORE</a></button>
+          </div>
+        </div>
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6">
+            <h5>实力得人心 选择瑞虎5x的N个理由</h5>
+            <p>对于大多数人来说，购车不算是小事，总要咨询、比较一番才会慎重做出决定...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=21ca4a3f-84d9-470c-b6d8-4fc7ef81bb88
+">READ MORE</a>
+			  </button>
+          </div>
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/1.png" alt=""></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/4.png" alt=""></div>
+          <div class="col-xs-6">
+            <h5>万元钜惠享不停瑞虎7助你新年旗开得“省”</h5>
+            <p>新年已至，瑞虎7万元钜惠持续鼎力巨促，助您在新的一年...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=675fc02f-093e-46f3-ab66-ad6136118a68
+">READ MORE</a></button>
+          </div>
+        </div>
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6">
+            <h5>瑞虎7年终优惠10000元 享发动机终身免费保修</h5>
+            <p>中国汽车技术研究中心（C-NCAP）近日对外发布了备受瞩目...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=631022e8-6a75-4403-9472-f3d5fe73aea3
+">READ MORE</a></button>
+          </div>
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/7.jpg" alt=""></div>
+        </div>
+      </div>
+	  <div class="item">
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/4.png" alt=""></div>
+          <div class="col-xs-6">
+            <h5>12月实销破万瑞虎5x实力收获出色“战绩”</h5>
+            <p>据最新数据显示，瑞虎5x 12月销量破万，在年末取得出色“战绩”...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=e065d868-7d7e-4cbe-abfb-77ac8560a872
+">READ MORE</a></button>
+          </div>
+        </div>
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6">
+            <h5>从“悦野越世界”看瑞虎5x的年度关键词——“聪明”</h5>
+            <p>进入2018新年，人们纷纷忙着盘点上一年，支付宝推出年度账单...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=6bb0d402-a129-4700-b71d-dcc4d732a1c9
+">READ MORE</a></button>
+          </div>
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/5.png" alt=""></div>
+        </div>
+      </div>
+	  <div class="item">
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/6.png" alt=""></div>
+          <div class="col-xs-6">
+            <h5>月销万台，“新爆款”瑞虎5x名至实归有看头</h5>
+            <p>有人说，“奇瑞出了新爆款”。上市仅四个月的瑞虎5x，2017年9月份上市...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=60078974-b98c-433b-b3b4-7d2ae1336dba
+">READ MORE</a></button>
+          </div>
+        </div>
+        <div class="col-xs-12 cartex">
+          <div class="col-xs-6">
+            <h5>实力得人心 选择瑞虎5x的N个理由</h5>
+            <p>对于大多数人来说，购车不算是小事，总要咨询、比较一番才会慎重做出决定...</p>
+            <button type="button"><a href="http://www.chery.cn/BrandShow/News?newsid=21ca4a3f-84d9-470c-b6d8-4fc7ef81bb88
+">READ MORE</a></button>
+          </div>
+          <div class="col-xs-6"><img src="templates/yuanxiao/img/xin/1.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--分割线______________________________-->
+<div class="col-xs-3"></div>
+<div class="col-xs-6"><img src="templates/yuanxiao/img/tit-8.png" class="img-responsive" alt=""></div>
+<div class="col-xs-3"></div>
+<div class="col-xs-12 carimg scroll">
+  <button type="button" class="active">瑞虎5x</button>
+  <button type="button" class="act">瑞虎7</button>
+  <p class="mmm"><img src="templates/yuanxiao/img/瑞虎5x.png" alt=""><img src="templates/yuanxiao/img/texbg1.jpg" alt=""></p>
+  <p class="mm"><img src="templates/yuanxiao/img/瑞虎7.png" alt=""><img src="templates/yuanxiao/img/texbg1.jpg" alt=""></p>
+</div>
+
+<script src="templates/yuanxiao/js/jquery.min.js"></script> 
+<script src="templates/yuanxiao/js/bootstrap.min.js"></script> 
+<script src="templates/yuanxiao/js/swiper.min.js"></script> 
+<script src="templates/yuanxiao/js/car.js"></script> 
+<script src="templates/yuanxiao/js/vue.min.js"></script> 
+<script src="templates/yuanxiao/js/lodash.min.js"></script> 
+<script src="templates/yuanxiao/js/rh7.js"></script> 
+<script src="templates/yuanxiao/js/rh5x.js"></script> 
+<script>
+	
+
+        var vmApp = new Vue({
+            el: "#vm_app",
+            data: {
+                input: {
+                    car: 'rh5x',
+                    prov: '',
+                    city: '',
+                    shop: ''
+                },
+				lightPicCurr: 'r7',
+				lightPicList: {},
+				lightPicBtnIdx: 0,
+				lightPics: {
+					r7: {
+				    	btnList: [
+							'templates/yuanxiao/img/r7btn1.png',
+							'templates/yuanxiao/img/r7btn1.png',
+							'templates/yuanxiao/img/r7btn1.png',
+							'templates/yuanxiao/img/r7btn1.png',
+						],
+						picList: [
+							[
+								'templates/yuanxiao/img/r7/tag1/1.png',
+								'templates/yuanxiao/img/r7/tag1/2.png',
+								'templates/yuanxiao/img/r7/tag1/3.png',	
+							],
+							[
+								'templates/yuanxiao/img/r7/tag2/1.png',
+								'templates/yuanxiao/img/r7/tag2/2.png',
+								'templates/yuanxiao/img/r7/tag2/3.png',
+							]
+						]
+					},
+					r5x: {
+				    	btnList: [
+							'templates/yuanxiao/img/r5xbtn1.png',
+							'templates/yuanxiao/img/r5xbtn1.png',
+							'templates/yuanxiao/img/r5xbtn1.png',
+							'templates/yuanxiao/img/r5xbtn1.png',
+						],
+						picList: [
+							'templates/yuanxiao/img/r5xpic1.png',
+							'templates/yuanxiao/img/r5xpic1.png',
+							'templates/yuanxiao/img/r5xpic1.png',
+							'templates/yuanxiao/img/r5xpic1.png',
+						]
+					}
+				}
+            },
+			created: function () {
+				this.lightPicList = this.lightPics.r7;
+			},
+            computed: {
+                provArr: function () {
+                    if (!this.input.car) { return []; }
+                    var list = this.input.car == 'rh7' ? rh7 : rh5x;
+                    var result = [];
+                    for (const row of list) {
+                        if (result.indexOf(row.prov) >= 0) {
+                            continue;
+                        }
+                        result.push(row.prov);
+                    }
+                    return result;
+                },
+                
+                cityArr: function () {
+                    if (!this.input.car || !this.input.prov) { return []; }
+                    var list = this.input.car == 'rh7' ? rh7 : rh5x;
+                    var result = [];
+                    for (const row of list) {
+                        if (row.prov != this.input.prov) {
+                            continue;
+                        }
+                        if (result.indexOf(row.city) >= 0) {
+                            continue;
+                        }
+                        result.push(row.city);
+                    }
+                    return result;
+                },
+
+                shopArr: function () {
+                    if (!this.input.car || !this.input.prov || !this.input.city) { return []; }
+                    var list = this.input.car == 'rh7' ? rh7 : rh5x;
+                    var result = [];
+                    for (const row of list) {
+                        if (row.prov != this.input.prov) {
+                            continue;
+                        }
+                        if (row.city != this.input.city) {
+                            continue;
+                        }
+                        if (result.indexOf(row.shop) >= 0) {
+                            continue;
+                        }
+                        result.push(row.shop);
+                    }
+                    return result;
+                }
+            },
+			methods: {
+				setlightPicCurr: function(lp) {
+					this.lightPicCurr(lp);
+					this.lightPicList = this.lightPic[lp];
+				}
+			}
+        });
+    </script>
+    <script type="text/javascript">
+    	$("#aa").click(function(){
+		//console.log("ok")
+			$frons = $("#frons").val();
+			$name = $("#name").val();
+			$phone = $("#phone").val();
+			$shengf = $("#shengf").val();
+			$chengs = $("#chengs").val();
+			$jinxs = $("#jinxs").val();	
+
+	 		$.ajax({
+	                type: 'POST',
+	                dataType:'json',
+	                url : 'hysj.php?step=qrtj',
+	                 data: {
+	                        "frons":$frons,
+	                        "name":$name,
+	                        "phone":$phone,
+	                        "shengf":$shengf,
+	                        "chengs":$chengs,
+	                        "jinxs":$jinxs,
+	                        },
+	                success: function(data){
+	                    if (data == 1) {
+	                        	alert("提交成功");	
+	                    }else{
+	                        alert("提交失败");
+	                    }
+
+	                 }
+	            });
+	});
+	
+        $(".act").click(function(){
+          $(".mmm").hide();
+          $(".mm").show();
+        })
+
+        $(".active").click(function(){
+          $(".mmm").show();
+          $(".mm").hide();
+        })
+        var mySwiper = new Swiper('.swiper-container',{
+  autoplay : 2000,//可选选项，自动滑动
+  loop : true,//可选选项，开启循环
+})
+    </script>
+</body>
+</html>

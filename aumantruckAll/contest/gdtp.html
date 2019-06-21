@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=750,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <title>降本增效，我是冠军</title>
+  <meta name="keywords" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+  <meta name="description" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+    <link href="new0225/css/css.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/mobile/templates/contest/css/gdtp.css">
+
+
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12ebce5ddde1b698958bacdd8cce7342";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+<body>
+  
+
+   <div id="masonry" class="container-fluid" style="position:relative;left:.8rem">
+  <div class="box"><img src="/mobile/templates/contest/img/21.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/222.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/23.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/24.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/25.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/26.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/27.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/28.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/29.jpg"></div>
+  <div class="box"><img src="/mobile/templates/contest/img/30.jpg"></div>
+
+
+</div>     
+
+<img src="" alt="" id="img_3">
+<script>
+    
+    var w = 375;
+    var f = 16;
+    var c = document.documentElement.clientWidth;
+    var nf = c * f / w;
+    document.documentElement.style.fontSize = nf + 'px';
+$(function() {
+    var $container = $('#masonry');
+    $container.imagesLoaded(function() {
+        $container.masonrysonry({
+                itemSelector: '.box',
+                gutter: 20,
+                isAnimated: true,
+            });
+     });
+});
+
+$(function() {
+    var $objbox = $("#masonry");
+    var gutter = 25;
+    var centerFunc, $top0;
+    $objbox.imagesLoaded(function() {
+        $objbox.masonry({
+            itemSelector: "#masonry > .box",
+            gutter: gutter,
+            isAnimated: true
+        });
+        centerFunc = function() {
+            $top0 = $objbox.children("[style*='top: 0']");
+            $objbox.css("left", ($objbox.width() - ($top0.width() * $top0.length + gutter * ($top0.length - 1))) / 2-600).parent().css("overflow", "hidden");
+        };
+        centerFunc();
+    });
+    var tur = true;
+    $(window).resize(function() {
+        if (tur) {
+            setTimeout(function() {
+                tur = true;
+                centerFunc();
+            },
+            1000);
+            tur = false;
+        }
+    });
+});
+
+    $('#masonry>div').each(function(i){
+
+      $(this).click(function(){
+
+        var src = $(this).children('img').attr('src');
+// console.log(src)
+        $('#img_3').css('display','block');
+
+        $('#img_3').attr('src',src);
+      })
+    })
+
+    $('#img_3').click(function(){
+
+      $('#img_3').toggle();
+    })
+</script>
+</body>
+</html>

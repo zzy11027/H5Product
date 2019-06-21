@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title>降本增效，我是冠军</title>
+	<meta name="keywords" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+	<meta name="description" content="2018年中国高效物流卡车公开赛危化品行业郑州启动">
+	   <link href="new0225/css/css.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="/mobile/templates/jc/css/jc.css">
+	<script src="/mobile/templates/jc/js/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script>
+        wx.config({
+            debug: false, // 开启调试模式调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印�?
+            appId: 'wxa1ef57725e6a43a9', // 必填，公众号的唯一标识
+            timestamp: '{$arr.timestamp}', // 必填，生成签名的时间
+            nonceStr: '{$arr.noncestr}', // 必填，生成签名的随机
+            signature: '{$arr.sha1}',// 必填，签名，见附
+            jsApiList: [
+                "onMenuShareTimeline",
+                "scanQRCode",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附
+        });
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: '中国高效物流卡车公开赛河南站冠军竞猜', // 分享标题
+                desc: '“降本增效 我是冠军”竞猜有奖，为你喜欢的选手打call！', // 分享描述
+                link: 'http://www.aumantruck.com/mobile/spike_jc.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    //alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    //alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+
+            });
+            wx.onMenuShareTimeline({
+                title: '中国高效物流卡车公开赛河南站冠军竞猜', // 分享标题
+                link: 'http://www.aumantruck.com/mobile/spike_jc.php', // 分享链接
+                imgUrl: 'http://www.aumantruck.com/mobile/templates/contest/logo.jpg', // 分享图标
+                success: function () {
+                  //  alert("分享成功");
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                  //  alert("取消成功");
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+
+
+	<!-- banner -->
+	<div class="banner">
+        <a href="http://www.aumantruck.com/article.php?id=50489" target="_blank">
+                    
+        </a>
+    </div>
+
+
+    <div class="container">
+
+		<!-- <ul>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul> -->
+
+
+		<!-- 上部分 -->
+			<div class="auto-top">
+				
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+			</div>
+
+			<div class="auto-top1">
+				
+				<a class="a_1"></a>
+				<a class="a_2"></a>
+			</div>	
+
+
+			<!-- 弹框 -->
+			<div class="tk"></div>
+			<div class="tk_1">
+    			<h3 class="dao">场地操控赛：</h3>
+		    	<div class="ll">
+			    	<span>竞猜冠军：</span><span>{$sql_type1.name}</span><br>
+			    	<span>竞猜成绩：</span><span>{$sql_type1.num}</span><span>分钟</span>
+		    	</div>
+
+				<h3 class="dao_1">道路实况赛：</h3>
+		    	<div class="ll_1">
+			    	<span>竞猜冠军：</span><span>{$sql_type2.name}</span><br>
+			    	<span>竞猜成绩：</span><span>{$sql_type2.num}</span><span>L/100KM</span>
+		    	</div>
+
+		    	<div class="guan"></div>
+			</div>
+
+			<!-- 按钮 -->
+			<div class="lef" onclick="jian()">
+				
+
+			</div>
+			<div class="rig" onclick="add()">
+				
+
+			</div>
+
+
+			<!-- 竞猜 -->
+
+<div class="all">
+<div class="jc">
+
+				<div class="jc_1 jcjc">
+					<input type="hidden" id="userid" value="{$user_id}">
+					<form class="jc_1-1 jc1">
+						<p>李佩佩</p>
+						<h5>济源安航汽车运输有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(1,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc2" style="display: none;">
+						<p>李国营</p>
+						<h5>济源安航汽车运输有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(2,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc3" style="display: none;">
+						<p>于海平</p>
+						<h5>新乡市危化品运输车队</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(3,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc4" style="display: none;">
+						<p>王明晓</p>
+						<h5>新乡市危化品运输车队</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(4,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc5" style="display: none;">
+						<p>刘俊洛</p>
+						<h5>巩义永泉汽车运输有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(5,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc6" style="display: none;">
+						<p>董小晋</p>
+						<h5>巩义永泉汽车运输有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(6,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc7" style="display: none;">
+						<p>梁世祥</p>
+						<h5>商丘市中通物流有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(7,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc8" style="display: none;">
+						<p>杨建福</p>
+						<h5>商丘市中通物流有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(8,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc9" style="display: none;">
+						<p>张次山</p>
+						<h5>安阳市龙鹏化工有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(9,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc10" style="display: none;">
+						<p>王文海</p>
+						<h5>安阳华一达塑化有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(10,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc11" style="display: none;">
+						<p>孙玉清</p>
+						<h5>安阳市鉴效化工产品有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(11,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc12" style="display: none;">
+						<p>尹明江</p>
+						<h5>正本物流</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(12,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc13" style="display: none;">
+						<p>王云领</p>
+						<h5>郑州交通运输集团有限责任公司危险品运输分公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(13,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc14" style="display: none;">
+						<p>左新奎</p>
+						<h5>中国石油运输有限公司河南分公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(14,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc15" style="display: none;">
+						<p>马书国</p>
+						<h5>中国石油运输有限公司河南分公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(15,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc16" style="display: none;">
+						<p>蒋先海</p>
+						<h5>郑州远达石油运输有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(16,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc17" style="display: none;">
+						<p>李国庆</p>
+						<h5>濮阳市豫龙油汽有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(17,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc18" style="display: none;">
+						<p>冯保胜</p>
+						<h5>洛阳宁安化学危险货物运输有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(18,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc19" style="display: none;">
+						<p>柳玉良</p>
+						<h5>河南中原铁道物流有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(19,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc20" style="display: none;">
+						<p>黄超永</p>
+						<h5>郑州通程运输科技有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(20,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jc21" style="display: none;">
+						<p>马建伟</p>
+						<h5>河南中油南安物流有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(21,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jc22" style="display: none;">
+						<p>高树举</p>
+						<h5>河南心连心吊装有限公司</h5>
+						<span>用时竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<h4>分钟</h4>
+						<div class="but" {if $user_id } onclick="tj(22,1)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+				</div>
+			</div>
+
+</div>
+			
+	
+
+	<div class="all_1" style="display: none;">
+<div class="jc">
+
+				<div class="jc_1 jcjc">
+					<input type="hidden" id="userid" value="{$user_id}">
+					<form class="jc_1-1 jcs1">
+						<p>李佩佩</p>
+						<h5>济源安航汽车运输有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(1,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs2" style="display: none;">
+						<p>李国营</p>
+						<h5>济源安航汽车运输有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(2,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs3" style="display: none;">
+						<p>于海平</p>
+						<h5>新乡市危化品运输车队</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(3,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs4" style="display: none;">
+						<p>王明晓</p>
+						<h5>新乡市危化品运输车队</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(4,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs5" style="display: none;">
+						<p>刘俊洛</p>
+						<h5>巩义永泉汽车运输有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(5,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs6" style="display: none;">
+						<p>董小晋</p>
+						<h5>巩义永泉汽车运输有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(6,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs7" style="display: none;">
+						<p>梁世祥</p>
+						<h5>商丘市中通物流有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(7,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs8" style="display: none;">
+						<p>杨建福</p>
+						<h5>商丘市中通物流有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(8,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs9" style="display: none;">
+						<p>张次山</p>
+						<h5>安阳市龙鹏化工有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(9,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs10" style="display: none;">
+						<p>王文海</p>
+						<h5>安阳华一达塑化有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(10,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs11" style="display: none;">
+						<p>孙玉清</p>
+						<h5>安阳市鉴效化工产品有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(11,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs12" style="display: none;">
+						<p>尹明江</p>
+						<h5>正本物流</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(12,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs13" style="display: none;">
+						<p>王云领</p>
+						<h5>郑州交通运输集团有限责任公司危险品运输分公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(13,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs14" style="display: none;">
+						<p>左新奎</p>
+						<h5>中国石油运输有限公司河南分公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(14,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs15" style="display: none;">
+						<p>马书国</p>
+						<h5>中国石油运输有限公司河南分公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(15,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs16" style="display: none;">
+						<p>蒋先海</p>
+						<h5>郑州远达石油运输有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(16,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs17" style="display: none;">
+						<p>李国庆</p>
+						<h5>濮阳市豫龙油汽有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(17,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs18" style="display: none;">
+						<p>冯保胜</p>
+						<h5>洛阳宁安化学危险货物运输有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(18,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+
+					<form class="jc_1-1 jcs19" style="display: none;">
+						<p>柳玉良</p>
+						<h5>河南中原铁道物流有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(19,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs20" style="display: none;">
+						<p>黄超永</p>
+						<h5>郑州通程运输科技有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(20,2)" {else} onclick="denglu()"{/if} ></div>
+
+					<form class="jc_1-1 jcs21" style="display: none;">
+						<p>马建伟</p>
+						<h5>河南中油南安物流有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(21,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+					<form class="jc_1-2 jcs22" style="display: none;">
+						<p>高树举</p>
+						<h5>河南心连心吊装有限公司</h5>
+						<span>油耗竞猜：</span>
+						<input type="text" maxlength=5  onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+						<div class="but" {if $user_id } onclick="tjs(22,2)" {else} onclick="denglu()"{/if} ></div>
+					</form>
+				</div>
+			</div>
+
+</div>		
+<!-- <h4 style="display:none;width: 22%;
+    height: 53px;
+    position: absolute;
+    top: 30.1%;
+    left: 56%;
+    text-align: center;
+    line-height: 53px;
+    font-size: 17px;
+    color: #BA0103;
+    background: #fff;">分钟</h4>
+ -->
+
+    <!-- 弹窗 -->
+    <div class="div_1">
+		<p>xxx</p>
+		<span class="spa"></span>
+    </div>
+    <div class="div_2">
+		<span class="spa_1"></span>
+    </div>
+    <div class="div_3">
+    	<span class="spa_2"></span>
+		<input type="text" id="name" placeholder="请输入姓名" class="inp_11">
+		<input type="text" id="tel" placeholder="请输入手机" class="inp_12">
+		<input type="text" id="code" placeholder="验证码" class="inp_13">
+		 <img src="http://www.aumantruck.com/code.php?{$rand}" class="code-img u-full-width" alt="captcha" onClick="this.src='http://www.aumantruck.com/code.php?'+Math.random()" />
+
+		<div class="butt" onclick="choujiang()"></div>
+    </div>
+<!--     <div class="div_4">
+    	<h3 class="dao">道路实况赛：</h3>
+	    	<div class="ll">
+		    	<span>竞猜冠军：</span><span>{$sql_type1.name}</span><br>
+		    	<span>竞猜成绩：</span><span>{$sql_type1.num}</span><span> L/KM</span>
+	    	</div>
+
+		<h3 class="dao_1">场地操控赛：</h3>
+	    	<div class="ll_1">
+		    	<span>竞猜冠军：</span><span>{$sql_type2.name}</span><br>
+		    	<span>竞猜成绩：</span><span>{$sql_type2.num}</span><span> 分钟</span>
+	    	</div>
+		<span class="spa_3"></span>
+    </div> -->
+			<div class="pai">
+				
+				<?php $i=1; ?>
+				<!--{foreach from=$hot_cat item=goods name=goods }-->	
+				<?php $i++; ?>
+				<ul>
+					<li>第{$smarty.foreach.goods.iteration}名</li>
+					<li>{$goods.area}</li>
+					<li>{$goods.name}</li>
+					{if $goods.zs eq ""}
+					<li>0</li>
+					{else}
+					<li>{$goods.zs}</li>
+					{/if}
+				</ul>
+					<!--{/foreach}-->
+
+				
+			</div>
+    </div>
+
+
+<div class="dian" style="width: 100%;height: 40px;"></div>
+
+
+
+
+
+<div class="navWrapper boxShadow" style="position: fixed;
+    bottom: 0px;
+    height: 2.375rem;
+    /*padding-top: 15px;*/
+    width: 100%;
+    background-color: #fff;
+    left: 50%;
+    margin-left: -11.8rem;
+    z-index: 200;">
+        <div class="innerWrap" style="    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0.75rem;">
+                <div class="footNav" style="background:#fff;overflow: hidden;height: 100%;padding-left: 0px;">
+                        <a style="float: left;font-size: 16px;color: #999;text-align: center;width: 4.625rem;margin-right: 0px;" href="index.php" target="_parent" name="home"><img style="display: block;width: 1.4375rem;height: 1.4375rem;margin:0 auto;margin-bottom:0.3125rem;" src="new0225/images/home.png">首页</a>
+                        <a style="float: left;font-size: 16px;color: #999;text-align: center;width: 4.625rem;margin-right: 0px;" href="mall.php?act=index" name="truck" target="_parent"><img style="display: block;width: 1.4375rem;height: 1.4375rem;margin:0 auto;margin-bottom:0.3125rem;" src="new0225/images/truck.png">商城</a>
+                        <a style="float: left;font-size: 16px;color: #999;text-align: center;width: 4.625rem;margin-right: 0px;" href="http://bbs.aumantruck.com" target="_parent" name="community"><img style="display: block;width: 1.4375rem;height: 1.4375rem;margin:0 auto;margin-bottom:0.3125rem;" src="new0225/images/community.png">社区                        </a>
+                        <a style="float: left;font-size: 16px;color: #999;text-align: center;width: 4.625rem;margin-right: 0px;" href="service.php" target="_parent" name="server"><img style="display: block;width: 1.4375rem;height: 1.4375rem;margin:0 auto;margin-bottom:0.3125rem;" src="new0225/images/server.png">服务</a>
+
+                        <a style="float: left;font-size: 16px;color: #999;text-align: center;width: 4.625rem;margin-right: 0px;" href="user.php?act=membercenter" id="login1"> <img style="display: block;width: 1.4375rem;height: 1.4375rem;margin:0 auto;margin-bottom:0.3125rem;" src="new0225/images/people.png">我</a>
+
+                </div>
+        </div>
+    </div>
+
+
+
+	<script type="text/javascript">
+	function denglu() {
+        alert('请先登录');
+        window.location.href = 'checkLogin.php?act=login&step=active&huodong=jc';
+    }
+
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+	var a = 1;
+function add(){
+	if(a>21){
+		return false;
+	}
+	a++;
+
+	var str = '.jc'+a;
+	var strs = '.jcs'+a;
+	console.log(str)
+
+	$(str).show();
+	$(str).siblings().hide();
+	$(strs).show();
+	$(strs).siblings().hide();
+}
+
+function jian(){
+
+	if(a<2){
+		return false;
+	}
+	a--;
+
+	var str = '.jc'+a;
+	var strs = '.jcs'+a;
+	console.log(str)
+
+	$(str).show();
+	$(str).siblings().hide();
+
+	$(strs).show();
+	$(strs).siblings().hide();
+}
+
+function tj(m,type){
+	var userid = $("#userid").val();
+	var str = '.jc'+m;
+	var s = $(str).find('input').val();
+	var mmm = $(str);
+	console.log(mmm)
+	console.log(s)
+	$.post("spike_jc.php?act=fentj", { id:m,fen:s,userid:userid,type:type},function(msg){
+	        if(msg==1){
+	            alert("恭喜您竞猜成功!");
+	            // location.reload();
+	           	$(".div_3").show();
+	            return false;
+	        }else{
+	        	alert("您已经竞猜过了!");
+
+	        	// $(".div_3").show();
+	        	return false;
+	        }
+    });	
+}
+
+function tjs(m,type){
+		var userid = $("#userid").val();
+	var str = '.jcs'+m;
+	var s = $(str).find('input').val();
+	var mmm = $(str);
+	console.log(mmm)
+	console.log(s)
+	$.post("spike_jc.php?act=fentj", { id:m,fen:s,userid:userid,type:type},function(msg){
+	        if(msg==1){
+	            alert("恭喜您竞猜成功!");
+	            // location.reload();
+	           	$(".div_3").show();
+	            return false;
+	        }else{
+	        	alert("您已经竞猜过了!");
+
+	        	// $(".div_3").show();
+	        	return false;
+	        }
+    });
+}
+function choujiang(){
+	var userid = $("#userid").val();
+	var name = $("#name").val();
+	var tel = $("#tel").val();
+	var code = $("#code").val();
+	
+  	if (!tel) {
+            alert('请输入手机号');
+            return false;
+        }
+        var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+        if (!reg.test(tel)) {
+            alert("请输入正确的手机号");
+            return false;
+        }
+	$.post("spike_jc.php?act=info",{name:name,tel:tel,code,code,userid:userid},function(msg){
+        if(msg==1){
+        	$.post("spike_jc.php?act=prize",{userid:userid},function(msg){
+	            if(msg==1){
+	            	// alert("中了1块钱");
+	            	$(".div_3").hide();
+	            	$(".div_1").show();
+	            	$('.div_1').find('p').text('1');
+	            }else if(msg==2){
+	            	// alert("中了2块钱");
+	            	$(".div_3").hide();
+	            	$(".div_1").show();
+	            	$('.div_1').find('p').text('2');
+	            }else if(msg==3){
+	            	// alert("中了5块钱");
+	            	$(".div_3").hide();
+	            	$(".div_1").show();
+	            	$('.div_1').find('p').text('5');
+	            }else if(msg==4){
+	            	// alert("谢谢惠顾");
+	            	$(".div_3").hide();
+	            	$(".div_2").show();
+
+	            }
+        	});
+
+
+        }else if(msg==8){
+        	alert("验证码错误");
+        	return;
+        }else if(msg==88){
+        	alert("未知错误");
+        	return;
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('.a_1').click(function(){
+	$('.all').show();
+	$('.all_1').hide();
+	$('h4').show();
+})
+
+$('.a_2').click(function(){
+	$('.all_1').show();
+	$('h4').hide();
+	$('.all').hide();
+})
+
+$('.spa').click(function(){
+	$('.div_1').hide();
+	location.reload();
+})
+$('.spa_1').click(function(){
+	$('.div_2').hide();
+	location.reload(); 
+})
+$('.spa_2').click(function(){
+	$('.div_3').hide();
+})
+$('.spa_3').click(function(){
+	$('.div_4').hide();
+})
+
+// 弹框
+$('.tk').click(function(){
+	var userid = $("#userid").val();
+	if(userid==0){
+		denglu();
+	}else{
+		$('.tk_1').show();
+	}
+})
+
+// 关闭
+$('.guan').click(function(){
+	$('.tk_1').hide();
+	location.reload();
+})
+	</script>
+</body>
+</html>

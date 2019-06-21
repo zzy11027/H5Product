@@ -1,0 +1,524 @@
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);text-decoration:none;list-style-type:none;}
+a {text-decoration:none;outline:none;}
+input, button, select, textarea {
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+body{
+	width: 100%;
+	height:auto;
+	position: relative;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: #000;
+}
+
+.banner{
+	width: 100%;
+	height: 11.75rem;
+	background-image: url(../img/banner_yc.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.banner>a{
+	display: block;
+	width: 100%;
+	height: 11.75rem;
+}
+
+
+/*内容区*/
+.container{
+	width: 100%;
+    height: 268.1875rem;
+	/*height: 271.40625rem;*/
+	background-image: url(../img/wxp_yc.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.container>ul{
+	width: 100%;
+	height: 6.125rem;
+	display: flex;
+	justify-content: center;
+}
+.container>ul>li{
+	width: 4.125rem;
+	height:6.125rem;
+}
+.container>ul>li>a{
+	display: block;
+	width: 4.125rem;
+	height:6.125rem;
+}
+/*各站地*/
+.zhan{
+    width: 77%;
+    height: 3.8rem;
+    position: absolute;
+    top: 8.3%;
+    left: 21%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.zhan>a{
+    display: block;
+    width: 3rem;
+    height: 1.5rem;
+}
+.auto{
+	width: 100%;
+    height: 20.0625rem;
+    position: absolute;
+    top: 10.2%;
+}
+.auto>img{
+	display: block;
+    width: 10.5rem;
+    height: 12.5rem;
+    position: absolute;
+    top: 1%;
+    left: 31%;
+}
+.name{
+    width: 9.375rem;
+    height: 5.0rem;
+    position: absolute;
+    top: 72%;
+    left: 34%;
+}
+.name>div{
+	width: 9.375rem;
+	height: 1.75rem;
+	line-height: 1.75rem;
+	color:#000;
+	font-size: 22px;
+}
+.find{
+	width: 6.25rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 84%;
+	left: 72%;
+}
+.find>a{
+	display: block;
+	width: 6.25rem;
+	height: 3.125rem;
+}
+.auto_1{
+	width: 100%;
+    height: 7.5625rem;
+    position: absolute;
+    top: 17.4%;
+}
+.auto_1>img{
+	display: block;
+    width: 6rem;
+    height: 7.3rem;
+    position: absolute;
+    top: 4%;
+    left: 12%;
+}
+.name_1{
+width: 6rem;
+    height: 5.0rem;
+    position: absolute;
+    top: 18%;
+    left: 55%;
+}
+.name_1>div{
+    width: 5rem;
+    height: 1.5625rem;
+    line-height: 1.5625rem;
+    color: #000;
+    font-size: 24px;
+    overflow: auto;
+}
+.find_1{
+	width: 6.25rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 55%;
+	left: 72%;
+}
+.find_1>a{
+	display: block;
+	width: 6.25rem;
+	height: 3.125rem;
+}
+.auto_2{
+	width: 100%;
+    height: 7.5625rem;
+    position: absolute;
+    top: 20.5%;
+}
+.auto_2>img{
+	display: block;
+    width: 6rem;
+    height: 7.1rem;
+    position: absolute;
+    top: 4%;
+    left: 12%;
+}
+.name_2{
+    width: 5rem;
+    height: 5.0rem;
+    position: absolute;
+    top: 18%;
+    left: 55%;
+}
+.name_2>div{
+    width: 5rem;
+    height: 1.5625rem;
+    line-height: 1.5625rem;
+    color: #000;
+    font-size: 22px;
+    overflow: auto;
+}
+.find_2{
+	width: 6.25rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 55%;
+	left: 72%;
+}
+.find_2>a{
+	display: block;
+	width: 6.25rem;
+	height: 3.125rem;
+}
+.auto-middle{
+	width: 100%;
+    height: 19.375rem;
+    position: absolute;
+    top: 23.5%;
+}
+.auto-middle>div{
+    width: 58%;
+    height: 2.8rem;
+    cursor: pointer;
+    margin-left: 5.6rem;
+    color: #fff;
+    line-height: 2.8rem;
+    text-align: left;
+    font-size: 25px;
+    overflow: auto;
+    padding-right: 4rem;
+}
+.auto-middle>div>a{
+	display: block;
+	width: 100%;
+	height: 2.8rem;
+	cursor: pointer;
+}
+
+/*轮播*/
+.swiper-container{
+    width: 23.4375rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    top: 27.24%;
+    height: 20.9rem;
+}
+.swiper-wrapper{
+	/*display: flex;*/
+	height: auto;
+}
+.swiper-slide{
+	width: 23.4375rem;
+	height: 21rem;
+}
+.s1{
+    width:23.4375rem;
+    height: 21rem;
+    background-image: url(../img/d1_ln.jpg);
+    background-size: 100% 100%;
+}
+.s2{
+    width: 23.4375rem;
+    height:21rem;
+    background-image: url(../img/d2_ln.jpg);
+    background-size: 100% 100%;
+    margin-right: 0px;
+}
+.s3{
+    width: 23.4375rem;
+    height:21rem;
+    background-image: url(../img/d3_ln.jpg);
+    background-size: 100% 100%;
+}
+.s4{
+    width: 23.4375rem;
+    height: 21rem;
+    background-image: url(../img/d4_ln.jpg);
+    background-size: 100% 100%;
+    margin-right: 0px;
+}
+.s5{
+    width: 23.4375rem;
+    height: 21rem;
+    background-image: url(../img/d5_ln.jpg);
+    background-size: 100% 100%;
+    margin-right: 0px;
+}
+.s6{
+    width: 23.4375rem;
+    height: 21rem;
+    background-image: url(../img/d6_ln.jpg);
+    background-size: 100% 100%;
+    margin-right: 0px;
+}
+.gg{
+	width: 97%;
+    height: 9rem;
+    position: absolute;
+    top: 41%;
+    left: 2%;
+    display: flex;
+    justify-content: space-between;
+    /*top: 36.3%;*/
+}
+.gg>.nam{
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    top: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.nam>p{
+    width: 30%;
+    height:3.25rem;
+    font-size: 0.58rem;
+    text-align: center;
+}
+/*.gg>img{
+	display: block;
+    width: 6.5rem;
+    height: 6rem;
+    float: left;
+    margin-left: 0.4375rem;
+}
+.gg>img:nth-child(2){
+	display: block;
+    width: 6.5rem;
+    height: 6rem;
+    float: left;
+    margin-left: 1.5625rem;
+}
+.gg>img:nth-child(3){
+	display: block;
+    width: 6.5rem;
+    height: 6rem;
+    float: left;
+    margin-left: 1.5625rem;
+}*/
+
+/*询价*/
+.xj{
+    width: 100%;
+    height: 14rem;
+    position: absolute;
+    top: 45.7%;
+    /*top: 40.2%;*/
+}
+.xj input:nth-child(1){
+	width: 6.25rem;
+    height: 0.9375rem;
+    position: absolute;
+    top: 3%;
+    left: 30%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.xj input:nth-child(2){
+ 	width: 6.25rem;
+    height: 1.5125rem;
+    position: absolute;
+    top: 21%;
+    left: 30%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.xj> .select_1{
+ 	width: 6.25rem;
+    height: 1.5125rem;
+    position: absolute;
+    top:42%;
+    left: 30%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.xj> .select_2{
+	width: 28%;
+    height: 1.5125rem;
+    position: absolute;
+    top: 42%;
+    left: 65%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.jing{
+	width: 58%;
+    height: 1.5125rem;
+    position: absolute;
+    top: 60%;
+    left: 31%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.xj>.but{
+	width: 33%;
+    height: 2.3125rem;
+    position: absolute;
+    top: 86%;
+    left: 33%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*图文直播*/
+.tuwen{
+	width: 100%;
+    height: 17.0rem;
+    position: absolute;
+    top: 53.15%;
+    text-align: center;
+    line-height: 15.5rem;
+    /*top: 47.6%;*/
+}
+.tuwen_left{
+    display: block;
+    width: 96%;
+    height: 13.75rem;
+    margin-top: 0.7rem;
+    margin-left: 0.7rem;
+}
+.tuwen_left_a{
+	display: block;
+	width: 98%;
+	height: 3.125rem;
+}
+
+.tuwen_right{
+    display: block;
+    width: 96%;
+    height: 13.7rem;
+    margin-top: 0.875rem;
+    margin-left: 0.75rem;
+}
+.tuwen_left_b{
+	display: block;
+	width: 98%;
+	height: 3.125rem;
+}
+.img_img1{
+    display: block;
+    width: 94%;
+    height: 22.25rem;
+    position: absolute;
+    top: 61.8%;
+    left: 4%;
+}
+/*行业论坛*/
+.hy{
+	width: 100%;
+    height: 14.4375rem;
+    position: absolute;
+    top: 71.9%;
+}
+
+.luntan{
+	width: 95%;
+	height: 10.375rem;
+	padding-left: .5rem;
+    overflow: auto;
+}
+.luntan>a{
+    display: block;
+    width: 100%;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    color: #000;
+    font-size: 23px;
+    overflow: auto;
+    border-bottom: 1px dashed #000
+}
+
+/*商务合作*/
+.shang{
+    width: 100%;
+    height: 13.75rem;
+    position: absolute;
+    top: 77.9%;
+}
+.shang input:nth-child(1){
+	width: 56%;
+    height: 0.8125rem;
+    position: absolute;
+    top: 4%;
+    left: 33%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.shang input:nth-child(2){
+	width: 56%;
+    height: 0.8125rem;
+    position: absolute;
+    top: 24%;
+    left: 33%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.shang input:nth-child(3){
+	width: 56%;
+    height: 0.8125rem;
+    position: absolute;
+    top: 46%;
+    left: 33%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.shang .butt{
+	width: 32%;
+    height: 2.4375rem;
+    position: absolute;
+    top: 68%;
+    left: 33%;
+    cursor: pointer;
+}
+
+/*修改*/
+.gg>a>img{
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    float: left;
+    margin-left: -.2rem;
+}
+.img_3{
+display: none; 
+    width: 44%;
+    height: 9.75rem;
+    position: absolute;
+    top: 25%;
+    left: 29%;
+    z-index: 999999;
+}
