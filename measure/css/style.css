@@ -1,0 +1,476 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body,#shareContent{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+#bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#000;
+    opacity: .8;
+    z-index: 1;
+    display: none;
+
+}
+#shareContent{
+    display: none;
+}
+.pho{
+    height: 2.8125rem;
+    width: 2.8125rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 4.9rem;
+    left: 4.28rem;
+    z-index: 999;
+    display: none;
+    background-size: 100% 100%;
+}
+/* .window{
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    z-index: 1;
+    display: none;
+} */
+.cover{
+    height:100%;
+    width:100%;
+    opacity:1;
+    position:absolute;
+    top:0;
+    left:0;
+    }
+#rules{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    z-index: 9999999999999999999999999999999;
+    display: none;
+
+}
+.sure{
+    position: absolute;
+    width: 7.875rem;
+    height: 2.5rem;
+    bottom: 3.5rem;
+    left: 5rem;
+}
+.first,.problem,.result1,.result2,.result3,.result4,.result5,.info,.prize,.pity,.lotto{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1C6CE9;
+}
+.share-pho{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background:#1C6CE9;
+    display: none;
+}
+#screenShotImg {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 66%;
+   }
+.problem,.result1,.result2,.result3,.result4,.result5,.info,.prize,.pity,.lotto,.share-pho{
+    display: none;
+}
+.bg1{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/index/bg1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+}
+.bg2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .625rem;
+}
+.logo{
+    position: absolute;
+    top: 1.3rem;
+    left: 1.3rem;
+    z-index: 1;
+}
+.theme{
+    position: absolute;
+    top: 4.3rem;
+    right: -0.625rem;
+}
+.car{
+    position: absolute;
+    top: 0.3rem;
+    left: -2rem;
+}
+.down{
+    position: absolute;
+    top: 33rem;
+    left: 1.5rem;
+}
+.start{
+    position: absolute;
+    top: 30.5rem;
+    left: 7rem;
+}
+.creat{
+    position: absolute;
+    top: 31.6rem;
+    left: 7rem;
+}
+.rule{
+    position: absolute;
+    top: 34.7rem;
+    left: 10rem;
+    z-index: 1;
+}
+.question{
+    position: absolute;
+    top: 0;
+    right: .5rem;
+}
+.num1{
+    position: absolute;
+    top: 6.25rem;
+    left: 1.875rem;
+}
+.num2{
+    position: absolute;
+    top: 11.25rem;
+    left: 1.875rem;
+}
+.num3{
+    position: absolute;
+    top: 16.25rem;
+    left: 1.875rem;
+}
+.num4{
+    position: absolute;
+    top: 21.25rem;
+    left: 1.875rem;
+}
+.creat1{
+    position: absolute;
+    left: 1.3125rem;
+    top: 4.5rem;
+}
+
+.creat11,.creat22,.creat33,.creat44,.creat55{
+    position: absolute;
+    left: 4.6rem;
+    top: 15.6rem;
+}
+.share{
+    position: fixed;
+    bottom: 4.25rem;
+    right: 3rem;
+    z-index: 999;
+    display: none;
+}
+.photo{
+    position: absolute;
+    top: 4.9rem;
+    left: 4rem;
+}
+.star{
+    position: absolute;
+    left: 13rem;
+    top: 7.5rem;
+}
+.start1{
+    top: 7.2rem;
+}
+.info1,.prize1,.pity1{
+    position: absolute;
+    left: .5rem;
+    top: 5rem;
+}
+.btn{
+    position: absolute;
+    bottom: 2.6rem;
+    left: 6rem;
+    height: 3rem;
+    width: 9.5rem;
+}
+.btn1{
+    position: absolute;
+    bottom: 3rem;
+    left: 6rem;
+    height: 3rem;
+    width: 9.5rem;
+}
+.edit{
+    z-index: 999;
+    position: absolute;
+    top: 12.5rem;
+    left: 11rem;
+    font-size: 1.5rem;
+}
+.btn2{
+    position: absolute;
+    bottom: 2.8rem;
+    left: 6rem;
+    height: 3rem;
+    width: 9.5rem;
+}
+input{
+    height: 1.25rem;
+    width: 12.5rem;
+    position: absolute;
+    border: 0;
+    outline-style: none;
+}
+.name{
+    top: 7.7rem;
+    left: 5.8rem;
+}
+.tel{
+    top: 9.9rem;
+    left: 5.8rem;
+}
+.address{
+    top: 12rem;
+    left: 5.8rem;
+}
+.purpose{
+    top: 17.5rem;
+    left: 8.2rem;
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .8;
+}
+.share-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .8;
+}
+.success{
+    height: 4rem;
+    width: 8rem;
+    background-color: #fff;
+    position: fixed;
+    opacity:.8;
+    top: 10%;
+    left: 30%;
+    z-index: 999;
+    text-align: center;
+    display: none;
+    padding:.5rem;
+    border-radius: .625rem;
+}
+.num2,.num3,.num4{
+    display: none;
+}
+
+.radio{
+    z-index:999;
+    position: absolute;
+    top:2rem;
+    left: 0;
+    margin-left: 1rem;
+}
+.shadow{
+    position: absolute;
+    top: 28rem;
+    left: 5.5rem;
+}
+.ride-bg{
+    position: absolute;
+    top: 5rem;
+    left: 1.3rem;
+}
+.cirle{
+    position: absolute;
+    top: 17.5rem;
+    left: 8rem;
+}
+.big-rid{
+    position: absolute;
+    top: 12.5rem;
+    left: 3.5rem;
+}
+.title1{
+    position: absolute;
+    top: 8rem;
+    left: 6.3rem;
+}
+.click{
+    position: absolute;
+    top: 19.5rem;
+    left: 10.3rem;
+}
+
+/* 单选按钮 */
+        .gcs-radio {
+            display: none;
+        }
+        .gcs-radio+label {
+            width: 3rem;
+            height: 1.6875rem;
+            margin-right: 2rem;
+            display: inline-block;  
+        }
+        .gcs-radio+label .t11 {
+            width: 3rem;
+        }
+        .gcs-radio:checked+label:after {
+            content: url("../img/problem/yes.png");
+            display: inline-block;
+            width: 3.75rem;
+            height: 3.3125rem;
+        }
+/* 单选按钮 */
+.num2,.num3,.num4{
+    animation: showout 4s;
+    animation-iteration-count:1;/*动画只执行一次*/
+    -moz-animation-iteration-count:1;
+    -webkit-animation-iteration-count:1;
+    -o-animation-iteration-count:1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showout{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.tip{
+    animation: tip 1.2s infinite;
+	}
+	@keyframes tip{
+		0%{ transform: scale(.95); }
+		50%{ transform: scale(1.01); }
+		100%{ transform: scale(.95); }
+    }
+
+
+.car{
+    animation: move 3s;
+    animation-iteration-count:1;/*动画只执行一次*/
+    -moz-animation-iteration-count:1;
+    -webkit-animation-iteration-count:1;
+    -o-animation-iteration-count:1;
+    animation-fill-mode: forwards;
+}
+    @keyframes move{
+        0%{
+            /* transform: scale(.3); */
+            top: 0.3rem;
+            left: -2rem;
+        }
+        /* 50%{
+            transform: scale(1.0);
+        } */
+        
+        100%{
+            top: 0.3rem;
+            left: -21rem;
+        }
+    }
+
+
+
+
+
+
+
+
+
+.goPrize{
+    width:11.96875rem;
+    height: 3.625rem;
+    position: absolute;
+    margin:auto;
+    left: 0;
+    right: 0;
+    bottom: 5rem;
+    background-image: url(../img/goPrize.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+
+canvas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    display: none;
+}
+
+
+
+
+.loading{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+}
+.loading img{
+  width: 5.0rem;
+  height: 5.0rem;
+  position: absolute;
+  margin:auto;
+  left: 0%;
+  right: 0%;
+  top: 11.5rem;
+  animation: rotating 1.2s linear infinite;
+}
+.loading div{
+  width: 100%;
+  position: absolute;
+  margin:auto;
+  left: 0%;
+  right: 0%;
+  top: 18rem;
+  text-align: center;
+}
+.loading div{width: 100%; position: absolute; margin:auto; left: 0%; right: 0%; top: 18rem; text-align: center; } 
+
+@keyframes rotating{
+    0% {
+    transform: rotate(0deg);
+}
+50% {
+    transform: rotate(0.5turn);
+}
+100% {
+    transform: rotate(1turn);
+}
+}
