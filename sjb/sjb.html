@@ -1,0 +1,1355 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport视图宽度设置      视图宽度 = 设备宽度， 初始化视图大小    可调整的最大宽度   可调整的最小宽度   用户是否可以调整视图宽度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+	<!-- <link rel="stylesheet" href="./css/index.css"> -->
+	<script src="./jquery.min.js"></script>
+	<script src="./1.js"></script>
+</head>
+<style>
+		*{
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+	body{
+		position: relative;
+	}
+	.bo{
+		position: relative;
+		width: 100%;
+		height: 41.6875rem;
+		background-image: url('./img/all.jpg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+/*第一组*/
+	.one{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 9.5%;
+	}
+
+	.one>img:nth-child(1){
+		display: block;
+	    width: 1.3rem;
+	    height: 0.85rem;
+	    position: absolute;
+		top: 2.2%;
+		left: 32%;
+	}
+	.one>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+/*第二组*/
+
+	.two{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 24.6%;
+	}
+
+	.two>img:nth-child(1){
+		display: block;
+		width: 1.4rem;
+		height: 1rem;
+		position: absolute;
+		top: 2%;
+		left: 32%;
+	}
+	.two>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+
+/*第三组*/
+
+	.three{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 39.8%;
+	}
+
+	.three>img:nth-child(1){
+		display: block;
+		width: 1.4rem;
+		height: 1rem;
+		position: absolute;
+		top: 1%;
+		left: 32%;
+	}
+	.three>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+/*第四组*/
+
+	.four{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 54.9%;
+	}
+
+	.four>img:nth-child(1){
+		display: block;
+	    width: 1.3rem;
+	    height: 0.85rem;
+	    position: absolute;
+	    top: 2%;
+	    left: 33%;
+	}
+	.four>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height:  0.9rem;
+		position: absolute;
+		top: 72%;
+		left: 32%;
+	}
+
+/*前四组八进四*/
+	.one_1{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 13.6%;
+		left: 19.4%;
+	}
+	.one_1>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_1>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+/*前四组八进四*/
+	.one_2{
+		width: 1.5rem;
+		height: 7.4rem;
+		position: absolute;
+		top: 43.8%;
+		left: 19.4%;
+	}
+	.one_2>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0.3%;
+		left: 0.7%;
+	}
+	.one_2>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 85.67%;
+		left: 0.7%;
+	}
+
+
+	/*前四组  四进二*/
+	.one_1_1{
+		width: 1.5rem;
+		height: 13.65rem;
+		position: absolute;
+		top: 20.95%;
+		left: 32.4%;
+	}
+	.one_1_1>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top:0%;
+		left: 0.7%;
+	}
+	.one_1_1>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 92.5%;
+		left: 0.7%;
+	}
+
+
+	/*第五组*/
+	.five{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 9.7%;
+		right: 0%;
+	}
+
+	.five>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.five>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+	/*第六组*/
+	.six{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 24.8%;
+		right: 0%;
+	}
+
+	.six>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.six>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+
+	/*第七组*/
+	.seven{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 39.9%;
+		right: 0%;
+	}
+
+	.seven>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.seven>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+
+	/*第八组*/
+	.eight{
+		width: 3.75rem;
+		height: 4.8125rem;
+		position: absolute;
+		top: 55.1%;
+		right: 0%;
+	}
+
+	.eight>img:nth-child(1){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 0.2%;
+		left: 34%;
+	}
+	.eight>img:nth-child(2){
+		display: block;
+		width: 1.35rem;
+		height: 0.9rem;
+		position: absolute;
+		top: 70.2%;
+		left: 34%;
+	}
+
+
+	/*后四组八进四*/
+	.one_3{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 13.6%;
+		left: 74.4%;
+	}
+	.one_3>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_3>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+
+	/*后四组八进四*/
+	.none{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 43.9%;
+		left: 74.4%;
+	}
+		/*后四组八进四*/
+	.one_4{
+		width: 1.5rem;
+		height: 7.35rem;
+		position: absolute;
+		top: 43.9%;
+		left: 74.4%;
+	}
+	.one_4>img:nth-child(1){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_4>img:nth-child(2){
+		display: block;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+	.one_4>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 0%;
+		left: 0.7%;
+	}
+	.one_4>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 86.05%;
+		left: 0.7%;
+	}
+
+
+	/*后四组  四进二*/
+	.one_1_2{
+		width: 1.5rem;
+		height: 13.65rem;
+		position: absolute;
+		top: 20.95%;
+		left: 61.4%;
+	}
+	.one_1_2>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top:0%;
+		left: 0.7%;
+	}
+	.one_1_2>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1rem;
+		position: absolute;
+		top: 92.5%;
+		left: 0.7%;
+	}
+	/*最终二进一*/
+	.last{
+		width: 4.8rem;
+		height: 1.04rem;
+		position: absolute;
+		top: 35.75%;
+		left: 39.9%;
+	}
+	.last>img:nth-child(1){
+		display: none;
+		width: 1.5rem;
+		height: 1.1rem;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+	}
+	.last>img:nth-child(2){
+		display: none;
+		width: 1.5rem;
+		height: 1.1rem;
+		position: absolute;
+		top: 0%;
+		right: -1%;
+	}
+/*禁止点击*/
+	.last_1{
+		width: 4.8rem;
+		height: 1.04rem;
+		position: absolute;
+		top: 35.75%;
+		left: 39.9%;
+		z-index: 9999999;
+		display: none;
+	}
+
+	/*决赛*/
+
+	.jue{
+		display: none;
+		width: 2.65rem;
+		height: 1.75rem;
+		position: absolute;
+		top: 24.6%;
+		left: 44.4%;
+	}
+
+	/*完成*/
+	.over{
+		width: 6.25rem;
+		height: 2.5rem;
+		background-image: url(./img/wc.png);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 68%;
+		left: 37%;
+		display: none;
+	}
+
+	/*合成图片*/
+	.img_last{
+		display: none;
+		width: 100%;
+		height: 41.6875rem;
+		position: absolute;
+		top: 0%;
+		z-index: 0;
+	}
+
+
+	/*////////////////////////////////////////////*/
+.kai{
+	width: 100%;
+	height: 41.6875rem;
+	background-image: url(./images/kai.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	z-index: 99999;
+}
+.gui{
+	width: 4.8rem;
+	height: 1.7rem;
+	position: absolute;
+	top: 3.5%;
+	left: 0%;
+}
+.guize{
+	width: 100%;
+	height: 41.6875rem;
+	background-image: url('./images/gui.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	z-index: 999999;
+	display: none;
+}
+.close{
+	width: 3.125rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 7%;
+	right: 1%;
+}
+.chou_1{
+	width: 7.25rem;
+	height: 2.1rem;
+	position: absolute;
+	top: 85%;
+	left: 35%;
+	z-index: 999999999999;
+	background-image: url('./images/chou.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: none;
+}
+.dian{
+	width: 9.25rem;
+	height: 3.125rem;
+	position: absolute;
+	top: 81.5%;
+	left: 31%;
+}
+
+.tan_1{
+	width: 100%;
+	height: 41.6875rem;
+	background-image:url('./images/tan_1.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	display: none;
+	position: absolute;
+	top: 0%;
+	z-index: 999999999999999999999999;
+}
+.g{
+	display: block;
+	width: 1.875rem;
+	height: 1.875rem;
+	position: absolute;
+	top: 15%;
+	right: 3%;
+}
+.tan_1>p{
+	width: 6.25rem;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 27.5%;
+	left: 23.5%;
+}
+.inp_1{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 44%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.inp_2{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 54.5%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.but{
+	width: 6.25rem;
+	height: 2.7rem;
+	position: absolute;
+	top: 62%;
+	left: 34%;
+}
+.tan_2{
+	width: 100%;
+	height: 41.6875rem;
+	background-image:url('./images/tan_2.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	display: none;
+	position: absolute;
+	top: 0%;
+	z-index: 999999999999999999999999;
+}
+.tan_2>p{
+	width: 6.25rem;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 27.5%;
+	left: 23.5%;
+}
+.inp_3{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 44%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.inp_4{
+	width: 12.5rem;
+	height: 1.875rem;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 54.5%;
+	left: 19%;
+	font-size: 14px;
+	color: #000;
+}
+.but1{
+	width: 6.25rem;
+	height: 2.7rem;
+	position: absolute;
+	top: 62%;
+	left: 34%;
+}
+.tan_3{
+	width: 100%;
+	height: 41.6875rem;
+	background-image:url('./images/tan_3.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	display: none;
+	position: absolute;
+	top: 0%;
+	z-index: 999999999999999999999999;
+}
+.but2{
+	width: 12.25rem;
+	height: 2.7rem;
+	position: absolute;
+	top: 63.2%;
+	left: 19%;
+}
+
+
+/*loading*/
+
+.spinner {
+    margin: 6.25rem auto 0;
+    width: 9.375rem;
+    text-align: center;
+    position: absolute;
+    top: 29%;
+    left: 29%;
+    z-index: 99999999999;
+    display: none;
+}
+ #i{
+    width: 10.25rem;
+    height: 2.1875rem;
+    line-height: 2.1875rem;
+    text-align: center;
+    color: #67CF22;
+ }
+.spinner > div {
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: #67CF22;
+ 
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+/*已完成*/
+.spinner_1 {
+    margin: 6.25rem auto 0;
+    width: 9.375rem;
+    text-align: center;
+    position: absolute;
+    top: 29%;
+    left: 29%;
+    z-index: 99999999999;
+    display: none;
+}
+ #i_1{
+    width: 10.25rem;
+    height: 2.1875rem;
+    line-height: 2.1875rem;
+    text-align: center;
+    color: #67CF22;
+ }
+.spinner_1 > div {
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: #67CF22;
+ 
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner_1 .bounce1_1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.spinner_1 .bounce2_1 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+#screenShotImg{
+	display: none;
+	position: absolute;
+	top: 0%;
+	z-index: 99999999999999;
+	width: 23.4375rem;
+	height: 41.6875rem;
+}
+
+
+/*二维码*/
+.ewm{
+    position: absolute;
+    top: 55%;
+    left: 37.5%;
+     display: none; 
+    width: 6rem;
+    height: 4.3rem;
+}
+</style>
+<body>
+<div class="bo"  id="shareContent">
+<!-- 第一组 -->
+	<div class="one">
+		
+		<img src="./img/1.jpg" alt="">
+		<img src="./img/2.jpg" alt="">
+	</div>
+
+<!-- 第二组 -->
+	<div class="two">
+		
+		<img src="./img/3.jpg" alt="">
+		<img src="./img/4.jpg" alt="">
+	</div>
+<!-- 第三组 -->
+	<div class="three">
+		
+		<img src="./img/5.jpg" alt="">
+		<img src="./img/6.jpg" alt="">
+	</div>
+
+<!-- 第四组 -->
+	<div class="four">
+		
+		<img src="./img/7.jpg" alt="">
+		<img src="./img/8.jpg" alt="">
+	</div>
+
+
+<!-- 第五组 -->
+	<div class="five">
+		
+		<img src="./img/9.jpg" alt="">
+		<img src="./img/10.jpg" alt="">
+	</div>
+
+<!-- 第六组 -->
+	<div class="six">
+		
+		<img src="./img/11.jpg" alt="">
+		<img src="./img/12.jpg" alt="">
+	</div>
+
+<!-- 第七组 -->
+	<div class="seven">
+		
+		<img src="./img/13.jpg" alt="">
+		<img src="./img/14.jpg" alt="">
+	</div>
+
+<!-- 第八组 -->
+	<div class="eight">
+		
+		<img src="./img/15.jpg" alt="">
+		<img src="./img/16.jpg" alt="">
+	</div>
+
+
+<!-- 前四组  八进四 -->
+	<div class="one_1">
+		<img src="" alt="" class="tu1">
+		<img src="" alt="" class="tu2">
+	</div>
+
+	<div class="one_2">
+		<img src="" alt="" class="tu3">
+		<img src="" alt="" class="tu4">
+	</div>
+
+
+
+<!--后四组  八进四 -->
+	<div class="one_3">
+		<img src="" alt="" class="tu9">
+		<img src="" alt="" class="tu10">
+	</div>
+
+	<div class="one_4">
+		<img src="" alt="" class="tu11">
+		<img src="" alt="" class="tu12">
+	</div>
+
+
+<!-- 前四组 四进二 -->
+
+	<div class="one_1_1">
+		
+		<img src="" alt="" class="tu5">
+
+		<img src="" alt="" class="tu6">
+	</div>
+
+
+<!-- 后四组 四进二 -->
+
+	<div class="one_1_2">
+		
+		<img src="" alt="" class="tu13">
+
+		<img src="" alt="" class="tu14">
+	</div>
+
+<!-- 最终 二进一 -->
+
+	<div class="last">
+		
+		<img src="" alt="" class="tu7">
+
+		<img src="" alt="" class="tu8">
+	</div>
+
+
+<!-- 禁止点击决赛 -->
+
+	<div class="last_1">
+		
+
+	</div>
+	<!-- 决赛 -->
+
+	<img src="" alt="" class="jue">
+
+
+	<!-- 二维码 -->
+	<img src="./img/ewm.png" alt="" class="ewm">
+
+
+	<!-- 完成 -->
+<!-- onclick="over()" -->
+	<div class="over"  id="btnShare" >
+		
+
+	</div>
+	</div>
+
+	<img src="" alt="" class="img_last">
+
+
+	<!-- 存放截图 -->
+   <img id="screenShotImg">
+
+
+
+
+<!-- 抽奖页面 -->
+
+<div class="tan_1">
+
+    <a class="g">
+
+    </a>
+
+		<p>XXX</p>
+
+		<input type="text" class="inp_1" placeholder="请输入您的姓名">
+
+		<input type="text" class="inp_2" placeholder="请输入您的电话">
+
+		<div class="but">
+
+
+		</div>
+
+</div>
+
+ <div class="tan_2">
+
+       <a class="g"></a>
+
+    <input type="text" class="inp_3" placeholder="请输入您的姓名">
+
+    <input type="text" class="inp_4" placeholder="请输入您的电话">
+
+    <div class="but1">
+
+
+    </div>
+
+ </div>
+
+<div class="tan_3">
+
+	<a class="g"></a>
+    <div class="but2">
+
+
+    </div>
+
+ </div>
+
+
+<div class="chou_1">
+
+</div>
+
+
+
+<!-- loading -->
+
+	<div class="spinner">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+		<p id="i">
+			正在生成，请稍后……
+		</p>
+	</div>
+
+
+<!-- 已完成 -->
+
+
+	<div class="spinner_1">
+		<div class="bounce1_1"></div>
+		<div class="bounce2_1"></div>
+		<div class="bounce3_1"></div>
+		<p id="i_1">
+			生成图片成功！
+		</p>
+	</div>
+
+
+<script src="static/js/html2canvas.js"></script>
+	<script type="text/javascript">
+		var w = 375;
+		var f = 16;
+		var c = document.documentElement.clientWidth;
+		var nf = c * f / w;
+		document.documentElement.style.fontSize = nf + 'px';
+
+
+// 第一组
+		$('.one').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu1').css('display','block');
+				
+				var m = $('.one_1').find('img').eq(0).attr('src',src);
+			})
+		})
+
+// 第二组
+		$('.two').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu2').css('display','block');
+				var m = $('.one_1').find('img').eq(1).attr('src',src);
+			})
+		})
+// 第三组
+		$('.three').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu3').css('display','block');
+				
+				var m = $('.one_2').find('img').eq(0).attr('src',src);
+			})
+		})
+// 第四组
+		$('.four').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu4').css('display','block');
+				var m = $('.one_2').find('img').eq(1).attr('src',src);
+			})
+		})
+
+// 第五组
+		$('.five').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu9').css('display','block');
+				var m = $('.one_3').find('img').eq(0).attr('src',src);
+			})
+		})
+
+// 第六组
+		$('.six').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu10').css('display','block');
+				var m = $('.one_3').find('img').eq(1).attr('src',src);
+			})
+		})
+
+// 第七组
+		$('.seven').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu11').css('display','block');
+				var m = $('.one_4').find('img').eq(0).attr('src',src);
+			})
+		})
+
+// 第八组
+		$('.eight').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				$('.tu12').css('display','block');
+				var m = $('.one_4').find('img').eq(1).attr('src',src);
+			})
+		})
+
+// 前四组 四进二
+
+	 	$('.one_1').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				if($('.tu1').attr('src') == ''||$('.tu2').attr('src') == ''){
+					alert('请选择您预测的队伍哦！');
+					return false;
+				}
+				$('.tu5').css('display','block');
+				var m = $('.one_1_1').find('img').eq(0).attr('src',src);
+			})
+		})
+
+// 前四组 四进二
+
+	 	$('.one_2').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				if($('.tu3').attr('src') == ''||$('.tu4').attr('src') == ''){
+					alert('请选择您预测的队伍哦！')
+					return false;
+				}
+				$('.tu6').css('display','block');
+				var m = $('.one_1_1').find('img').eq(1).attr('src',src);
+			})
+		})
+
+// 后四组 四进二
+
+	 	$('.one_3').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				if($('.tu9').attr('src') == ''||$('.tu10').attr('src') == ''){
+					alert('请选择您预测的队伍哦！');
+					return false;
+				}
+				$('.tu13').css('display','block');
+				var m = $('.one_1_2').find('img').eq(0).attr('src',src);
+			})
+		})
+
+
+// 后四组 四进二
+
+	 	$('.one_4').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				if($('.tu11').attr('src') == ''||$('.tu12').attr('src') == ''){
+					alert('请选择您预测的队伍哦！');
+					return false;
+				}
+				$('.tu14').css('display','block');
+				var m = $('.one_1_2').find('img').eq(1).attr('src',src);
+			})
+		})
+
+
+// 前四组 二进一
+
+	 	$('.one_1_1').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+
+				if($('.tu5').attr('src') == ''||$('.tu6').attr('src') == ''){
+					alert('请选择您预测的队伍哦！');
+					return false;
+				}
+				$('.tu7').css('display','block');
+				// $('.tu8').css('display','block');
+				var m = $('.last').find('img').eq(0).attr('src',src);
+			})
+		})
+
+
+//后四组 二进一
+
+	 	$('.one_1_2').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+				if($('.tu13').attr('src') == ''||$('.tu14').attr('src') == ''){
+					alert('请选择您预测的队伍哦！');
+					return false;
+				}
+				$('.tu8').css('display','block');
+				var m = $('.last').find('img').eq(1).attr('src',src);
+			})
+		})
+
+
+//决赛
+
+	 	var mmm = $('.last').find('img').each(function(i){
+
+			$(this).click(function(){
+
+				var src = $(this).attr('src');
+				console.log(src);
+
+				if($('.tu7').attr('src') == ''||$('.tu8').attr('src') == ''){
+					alert('请选择您预测的队伍哦！');
+					return false;
+				}
+				$('.jue').css('display','block');
+				var m = $('.jue').attr('src',src);
+				$('.over').show();
+
+			})
+		})
+
+
+// DPR的计算
+	 	var getPixelRatio = function(context) {
+
+			var backingStore = context.backingStorePixelRatio ||
+			context.webkitBackingStorePixelRatio ||
+			context.mozBackingStorePixelRatio ||
+			context.msBackingStorePixelRatio ||
+			context.oBackingStorePixelRatio ||
+			context.backingStorePixelRatio || 1;
+			return (window.devicePixelRatio || 1) / backingStore;
+		};
+
+
+
+	$('.chou_1').click(function(){
+    	$('.tan_1').show();
+    })
+
+    $('.but').click(function(){
+    	alert('提交成功!');
+    })
+
+
+    // 关闭抽奖页
+    $('.g').click(function(){
+      $('.tan_1').hide();
+      $('.tan_2').hide();
+      $('.tan_3').hide();
+    })
+
+
+
+
+
+
+
+    //定义查找元素方法
+    function $aa(selector) {
+        return document.querySelector(selector);
+    }
+    var main = {
+        init:function(){
+            main.setListener();
+        },
+        //设置监听事件
+        setListener:function(){
+            var btnShare = document.getElementById("btnShare");
+            btnShare.onclick = function(){
+                main.html2Canvas();
+            }
+        },
+        //获取像素密度
+        getPixelRatio:function(context){
+            var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+            return (window.devicePixelRatio || 1) / backingStore;
+        },
+        //绘制dom 元素，生成截图canvas
+        html2Canvas: function () {
+            var shareContent = $aa("#shareContent");// 需要绘制的部分的 (原生）dom 对象 ，注意容器的宽度不要使用百分比，使用固定宽度，避免缩放问题
+            var width = shareContent.offsetWidth;  // 获取(原生）dom 宽度
+            var height = shareContent.offsetHeight; // 获取(原生）dom 高
+            var offsetTop = shareContent.offsetTop;  //元素距离顶部的偏移量
+
+            var canvas = document.createElement('canvas');  //创建canvas 对象
+            var context = canvas.getContext('2d');
+            var scaleBy = main.getPixelRatio(context);  //获取像素密度的方法 (也可以采用自定义缩放比例)
+            canvas.width = width * scaleBy;   //这里 由于绘制的dom 为固定宽度，居中，所以没有偏移
+            canvas.height = (height + offsetTop) * scaleBy;  // 注意高度问题，由于顶部有个距离所以要加上顶部的距离，解决图像高度偏移问题
+            context.scale(scaleBy, scaleBy);
+
+            var opts = {
+                allowTaint:true,//允许加载跨域的图片
+                tainttest:true, //检测每张图片都已经加载完成
+                scale:scaleBy, // 添加的scale 参数
+                canvas:canvas, //自定义 canvas
+                logging: true, //日志开关，发布的时候记得改成false
+                width:width, //dom 原始宽度
+                height:height //dom 原始高度
+            };
+            html2canvas(shareContent, opts).then(function (canvas) {
+               console.log("html2canvas");
+                var body = document.getElementsByTagName("body");
+                body[0].appendChild(canvas);
+            	canvas.style.width = '100%';
+		        var dataUrl = canvas.toDataURL('image/png',0.7);
+		        document.getElementById("screenShotImg").src = dataUrl;
+            });
+        }
+    };
+
+    //最后运行代码
+    main.init();
+	</script>
+</body>
+</html>
