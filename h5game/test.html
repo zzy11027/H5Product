@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<title></title>
+    <link rel="stylesheet" href="templates/h5game/css/index.css">
+	<link rel="stylesheet" href="templates/h5game/css/animate1.css">
+	<script src="templates/h5game/js/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="start">点这里开始倒计时</div>
+    
+    <div>30</div>
+
+    <div class="text">0</div>
+    <script>
+
+
+        $('.start').click(function(){
+            a = setInterval(textAdd,1000);
+            setTimeout(function(){
+
+                alert('30秒倒计时结束了！')
+
+            },30000)
+        })
+
+        function textAdd(){
+            var text = $('.text').text();
+            text++;
+            console.log(text);
+            $('.text').text(text);  
+        }
+
+
+
+        function djs(){
+
+            b = setInterval(function(){
+                time--;
+
+                //倒计时结束后     结束游戏
+                if(time == 0){
+                    clearInterval(a);
+                    clearInterval(b);
+                    $('.time>span:eq(1)').text('0');
+                    return false;
+                }
+
+                $('.time>span:eq(1)').text(time);
+            },1000)
+        }
+    </script>
+	<script src='templates/h5game/js/build.js'></script>
+	<script type="text/javascript"> 
+
+	</script>
+</body>
+</html>
